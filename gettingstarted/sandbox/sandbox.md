@@ -24,8 +24,11 @@ Open Gateway APIs access is granted to applications, not developers, so every ap
 Therefore the way to get credentials to test the APIs is to register an application in the Sandbox console. You will use your application credentials to authenticate your requests to the APIs from any test you code no matter if it is actually a comprehensive application or just a tiny script to run from the a command line interface.
 
 For every application you create, you will need to follow these simple steps to configure it:
+
 1. Select the APIs you want your application to test. It could be one or several APIs depending on your use case.
+
 ![API selection](images/api-selection.png)
+
 2. Select the usage mode for your application. You have the following options:
 
 	- **Production mode**
@@ -34,7 +37,7 @@ For every application you create, you will need to follow these simple steps to 
 
 		Movistar (Spain) is already available for testing from the Telefónica Open Gateway Sandbox, and other Telefónica operators in other countries will be added soon.
 
-		The production mode is disabled by default for Privacy reasons, but you can enable it by filling in your legal information and accepting the terms and conditions in the form that the Sandbox console will offer you for that purpose.
+		The production mode is disabled by default for Privacy reasons, but you can enable it by filling in your legal information and accepting the terms and conditions in the form that the Sandbox console will offer you for that purpose. You will have to provide some mobile phone numbers of your own which will be added to a whitelist that will allow you to test the APIs in production mode from your own devices and will block API usage accessing someone else's personal data.
 
 	- **Mock mode**
 
@@ -44,16 +47,43 @@ For every application you create, you will need to follow these simple steps to 
 
 ![Usage mode](images/usage-mode.png)
 
-3. Briefly describe your application as part of the application onboarding process so that mobile operators can understand the purpose of your tests and validate it. Since it is a testing environment, your application won't be rejected as per this information, but our Sandbox uses standard procedures to register applications in the mobile operators' systems which takes this data as mandatory.
+3. Briefly describe your application as part of the application onboarding process so that mobile operators can understand the purpose of your tests and validate it.
+
+	Since it is a testing environment, your application won't be rejected as per this information, but our Sandbox uses standard procedures to register applications in the mobile operators' systems which takes this data as mandatory.
 
 	These are the fields you need to fill in:
 
 	- **Name**: A name to identify your application by the operators as an Open Gateway APIs consumer.
 	- **Full name**: Your application's commercial name by which operators can find it in your website or application stores.
 	- **Description**: A brief description of your application's use case related to the usage of the APIs.
-	- **Redirect URL**: (Optional) For frontend triggered authorization flows, you must indicate an URI hosted on your servers for the flow to call back to your code for it to complete authorization and perform the service API request (check [frontend triggered authorization flow](../../opengateway/authentication/frontend.md) for detailed information).
+	- **Redirect URL**: (Optional) For frontend triggered authorization flows, you must indicate an URI hosted on your servers for the flow to call back to your code for it to complete authorization and perform the service API request (check [frontend triggered authorization flow](/authentication/frontend.md) for detailed information).
 
 ![App information](images/app-information.png)
+
+4. Check the specifications and accept the terms and conditions per API and operator.
+
+	Each mobile operator has its own terms and conditions for the usage of each API, and its own technical specifications you will want to consider when it comes to consuming them, so you will need to accept them for each API you want to test on each operator you have previously selected.
+
+	Since our Sandbox is just a free testing environment, specifications are not binding and conditions are meant for safeguarding privacy, even given that only whitelisted phone numbers can be used when testing in the Production mode with our mobile operators. In the case of the Mock mode, a global simulated operator will provide you with mock responses being the terms and conditions of the program you are member to that applies.
+
+![Check specifications and conditions per API and operator](images/app-configuration.png)
+
+5. Review the summary and confirm
+
+![Review the summary and confirm](images/review-confirm.png)
+
+6. Once you have confirmed, your application is granted access to the Sandbox API gateway with its credentials.
+
+![alt text](images/app-created.png)
+
+To get your application credentials and use them in your prototype, go to the application details page on the My Apps section, where you will find the following information:
+
+- **Client ID**: A unique identifier for your application.
+- **Client Secret**: A secret key to authenticate your application to the APIs.
+
+![alt text](images/app-credentials.png)
+
+Note that if you selected the Production mode, you will have to wait for the approval of your application by the mobile operators you selected. When your application status is "Completed" you are good to test the APIs with your applications's credentials no matter what end-user phone number you are using. If you only selected the Mock mode, you can start testing right away.
 
 ## Using the APIs
 
