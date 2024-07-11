@@ -1,0 +1,66 @@
+# Telefónica Open Gateway Sandbox
+
+In this section you will find how to use our Sandbox environment to test the Open Gateway APIs without the need to subscribe to a Channel Partner. Your tests won't be charged and won't be suitable for going into a production stage, so it is a great chance to learn and prototype, as a previous step to go commercial.
+
+Please note that the usage of credentials granted from our Sandbox might be subject to some limitations in order to let you test without the obligations of a commercial contract. The terms and conditions of our developer or partner programs will apply.
+
+## Getting onboarded
+
+The only requirement to start using the Open Gateway Sandbox is to join one of our programs. Please check which one best fit your needs. You can also request to join both:
+
+- [Open Gateway Developer Hub](https://opengateway.telefonica.com/en/developer-hub)
+- [Open Gateway Partner Program](https://opengateway.telefonica.com/en/partner-program)
+
+Once you are approved in at least one of our programs and you log in to the private area of the Telefónica Open Gateway website, you already have access to the Sandbox web console as a program member from the Technical Toolbox section.
+
+![Access to the Sandbox console from the website private area](images/access.png)
+
+## Registering your application
+
+Open Gateway APIs access is granted to applications, not developers, so every application can have limited access to the scope and for the purpose it needs.
+
+[More information on Privacy](../../opengateway/privacy.md)
+
+Therefore the way to get credentials to test the APIs is to register an application in the Sandbox console. You will use your application credentials to authenticate your requests to the APIs from any test you code no matter if it is actually a comprehensive application or just a tiny script to run from the a command line interface.
+
+For every application you create, you will need to follow these simple steps to configure it:
+1. Select the APIs you want your application to test. It could be one or several APIs depending on your use case.
+![API selection](images/api-selection.png)
+2. Select the usage mode for your application. You have the following options:
+
+	- **Production mode**
+
+		Although our Sandbox is not a Channel Partner's production environment but a testing environment instead, it can route your API calls to our mobile operators to provide a real response if you test your prototype application from a device connected to one of their networks. That requires that you are the mobile line holder and have the SIM card installed in such device.
+
+		Movistar (Spain) is already available for testing from the Telefónica Open Gateway Sandbox, and other Telefónica operators in other countries will be added soon.
+
+		The production mode is disabled by default for Privacy reasons, but you can enable it by filling in your legal information and accepting the terms and conditions in the form that the Sandbox console will offer you for that purpose.
+
+	- **Mock mode**
+
+		You can test your application without the need to have a SIM card from one of our mobile operators. The Sandbox will provide you with a mock response for every API call you make.
+
+		The mock mode will also make available for you some APIs that are not still commercially available on our mobile operators, so you can test them in advance.
+
+![Usage mode](images/usage-mode.png)
+
+3. Briefly describe your application as part of the application onboarding process so that mobile operators can understand the purpose of your tests and validate it. Since it is a testing environment, your application won't be rejected as per this information, but our Sandbox uses standard procedures to register applications in the mobile operators' systems which takes this data as mandatory.
+
+	These are the fields you need to fill in:
+
+	- **Name**: A name to identify your application by the operators as an Open Gateway APIs consumer.
+	- **Full name**: Your application's commercial name by which operators can find it in your website or application stores.
+	- **Description**: A brief description of your application's use case related to the usage of the APIs.
+	- **Redirect URL**: (Optional) For frontend triggered authorization flows, you must indicate an URI hosted on your servers for the flow to call back to your code for it to complete authorization and perform the service API request (check [frontend triggered authorization flow](../../opengateway/authentication/frontend.md) for detailed information).
+
+![App information](images/app-information.png)
+
+## Using the APIs
+
+### HTTP integration
+
+#### API reference
+
+### Sandbox SDK
+
+#### SDK reference
