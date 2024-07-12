@@ -4,7 +4,7 @@ Welcome to Open Gateway APIs – your gateway to leveraging advanced network cap
 
 ## What is Open Gateway?
 
-Open Gateway is a groundbreaking initiative spearheaded by the GSMA in collaboration with leading telecommunications operators, cloud providers, and aggregators worldwide. Our mission is to create a standardized framework of Application Programming Interfaces (APIs) that enable simplified and universal access to cutting-edge mobile network capabilities and associated services. By leveraging Open Gateway APIs, developers can focus on building exceptional applications while we handle the complexities of network integration.
+Open Gateway is a initiative spearheaded by the GSMA in collaboration with leading telecommunications operators, cloud providers, and aggregators worldwide. Our mission is to create a standardized framework of Application Programming Interfaces (APIs) that enable simplified and universal access to cutting-edge mobile network capabilities and associated services. By leveraging Open Gateway APIs, developers can focus on building exceptional applications while we handle the complexities of network integration.
 
 ## Why Open Gateway APIs?
 
@@ -47,7 +47,6 @@ Getting started with Open Gateway APIs is easy:
 
 By becoming a part of the Open Gateway community, you join a global network of developers, innovators, and industry leaders dedicated to advancing the digital ecosystem. Share your experiences, collaborate with peers, and stay updated with the latest developments and best practices.
 
-## Conclusion
 
 Open Gateway APIs open up a world of possibilities for developers looking to harness the power of advanced network capabilities. Our standardized, secure, and easy-to-use APIs provide the foundation for creating exceptional applications that meet the demands of today's connected world. Start your journey with Open Gateway today and transform your ideas into reality.
 
