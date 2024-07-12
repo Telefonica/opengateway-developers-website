@@ -9,7 +9,7 @@ The Open Gateway APIs manages API calls and credentials, ensuring they are route
 
 
 
-![Open Gateway Architecture](../images/architecture.png) Open Gateway Architecture
+![Open Gateway Architecture](images/architecture.png) Open Gateway Architecture
 
 
 ## Key Features of Open Gateway API Architecture

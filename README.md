@@ -2,6 +2,17 @@
 
 This repository contains the content of the Open Gateway's developers website. Each page in the website must be linked to a markdown file in this repository and will updated and published after a pull request for every change.
 
+## Table of contents
+- [Open Gateway initiative](opengateway/intro.md)
+	- [Architecture](opengateway/architecture.md)
+	- [CAMARA](opengateway/camara.md)
+	- [Privacy](opengateway/privacy.md)
+- [Open Gateway APIs](apis/intro.md)
+	- [SIM Swap](apis/simswap.md)
+	- [Number Verification](apis/numberverification.md)
+- [Getting started](gettingstarted/gettingstarted.md)
+	- [Open Gateway Sandbox](gettingstarted/sandbox/sandbox.md)
+
 ## To-do list
 - [ ] Confirm and purchase the developer portal platform
 - [ ] Create the website structure from Miro's design into folders and markdown files
