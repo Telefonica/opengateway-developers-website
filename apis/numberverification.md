@@ -8,34 +8,6 @@ Built as part of the **Open Gateway** initiative, the Number Verification API pr
 
 In today's digital landscape, verifying phone number ownership is critical to prevent identity fraud and secure online transactions. The Number Verification CAMARA API offers a reliable solution to **authenticate users by confirming their phone numbers**. This ensures that only legitimate users gain access to digital services, bolstering security measures and building trust among customers.
 
-### Digital Identity and Authentication
-
-Digital identity refers to the electronic representation of an individual or organization, encompassing digitally stored identifying characteristics exchanged during electronic transactions. These characteristics uniquely and specifically identify a person or legal entity. Unlike physical IDs such as passports, digital identities enable remote authentication over digital channels. They track activities, collect personal data, and validate individuals accessing services. Trust between parties—services, application providers, or users—is crucial in digital identity and electronic transactions, underpinned by authenticity and reliability.
-
-### Multi-Factor Authentication
-
-To access digital services, users must authenticate themselves on the provider’s website/app using credentials. Authentication factors are categories of evidence proving identity, such as usernames/passwords, national IDs, or phone numbers. The three main authentication factors are:
-
-- **Knowledge Factor:** Information known to the user (e.g., username/password).
-- **Possession Factor:** Physical possession of something (e.g., mobile phone).
-- **Inherence Factor:** Inherent physical characteristics (e.g., fingerprint).
-
-While individual authentication factors may have vulnerabilities, using multiple factors enhances security. Knowledge-based factors like passwords can be weak due to user habits or technology limitations. Biometric and possession-based factors offer stronger security against unauthorized access. Combining these factors in multi-factor authentication processes significantly reduces the risk of hacking attempts.
-
-
-### Seamless and Transparent Authentication Using Network Connection
-
-Smartphones have become indispensable for accessing digital services, managing everything from food delivery to banking. Leveraging smartphones as a possession factor in authentication systems is convenient for users accustomed to multi-factor authentication.
-
-Currently, SMS One-time Passwords (OTPs) are widely used for possession authentication due to their simplicity and integration with existing SMS delivery systems. However, SMS OTPs rely on the assumption that users can receive and manually input the code, which introduces several challenges:
-
-- **Number Verification Process:** Users confirm ownership of their registered phone number by receiving and entering an SMS OTP.
-- **Possession Factor Validation:** Users demonstrate possession of the registered phone number by inputting the SMS OTP.
-
-Despite its widespread use, SMS OTPs pose security risks such as SIM Swapping and lack of encryption for transmitted codes. These factors contribute to a non-transparent user experience and potential security vulnerabilities.
-
-To address these issues, new solutions leverage carrier network-based technology for robust authentication. When users power on their phones, devices and SIM cards automatically connect to and authenticate through the carrier network without user intervention. This approach ensures secure, frictionless authentication, leveraging mobile network capabilities for enhanced security and user experience compared to traditional methods.
-
 ### How does the Number Verification API help to facilitate authentication? 
 
 The Number Verification API utilizes telco mechanisms to authenticate users seamlessly based on their device's connection to the network. This method contrasts with traditional authentication solutions by enhancing user convenience and security. Unlike manual processes or plain-text codes, network-based validation requires no user interaction, bolstering protection against unauthorized access.
@@ -73,4 +45,4 @@ The CAMARA Number Verification API offers significant advantages for industries 
 
 6. **Security:** CAMARA guidelines establish a common privacy and security framework that addresses service providers' needs while safeguarding customer rights.
 
-By leveraging the CAMARA Number Verification API, industries can enhance security, improve user experiences, and mitigate identity fraud risks effectively.
+

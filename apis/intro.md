@@ -6,7 +6,6 @@ Open Gateway enables software developers to leverage Network Application Program
 
 Open Gateway utilizes these network APIs to offer a unified standard interface across multiple operator networks worldwide, abstracting the inherent complexities associated with network APIs. This approach simplifies integration and enhances interoperability for developers and applications alike.
 
-
 ## Technical Description of Open Gateway APIs
 
 ### Interoperability and Open Standards
@@ -20,12 +19,6 @@ Open Gateway APIs are designed using a _RESTful_ (Representational State Transfe
 ### Security and Authentication
 
 Open Gateway APIs implement robust security and authentication mechanisms to protect data integrity and confidentiality. This includes the use of _OAuth 2.0_ for authorization and _JWT_ (JSON Web Tokens) for secure user and application authentication.
-
-### Technical Benefits
-* **Simplified integration**: By using standardized APIs, developers can quickly integrate advanced network capabilities into their applications without needing custom integrations for each operator.
-* **Scalability**: The RESTful architecture allows applications to scale efficiently in distributed and high-demand environments.
-* **Innovation**: Open APIs enable developers to explore new opportunities and create innovative services that leverage advanced mobile network capabilities.
-
 
 ## Available APIs
 
