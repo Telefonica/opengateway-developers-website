@@ -38,10 +38,11 @@ We understand that integrating new technologies can be challenging. That's why O
 Getting started with Open Gateway APIs is easy:
 
 1. **Explore Available APIs:** Browse our API catalog to discover the various network capabilities and services that you can integrate into your applications.
-2. **Register and Obtain Credentials:** Sign up for an account and obtain the necessary API credentials to access the services.
-3. **Read the Documentation:** Familiarize yourself with our comprehensive documentation to understand how to make API calls, handle responses, and implement best practices.
-4. **Start Building:** Begin integrating Open Gateway APIs into your applications, leveraging the powerful network capabilities to create innovative and high-performance solutions.
-5. **Test and Optimize:** Test your integration thoroughly to ensure functionality, reliability, and performance. Optimize your application based on feedback and performance metrics.
+2. **Find a channel partner:** Identify a channel partner or join to the Developer Hub in order to use the APIs. 
+3. **Register and Obtain Credentials:** Sign up for an account and obtain the necessary API credentials to access the services.
+4. **Read the Documentation:** Familiarize yourself with our comprehensive documentation to understand how to make API calls, handle responses, and implement best practices.
+5. **Start Building:** Begin integrating Open Gateway APIs into your applications, leveraging the powerful network capabilities to create innovative and high-performance solutions.
+
 
 ## Join the Open Gateway Community
 
