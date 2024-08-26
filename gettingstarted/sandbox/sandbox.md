@@ -1,3 +1,9 @@
+---
+title: Telefónica Open Gateway Sandbox
+excerpt: A guide on how to use the Telefónica Open Gateway Sandbox to get familiar with the Open Gateway APIs
+category: 66840b9dac745a002559ffad
+---
+
 # Telefónica Open Gateway Sandbox
 
 In this section you will find how to use our Sandbox environment to test the Open Gateway APIs without the need to subscribe to a Channel Partner. Your tests won't be charged and won't be suitable for going into a production stage, so it is a great chance to learn and prototype, as a previous step to go commercial.
@@ -87,10 +93,33 @@ Note that if you selected the Production mode, you will have to wait for the app
 
 ## Using the APIs
 
+So far you have used the Sandbox console to register your application as the client to the APIs which means your application is the entity granted access with its credentials.
+
+Now you will use such credentials to effectively consume de APIs from your code. You can use any programming language and any platform that supports HTTP requests, or you can use SDKs for convenience. The offering of SDKs in different programming languages depends on your Channel Partner of choice at the commercial stage. For testing purposes, our Open Gateway Sandbox provides you with a Python SDK and will publish SDK in other common languages soon.
+
 ### HTTP integration
+
+#### Pros and cons
+- Pros:
+	- No dependencies on third-party libraries
+	- No need to learn a new SDK
+	- Portability across different Channel Partners (which provide their own SDKs)
+- Cons:
+	- More low-level tasks to care about: encoding your credentials, calling authorization endpoints, handling tokens, etc.
+	- More difficult to implement
+	- More verbose code
+	- More error-prone code
 
 #### API reference
 
 ### Sandbox SDK
+
+#### Pros and cons
+- Pros:
+	- Low-level tasks are abstracted: you instantiate a class with your application credentials and the instance will handle authentication and token management for you
+	- Further features could be included by the Channel Partner in the SDK: for instance, frontend SDKs handling network interfaces to avoid authentication problems caused by end-user device being connected to Wi-Fi networks
+	- Less code to write
+	- Less error-prone code
+	- Easier to implement
 
 #### SDK reference
