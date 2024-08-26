@@ -1,3 +1,9 @@
+---
+title: Getting started
+excerpt: Find out how to start testing the Open Gateway APIs in our Sandbox or go commercial with one of our Channel Partners
+category: 66840b9dac745a002559ffad
+---
+
 # Getting started
 
 Once you are familiar with the Open Gateway initiative and the APIs we offer, you will want to start testing them into your own prototype applications to perform proofs of concept on your use cases.
