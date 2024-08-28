@@ -38,23 +38,6 @@ The Open Gateway architecture offers **Unified API Access**, allowing developers
 - **Simplifies Integration:** Reduces complexity by providing a unified access point.
 - **Enhances Efficiency:** Streamlines the process of accessing and utilizing network services.
 
-## Benefits of Open Gateway API Architecture
-
-### Simplified Integration
-
-By using standardized APIs, developers can quickly integrate advanced network capabilities into their applications. This approach eliminates the need for custom integrations for each operator, aggregator, or cloud provider, saving time and resources.
-
-### Improved Scalability
-
-The RESTful architecture of Open Gateway APIs supports high scalability, making it suitable for applications that require efficient handling of large volumes of data and users.
-
-### Enhanced Security
-
-The implementation of OAuth 2.0 and JWT ensures that user data and application interactions are secure, providing peace of mind for developers and end-users alike.
-
-### Innovation and Flexibility
-
-Open Gateway APIs enable developers to explore new opportunities and create innovative services that leverage advanced mobile network capabilities. The flexible and open nature of the architecture supports a wide range of use cases and applications.
 
 ## How to consume the APIs
 
