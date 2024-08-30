@@ -1,6 +1,6 @@
 ---
-title: Telefónica Open Gateway Sandbox
-excerpt: In this section you will find how to use our Sandbox environment to test the Open Gateway APIs without the need to subscribe to a Channel Partner. Your tests won't be charged and won't be suitable for going into a production stage, so it is a great chance to learn and prototype, as a previous step to go commercial.
+title: Sandbox
+excerpt: In this section you will find how to use the Telefónica Open Gateway Sandbox environment to test the Open Gateway APIs without the need to subscribe to a Channel Partner. Your tests won't be charged and won't be suitable for going into a production stage, so it is a great chance to learn and prototype, as a previous step to go commercial.
 category: 66840b9dac745a002559ffad
 ---
 
@@ -108,7 +108,7 @@ Now you will use such credentials to effectively consume de APIs from your code.
 
 #### API reference
 
-You can check the OpenAPI 3.0 specification of each API in the []
+You can check the OpenAPI v3 specification of each API in the [Open Gateway APIs](../../02_apis/01_apis.md) guide.
 
 ### Sandbox SDK
 
@@ -119,5 +119,11 @@ You can check the OpenAPI 3.0 specification of each API in the []
 	- Less code to write
 	- Less error-prone code
 	- Easier to implement
+- Cons:
+	- It is up to your Channel Partner to provide SDKs in different programming languages including your app's one. Once you shift to a Channel Partner, your production code will need to use their SDKs instead of the Sandbox's one you used for testing and prototyping or, in the worst case, you will have to use the HTTP integration method instead if no SDK is available for your app's language.
+	- Our Sandbox does not provide a fronted SDK, so if the use case you are prototyping triggers the authorization flow from the end-user device, you will need to implement it by coding HTTP integration. Once you progress to a production stage, you need to check your Channel Partner toolkit offering.
+	- Consequently to the above, once in a production stage, you will less portability across different Channel Partners
 
 #### SDK reference
+
+You can check the reference of the current Sandbox SDK reference in the [Python Sandbox SDK](02_sdkreference.md) guide. The scope of the APIs covered and the programming languages supported will be extended progressively according to the Sandbox roadmap.
