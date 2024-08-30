@@ -1,3 +1,9 @@
+---
+title: SIM Swap API
+excerpt: The SIM Swap API from Open Gateway allows to check for SIM card swaps for fraud prevention purposes
+category: 66aa4f941e51e7000fa353ce
+---
+
 # Open Gateway's SIM Swap API
 
 The SIM Swap API from Open Gateway allows to check for SIM card swaps for fraud prevention purposes.

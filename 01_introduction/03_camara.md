@@ -1,12 +1,16 @@
+---
+title: CAMARA project
+excerpt: CAMARA is an open-source initiative under the Linux Foundation focused on defining, developing, and testing telecom APIs
+category: 66840b9dac745a002559ffad
+---
+
 # CAMARA project
 
 ## What is CAMARA?
 
 CAMARA is an open-source initiative under the Linux Foundation focused on defining, developing, and testing telecom APIs. In collaboration with the GSMA Operator Platform Group, CAMARA ensures that API requirements are aligned, and API definitions are published for industry-wide use. The project achieves API harmonization by rapidly creating working code and providing developer-friendly documentation. All API definitions and reference implementations are available for free under the Apache 2.0 license.
 
-
 With CAMARA Open APIs, enterprise software developers can integrate network capabilities once, and they’re ready to go. Imagine these APIs embedded in cloud provider stacks. Developers could then seamlessly incorporate lines of code from both the cloud provider and global telecommunication standards, covering services like identity, cybersecurity, billing, signaling, geolocation, and more.
-
 
 ## Key CAMARA activities
 
@@ -18,8 +22,6 @@ With CAMARA Open APIs, enterprise software developers can integrate network capa
 
 4. **Enhancing application portability**: By providing standardized APIs, CAMARA supports the portability of applications across different networks and countries. This is crucial for developers looking to create applications that can operate seamlessly in a global environment.
 
-
-
 ## Objectives of the CAMARA Project
 
 1. **API Interoperability**: The primary goal of CAMARA is to solve challenges related to the portability and replication of API services across heterogeneous operator and cloud architectures. This is achieved by developing an open, global, and accessible API solution that allows developers to integrate operator capabilities into any network where customers are located.
@@ -27,6 +29,3 @@ With CAMARA Open APIs, enterprise software developers can integrate network capa
 2. **Global Collaboration**: CAMARA fosters new collaboration opportunities between network and cloud companies, including telecommunications operators, device manufacturers, and independent software vendors (ISVs). This collaboration is essential to avoid fragmentation between telecom and cloud developers and to accelerate the advancement of global portability and the adoption of new features and capabilities.
 
 3. **Simplification of Telco Complexity**: The project aims to simplify the complexity of telecommunications by abstracting network APIs to service APIs. This facilitates API consumption by customers without telecommunications expertise, meets data privacy and regulatory requirements, and eases application integration into the network.
-
-
-

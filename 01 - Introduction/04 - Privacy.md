@@ -1,1 +1,0 @@
-# Privacy at Open Gateway

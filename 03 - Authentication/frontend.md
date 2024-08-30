@@ -1,1 +1,0 @@
-# Frontend triggered authorization flow

@@ -1,3 +1,9 @@
+---
+title: Open Gateway API Architecture
+excerpt: By leveraging standardized APIs, the Open Gateway architecture empowers developers to create robust, scalable, and high-performance applications
+category: 66840b9dac745a002559ffad
+---
+
 # Open Gateway API Architecture Documentation
 
 ## Introduction to Open Gateway API Architecture
@@ -6,9 +12,7 @@ The **Open Gateway API Architecture** is a cutting-edge framework designed to en
 
 The Open Gateway APIs manages API calls and credentials, ensuring they are routed correctly to respective mobile operators. Its intuitive interface enables developers to effortlessly choose and subscribe to network APIs offered by multiple operators across different regions. This transforms Open Gateway into a convenient marketplace that simplifies procurement processes while maintaining a seamless user experience.
 
-
 ![Open Gateway Architecture](images/architecture.png) Open Gateway Architecture
-
 
 ## Key Features of Open Gateway API Architecture
 
