@@ -4,8 +4,6 @@ excerpt: Find out how to start testing the Open Gateway APIs in our Sandbox or g
 category: 66840b9dac745a002559ffad
 ---
 
-# Getting started
-
 Once you are familiar with the Open Gateway initiative and the APIs we offer, you will want to start testing them into your own prototype applications to perform proofs of concept on your use cases.
 
 There is two paths you can take according to the maturity of your project, not exclusive if you want to go through both, which are either testing in the Telefónica's Open Gateway Sandbox environment or shifting to the Open Gateway platform of one of our Channel Partners, closer to a commercial stage.

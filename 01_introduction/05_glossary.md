@@ -4,8 +4,6 @@ excerpt: Reference guide to key terms and concepts used in the Open Gateway API 
 category: 66840b9dac745a002559ffad
 ---
 
-# Glossary of Terms
-
 ## Aggregator
 Aggregator or ‘Channel Partners’ aggregate Operator’s CAMARA standardized APIs to build Open Gateway-based services and implement Operator end-point routing based on final user identification on the network.
 

@@ -1,12 +1,8 @@
 ---
 title: Open Gateway APIs
-excerpt: Introduction to Open Gateway APIs and their descriptions and specifications
+excerpt: The Open Gateway initiative is led to create a standardized framework of Application Programming Interfaces (APIs) that enables simplified and universal access to advanced mobile network capabilities and associated services. Designed to promote interoperability, innovation, and operational efficiency within the digital ecosystem, Open Gateway APIs are essential for modern application development.
 category: 66aa4f941e51e7000fa353ce
 ---
-
-# Open Gateway APIs
-
-Open Gateway APIs represent an innovative initiative led by the GSMA and  telecommunications operators to create a standardized framework of Application Programming Interfaces (APIs). These APIs enable simplified and universal access to advanced mobile network capabilities and associated services. Designed to promote interoperability, innovation, and operational efficiency within the digital ecosystem, Open Gateway APIs are essential for modern application development.
 
 Open Gateway enables software developers to leverage Network Application Programming Interfaces (APIs) for building applications that seamlessly communicate with underlying networks. These APIs provide a consistent method for accessing analytical and statistical data from networks, facilitating the implementation of customer experience-focused use cases. Open Gateway empowers developers to retrieve network information and request configuration changes efficiently.
 

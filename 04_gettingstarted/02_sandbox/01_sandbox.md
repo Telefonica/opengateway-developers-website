@@ -1,12 +1,8 @@
 ---
 title: Telefónica Open Gateway Sandbox
-excerpt: A guide on how to use the Telefónica Open Gateway Sandbox to get familiar with the Open Gateway APIs
+excerpt: In this section you will find how to use our Sandbox environment to test the Open Gateway APIs without the need to subscribe to a Channel Partner. Your tests won't be charged and won't be suitable for going into a production stage, so it is a great chance to learn and prototype, as a previous step to go commercial.
 category: 66840b9dac745a002559ffad
 ---
-
-# Telefónica Open Gateway Sandbox
-
-In this section you will find how to use our Sandbox environment to test the Open Gateway APIs without the need to subscribe to a Channel Partner. Your tests won't be charged and won't be suitable for going into a production stage, so it is a great chance to learn and prototype, as a previous step to go commercial.
 
 Please note that the usage of credentials granted from our Sandbox might be subject to some limitations in order to let you test without the obligations of a commercial contract. The terms and conditions of our developer or partner programs will apply.
 
@@ -111,6 +107,8 @@ Now you will use such credentials to effectively consume de APIs from your code.
 	- More error-prone code
 
 #### API reference
+
+You can check the OpenAPI 3.0 specification of each API in the []
 
 ### Sandbox SDK
 

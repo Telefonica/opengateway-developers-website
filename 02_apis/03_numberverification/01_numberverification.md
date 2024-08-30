@@ -1,14 +1,10 @@
 ---
 title: Number Verification API
-excerpt: The standardised Number Verification API allows you to increase the security of your users' identity and credentials quickly, conveniently, reliably and securely
+excerpt: The Number Verification API is a pivotal tool for bolstering security and reliability in your applications. In today's digital landscape, verifying the authenticity of phone numbers is paramount for safeguarding against fraud and ensuring seamless user interactions. The Number Verification API offers a streamlined solution to validate phone numbers in real-time, empowering developers to implement robust identity verification mechanisms with ease.
 category: 66aa4f941e51e7000fa353ce
 ---
 
-# Open Gateway's Number Verification API
-
-Discover the **Number Verification API**, a pivotal tool for bolstering security and reliability in your applications. In today's digital landscape, verifying the authenticity of phone numbers is paramount for safeguarding against fraud and ensuring seamless user interactions. The Number Verification API offers a streamlined **solution to validate phone numbers in real-time**, empowering developers to implement robust identity verification mechanisms with ease.
-
-Built as part of the **Open Gateway** initiative, the Number Verification API provides developers universal access to essential network functionalities. Whether you're enhancing user registration processes, securing transactions, or optimizing user engagement strategies, integrating the Number Verification API enriches your application's security posture while ensuring a seamless user experience.
+Built as part of the Open Gateway initiative, the Number Verification API provides developers universal access to essential network functionalities. Whether you're enhancing user registration processes, securing transactions, or optimizing user engagement strategies, integrating the Number Verification API enriches your application's security posture while ensuring a seamless user experience.
 
 ##  Why Number Verification?
 

@@ -4,21 +4,9 @@ excerpt: The SIM Swap API from Open Gateway allows to check for SIM card swaps f
 category: 66aa4f941e51e7000fa353ce
 ---
 
-# Open Gateway's SIM Swap API
+The standardized SIM Swap API enables seamless integration of SIM swap detection and management functionality into your applications. This API enhances security by identifying potentially fraudulent activity and providing an additional layer of protection against unauthorized access.
 
-The SIM Swap API from Open Gateway allows to check for SIM card swaps for fraud prevention purposes.
-
-## To-do list
-- [ ] Link to the marketing website API page
-- [ ] Add the API reference
-- [ ] Add the usage sample codes
-- [ ] Add a link to the open-source sample application on GitHub
-
-# Open Gateway's SIM Swap API
-
-The **standardized SIM Swap API** enables seamless integration of **SIM swap detection** and **management functionality** into your applications. This API enhances security by **identifying potentially fraudulent activity** and providing an **additional layer of protection** against unauthorized access.
-
-Additionally, the **SIM Swap's Unified API Access** feature ensures **access to network capabilities** of various carriers through a **single, standardized interface**. This simplifies integration and improves efficiency for developers by consolidating access to multiple carrier networks.
+Additionally, the SIM Swap's Unified API Access feature ensures access to network capabilities of various carriers through a single, standardized interface. This simplifies integration and improves efficiency for developers by consolidating access to multiple carrier networks.
 
 ## SIM Swap and Account Takeover Fraud
 
