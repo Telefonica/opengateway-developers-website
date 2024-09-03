@@ -1,7 +1,7 @@
 ---
 title: Sandbox
 excerpt: In this section you will find how to use the Telefónica Open Gateway Sandbox environment to test the Open Gateway APIs without the need to subscribe to a Channel Partner. Your tests won't be charged and won't be suitable for going into a production stage, so it is a great chance to learn and prototype, as a previous step to go commercial.
-category: 66840b9dac745a002559ffad
+category: 66d5624a492663000f4ed527
 ---
 
 Please note that the usage of credentials granted from our Sandbox might be subject to some limitations in order to let you test without the obligations of a commercial contract. The terms and conditions of our developer or partner programs will apply.
@@ -21,7 +21,7 @@ Once you are approved in at least one of our programs and you log in to the priv
 
 Open Gateway APIs access is granted to applications, not developers, so every application can have limited access to the scope and for the purpose it needs.
 
-[More information on Privacy](../../opengateway/privacy.md)
+[More information on Privacy](../../about/privacy.md)
 
 Therefore the way to get credentials to test the APIs is to register an application in the Sandbox console. You will use your application credentials to authenticate your requests to the APIs from any test you code no matter if it is actually a comprehensive application or just a tiny script to run from the a command line interface.
 
@@ -58,7 +58,7 @@ For every application you create, you will need to follow these simple steps to 
 	- **Name**: A name to identify your application by the operators as an Open Gateway APIs consumer.
 	- **Full name**: Your application's commercial name by which operators can find it in your website or application stores.
 	- **Description**: A brief description of your application's use case related to the usage of the APIs.
-	- **Redirect URL**: (Optional) For frontend triggered authorization flows, you must indicate an URI hosted on your servers for the flow to call back to your code for it to complete authorization and perform the service API request (check [frontend triggered authorization flow](/authentication/frontend.md) for detailed information).
+	- **Redirect URL**: (Optional) For frontend triggered authorization flows, you must indicate an URI hosted on your servers for the flow to call back to your code for it to complete authorization and perform the service API request (check [frontend triggered authorization flow](../../callflows/authorization/frontend.md) for detailed information).
 
 ![App information](https://github.com/Telefonica/opengateway-developers-website/raw/main/04_gettingstarted/02_sandbox/images/app-information.png?raw=true)
 
@@ -91,39 +91,18 @@ Note that if you selected the Production mode, you will have to wait for the app
 
 So far you have used the Sandbox console to register your application as the client to the APIs which means your application is the entity granted access with its credentials.
 
-Now you will use such credentials to effectively consume de APIs from your code. You can use any programming language and any platform that supports HTTP requests, or you can use SDKs for convenience. The offering of SDKs in different programming languages depends on your Channel Partner of choice at the commercial stage. For testing purposes, our Open Gateway Sandbox provides you with a Python SDK and will publish SDK in other common languages soon.
+Now you will use such credentials to effectively consume de APIs from your code. You can use any programming language and any platform that supports HTTP requests, or you can use the Sandbox SDK for convenience. Our Open Gateway Sandbox provides you with a Python SDK and will publish SDKs in other common languages soon.
 
-### HTTP integration
+[Check the pros and cons of using HTTP integration or SDKs to consume the APIs](../../callflows/apiintegration.md)
 
-#### Pros and cons
-- Pros:
-	- No dependencies on third-party libraries
-	- No need to learn a new SDK
-	- Portability across different Channel Partners (which provide their own SDKs)
-- Cons:
-	- More low-level tasks to care about: encoding your credentials, calling authorization endpoints, handling tokens, etc.
-	- More difficult to implement
-	- More verbose code
-	- More error-prone code
+When it comes to our Sandbox's SDK, the following particular considerations apply:
+- Once you shift to a Channel Partner in a commercial stage, your production code will need to use their SDKs instead of the Sandbox's one you used for testing and prototyping or, in the worst case, you will have to use the HTTP integration method instead if no SDK is available for your app's language.
+- Our Sandbox does not provide a fronted SDK, so if the use case you are prototyping triggers the authorization flow from the end-user device, you will need to implement it by coding HTTP integration. Once you progress to a production stage, you need to check your Channel Partner toolkit offering.
 
 #### API reference
 
-You can check the OpenAPI v3 specification of each API in the [Open Gateway APIs](../../02_apis/01_apis.md) guide.
+You can check the OpenAPI v3 specification of each API in the list of [Available APIs](../../catalog/available.md) or in the [API Roadmap](../../catalog/roadmap.md).
 
-### Sandbox SDK
+### Sandbox SDK reference
 
-#### Pros and cons
-- Pros:
-	- Low-level tasks are abstracted: you instantiate a class with your application credentials and the instance will handle authentication and token management for you
-	- Further features could be included by the Channel Partner in the SDK: for instance, frontend SDKs handling network interfaces to avoid authentication problems caused by end-user device being connected to Wi-Fi networks
-	- Less code to write
-	- Less error-prone code
-	- Easier to implement
-- Cons:
-	- It is up to your Channel Partner to provide SDKs in different programming languages including your app's one. Once you shift to a Channel Partner, your production code will need to use their SDKs instead of the Sandbox's one you used for testing and prototyping or, in the worst case, you will have to use the HTTP integration method instead if no SDK is available for your app's language.
-	- Our Sandbox does not provide a fronted SDK, so if the use case you are prototyping triggers the authorization flow from the end-user device, you will need to implement it by coding HTTP integration. Once you progress to a production stage, you need to check your Channel Partner toolkit offering.
-	- Consequently to the above, once in a production stage, you will less portability across different Channel Partners
-
-#### SDK reference
-
-You can check the reference of the current Sandbox SDK reference in the [Python Sandbox SDK](02_sdkreference.md) guide. The scope of the APIs covered and the programming languages supported will be extended progressively according to the Sandbox roadmap.
+You can check the reference of the current Sandbox SDK reference in the [Python Sandbox SDK](./sdkreference.md) guide. The scope of the APIs covered and the programming languages supported will be extended progressively according to the Sandbox roadmap.
