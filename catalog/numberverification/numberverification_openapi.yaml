@@ -35,27 +35,20 @@ info:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
 servers:
-  - url: https://{host}{basePath}
+  - url: "{apiRoot}/{basePath}"
     variables:
-      host:
-        default: api.example.com
-        description: Host that serves the API
+      apiRoot:
+        default: https://sandbox.opengateway.telefonica.com/apigateway
+        description: API root
       basePath:
         default: /number-verification/v0
         description: Base path for the number verification API
-tags:
-  - name: Phone number verify
-    description: API operation to verify a phone number received as input. It can be received either in plain text or hashed format.
-  - name: Phone number share
-    description: API operation to return the phone number associated to the access token.
 paths:
   /verify:
     post:
-      tags:
-        - Phone number verify
-      summary: Verifies if the received hashed/plain text phone number matches the phone number associated with the access token
+      summary: Verify a phone number
       description: |
-        Verifies if the specified phone number (plain text or hashed format) matches the one that the user is currently using.
+        Verifies if the specified phone number (plain text or hashed format) matches the one associated with the access token.
          - The number verification will be done for the user that has authenticated via mobile network and so their `sub` is in the access token
          - It returns true/false depending on if the hashed phone number received as input matches the authenticated user's `device phone number` associated to the access token
       operationId: phoneNumberVerify
@@ -101,11 +94,9 @@ paths:
           - number-verification-verify-read
   /device-phone-number:
     get:
-      tags:
-        - Phone number share
-      summary: Returns the phone number associated with the access token
+      summary: Get the end-user phone number
       description: |
-        Returns the phone number so the API clients can verify the number themselves:
+        Returns the phone number associated with the access token so the API clients can verify the number themselves:
          - It will be done for the user that has authenticated via mobile network and so their `sub` is in the access token
          - It returns the authenticated user's `device phone number` associated to the access token
       operationId: phoneNumberShare
