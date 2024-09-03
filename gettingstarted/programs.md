@@ -10,6 +10,8 @@ There is two paths you can take according to your profile and the maturity of yo
 
 ## Telefónica Open Gateway Developer Hub
 
+The Open Gateway Developer Hub is your ultimate resource for prototyping and testing your use cases with ease by using our Sandbox, and access to exclusive content like videos or webinars. Join a thriving community of developers, get support, and explore new features with the Open Gateway Developer Hub, the essential platform for all your development needs.
+
 By joining our Developer Hub you will get early access to the Open Gateway APIs, whether there are already available through any of our Channel Partners or not, as well as the latest news and updates on the Open Gateway initiative.
 
 One of the main benefits of joining our Developer Hub is having access to the Telefónica Open Gateway Sandbox to actually test the APIs, but there are many other advantages from being part of our community...

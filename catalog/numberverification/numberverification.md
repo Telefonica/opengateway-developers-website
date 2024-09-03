@@ -29,22 +29,3 @@ The Number Verification CAMARA API validates user identity by confirming ownersh
 The Number Verification CAMARA API enables developers to seamlessly integrate authentication mechanisms into their applications, enhancing the user experience and security. It can also be combined with other Open Gateway APIs focused on anti-fraud measures to further bolster security.
 
 Integration with channel partners and service aggregators streamlines the incorporation of telco functionalities with additional security algorithms, backup authentication methods, or external data sources. This collaboration enhances service reliability and security, leveraging APIs like Device Location Verification or SIM SWAP within the Open Gateway framework.
-
-
-## Advantages of the CAMARA Number Verification API
-
-The CAMARA Number Verification API offers significant advantages for industries focused on enhancing identity protection. Here are key benefits that highlight why the CAMARA API is essential:
-
-1. **Secure Authentication and Identity Validation:** Utilizes network mechanisms instead of less secure Over the Top (OTT) methods or hardware tokens. It operates on any internet-enabled mobile device connected to a carrier's mobile data network, including during roaming and temporary Wi-Fi transitions.
-
-2. **Improved User Experience:** Eliminates the need to copy, paste, or remember one-time passwords sent via SMS, thereby enhancing both security and user convenience during validation processes.
-
-3. **Anti-Fraud Suite:** Number Verification is part of the broader suite of Open Gateway APIs dedicated to protecting customer identities in mobile digital services. APIs like SIM SWAP, Device Location Verification, and Know Your Customer - Match complement Number Verification to strengthen security across different scenarios.
-
-4. **Usability:** CAMARA APIs are designed with developer-friendliness in mind, simplifying integration for telcos and various clients. This streamlined integration enables service providers to offer Number Verification seamlessly as an authentication option for users.
-
-5. **Footprint:** CAMARA's standardized approach to Number Verification ensures universal access to this functionality across telco operators and countries, promoting consistency and reliability.
-
-6. **Security:** CAMARA guidelines establish a common privacy and security framework that addresses service providers' needs while safeguarding customer rights.
-
-
