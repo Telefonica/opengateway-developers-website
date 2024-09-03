@@ -8,7 +8,10 @@ Once you are familiar with the Open Gateway initiative and the APIs we offer, yo
 
 There is two paths you can take according to the maturity of your project, not exclusive if you want to go through both, which are either testing in the Telefónica's Open Gateway Sandbox environment or shifting to the Open Gateway platform of one of our Channel Partners, closer to a commercial stage.
 
-## Telefónica Open Gateway Sandbox
+## Telefónica  Gateway Developer Hub
+
+
+The Open Gateway Developer Hub is your ultimate resource for building and integrating applications with eas using the Sandbox. Access to exclusive content like videos or webinars.  Join a thriving community of developers, get support, and explore new features with the Open Gateway Developer Hub—the essential platform for all your development needs.
 
 The Open Gateway Sandbox from Telefónica is a free environment where you can test the Open Gateway APIs. It is a great way to start testing the APIs and services in a controlled environment, without the need to sign a contract or pay for the service.
 
