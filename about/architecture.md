@@ -8,7 +8,7 @@ category: 66840b9dac745a002559ffad
 
 The Open Gateway APIs manages API calls and credentials, ensuring they are routed correctly to respective mobile operators. Its intuitive interface enables developers to effortlessly choose and subscribe to network APIs offered by multiple operators across different regions. This transforms Open Gateway into a convenient marketplace that simplifies procurement processes while maintaining a seamless user experience.
 
-![Open Gateway Architecture](images/architecture.png) Open Gateway Architecture
+![Open Gateway Architecture](https://github.com/Telefonica/opengateway-developers-website/raw/main/about/images/architecture.png) Open Gateway Architecture
 
 ## Key Features of Open Gateway API Architecture
 
