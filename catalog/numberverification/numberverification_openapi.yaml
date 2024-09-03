@@ -58,13 +58,6 @@ paths:
 
         `dpv:FraudPreventionAndDetection#number-verification-verify-read`
       operationId: phoneNumberVerify
-      parameters:
-        - in: header
-          name: x-correlator
-          required: false
-          description: Correlation id for the different services
-          schema:
-            type: string
       requestBody:
         content:
           application/json:
