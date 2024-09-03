@@ -1,5 +1,5 @@
 ---
-title: API Integration
+title: ⚙️ API Integration
 excerpt: In this guide we will go through the different ways to integrate with Open Gateway APIs so you can find the best fit for your use case and the offering from our Channel Partners.
 category: 66d57750d3f60b0011576376
 ---

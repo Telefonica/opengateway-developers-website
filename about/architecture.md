@@ -1,5 +1,5 @@
 ---
-title: API Architecture
+title: 📐 API Architecture
 excerpt: The Open Gateway API Architecture is a cutting-edge framework designed to enable seamless integration of advanced network capabilities and services into your applications. Developed by the GSMA in collaboration with leading telecommunications operators, aggregators, cloud providers, and other telcos, this architecture focuses on promoting interoperability, enhancing innovation, and improving operational efficiency. By leveraging standardized APIs, the Open Gateway architecture empowers developers to create robust, scalable, and high-performance applications.
 category: 66840b9dac745a002559ffad
 ---
