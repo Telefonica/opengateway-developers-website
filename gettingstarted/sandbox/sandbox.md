@@ -21,7 +21,7 @@ Once you are approved in at least one of our programs and you log in to the priv
 
 Open Gateway APIs access is granted to applications, not developers, so every application can have limited access to the scope and for the purpose it needs.
 
-[More information on Privacy](../../about/privacy.md)
+[More information on Privacy](/docs/privacy)
 
 Therefore the way to get credentials to test the APIs is to register an application in the Sandbox console. You will use your application credentials to authenticate your requests to the APIs from any test you code no matter if it is actually a comprehensive application or just a tiny script to run from the a command line interface.
 
@@ -58,7 +58,7 @@ For every application you create, you will need to follow these simple steps to 
 	- **Name**: A name to identify your application by the operators as an Open Gateway APIs consumer.
 	- **Full name**: Your application's commercial name by which operators can find it in your website or application stores.
 	- **Description**: A brief description of your application's use case related to the usage of the APIs.
-	- **Redirect URL**: (Optional) For frontend triggered authorization flows, you must indicate an URI hosted on your servers for the flow to call back to your code for it to complete authorization and perform the service API request (check [frontend triggered authorization flow](../../callflows/authorization/frontend.md) for detailed information).
+	- **Redirect URL**: (Optional) For frontend triggered authorization flows, you must indicate an URI hosted on your servers for the flow to call back to your code for it to complete authorization and perform the service API request (check [frontend triggered authorization flow](/docs/frontend) for detailed information).
 
 ![App information](https://github.com/Telefonica/opengateway-developers-website/raw/main/gettingstarted/sandbox/images/app-information.png?raw=true)
 
@@ -93,7 +93,7 @@ So far you have used the Sandbox console to register your application as the cli
 
 Now you will use such credentials to effectively consume de APIs from your code. You can use any programming language and any platform that supports HTTP requests, or you can use the Sandbox SDK for convenience. Our Open Gateway Sandbox provides you with a Python SDK and will publish SDKs in other common languages soon.
 
-[Check the pros and cons of using HTTP integration or SDKs to consume the APIs](../../callflows/apiintegration.md)
+[Check the pros and cons of using HTTP integration or SDKs to consume the APIs](/docs/apiintegration)
 
 When it comes to our Sandbox's SDK, the following particular considerations apply:
 - Once you shift to a Channel Partner in a commercial stage, your production code will need to use their SDKs instead of the Sandbox's one you used for testing and prototyping or, in the worst case, you will have to use the HTTP integration method instead if no SDK is available for your app's language.
@@ -101,7 +101,7 @@ When it comes to our Sandbox's SDK, the following particular considerations appl
 
 #### API reference
 
-You can check the OpenAPI v3 specification of each API in the list of [Available APIs](../../catalog/available.md) or in the [API Roadmap](../../catalog/roadmap.md).
+You can check the OpenAPI v3 specification of each API in the list of [Available APIs](/docs/available) or in the [API Roadmap](/docs/roadmap).
 
 ### Sandbox SDK reference
 

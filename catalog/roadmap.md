@@ -8,7 +8,7 @@ category: 66aa4f941e51e7000fa353ce
 
 The following APIs are already available on most telcos' API exposure platforms, and are about to be made commercially available according to every region's legal and privacy requirements.
 
-Get sure to get onboarded on the Open Gateway Developer Hub to get early access to these APIs and start testing them in our <a href="../gettingstarted/sandbox/sandbox.md">Sandbox environment</a>.
+Get sure to get onboarded on the Open Gateway Developer Hub to get early access to these APIs and start testing them in our <a href="/docs/sandbox">Sandbox environment</a>.
 
 ### Number Verification API
 
