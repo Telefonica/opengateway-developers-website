@@ -36,7 +36,7 @@ servers:
 paths:
   /check:
     post:
-      summary: /check
+      summary: SIM Swap /check
       tags: 
         -  Check for a SIM swap
       security:
@@ -82,7 +82,7 @@ paths:
           $ref: "#/components/responses/Generic504"
   /retrieve-date:
     post:
-      summary: /retrieve-date
+      summary: SIM Swap /retrieve-date
       tags: 
         -  Retrieve latest SIM swap date
       security:
