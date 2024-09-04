@@ -21,3 +21,19 @@ jobs:
         uses: readmeio/rdme@v8
         with:
           rdme: guides . --key=${{ secrets.README_API_KEY }} --version=1.0
+
+  rdme-openapi:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo 📚
+        uses: actions/checkout@v3
+
+      - name: Run `openapi` command 🚀
+        uses: readmeio/rdme@v8
+        with:
+          rdme: openapi catalog/simswap/simswap_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=66d6d367c3032f006ebc2534
+        
+      - name: Run `openapi` command 🚀
+        uses: readmeio/rdme@v8
+        with:
+          rdme: openapi catalog/numberverification/numberverification_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=66d6da62784552006304adcb
