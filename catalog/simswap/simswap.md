@@ -54,25 +54,3 @@ To safeguard against SIM swap fraud, it is crucial to be aware of how your perso
 
 By understanding the mechanics of SIM swap fraud and taking proactive steps to protect your accounts, you can significantly reduce the risk of falling victim to this type of cybercrime.
 
-
-# Overview of the SIM Swap CAMARA API
-
-## High level definition of the SIM Swap CAMARA API
-
-The SIM Swap CAMARA API is a software interface that enables applications to request the last date of a SIM swap performed on a mobile line or to check whether a SIM swap has been performed during a specified period. This functionality is provided in an easy and secure manner, allowing real-time verification of the activation date of a SIM card on the mobile network.
-
-### API Operations
-
-The SIM Swap CAMARA API specifies the following two operations:
-
-- **POST retrieve-date:** Answers the question ‘when did the last SIM swap occur?’. This operation requires the phone number to be checked (parameter `phoneNumber`).
-
-- **POST check:** Checks whether a SIM swap occurred during the last N hours. This operation requires the following inputs:
-  - `phoneNumber`: The phone number to be checked.
-  - `maxAge`: The period in hours to be checked for a SIM swap (minimum 1 hour, maximum 2400 hours, default 240 hours).
-
-With the SIM Swap CAMARA API, any digital service provider can integrate the functionality of checking changes in SIM renewals directly into their software. This can be done both alone and in combination with other external inputs. Additionally, they can combine other Open Gateway APIs related to anti-fraud measures that may be of interest.
-
-Aggregators play a crucial role in the anti-fraud industry. They can integrate this functionality into their software and build more sophisticated algorithms by combining other security checks, such as location verification, phone number verification, matching of contact information, external data sources, AI algorithms, etc. To achieve this, aggregators can use other Open Gateway APIs like Device Location Verification, Number Verification, or KYC-Match.
-
-By using the SIM Swap CAMARA API, developers can significantly enhance the security and reliability of their applications, providing a robust defense against SIM swap fraud.
