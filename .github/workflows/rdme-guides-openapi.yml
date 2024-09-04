@@ -37,3 +37,13 @@ jobs:
         uses: readmeio/rdme@v8
         with:
           rdme: openapi catalog/numberverification/numberverification_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=66d6da62784552006304adcb
+        
+      - name: Run `openapi` command 🚀
+        uses: readmeio/rdme@v8
+        with:
+          rdme: openapi catalog/devicelocation_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=66d74d863ccce000124211e8
+  
+      - name: Run `openapi` command 🚀
+        uses: readmeio/rdme@v8
+        with:
+          rdme: openapi catalog/devicestatus_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=66d7828a08fb2000497d3cfd

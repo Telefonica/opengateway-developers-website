@@ -1,5 +1,5 @@
 ---
-title: Join our Programs
+title: 🏅 Join our Programs
 excerpt: Find out how to start testing the Open Gateway APIs in our Sandbox or go commercial with one of our Channel Partners
 category: 66d5624a492663000f4ed527
 ---
@@ -9,6 +9,8 @@ Once you are familiar with the Open Gateway initiative and the APIs we offer, yo
 There is two paths you can take according to your profile and the maturity of your project, not exclusive if you want to go through both, which are either testing in the Telefónica's Open Gateway Sandbox environment or shifting to the Open Gateway platform of one of our Channel Partners, closer to a commercial stage.
 
 ## Telefónica Open Gateway Developer Hub
+
+The Open Gateway Developer Hub is your ultimate resource for prototyping and testing your use cases with ease by using our Sandbox, and access to exclusive content like videos or webinars. Join a thriving community of developers, get support, and explore new features with the Open Gateway Developer Hub, the essential platform for all your development needs.
 
 By joining our Developer Hub you will get early access to the Open Gateway APIs, whether there are already available through any of our Channel Partners or not, as well as the latest news and updates on the Open Gateway initiative.
 

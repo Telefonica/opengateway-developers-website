@@ -28,37 +28,36 @@ info:
   version: 0.3.1
   termsOfService: http://example.com/terms/
   contact:
-    name: API Support
-    url: http://www.example.com/support
-    email: support@example.com
+    name: Telefónica Open Gateway DevRel
+    url: https://opengateway.telefonica.com/en/developer-hub
+    email: devrel@telefonica.com
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
 servers:
-  - url: "{apiRoot}/{basePath}"
+  - url: "{host}/number-verification/{version}"
     variables:
-      apiRoot:
-        default: https://sandbox.opengateway.telefonica.com/apigateway
-        description: API root
-      basePath:
-        default: /number-verification/v0
-        description: Base path for the number verification API
+      host:
+        default: sandbox.opengateway.telefonica.com/apigateway
+        description: gateway URL
+      version:
+        default: v0
+        description: Version of the Number Verification API
 paths:
   /verify:
     post:
-      summary: Verify a phone number
+      summary: Number Verification /verify
+      tags: 
+        -  Verify a phone number
       description: |
         Verifies if the specified phone number (plain text or hashed format) matches the one associated with the access token.
          - The number verification will be done for the user that has authenticated via mobile network and so their `sub` is in the access token
          - It returns true/false depending on if the hashed phone number received as input matches the authenticated user's `device phone number` associated to the access token
+
+        Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following purpose:
+
+        `dpv:FraudPreventionAndDetection#number-verification-verify-read`
       operationId: phoneNumberVerify
-      parameters:
-        - in: header
-          name: x-correlator
-          required: false
-          description: Correlation id for the different services
-          schema:
-            type: string
       requestBody:
         content:
           application/json:
@@ -68,11 +67,6 @@ paths:
       responses:
         '200':
           description: OK
-          headers:
-            x-correlator:
-              description: Correlation id for the different services
-              schema:
-                type: string
           content:
             application/json:
               schema:
@@ -92,53 +86,17 @@ paths:
       security:
         - three_legged:
           - number-verification-verify-read
-  /device-phone-number:
-    get:
-      summary: Get the end-user phone number
-      description: |
-        Returns the phone number associated with the access token so the API clients can verify the number themselves:
-         - It will be done for the user that has authenticated via mobile network and so their `sub` is in the access token
-         - It returns the authenticated user's `device phone number` associated to the access token
-      operationId: phoneNumberShare
-      parameters:
-        - in: header
-          name: x-correlator
-          required: false
-          description: Correlation id for the different services
-          schema:
-            type: string
-      responses:
-        '200':
-          description: OK
-          headers:
-            x-correlator:
-              description: Correlation id for the different services
-              schema:
-                type: string
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NumberVerificationShareResponse'
-        '400':
-          $ref: '#/components/responses/Generic400'
-        '401':
-          $ref: '#/components/responses/Generic401'
-        '403':
-          $ref: '#/components/responses/PhoneNumberVerificationPermissionDenied403'
-        '500':
-          $ref: '#/components/responses/Generic500'
-        '503':
-          $ref: '#/components/responses/Generic503'
-        '504':
-          $ref: '#/components/responses/Generic504'
-      security:
-        - three_legged:
-          - number-verification-share-read
 components:
   securitySchemes:
     three_legged:
-      type: openIdConnect
-      openIdConnectUrl: https://example.com/.well-known/openid-configuration
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://{host}/authorize
+          tokenUrl: https://{host}/token
+          scopes:
+            number-verification-verify-read: phoneNumberVerify operation
+            number-verification-share-read: phoneNumberShare operation
   schemas:
     NumberVerificationRequestBody:
       type: object
@@ -202,11 +160,6 @@ components:
   responses:
     Generic400:
       description: Problem with the client request
-      headers:
-        x-correlator:
-          description: Correlation id for the different services
-          schema:
-            type: string
       content:
         application/json:
           schema:
@@ -217,11 +170,6 @@ components:
             message: Client specified an invalid argument, request body or query param
     Generic401:
       description: Authentication problem with the client request
-      headers:
-        x-correlator:
-          description: Correlation id for the different services
-          schema:
-            type: string
       content:
         application/json:
           schema:
@@ -236,11 +184,6 @@ components:
         In addition to regular scenario of `PERMISSION_DENIED`, other scenarios may exist:
           - Client authentication was not via mobile network. In order to check the authentication method, AMR parameter value in the 3-legged user's access token can be used and make sure that the authentication was not either by SMS+OTP nor username/password (`{"code": "NUMBER_VERIFICATION.USER_NOT_AUTHENTICATED_BY_MOBILE_NETWORK","message": "Client must authenticate via the mobile network to use this service"}`)
           - Phone number cannot be deducted from access token context.(`{"code": "NUMBER_VERIFICATION.INVALID_TOKEN_CONTEXT","message": "Phone number cannot be deducted from access token context"}`)
-      headers:
-        x-correlator:
-          description: Correlation id for the different services
-          schema:
-            type: string
       content:
         application/json:
           schema:
@@ -263,11 +206,6 @@ components:
                 message: Phone number cannot be deducted from access token context
     Generic500:
       description: Server error
-      headers:
-        x-correlator:
-          description: Correlation id for the different services
-          schema:
-            type: string
       content:
         application/json:
           schema:
@@ -278,11 +216,6 @@ components:
             message: Server error
     Generic503:
       description: Service unavailable. Typically the server is down.
-      headers:
-        x-correlator:
-          description: Correlation id for the different services
-          schema:
-            type: string
       content:
         application/json:
           schema:
@@ -293,11 +226,6 @@ components:
             message: Service unavailable
     Generic504:
       description: Request time exceeded. If it happens repeatedly, consider reducing the request complexity
-      headers:
-        x-correlator:
-          description: Correlation id for the different services
-          schema:
-            type: string
       content:
         application/json:
           schema:
