@@ -4,4 +4,83 @@ excerpt: Reference guide to the Sandbox Python SDK on how to authorize, instanti
 category: 66d5624a492663000f4ed527
 ---
 
-(WIP)
+The current scope of the Sandbox SDK is limited since it is meant to showcase how an SDK integration is like. Check the [API Integration guide](/docs/apiintegration) to understand the pros and cons of using an SDK when compared to implement HTTP requests.
+
+Available languages:
+- Python
+
+Available service classes (per Open Gateway API product):
+- SIM Swap
+
+## Installation
+
+The Sandbox SDK is available as a Python package in the [Python Package Index (PyPI)](https://pypi.org/project/opengateway-sandbox-sdk/). You can install it using `pip`:
+
+```bash
+pip install opengateway-sandbox-sdk
+```
+
+## Service class reference
+
+#### Class constructor
+
+```Python
+SimSwap(client_id: str, client_secret: str, phone_number: str)
+```
+
+Instantiates a SIM Swap service class authorizing the instance with the [CIBA flow](/docs/backend).
+
+Required parameters:
+- client_id (str): Your application's client ID as obtained from the Sandbox console
+- client_secret (str): Your application's client secret obtained along with the client ID
+- phone_number (str): Phone Number to check SIM Swap status, with country prefix. Example: '+346xxxxxxxx'
+
+#### Class functions
+
+###### Check for a SIM Swap
+```Python
+SimSwap.check(self, max_age:int) → bool
+```
+
+Required parameters:
+- max_age (int): Period in hours to be checked for a SIM Swap
+
+Returns:
+- bool, true if the SIM was swapped during the "max_age" period
+
+###### Retrieve last SIM Swap date
+```Python
+SimSwap.retrieve_date(self) → datetime
+```
+Returns:
+- datetime, with the Timestamp of latest SIM swap performed
+
+## Usage sample
+
+The following is a sample Python script you can run from your command line to check if a SIM card swap happened in the last n days (2nd argument) for a given phone number (1st argument):
+
+```python
+import sys
+from opengateway_sandbox_sdk import Simswap
+
+APP_CLIENT_ID = "obtained-from-the-sandbox-console"
+APP_CLIENT_SECRET = "obtained-from-the-sandbox-console"
+
+def main() -> None:
+    phone_number = sys.argv[1]
+    max_age = int(sys.argv[2]) if len(sys.argv) > 2 else 2400
+
+    simswap_client = Simswap(APP_CLIENT_ID, APP_CLIENT_SECRET, phone_number)
+    print(f'CIBA auth success')
+
+    if simswap_client.check(max_age=2400):
+        print(f'A SIM card swap happened in the last {max_age // 24} days')
+    else:
+        print(f'No SIM card swap in the last {max_age // 24} days')
+
+    last_swap = simswap_client.retrieve_date()
+    print(f'Last SIM card swap happened {last_swap}')
+
+if __name__ == "__main__":
+    main()
+```
