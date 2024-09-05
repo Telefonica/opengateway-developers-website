@@ -22,3 +22,13 @@ The only requirement to start using the Open Gateway Sandbox is to join one of o
 Once you are approved in at least one of our programs and you log in to the private area of the Telefónica Open Gateway website, you already have access to the Sandbox web console as a program member from the Technical Toolbox section.
 
 ![Access to the Sandbox console from the website private area](https://github.com/Telefonica/opengateway-developers-website/raw/main/gettingstarted/sandbox/images/access.png?raw=true)
+
+## Available APIs in the Sandbox
+
+| API |  Available  | Soon Available | 
+|:-----|:--------:|------:|
+| Sim Swap | Movistar Spain, Mock Operator | VIVO Brasil, O2 Germany, Blau Germany |
+| Number Verification | Mock Operator |  Movistar Spain, VIVO Brasil, O2 Germany, Blau Germany |
+| Device Location | Mock Operator |  Movistar Spain, VIVO Brasil, O2 Germany, Blau Germany |
+| Device Status | Mock Operator |  Movistar Spain, VIVO Brasil, O2 Germany, Blau Germany |
+| Quality on Demand |  |  Mock Operator, Movistar Spain, VIVO Brasil, O2 Germany, Blau Germany |
