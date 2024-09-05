@@ -24,9 +24,13 @@ According to your application's use case, the API call flow will trigger from th
 
 	[Frontend authorization flow](/docs/frontend)
 
-- If you want to use Open Gateway APIs from your backend without end-user interaction, or the connected devices involved in your use does not have a user interface (e.g. IoT, drones, autonomous driving, etc.), you will need to use the backend authorization flow, following the **CIBA** (Client Initiated Backchannel Authentication) standard. 
+- If you want to use Open Gateway APIs from your backend without end-user interaction, or the connected devices involved in your use does not have a user interface (e.g. IoT, drones, autonomous driving, etc.), you will need to use the backend authorization flow, following the OIDC standard **CIBA** (Client-Initiated Backchannel Authentication Flow). 
 
 	[Backend authorization flow](/docs/backend)
+
+Your Channel Partner of choice may provide you with SDKs or implement these flows for you in your application. When using them, such SDKs abstract you from the details of this flows while they still occur under the hood.
+
+More on this in the [API integration guide](/docs/apiintegration). Refer to your Channel Partner for available SDKs and their specifications and conditions.
 
 ## Consent capture
 
@@ -36,4 +40,4 @@ In case the lawful basis of the Open Gateway API and the purpose of your use cas
 
 The frontend authorization flow, as per the OIDC standard, will redirect your request to the operator's consent capture URL if needed, and then resume all the way to your application's redirect URI according to the user event.
 
-In case of implementing a backend authorization flow, there is no standard way to make the operator suscriber to get to a consent capture frontend, so you will have to implement a secondary flow, known as out-of-band, to capture the consent by other mean, so when your backend calls the Open Gateway API the user consent has been already granted. This secondary flow will usually be a registration, subscription or activation process on your customer journey, or similar.
+In case of implementing a backend authorization flow, there is no standard way to make the operator subscriber to get to a consent capture frontend, so you will have to implement a secondary flow, known as out-of-band, to capture the consent by other mean, so when your backend calls the Open Gateway API the user consent has been already granted. This secondary flow will usually be a registration, subscription or activation process on your customer journey, or similar.
