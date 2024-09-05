@@ -28,3 +28,24 @@ The Device Location Camara API specifies one operation:
 
 [Check the API Reference](/reference/retrievedevicelocation)
 
+
+## Why device location API
+
+The standardised Device Location Verification API provides the option of verifying the geographical location of a given SIM-based device and validating whether it is within a requested geographical area without spoofing or GPS.
+
+This solution validates the location of a device to enable services or allow transactions by verifying the location.
+
+### Fast and reliable location
+The Device Location Verification API provides a swift and efficient way to validate customer locations, helping you maintain control over your application while enabling features like anti-fraud measures, personalization, and targeted advertising.
+
+### Theft-free gps
+Location verification is based on network data managed by telecom carriers, ensuring protection against device spoofing, GPS manipulation, or emulation.
+
+### Risk prevention
+When combined with other APIs such as Number Verification, Device Swap, or Know Your Customer (KYC) Match, this API enhances service security, improves user experience, and reduces identity-related risks.
+
+### Simplified integration
+As a standardized API, it allows seamless integration into your applications without the need for carrier-specific customizations, simplifying development and accelerating time to market.
+
+### Footprint for your identity service
+The API's standardization ensures uniform access across multiple telecom providers, expanding your business reach and ensuring consistent functionality across different carriers.
