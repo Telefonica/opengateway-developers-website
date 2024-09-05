@@ -44,17 +44,17 @@ activate FE
                 activate OP
                     OP-->>CP: 200 (ok)<br/>operator_access_token
                 deactivate OP
-                CP->>CP: Generate cp_code<br/>to resolve operator_access_token later
-                CP-->>FE: 302 (redirect) Location:<br/>app_callback_url?code=cp_code
+                CP->>CP: Generate code<br/>to resolve operator_access_token later
+                CP-->>FE: 302 (redirect) Location:<br/>app_callback_url?code=code
                 deactivate CP
-                FE-->>BE: GET app_callback_url<br/>?code=cp_code
+                FE-->>BE: GET app_callback_url<br/>?code=code
                 activate BE
-                    BE->>CP: POST <cp>/token<br/>code=cp_code
+                    BE->>CP: POST <cp>/token<br/>code=code
                     activate CP
-                        CP->>CP: Resolve operator_access_token<br/>and embed it along with routing info<br/>into a cp_access_token
-                        CP-->>BE: 200 (ok)<br/>cp_access_token
+                        CP->>CP: Resolve operator_access_token<br/>and embed it along with routing info<br/>into a access_token
+                        CP-->>BE: 200 (ok)<br/>access_token
                     deactivate CP
-                    BE->>CP: Call Open Gateway API<br/>cp_access_token
+                    BE->>CP: Call Open Gateway API<br/>access_token
                     activate CP
                         CP->>CP: Unembed operator routing information<br/>and operator_access_token
                         CP->>OP: Call Open Gateway API<br/>operator_access_token

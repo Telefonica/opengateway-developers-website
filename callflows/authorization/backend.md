@@ -45,7 +45,7 @@ From a developer perspective, the backend authorization flow consists of two seq
 	
 ## Backend authorization flow sequence diagram
 
-WIP
+![Backend Authorization Flow Sequence Diagram](https://github.com/Telefonica/opengateway-developers-website/raw/main/callflows/authorization/diagrams/backend.svg?autoSizes=true)
 
 ## References
 
