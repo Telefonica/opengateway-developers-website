@@ -51,7 +51,7 @@ From a developer perspective, the frontend authorization flow consists of two se
 	
 ## Frontend authorization flow sequence diagram
 
-WIP
+![Frontend Authorization Flow Sequence Diagram](https://github.com/Telefonica/opengateway-developers-website/raw/main/callflows/authorization/diagrams/frontend.svg?autoSizes=true)
 
 ## References
 
