@@ -4,16 +4,16 @@ excerpt: The following samples show how to use the [Open Gateway SIM Swap API](h
 category: 66aa4f941e51e7000fa353ce
 ---
 
-The following code shows, for didactic purposes, a hypothetical or sample SDK, in several programming languages, from a generic Open Gateway's channel partner, also known as aggregator. The final implementation will depend on the channel partner's development tools offering. Note that channel partners' Open Gateway SDKs are just code modules wrapping authentication and API calls providing an interface in your app's programming for convenience.
+The following code shows, for didactic purposes, a hypothetical or sample SDK, in several programming languages, from a generic Open Gateway's channel partner, also known as aggregator. The final implementation will depend on the channel partner's development tools offering. Note that channel partners' Open Gateway SDKs are just code modules wrapping authorization and API calls providing an interface in your app's programming for convenience.
 
 Sample code on how to consume the API without an SDK, directly with HTTP requests, is also provided, and it is common and valid no matter what your partner is, thanks to the CAMARA standardization. If you do not use an SDK you need to code the HTTP calls and additional stuff like encoding your credentials, calling authorization endpoints, handling tokens, etc. You can check our sample [Postman collection](https://bxbucket.blob.core.windows.net/bxbucket/opengateway-web/uploads/OpenGateway.postman_collection.json) as a reference.
 
 ### Table of contents
 - [Backend flow](#backend-flow)
-    - [Authentication](#authentication)
+    - [Authorization](#authorization)
     - [API usage](#api-usage)
 - [Frontend flow](#frontend-flow)
-    - [Authentication](#authentication-1)
+    - [Authorization](#authorization-1)
         - [Requesting the authorization code from the frontend](#requesting-the-authorization-code-from-the-frontend)
         - [Getting the access token from the callback endpoint at the backend](#getting-the-access-token-from-the-callback-endpoint-at-the-backend)
     - [API usage](#api-usage-1)
@@ -22,13 +22,13 @@ Sample code on how to consume the API without an SDK, directly with HTTP request
 
 ### Backend flow
 
-Most likely, this API will be consumed in a backend flow, since it is the application owner not the end-user who wants to take advantage of its functionality. The authentication protocol used in Open Gateway for backend flows is the OIDC standard CIBA (Client Initiated Backchannel Authentication). You can check the CAMARA documentation on this flow [here](https://github.com/camaraproject/IdentityAndConsentManagement/blob/release-0.1.0/documentation/CAMARA-API-access-and-user-consent.md#ciba-flow-backend-flow).
+Most likely, this API will be consumed in a backend flow, since it is the application owner not the end-user who wants to take advantage of its functionality. The authorization protocol used in Open Gateway for backend flows is the OIDC standard CIBA (Client-Initiated Backchannel Authentication). You can check the CAMARA documentation on this flow [here](https://github.com/camaraproject/IdentityAndConsentManagement/blob/release-0.1.0/documentation/CAMARA-API-access-and-user-consent.md#ciba-flow-backend-flow).
 
-First step is to instantiate the SIM Swap service class included in the corresponding SDK. By providing your app's credentials to the class constructor, it handles the CIBA authentication on its behalf. Providing the phone number as well, as an identifier of the line to be checked for SIM swaps, allows authorization to be 3-legged and enables end-user consent management, and will let your app to just effectively use the API in a single line of code below.
+First step is to instantiate the SIM Swap service class included in the corresponding SDK. By providing your app's credentials to the class constructor, it handles the CIBA authorization on its behalf. Providing the phone number as well, as an identifier of the line to be checked for SIM swaps, allows authorization to be 3-legged and enables end-user consent management, and will let your app to just effectively use the API in a single line of code below.
 
-#### Authentication
+#### Authorization
 
-Since Open Gateway authentication is 3-legged, meaning it identifies the application, the operator and the operator's subscriber, who is also the end-user holder of the mobile line, each check for a different phone number needs its own SDK class instantiation, or access token if not using an SDK.
+Since Open Gateway authorization is 3-legged, meaning it identifies the application, the operator and the operator's subscriber, who is also the end-user holder of the mobile line, each check for a different phone number needs its own SDK class instantiation, or access token if not using an SDK.
 
 ```node Sample SDK for Node.js
 import { ClientCredentials, SIMSwap } from "aggregator/opengateway-sdk"
@@ -271,7 +271,7 @@ myHeaders.append("Content-Type", "application/json");
 myHeaders.append("Authorization", `Bearer ${accessToken}`);
 
 const requestBody = JSON.stringify({
-  "phoneNumber": customerPhoneNumber // as set in the authentication step
+  "phoneNumber": customerPhoneNumber // as set in the authorization step
 });
 
 const requestOptions = {
@@ -288,7 +288,7 @@ fetch("https://opengateway.aggregator.com/sim-swap/v0/retrieve-date", requestOpt
 ```
 ```java HTTP using Java
 JSONObject requestBody = new JSONObject();
-requestBody.put("phoneNumber", customerPhoneNumber); // as set in the authentication step
+requestBody.put("phoneNumber", customerPhoneNumber); // as set in the authorization step
 
 HttpRequest request = HttpRequest.newBuilder()
     .uri(URI.create("https://opengateway.aggregator.com/sim-swap/v0/retrieve-date"))
@@ -310,7 +310,7 @@ headers = {
 }
 
 data = {
-    "phoneNumber": customer_phone_number, # as set in the authentication step
+    "phoneNumber": customer_phone_number, # as set in the authorization step
 }
 
 response = requests.post(
@@ -331,20 +331,20 @@ This flow allows the mobile network operator to effectively identify the user by
 
 From this point, your application, from its backend, will request an access token, and use it to call the service API.
 
-#### Authentication
+#### Authorization
 
 Some Channel Partners may provide you with frontend SDKs to handle the Authorization Code Flow on your application's behalf, providing some extra features like checking your end-user's device network interface to avoid problems caused from it being connected to a WiFi network, for instance, since this flow relies on the mobile line connectivity for the operator to identify the end-user and authorize your application.
 
 The following samples show how to implement the flow without a frontend SDK with these premises:
 * Application's frontend performs an HTTP request to get a `code`, and provides a `redirect_uri` it wants such `code` to be redirected to.
-* Application's frontend will receive an HTTP redirect (status 302) and needs to be able to handle it. If it is a web application running on a web browser, the browser will natively follow the redirection. If it is not, in depends on the coding language and/or HTTP module or library used, or on its settings, how the flow will follow all the way to your application's backend through the mobile network operator authentication server.
+* Application's frontend will receive an HTTP redirect (status 302) and needs to be able to handle it. If it is a web application running on a web browser, the browser will natively follow the redirection. If it is not, in depends on the coding language and/or HTTP module or library used, or on its settings, how the flow will follow all the way to your application's backend through the mobile network operator authorization server.
 * Application's backend receives the `code` from this HTTP redirection, by publishing an endpoint in the given `redirect_uri`, and then exchanges it for an access token. The latter can be achieved by using a backend SDK as shown in the [Backend flow](#backend-flow).
 
-The authentication protocol used in Open Gateway for frontend flows is the OIDC standard Authorization Code Flow. You can check the CAMARA documentation on this flow [here](https://github.com/camaraproject/IdentityAndConsentManagement/blob/release-0.1.0/documentation/CAMARA-API-access-and-user-consent.md#authorization-code-flow-frontend-flow).
+The authorization protocol used in Open Gateway for frontend flows is the OIDC standard Authorization Code Flow. You can check the CAMARA documentation on this flow [here](https://github.com/camaraproject/IdentityAndConsentManagement/blob/release-0.1.0/documentation/CAMARA-API-access-and-user-consent.md#authorization-code-flow-frontend-flow).
 
 #### Requesting the authorization code from the frontend
 
-The following samples show how your application can trigger the authentication flow from the frontend either from code or by submitting a simple HTML form. The same can be achieved from code in any other programming language with the ability to perform HTTP requests:
+The following samples show how your application can trigger the authorization flow from the frontend either from code or by submitting a simple HTML form. The same can be achieved from code in any other programming language with the ability to perform HTTP requests:
 
 ```ecmascript HTTP using JavaScript (ES6)
 let userPhoneNumber = "+34555555555";
@@ -408,7 +408,7 @@ fetch(url, requestOptions);
 
 #### Getting the access token from the callback endpoint at the backend
 
-Samples represent how to publish the callback URL in Python or Node.js, so the code from the Auth Code Flow can be received. The same can be achieved in any other language with capabilities to run an HTTP server and listen for the redirect from the authentication flow:
+Samples represent how to publish the callback URL in Python or Node.js, so the code from the Auth Code Flow can be received. The same can be achieved in any other language with capabilities to run an HTTP server and listen for the redirect from the authorization flow:
 
 ```python Sample SDK for Python
 from flask import Flask, request, jsonify
