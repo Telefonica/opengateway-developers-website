@@ -1,0 +1,267 @@
+openapi: 3.0.3
+info: 
+  title: OIDC Authorization
+  version: "Core 1.0"
+  description: Check the [Authorization guide](/docs/authorization)
+  contact:
+    name: Telefónica Open Gateway DevRel
+    url: https://opengateway.telefonica.com/en/developer-hub
+    email: devrel@telefonica.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+  - url: "{host}"
+    variables:
+      host:
+        default: sandbox.opengateway.telefonica.com/apigateway
+        description: API gateway URL
+paths:
+  /authorize:
+    get:
+      summary: Auth Code Flow
+      tags:
+        - Authorize an application
+      security:
+        - none: []
+      description: |
+        Authorize an application to access a resource from the user device
+      operationId: authorize
+      parameters: 
+        - name: response_type
+          in: query
+          description: The response type
+          required: true
+          schema:
+            type: string
+            enum:
+              - code
+        - name: client_id
+          in: query
+          description: Your application client ID
+          required: true
+          schema:
+            type: string
+        - name: purpose
+          in: query
+          description: The purpose of the authorization
+          required: true
+          schema:
+            type: string
+        - name: redirect_uri
+          in: query
+          description: The redirect URI
+          required: true
+          schema:
+            type: string
+        - name: login_hint
+          in: query
+          description: The login hint
+          required: false
+          schema:
+            type: string
+        - name: state
+          in: query
+          description: The state
+          required: false
+          schema:
+            type: string
+        - name: nonce
+          in: query
+          description: The nonce
+          required: false
+          schema:
+            type: string
+      responses:
+        "302":
+          description: Redirects to the `redirect_uri` with the authorization code in the query string
+        "400":
+          $ref: "#/components/responses/Generic400"
+        "401":
+          $ref: "#/components/responses/Generic401"
+        "403":
+          $ref: "#/components/responses/Generic403"
+  /bc-authorize:
+    post:
+      summary: CIBA
+      tags:
+        - Authorize an application
+      security:
+        - basicAuth: []
+      description: |
+        Authorize an application to access a resource from the backend
+      operationId: bcAuthorize
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: "#/components/schemas/AuthorizeRequest"
+        required: true
+      responses:
+        "200":
+          description: Returns an authorization code
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AuthorizationRequestId"
+        "400":
+          $ref: "#/components/responses/Generic400"
+        "401":
+          $ref: "#/components/responses/Generic401"
+        "403":
+          $ref: "#/components/responses/Generic403"
+  /token:
+    post:
+      summary: /token
+      tags:
+        - Retrieve an access token
+      security: 
+        - basicAuth: []
+      description: |
+        Retrieve an access token from the authorization code (frontend) or auth_req_id (backend)
+      operationId: token
+      requestBody: 
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              oneOf: 
+                - $ref: "#/components/schemas/AccessTokenAuthCodeRequest"
+                - $ref: "#/components/schemas/AccessTokenCIBARequest"
+        required: true
+      responses:
+        "200":
+          description: Returns an access token
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AccessToken"
+        "400":
+          $ref: "#/components/responses/Generic400"
+        "401":
+          $ref: "#/components/responses/Generic401"
+        "403":
+          $ref: "#/components/responses/Generic403"
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Basic authentication
+    none:
+      type: http
+      scheme: none
+  schemas:
+    AuthorizeRequest:
+      type: object
+      properties:
+        login_hint:
+          type: string
+          description: <id_type>:<id_value>
+        purpose:
+          type: string
+          description: dpv:<w3c_purpose>#<scope>
+      required:
+        - login_hint
+        - purpose
+    AuthorizationRequestId:
+      type: object
+      properties:
+        auth_req_id:
+          type: string
+          description: Authorization request ID
+        expires_in:
+          type: integer
+          format: int32
+          description: Expiration time in seconds
+        interval:
+          type: integer
+          format: int32
+          description: Polling interval in seconds
+      required:
+        - request_id
+    AccessTokenAuthCodeRequest:
+      type: object
+      properties:
+        grant_type:
+          type: string
+          description: The grant type
+          enum:
+            - authorization_code
+        code:
+          type: string
+          description: The authorization code
+        redirect_uri:
+          type: string
+          description: The redirect URI
+    AccessTokenCIBARequest:
+      type: object
+      properties:
+        grant_type:
+          type: string
+          description: The grant type
+          enum:
+            - urn:openid:params:grant-type:ciba
+        auth_req_id:
+          type: string
+          description: The authorization request ID
+    AccessToken:
+      type: object
+      properties:
+        access_token:
+          type: string
+          description: Access token
+        token_type:
+          type: string
+          description: Token type
+        expires_in:
+          type: integer
+          format: int32
+          description: Expiration time in seconds
+        refresh_token:
+          type: string
+          description: Refresh token
+        id_token:
+          type: string
+          description: ID token
+        scope:
+          type: string
+          description: Access token scope
+        purpose:
+          type: string
+          description: Purpose of the access token
+      required:
+        - access_token
+        - token_type
+        - expires_in
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+          description: Error code
+        message:
+          type: string
+          description: Error message
+      required:
+        - code
+        - message
+  responses:
+    Generic400:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+    Generic401:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+    Generic403:
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"

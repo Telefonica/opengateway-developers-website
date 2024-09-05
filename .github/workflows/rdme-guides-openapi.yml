@@ -31,6 +31,11 @@ jobs:
       - name: Run `openapi` command 🚀
         uses: readmeio/rdme@v8
         with:
+          rdme: openapi callflows/authorization/authorization_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=66da35ace41d6c004c486743
+
+      - name: Run `openapi` command 🚀
+        uses: readmeio/rdme@v8
+        with:
           rdme: openapi catalog/simswap/simswap_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=66d6d367c3032f006ebc2534
         
       - name: Run `openapi` command 🚀
