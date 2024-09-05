@@ -1,10 +1,10 @@
 ---
-title: Sample code
+title: Sample code for SIM Swap
 excerpt: The following samples show how to use the [Open Gateway SIM Swap API](https://opengateway.telefonica.com/en/apis/sim-swap), for fraud prevention purposes, in order to check if a given mobile line, identified by its phone number, has gotten a SIM card swap lately.
 category: 66aa4f941e51e7000fa353ce
 ---
 
-The following code shows, for didactic purposes, a hypothetical SDK, in several programming languages, from a generic Open Gateway's channel partner, also known as aggregator. The final implementation will depend on the channel partner's development tools offering. Note that channel partners' Open Gateway SDKs are just code modules wrapping authentication and API calls providing an interface in your app's programming for convenience.
+The following code shows, for didactic purposes, a hypothetical or sample SDK, in several programming languages, from a generic Open Gateway's channel partner, also known as aggregator. The final implementation will depend on the channel partner's development tools offering. Note that channel partners' Open Gateway SDKs are just code modules wrapping authentication and API calls providing an interface in your app's programming for convenience.
 
 Sample code on how to consume the API without an SDK, directly with HTTP requests, is also provided, and it is common and valid no matter what your partner is, thanks to the CAMARA standardization. If you do not use an SDK you need to code the HTTP calls and additional stuff like encoding your credentials, calling authorization endpoints, handling tokens, etc. You can check our sample [Postman collection](https://bxbucket.blob.core.windows.net/bxbucket/opengateway-web/uploads/OpenGateway.postman_collection.json) as a reference.
 
@@ -30,7 +30,7 @@ First step is to instantiate the SIM Swap service class included in the correspo
 
 Since Open Gateway authentication is 3-legged, meaning it identifies the application, the operator and the operator's subscriber, who is also the end-user holder of the mobile line, each check for a different phone number needs its own SDK class instantiation, or access token if not using an SDK.
 
-```node Generic SDK for Node.js
+```node Sample SDK for Node.js
 import { ClientCredentials, SIMSwap } from "aggregator/opengateway-sdk"
 
 const credentials: ClientCredentials(
@@ -42,7 +42,7 @@ const CUSTOMER_PHONE_NUMBER = '+34555555555'
 
 const simswapClient = new SIMSwap(credentials, null, CUSTOMER_PHONE_NUMBER)
 ```
-```java Generic SDK for Java
+```java Sample SDK for Java
 import aggregator.opengatewaysdk.ClientCredentials;
 import aggregator.opengatewaysdk.SIMSwap;
 
@@ -55,7 +55,7 @@ final String customerPhoneNumber = "+34555555555";
 
 SIMSwap simswapClient = new SIMSwap(credentials, null, customerPhoneNumber);
 ```
-```python Generic SDK for Python
+```python Sample SDK for Python
 from aggregator_opengateway_sdk import ClientCredentials, SIMSwap
 
 credentials = ClientCredentials(
@@ -248,19 +248,19 @@ access_token = response.json().get("access_token")
 
 Once your app is authenticated it only takes a single line of code to use the service API and effectively get a result.
 
-```node Generic SDK for Node.js
+```node Sample SDK for Node.js
 let result = await simswapClient.retrieveDate()
 
 console.log(`SIM was swapped: ${result.toLocaleString('en-GB', { timeZone: 'UTC' })}`)
 ```
-```java Generic SDK for Java
+```java Sample SDK for Java
 CompletableFuture<Boolean> resultFuture = simswapClient.retrieveDate();
 
 resultFuture.thenAccept(result -> {
     System.out.println("SIM was swapped: " + DateTimeFormatter.ISO_LOCAL_DATE.format(result));
 })
 ```
-```python Generic SDK for Python
+```python Sample SDK for Python
 result = await simswap_client.retrieve_date()
 
 print(f"SIM was swapped: {result.strftime('%B %d, %Y, %I:%M:%S %p')}")
@@ -410,7 +410,7 @@ fetch(url, requestOptions);
 
 Samples represent how to publish the callback URL in Python or Node.js, so the code from the Auth Code Flow can be received. The same can be achieved in any other language with capabilities to run an HTTP server and listen for the redirect from the authentication flow:
 
-```python Generic SDK for Python
+```python Sample SDK for Python
 from flask import Flask, request, jsonify
 from aggregator_opengateway_sdk import ClientCredentials, SIMSwap
 
@@ -430,7 +430,7 @@ def callback():
 if __name__ == '__main__':
     app.run()
 ```
-```node Generic SDK for Node.js
+```node Sample SDK for Node.js
 import { ClientCredentials, SIMSwap } from "aggregator/opengateway-sdk"
 import express from "express"
 
@@ -457,12 +457,12 @@ app.listen(port, () => {
 
 Once your app is authenticated it only takes a single line of code to use the service API and effectively get a result.
 
-```python Generic SDK for Python
+```python Sample SDK for Python
 result = await simswap_client.retrieve_date(phone_number)
 
 print(f"SIM was swapped: {result.strftime('%B %d, %Y, %I:%M:%S %p')}")
 ```
-```node Generic SDK for Node.js
+```node Sample SDK for Node.js
 let result = await simswapClient.retrieveDate(phoneNumber)
 
 console.log(`SIM was swapped: ${result.toLocaleString('en-GB', { timeZone: 'UTC' })}`)
