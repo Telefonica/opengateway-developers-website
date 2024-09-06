@@ -51,7 +51,7 @@ To use an environment in Postmam:
 2. The variables defined in the environment will be available for use in collection requests. Collection requests already use the following environment variables in the format
 {{variable_name}}. You simply need to edit the environment, after importing it, and modify
 them according to your own test configuration:
-	- ‘api-gateway-url - Fixed. Should not be changed if you want to run your tests on the Sandbox. Its value is https://sandbox.opengateway.telefonica.com/apigateway
+   - ‘api-gateway-url - Fixed. Should not be changed if you want to run your tests on the Sandbox. Its value is https://sandbox.opengateway.telefonica.com/apigateway
    - ‘application-client-id’ - Value that identifies each of the apps you have registered in the Sandbox. You can check it in the ‘My apps’ section.
    - ‘application-client-secret’ - Private key to authenticate each of your registered apps. You can check it in the section ‘My apps’. 
    - ‘mobile-phone-number’ - Mobile line number for mobile network API calls (e.g. SIM Swap). If it is more convenient for you. You can modify the calls in the collection to indicate this value in them instead of using the {{mobile-phone-number}} variable.
