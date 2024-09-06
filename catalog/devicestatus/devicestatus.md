@@ -20,7 +20,7 @@ The Device Status Camara API specifies one operation:
 
 - **POST /roaming**: answers the question 'is the device in roaming?'
 
-[Check the API Reference](/reference/devicestatus)
+[Check the API Reference](/reference/getroamingstatus)
 
 ## Why Device Status?
 
