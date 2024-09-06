@@ -32,11 +32,11 @@ This API provides a streamlined solution for accessing network capabilities acro
 
 Device Status allows companies to offer personalized services. Travel apps, for instance, can use the data provided by the API to offer valuable information, such as currency exchange rates or recommendations for data packages to users traveling abroad. This enhances the user experience and strengthens customer loyalty.
 
-### Cost Reduction
+### Cost Reduction
 
 The information provided by Device Status enables the implementation of cost-saving strategies, the setting of data routing rules, and the notification of customers about more affordable roaming options. This helps companies reduce international roaming fees, enhancing their offering.
 
-### Fraud Prevention and Detection
+###  Fraud Prevention and Detection
 
 By integrating this API, it's possible to generate fraud alerts to identify and mitigate suspicious activities. The API can automatically detect and respond to anomalies such as unusual changes in the location of a SIM, increasing app security and benefiting both developers and users.
 

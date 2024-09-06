@@ -28,11 +28,11 @@ To use a Postmam collection:
 
 2. Service APIs / Select a specific call to view the details and configuration options.
 
-![Available Services](https://github.com/Telefonica/opengateway-developers-website/raw/main/about/gettingstarted/sandbox/images/availableservice.png) 
+![Available Services](https://github.com/Telefonica/opengateway-developers-website/blob/main/gettingstarted/sandbox/images/availableservice.png) 
 
 3. You can send the request by clicking on the ‘Send’ button and view the response in the ‘Response’ tab. However, you will need to import the environment first.
 
-![Send Request](https://github.com/Telefonica/opengateway-developers-website/raw/main/about/gettingstarted/sandbox/images/send.png) 
+![Send Request](https://github.com/Telefonica/opengateway-developers-website/blob/main/gettingstarted/sandbox/images/send.png) 
 
 
 On the other hand, Postman environments allow you to have a specific configuration for each of the projects you are working on. The environment we provide you with the necessary information to carry out your tests on the Open Gateway Sandbox. 
@@ -42,7 +42,7 @@ To import an environment into Postman, you will need to follow the steps below:
 2. Click ‘Import’ and select the environment file you wish to import.
 3. Postman will import the environment and display it in the list of available environments.
 
-![Import Environment](https://github.com/Telefonica/opengateway-developers-website/raw/main/about/gettingstarted/sandbox/images/importenvironment.png) 
+![Import Environment](https://github.com/Telefonica/opengateway-developers-website/blob/main/gettingstarted/sandbox/images/importenvironment.png) 
 
 
 To use an environment in Postmam:
@@ -57,6 +57,6 @@ them according to your own test configuration:
    - ‘mobile-phone-number’ - Mobile line number for mobile network API calls (e.g. SIM Swap). If it is more convenient for you. You can modify the calls in the collection to indicate this value in them instead of using the {{mobile-phone-number}} variable.
    - ‘device-local-ip’ - Local IPv4 of a device on the home WiFi network for calls to the home network APIs (e.g. Home Devices QoD). If this is more convenient for you. You can modify the calls in the collection to specify this value in them instead of using the {{device-local-ip}} variable.
 
-![Sandbox Environment](https://github.com/Telefonica/opengateway-developers-website/raw/main/about/gettingstarted/sandbox/images/environments.png) 
+![Sandbox Environment](https://github.com/Telefonica/opengateway-developers-website/blob/main/gettingstarted/sandbox/images/environments.png) 
 
 For more information, you can consult the [Postman Getting Started](https://learning.postman.com/docs/getting-started/overview/) guide here.

@@ -4,6 +4,8 @@ excerpt: In this guide we will go through the different ways to integrate with O
 category: 66d57750d3f60b0011576376
 ---
 
+## RESTful by design 
+
 Since Open Gateway APIs are RESTful, you will always be able to integrate them by performing HTTP requests from any programming language providing such capability. However, most Channel Partners will provide you with SDKs in several programming languages which, by performing such requests themselves under the hood, will make your life easier when it comes to accessing the telco features that Open Gateway offers to your application.
 
 Apart from their commercial offer, check the offering of SDKs, our any other development tools, from your our Channel Partners to better suite to your use case and application needs.
