@@ -16,7 +16,7 @@ The standardised Device Location Verification API provides the option of verifyi
 
 This solution validates the location of a device to enable services or allow transactions by verifying the location.
 
-[Check the API Reference](/reference/verifylocation-1)
+[Overview and API Reference](/docs/devicelocation)
 
 ### Device status
 
@@ -24,7 +24,7 @@ The standardised Device Status API provides information regarding particular con
 
 Again, this API enables use cases around specific services related to the end-user's situation, or preventing frauds from foreign locations.
 
-[Check the API Reference](/reference/getroamingstatus)
+[Overview and API Reference](/docs/devicestatus)
 
 ### Quality on Demand Mobile (QoD Mobile) API
 

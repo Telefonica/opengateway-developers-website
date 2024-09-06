@@ -1,0 +1,46 @@
+sequenceDiagram
+participant BE as App backend
+participant CP as Channel Partner<br/>API gateway<br/>(cp)
+box As the app developer<br/>you don't need to interact<br/>with the operator
+    participant OP as End-user's mobile<br/>operator
+end
+
+BE->>CP: POST <cp>/bc-authorize<br/>purpose=dpv:<purpose>#35;<scope><br/>login_hint=<id_type>:<id>
+activate BE
+    activate CP
+        CP->>CP: Operator<br/>resolution
+        CP->>OP: POST <operator>/bc-authorize<br/>purpose=dpv:<purpose>#35;<scope><br/>login_hint=<id_type>:<id>
+        activate OP
+                OP->>OP: Identifies subscriber<br/>from the login_hint<br/>and generates and operator_auth_req_id
+            OP-->>CP: 200 (ok)<br/>operator_auth_req_id
+        deactivate OP
+        CP->>CP: Embed operator_auth_req_id along with routing info<br/>into a auth_req_id
+        CP-->>BE: 200 (ok)<br/>auth_req_id
+    deactivate CP
+    loop If error from /token due to lack of subscriber consent, poll until it is granted out-of-band
+        BE->>CP: POST <cp>/token<br/>auth_req_id
+        activate CP
+            CP->>CP: Unembed operator routing information<br/>and operator_auth_req_id
+            CP->>OP: POST <operator>/token<br/>operator_auth_req_id
+            activate OP
+                OP->>OP: Resolves subscriber from operator_auth_req_id<br/>and checks purpose's lawful basis<br/>and subscriber's consent
+                alt Subscriber consent is not granted
+                    OP-->>CP: 403 (forbidden)
+                    CP-->>BE: 403 (forbidden)
+                else Subscriber consent is granted
+                    OP-->>CP: 200 (ok)<br/>operator_access_token
+                deactivate OP
+                CP-->>BE: 200 (ok)<br/>access_token
+            deactivate CP
+            BE->>CP: Call Open Gateway API<br/>access_token
+            activate CP
+                CP->>CP: Unembed operator routing information<br/>and operator_access_token
+                CP->>OP: Call Open Gateway API<br/>operator_access_token
+                activate OP
+                    OP-->>CP: Open Gateway API<br/>response
+                deactivate OP
+                CP-->>BE: Open Gateway API<br/>response
+            deactivate CP
+        end
+    end
+deactivate BE

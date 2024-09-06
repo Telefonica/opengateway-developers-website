@@ -51,7 +51,7 @@ From a developer perspective, the frontend authorization flow consists of two se
 	
 ## Frontend authorization flow sequence diagram
 
-WIP
+![Frontend Authorization Flow Sequence Diagram](https://github.com/Telefonica/opengateway-developers-website/raw/main/callflows/authorization/diagrams/frontend.svg?autoSizes=true)
 
 ## References
 
@@ -60,6 +60,7 @@ In this portal, you can find the following references:
 - [Access token retrieval reference](/reference/token)
 - [Guide on Privacy](/docs/privacy)
 - [Postman collection](/docs/postman)
+- [Sample code for Number Verification](/docs/samplecode_numberverification)
 
 External references:
 - [CAMARA APIs Access and User Consent Management](https://github.com/camaraproject/IdentityAndConsentManagement/blob/r0.2.0/documentation/CAMARA-API-access-and-user-consent.md)

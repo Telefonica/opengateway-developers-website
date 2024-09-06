@@ -1,0 +1,72 @@
+sequenceDiagram
+actor EU as End=user
+participant FE as App frontend<br/>on user (subscriber)<br/>device
+participant BE as App backend
+participant CP as Channel Partner<br/>API gateway<br/>(cp)
+box As the app developer<br/>you don't need to interact<br/>with the operator
+    participant OP as End-user's mobile<br/>operator
+end
+
+EU-->>FE: Uses an app's<br/>Open Gateway-enhanced<br/>feature
+activate FE
+    FE->>CP: GET <cp>/authorize<br/>?redirect_uri=app_callback_url<br/>&purpose=dpv:<purpose>#35;<scope>
+    activate CP
+        CP->>CP: Operator<br/>resolution
+    CP-->>FE: 302 (redirect) Location:<br/><operator>/authorize?redirect_uri=cp_callback_url
+    deactivate CP
+    FE-->>OP: GET <operator>/authorize<br/>?redirect_uri=cp_callback_url
+    activate OP
+        OP->>OP: Identifies subscriber<br/>from device's IP address
+        OP->>OP: Checks purpose's lawful basis<br/>and subscriber's consent
+        alt Consent is granted or the lawful basis implies it
+            OP-->>FE: 302 (redirect) Location:<br/>cp_callback_url?code=operator_code
+        else Consent is not granted
+            OP-->>FE: 302 (redirect) Location:<br/><operator>/consent_capture_webpage
+            deactivate OP
+            FE-->>OP: GET <operator>/consent_capture_webpage
+            activate OP
+            alt User denies consent
+                OP-->>FE: 302 (redirect) Location:<br/>cp_callback_url?error=consent_denied
+            else User grants consent
+                OP-->>FE: 302 (redirect) Location:<br/>cp_callback_url?code=operator_code
+            end
+            deactivate OP
+        end
+        FE-->>CP: GET cp_callback_url?code/error
+        activate CP
+            alt API access is not consented
+                CP-->>FE: 403 (forbidden) error
+                opt
+                    FE-->>EU: Display app feature compromise from<br/>lack of consent
+                end
+            else API access is consented
+                CP->>OP: POST <operator>/token<br/>code=operator_code
+                activate OP
+                    OP-->>CP: 200 (ok)<br/>operator_access_token
+                deactivate OP
+                CP->>CP: Generate code<br/>to resolve operator_access_token later
+                CP-->>FE: 302 (redirect) Location:<br/>app_callback_url?code=code
+                deactivate CP
+                FE-->>BE: GET app_callback_url<br/>?code=code
+                activate BE
+                    BE->>CP: POST <cp>/token<br/>code=code
+                    activate CP
+                        CP->>CP: Resolve operator_access_token<br/>and embed it along with routing info<br/>into a access_token
+                        CP-->>BE: 200 (ok)<br/>access_token
+                    deactivate CP
+                    BE->>CP: Call Open Gateway API<br/>access_token
+                    activate CP
+                        CP->>CP: Unembed operator routing information<br/>and operator_access_token
+                        CP->>OP: Call Open Gateway API<br/>operator_access_token
+                        activate OP
+                            OP-->>CP: Open Gateway API<br/>response
+                        deactivate OP
+                        CP-->>BE: Open Gateway API<br/>response
+                    deactivate CP
+                opt 
+                    BE-->>FE: App backend response
+                deactivate BE
+                FE-->>EU: User interface event
+                end
+            end
+deactivate FE

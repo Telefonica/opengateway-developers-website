@@ -45,7 +45,7 @@ From a developer perspective, the backend authorization flow consists of two seq
 	
 ## Backend authorization flow sequence diagram
 
-WIP
+![Backend Authorization Flow Sequence Diagram](https://github.com/Telefonica/opengateway-developers-website/raw/main/callflows/authorization/diagrams/backend.svg?autoSizes=true)
 
 ## References
 
@@ -54,6 +54,7 @@ In this portal, you can find the following references:
 - [Access token retrieval reference](/reference/token)
 - [Guide on Privacy](/docs/privacy)
 - [Postman collection](/docs/postman)
+- [Sample code for SIM Swap](/docs/samplecode_simswap)
 
 External references:
 - [CAMARA APIs Access and User Consent Management](https://github.com/camaraproject/IdentityAndConsentManagement/blob/r0.2.0/documentation/CAMARA-API-access-and-user-consent.md)

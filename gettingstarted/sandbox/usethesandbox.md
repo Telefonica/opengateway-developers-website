@@ -86,9 +86,18 @@ When it comes to our Sandbox's SDK, the following particular considerations appl
 - Once you shift to a Channel Partner in a commercial stage, your production code will need to use their SDKs instead of the Sandbox's one you used for testing and prototyping or, in the worst case, you will have to use the HTTP integration method instead if no SDK is available for your app's language.
 - Our Sandbox does not provide a fronted SDK, so if the use case you are prototyping triggers the authorization flow from the end-user device, you will need to implement it by coding HTTP integration. Once you progress to a production stage, you need to check your Channel Partner toolkit offering.
 
+If you want to integrate the APIs from your code using HTTP requests, you will need to follow the [API integration guide](/docs/apiintegration) to understand the authorization flows and the API reference to know the endpoints and parameters you need to use.
+
+The base URL of the API gateway in the Sandbox is the following:
+https://sandbox.opengateway.telefonica.com/apigateway
+
+The path URL to add to the base URL for each API is defined in the API reference.
+
 #### API reference
 
 You can check the OpenAPI v3 specification of each API in the list of [Available APIs](/docs/available) or in the [API Roadmap](/docs/roadmap).
+
+You will be able to test the APIs from their specification pages on the Sandbox by setting the `host` variable to its default value, which is the Sandbox API gateway base URL.
 
 ### Sandbox SDK reference
 
