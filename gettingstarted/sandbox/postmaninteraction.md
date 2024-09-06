@@ -6,8 +6,8 @@ category: 66d5624a492663000f4ed527
 
 # Interact with the Open Gateway Sandbox using Postman
 
-Here you can access the postman collection simswap_collection_postman.json and the environment with variables that you will have to configure to work with your sandbox credentials
-simswap_collection_variables.json. To import a Postman collection, you will need to follow the steps below:  
+Here you can access the postman collection [postman_collection.json](https://github.com/Telefonica/opengateway-postman/blob/main/postman_collection.json) and the environment with variables that you will have to configure to work with your sandbox credentials
+[sandbox.postman_environment.json](https://github.com/Telefonica/opengateway-postman/blob/main/sandbox.postman_environment.json). To import a Postman collection, you will need to follow the steps below:  
 
 1. Open Postman and click on the ‘Import’ button in the top left corner of the interface.
 2. Select ‘File’ and browse for the collection file you wish to import into your system.
@@ -16,6 +16,8 @@ simswap_collection_variables.json. To import a Postman collection, you will need
 Open Gateway APIs access is granted to applications, not developers, so every application can have limited access to the scope and for the purpose it needs.
 
 ## Hands-on Postman 
+
+### Import the Postman Collection
 
 To use a Postmam collection: 
 
@@ -34,6 +36,7 @@ To use a Postmam collection:
 
 ![Send Request](https://github.com/Telefonica/opengateway-developers-website/blob/main/gettingstarted/sandbox/images/send.png) 
 
+### Import the Postman Environment
 
 On the other hand, Postman environments allow you to have a specific configuration for each of the projects you are working on. The environment we provide you with the necessary information to carry out your tests on the Open Gateway Sandbox. 
 
