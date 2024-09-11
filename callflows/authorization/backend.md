@@ -75,7 +75,7 @@ In this portal, you can find the following references:
 - [Authorization request reference](/reference/bcauthorize)
 - [Access token retrieval reference](/reference/token)
 - [Guide on Privacy](/docs/privacy)
-- [Postman collection](/docs/postman)
+- [Postman interaction](/docs/postmaninteraction)
 - [Sample code for SIM Swap](/docs/samplecode_simswap)
 
 External references:

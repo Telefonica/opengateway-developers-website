@@ -78,7 +78,7 @@ In this portal, you can find the following references:
 - [Authorization request reference](/reference/authorize)
 - [Access token retrieval reference](/reference/token)
 - [Guide on Privacy](/docs/privacy)
-- [Postman collection](/docs/postman)
+- [Postman interaction](/docs/postmaninteraction)
 - [Sample code for Number Verification](/docs/samplecode_numberverification)
 
 External references:
