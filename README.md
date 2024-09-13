@@ -47,6 +47,7 @@ The contents in this repo are meant to be organized in the following structure a
 	- [ ] Laura Lacarra [@lauralacarraarcos](https://github.com/lauralacarraarcos) (Go to Developer)
 	- [ ] Agustín Martín [@amg77](https://github.com/amg77) (Global Product)
 	- [ ] Diego Rivera [@diegotid](https://github.com/diegotid) (Global Product)
+	- [ ] Teresa B. Lufuluabo [@lufuOGW](https://github.com/lufuOGW) (Go to Developer)
 
 ## How to publish to the website
 - [ ] Include the Readme.com front matter to each markdown file
