@@ -1,0 +1,277 @@
+@font-face {
+    font-family: 'playfair-display';
+    src: url("https://resources.d-consumer.com/fonts/playfairdisplay/playfairdisplay-italic.eot");
+    src: url("https://resources.d-consumer.com/fonts/playfairdisplay/Regular/playfairdisplay-italic.eot?#iefix") format("embedded-opentype"), url("https://resources.d-consumer.com/fonts/playfairdisplay/playfairdisplay-italic.woff2") format("woff2"), url("https://resources.d-consumer.com/fonts/playfairdisplay/playfairdisplay-italic.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'telefonicasans-black';
+    src: url("https://resources.d-consumer.com/fonts/telefonicasans/black/telefonicasans-black.eot");
+    src: url("https://resources.d-consumer.com/fonts/telefonicasans/black/telefonicasans-black.eot?#iefix") format("embedded-opentype"), url("https://resources.d-consumer.com/fonts/telefonicasans/black/telefonicasans-black.woff2") format("woff2"), url("https://resources.d-consumer.com/fonts/telefonicasans/black/telefonicasans-black.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'telefonicasans-black-italic';
+    src: url("https://resources.d-consumer.com/fonts/telefonicasans/black/telefonicasans-black-italic.eot");
+    src: url("https://resources.d-consumer.com/fonts/telefonicasans/black/telefonicasans-black-italic.eot?#iefix") format("embedded-opentype"), url("https://resources.d-consumer.com/fonts/telefonicasans/black/telefonicasans-black-italic.woff2") format("woff2"), url("https://resources.d-consumer.com/fonts/telefonicasans/black/telefonicasans-black-italic.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'telefonicasans-bold';
+    src: url("https://resources.d-consumer.com/fonts/telefonicasans/bold/telefonicasans-bold.eot");
+    src: url("https://resources.d-consumer.com/fonts/telefonicasans/bold/telefonicasans-bold.eot?#iefix") format("embedded-opentype"), url("https://resources.d-consumer.com/fonts/telefonicasans/bold/telefonicasans-bold.woff2") format("woff2"), url("https://resources.d-consumer.com/fonts/telefonicasans/bold/telefonicasans-bold.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'telefonicasans-bold-italic';
+    src: url("https://resources.d-consumer.com/fonts/telefonicasans/bold/telefonicasans-bold-italic.eot");
+    src: url("https://resources.d-consumer.com/fonts/telefonicasans/bold/telefonicasans-bold-italic.eot?#iefix") format("embedded-opentype"), url("https://resources.d-consumer.com/fonts/telefonicasans/bold/telefonicasans-bold-italic.woff2") format("woff2"), url("https://resources.d-consumer.com/fonts/telefonicasans/bold/telefonicasans-bold-italic.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'telefonicasans-demibold';
+    src: url("https://resources.d-consumer.com/fonts/telefonicasans/demibold/telefonicasans-demibold.eot");
+    src: url("https://resources.d-consumer.com/fonts/telefonicasans/demibold/telefonicasans-demibold.eot?#iefix") format("embedded-opentype"), url("https://resources.d-consumer.com/fonts/telefonicasans/demibold/telefonicasans-demibold.woff2") format("woff2"), url("https://resources.d-consumer.com/fonts/telefonicasans/demibold/telefonicasans-demibold.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'telefonicasans-demibold-italic';
+    src: url("https://resources.d-consumer.com/fonts/telefonicasans/demibold/telefonicasans-demibold-italic.eot");
+    src: url("https://resources.d-consumer.com/fonts/telefonicasans/demibold/telefonicasans-demibold-italic.eot?#iefix") format("embedded-opentype"), url("https://resources.d-consumer.com/fonts/telefonicasans/demibold/telefonicasans-demibold-italic.woff2") format("woff2"), url("https://resources.d-consumer.com/fonts/telefonicasans/demibold/telefonicasans-demibold-italic.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'telefonicasans-extrabold';
+    src: url("https://resources.d-consumer.com/fonts/telefonicasans/extrabold/telefonicasans-extrabold.eot");
+    src: url("https://resources.d-consumer.com/fonts/telefonicasans/extrabold/telefonicasans-extrabold.eot?#iefix") format("embedded-opentype"), url("https://resources.d-consumer.com/fonts/telefonicasans/extrabold/telefonicasans-extrabold.woff2") format("woff2"), url("https://resources.d-consumer.com/fonts/telefonicasans/extrabold/telefonicasans-extrabold.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'telefonicasans-extrabold-italic';
+    src: url("https://resources.d-consumer.com/fonts/telefonicasans/extrabold/telefonicasans-extrabold-italic.eot");
+    src: url("https://resources.d-consumer.com/fonts/telefonicasans/extrabold/telefonicasans-extrabold-italic.eot?#iefix") format("embedded-opentype"), url("https://resources.d-consumer.com/fonts/telefonicasans/extrabold/telefonicasans-extrabold-italic.woff2") format("woff2"), url("https://resources.d-consumer.com/fonts/telefonicasans/extrabold/telefonicasans-extrabold-italic.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'telefonicasans-extralight';
+    src: url("https://resources.d-consumer.com/fonts/telefonicasans/extralight/telefonicasans-extralight.eot");
+    src: url("https://resources.d-consumer.com/fonts/telefonicasans/extralight/telefonicasans-extralight.eot?#iefix") format("embedded-opentype"), url("https://resources.d-consumer.com/fonts/telefonicasans/extralight/telefonicasans-extralight.woff2") format("woff2"), url("https://resources.d-consumer.com/fonts/telefonicasans/extralight/telefonicasans-extralight.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'telefonicasans-extralight-italic';
+    src: url("https://resources.d-consumer.com/fonts/telefonicasans/extralight/telefonicasans-extralight-italic.eot");
+    src: url("https://resources.d-consumer.com/fonts/telefonicasans/extralight/telefonicasans-extralight-italic.eot?#iefix") format("embedded-opentype"), url("https://resources.d-consumer.com/fonts/telefonicasans/extralight/telefonicasans-extralight-italic.woff2") format("woff2"), url("https://resources.d-consumer.com/fonts/telefonicasans/extralight/telefonicasans-extralight-italic.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'telefonicasans-hairline';
+    src: url("https://resources.d-consumer.com/fonts/telefonicasans/hairline/telefonicasans-hairline.eot");
+    src: url("https://resources.d-consumer.com/fonts/telefonicasans/hairline/telefonicasans-hairline.eot?#iefix") format("embedded-opentype"), url("https://resources.d-consumer.com/fonts/telefonicasans/hairline/telefonicasans-hairline.woff2") format("woff2"), url("https://resources.d-consumer.com/fonts/telefonicasans/hairline/telefonicasans-hairline.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'telefonicasans-hairline-italic';
+    src: url("https://resources.d-consumer.com/fonts/telefonicasans/hairline/telefonicasans-hairline-italic.eot");
+    src: url("https://resources.d-consumer.com/fonts/telefonicasans/hairline/telefonicasans-hairline-italic.eot?#iefix") format("embedded-opentype"), url("https://resources.d-consumer.com/fonts/telefonicasans/hairline/telefonicasans-hairline-italic.woff2") format("woff2"), url("https://resources.d-consumer.com/fonts/telefonicasans/hairline/telefonicasans-hairline-italic.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'telefonicasans-light';
+    src: url("https://resources.d-consumer.com/fonts/telefonicasans/light/telefonicasans-light.eot");
+    src: url("https://resources.d-consumer.com/fonts/telefonicasans/light/telefonicasans-light.eot?#iefix") format("embedded-opentype"), url("https://resources.d-consumer.com/fonts/telefonicasans/light/telefonicasans-light.woff2") format("woff2"), url("https://resources.d-consumer.com/fonts/telefonicasans/light/telefonicasans-light.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'telefonicasans-light-italic';
+    src: url("https://resources.d-consumer.com/fonts/telefonicasans/light/telefonicasans-light-italic.eot");
+    src: url("https://resources.d-consumer.com/fonts/telefonicasans/light/telefonicasans-light-italic.eot?#iefix") format("embedded-opentype"), url("https://resources.d-consumer.com/fonts/telefonicasans/light/telefonicasans-light-italic.woff2") format("woff2"), url("https://resources.d-consumer.com/fonts/telefonicasans/light/telefonicasans-light-italic.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'telefonicasans-medium';
+    src: url("https://resources.d-consumer.com/fonts/telefonicasans/medium/telefonicasans-medium.eot");
+    src: url("https://resources.d-consumer.com/fonts/telefonicasans/medium/telefonicasans-medium.eot?#iefix") format("embedded-opentype"), url("https://resources.d-consumer.com/fonts/telefonicasans/medium/telefonicasans-medium.woff2") format("woff2"), url("https://resources.d-consumer.com/fonts/telefonicasans/medium/telefonicasans-medium.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'telefonicasans-medium-italic';
+    src: url("https://resources.d-consumer.com/fonts/telefonicasans/medium/telefonicasans-medium-italic.eot");
+    src: url("https://resources.d-consumer.com/fonts/telefonicasans/medium/telefonicasans-medium-italic.eot?#iefix") format("embedded-opentype"), url("https://resources.d-consumer.com/fonts/telefonicasans/medium/telefonicasans-medium-italic.woff2") format("woff2"), url("https://resources.d-consumer.com/fonts/telefonicasans/medium/telefonicasans-medium-italic.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'telefonicasans-regular';
+    src: url("https://resources.d-consumer.com/fonts/telefonicasans/regular/telefonicasans-regular.eot");
+    src: url("https://resources.d-consumer.com/fonts/telefonicasans/regular/telefonicasans-regular.eot?#iefix") format("embedded-opentype"), url("https://resources.d-consumer.com/fonts/telefonicasans/regular/telefonicasans-regular.woff2") format("woff2"), url("https://resources.d-consumer.com/fonts/telefonicasans/regular/telefonicasans-regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'telefonicasans-regular-italic';
+    src: url("https://resources.d-consumer.com/fonts/telefonicasans/regular/telefonicasans-regular-italic.eot");
+    src: url("https://resources.d-consumer.com/fonts/telefonicasans/regular/telefonicasans-regular-italic.eot?#iefix") format("embedded-opentype"), url("https://resources.d-consumer.com/fonts/telefonicasans/regular/telefonicasans-regular-italic.woff2") format("woff2"), url("https://resources.d-consumer.com/fonts/telefonicasans/regular/telefonicasans-regular-italic.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'telefonicasans-thin';
+    src: url("https://resources.d-consumer.com/fonts/telefonicasans/thin/telefonicasans-thin.eot");
+    src: url("https://resources.d-consumer.com/fonts/telefonicasans/thin/telefonicasans-thin.eot?#iefix") format("embedded-opentype"), url("https://resources.d-consumer.com/fonts/telefonicasans/thin/telefonicasans-thin.woff2") format("woff2"), url("https://resources.d-consumer.com/fonts/telefonicasans/thin/telefonicasans-thin.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'telefonicasans-thin-italic';
+    src: url("https://resources.d-consumer.com/fonts/telefonicasans/thin/telefonicasans-thin-italic.eot");
+    src: url("https://resources.d-consumer.com/fonts/telefonicasans/thin/telefonicasans-thin-italic.eot?#iefix") format("embedded-opentype"), url("https://resources.d-consumer.com/fonts/telefonicasans/thin/telefonicasans-thin-italic.woff2") format("woff2"), url("https://resources.d-consumer.com/fonts/telefonicasans/thin/telefonicasans-thin-italic.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.rm-Header-top {
+  height: 80px !important;
+}
+
+.rm-Logo {
+  margin-bottom: -15px !important;
+}
+
+.markdown-body {
+  --markdown-font: "telefonicasans-regular", sans-serif;
+  --markdown-text: #676767;
+  --markdown-title: #031A34;
+ 
+}
+.rm-Guides #content-head h1 {
+    margin-bottom: 0;
+    margin-top: 0;
+  	color: #0066ff;
+}
+
+
+
+.footer {
+    background-color: #0166ff;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 125px; 
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.logo {
+    width: 145px; 
+    height: auto;
+    height: 40px
+}
+
+.text-container {
+    text-align: right; 
+    max-width: 50%;
+    word-wrap: break-word; 
+}
+
+.text {
+    font-family: 'telefonicasans-demibold', Arial, sans-serif; 
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.logo-link {
+    display: inline-block; 
+}
+
+.link {
+    color: #FFFFFF; 
+    text-decoration: none; 
+}
+
+.link:hover {
+    color: #FFFFFF; 
+    text-decoration: underline;
+}
+
+.rm-Header-top {
+    padding-top: 30px !important;
+}
+
+body::before {
+    content: 'Open Gateway';
+    color: rgb(242, 244, 255);
+    background-color: rgb(3, 26, 52);
+		font-family: 'telefonicasans-demibold';
+    font-weight: 700;
+    font-size: 13px;
+    position: absolute;
+    width: -webkit-fill-available;
+    max-height: 35px;
+    z-index: 1000;
+    padding: 10px 25px;
+}
+
+.copyright {
+    font-size: 12px;
+    margin: 10px 0 0 0;
+    font-family: 'telefonicasans-extralight', Arial, sans-serif; 
+}
+
+@media (max-width: 1024px) {
+    .footer {
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center; 
+        padding: 20px;
+    }
+
+    .logo {
+        margin-left: 0;
+        margin-bottom: 20px; 
+    }
+
+    .text-container {
+        text-align: center; 
+        margin-right: 0; 
+        max-width: 100%; 
+    }
+}
