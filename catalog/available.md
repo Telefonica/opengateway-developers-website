@@ -1,5 +1,5 @@
 ---
-title: 🛍️ Available APIs
+title: Available APIs
 excerpt: The Open Gateway initiative is led to create a standardized framework of Application Programming Interfaces (APIs) that enables simplified and universal access to advanced mobile network capabilities and associated services. Designed to promote interoperability, innovation, and operational efficiency within the digital ecosystem, Open Gateway APIs are essential for modern application development.
 category: 66aa4f941e51e7000fa353ce
 ---
