@@ -241,7 +241,7 @@ body::before {
     color: rgb(242, 244, 255);
     background-color: rgb(3, 26, 52);
 		font-family: 'telefonicasans-demibold';
-    font-weight: 700;
+    font-weight: 400;
     font-size: 13px;
     position: absolute;
     width: -webkit-fill-available;
