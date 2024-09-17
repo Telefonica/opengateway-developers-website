@@ -37,7 +37,7 @@ paths:
 
         Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following purpose:
 
-        `dpv:FraudPreventionAndDetection#location-verification-verify`
+        `dpv:FraudPreventionAndDetection#device-location-read`
       operationId: verifyLocation
       requestBody:
         content:
