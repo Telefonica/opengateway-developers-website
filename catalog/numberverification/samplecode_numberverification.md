@@ -11,9 +11,7 @@ The final implementation will depend on the channel partner's development tools 
 Sample code on how to consume the API without an SDK, directly with HTTP requests, is also provided, and it is common and valid no matter what your partner is, thanks to the CAMARA standardization. If you do not use an SDK you need to code the HTTP calls and additional stuff like encoding your credentials, calling authorization endpoints, handling tokens, etc. You can check our sample [Postman collection](https://bxbucket.blob.core.windows.net/bxbucket/opengateway-web/uploads/OpenGateway.postman_collection.json) as a reference.
 
 >**.callout_info**
-It is recomended to use the [API Reference tool](
-https://developers.opengateway.telefonica.com/reference/
-) for faster calls of our APIs
+It is recomended to use the [API Reference tool](https://developers.opengateway.telefonica.com/reference/) for faster calls of our APIs
 
 ### Table of contents
 - [Frontend](#frontend)
