@@ -24,7 +24,7 @@ https://developers.opengateway.telefonica.com/reference/
 
 ## Code samples
 > **.callout_warn** These are code examples
-> - Remember to replace 'my-app-id' and 'my-app-secret' with [the credentials of your app](https://sandbox.opengateway.telefonica.com/my-apps).   
+> - Remember to replace 'my-app-id' and 'my-app-secret' with the credentials of your app. (If you are using our Sandbox, you can get them [here](https://sandbox.opengateway.telefonica.com/my-apps)). 
 > - Remember also to replace "aggregator/opengateway-sdk" with the SDK from your aggregator. If you are using our sandbox SDK, check info and installation of de Sandbox SDK [here](../../gettingstarted/sandbox/sdkreference.md)
 
 ### Frontend
