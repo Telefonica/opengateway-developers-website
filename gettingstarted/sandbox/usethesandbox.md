@@ -88,7 +88,7 @@ When it comes to our Sandbox's SDK, the following particular considerations appl
 
 If you want to integrate the APIs from your code using HTTP requests, you will need to follow the [API integration guide](/docs/apiintegration) to understand the authorization flows and the API reference to know the endpoints and parameters you need to use.
 
-The base URL of the API gateway in the Sandbox is the following:
+**The base URL of the API gateway in the Sandbox is the following:**
 https://sandbox.opengateway.telefonica.com/apigateway
 
 The path URL to add to the base URL for each API is defined in the API reference.

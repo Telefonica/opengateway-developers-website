@@ -28,7 +28,7 @@ Our Sandbox will offer you a set of APIs to test, through the same interfaces an
 
 When you are ready to move to production, you will need to contact one of our Channel Partners and shift your concepts into actual applications which could need porting part of your code, specially if using our Sandbox's SDK, to the Channel Partner's toolkits and be completed with the proper environmental and operational stuff.
 
-[Check how to get onboarded and start using our Sandbox](sandbox/sandbox.md)
+[Check how to get onboarded and start using our Sandbox](/gettingstarted/sandbox/usethesandbox.md)
 
 ## Telefónica Open Gateway Partner Program
 

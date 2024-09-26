@@ -47,5 +47,5 @@ When combined with other APIs such as Number Verification, Device Swap, or Know 
 ###  Simplified integration
 As a standardized API, it allows seamless integration into your applications without the need for carrier-specific customizations, simplifying development and accelerating time to market.
 
-###  Footprint for your identity service
+### Footprint for your identity service
 The API's standardization ensures uniform access across multiple telecom providers, expanding your business reach and ensuring consistent functionality across different carriers.
