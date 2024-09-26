@@ -8,6 +8,8 @@ The following code shows, for didactic purposes, a hypothetical or sample SDK, i
 
 Sample code on how to consume the API without an SDK, directly with HTTP requests, is also provided, and it is common and valid no matter what your partner is, thanks to the CAMARA standardization. If you do not use an SDK you need to code the HTTP calls and additional stuff like encoding your credentials, calling authorization endpoints, handling tokens, etc. You can check our sample [Postman collection](https://bxbucket.blob.core.windows.net/bxbucket/opengateway-web/uploads/OpenGateway.postman_collection.json) as a reference.
 
+>**.callout_info** It is recomended to use the [API Reference tool](https://developers.opengateway.telefonica.com/reference/) for faster calls of our APIs
+
 ### Table of contents
 - [Backend flow](#backend-flow)
     - [Authorization](#authorization)
@@ -19,6 +21,9 @@ Sample code on how to consume the API without an SDK, directly with HTTP request
     - [API usage](#api-usage-1)
 
 ## Code samples
+> **.callout_warn** These are code examples
+> - Remember to replace 'my-app-id' and 'my-app-secret' with the credentials of your app. (If you are using our Sandbox, you can get them [here](https://sandbox.opengateway.telefonica.com/my-apps)). 
+> - Remember also to replace "aggregator/opengateway-sdk" with the SDK from your aggregator. If you are using our sandbox SDK, check info and installation of de Sandbox SDK [here](../../gettingstarted/sandbox/sdkreference.md)
 
 ### Backend flow
 
