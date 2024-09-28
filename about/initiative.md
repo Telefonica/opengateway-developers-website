@@ -39,11 +39,11 @@ We understand that integrating new technologies can be challenging. That's why O
 
 Getting started with Open Gateway APIs is easy:
 
-1. **Explore Available APIs:** Browse our API catalog to discover the various network capabilities and services that you can integrate into your applications.
+1. **Explore Available APIs:** Browse our [API catalog](https://opengateway.telefonica.com/apis) to discover the various network capabilities and services that you can integrate into your applications.
 2. **Find a channel partner or use our Sandbox:** Identify a channel partner or join to the [Developer Hub](https://opengateway.telefonica.com/developer-hub) in order to use the APIs. 
-3. **Register and Obtain Credentials:** Sign up for an account and obtain the necessary API credentials to access the services.
+3. **Register and Obtain Credentials:** [Sign up](https://opengateway.telefonica.com/developer-hub/unirse) for an account and obtain the necessary API credentials to access the services.
 4. **Read the Documentation:** Familiarize yourself with our comprehensive documentation to understand how to make API calls, handle responses, and implement best practices.
-5. **Start Building:** Begin integrating Open Gateway APIs into your applications, leveraging the powerful network capabilities to create innovative and high-performance solutions.
+5. **Start Building:** Begin integrating Open Gateway APIs into your applications. Use the [API Reference](https://developers.opengateway.telefonica.com/reference/authorize) for practical testing and leverage the powerful network capabilities to create innovative, high-performance solutions.
 
 
 ## Join the Open Gateway Community
