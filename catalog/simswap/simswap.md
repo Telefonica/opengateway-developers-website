@@ -35,6 +35,7 @@ Aggregators play a crucial role in the anti-fraud industry. They can integrate t
 By using the SIM Swap CAMARA API, developers can significantly enhance the security and reliability of their applications, providing a robust defense against SIM swap fraud.
 
 ## Why Sim Swap?
+![SIMSwap](./images/SIM%20Swap.jpg)
 
 ### Understanding SIM Swap Fraud
 

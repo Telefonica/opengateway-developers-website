@@ -23,6 +23,7 @@ The Device Status Camara API specifies one operation:
 [Check the API Reference](/reference/getroamingstatus)
 
 ## Why Device Status?
+![DeviceStatus](./images/DeviceStatus.jpg)
 
 By integrating this API, you can elevate the user experience by enabling, for example, personalised offers on travel services and improve security by quickly identifying and addressing potentially fraudulent SIM card locations.
 
