@@ -36,7 +36,7 @@ For this step, go to the *Retrieve an access token* secction. Because this tutor
 When finished, you page will look similar to the image below.
 ![CIBA Auth example](./images/Access%20token.png)
 
-## Step 4: Make your calls
+### Step 4: Make your calls
 The API Reference is now prepared to make calls to the Open Gateway's APIs. Check that the credentials you made are just for one API because of the purpose. Everytime you change the API you are consuming, you must change the purpose.
 The variable common to all APIs is the *access_token* you get in response of the last step, which should be placed in the authentication section.
 
