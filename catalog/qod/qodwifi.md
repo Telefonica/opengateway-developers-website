@@ -1,18 +1,21 @@
 ---
-title: SIM Swap API
-excerpt: The SIM Swap API from Open Gateway allows to check for SIM card swaps for fraud prevention purposes
+title: QoD Wifi
+excerpt: The QoD API allows the developer to prioritize network traffic on certain devices on demand.
 category: 66aa4f941e51e7000fa353ce
 ---
 
-The standardized SIM Swap API enables seamless integration of SIM swap detection and management functionality into your applications. This API enhances security by identifying potentially fraudulent activity and providing an additional layer of protection against unauthorized access.
+An example of an application that aims to enrich the public experience when attending a live sporting event, an advanced feature for your viewers may be watching replays of relevant games. 
 
-Additionally, the SIM Swap's Unified API Access feature ensures access to network capabilities of various carriers through a single, standardized interface. This simplifies integration and improves efficiency for developers by consolidating access to multiple carrier networks.
+To do this, the application must ensure that the end user has adequate connectivity to watch it, regardless of the
+number of simultaneous users watching the sporting event in the same location. 
 
-## Overview of the SIM Swap CAMARA API
+## Overview of the QoD Wifi CAMARA API
 
 ### High level definition
 
-The SIM Swap CAMARA API is a software interface that enables applications to request the last date of a SIM swap performed on a mobile line or to check whether a SIM swap has been performed during a specified period. This functionality is provided in an easy and secure manner, allowing real-time verification of the activation date of a SIM card on the mobile network.
+The QoD Wifi CAMARA API is a software interface that enable application developers to integrate network configuration and optimization functionalities into their software, without the need for the End Users to run complex processes on their devices.
+
+This functionality easily allows applications to gain the ability to interact seamlessly with mobile network operator systems, so developers can focus on provide a better user experience.
 
 ### API Operations
 
