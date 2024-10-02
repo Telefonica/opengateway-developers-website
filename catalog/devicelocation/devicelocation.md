@@ -4,7 +4,6 @@ excerpt: The Device Location API from Open Gateway allows to check if a mobile p
 category: 66aa4f941e51e7000fa353ce
 ---
 
-
 The Device Location API is a software interface that allows applications to confirm if a user's device is in its intended location. The network must track a device's location at all times to effectively provide telecommunications services. This capability is utilized to offer device location as a service.
 
 The Device Location API enhances security by verifying that a device is in the expected location during transactions, which helps prevent fraud and unauthorized activities. This verification process also streamlines authentication, leading to faster and smoother transactions, ultimately improving the user experience. 
@@ -13,6 +12,7 @@ Additionally, the API is a valuable tool for fraud prevention, as it can quickly
  
 Furthermore, by knowing a user's location, businesses can offer more personalized and context-aware services, increasing customer engagement and satisfaction. The API's versatility makes it applicable across various industries, including retail, telecom, and logistics. For merchants, it also contributes to reducing chargebacks by verifying the location of a device during transactions.
 
+![DeviceLocation](./images/DeviceLocation.jpg)
 
 ## Overview of the SIM Swap CAMARA API
 
