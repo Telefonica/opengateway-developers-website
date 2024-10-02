@@ -17,43 +17,61 @@ The QoD Wifi CAMARA API is a software interface that enable application develope
 
 This functionality easily allows applications to gain the ability to interact seamlessly with mobile network operator systems, so developers can focus on provide a better user experience.
 
+
 ### API Operations
 
-The SIM Swap CAMARA API specifies the following two operations:
+The QoD CAMARA API specifies the following three operations:
 
-- **POST retrieve-date:** Answers the question ‘when did the last SIM swap occur?’. This operation requires the phone number to be checked (parameter `phoneNumber`).
+- **POST Creates a new session:** An operation to setup a new QoD provisioning for a given device. Parameters required:  
 
-  [Check the API Reference](/reference/retrievesimswapdate)
+  - `ueId`: User equipment identifier ;
+  - `asId`: Application server identifier ;
+  - `qos` : Enum: "QOS_E" (Qualifier for enhanced communication profile),  "QOS_S" (Qualifier for the requested QoS profile S), "QOS_M" (Qualifier for the requested QoS profile M) ,  "QOS_L" (Qualifier for the requested QoS profile L);
+  
+Other parameters :
 
-- **POST check:** Checks whether a SIM swap occurred during the last N hours. This operation requires the following inputs:
-  - `phoneNumber`: The phone number to be checked.
-  - `maxAge`: The period in hours to be checked for a SIM swap (minimum 1 hour, maximum 2400 hours, default 240 hours).
+  - `duration`: Session duration in seconds (maximal value of 24 hours is used if not set);
+  - `uePorts` : Ports may be specified as a list of ranges or single ports ;
+  - `asPorts` : Ports may be specified as a list of ranges or single ports ;
+  - `notificationUrl` : Allows asynchronous delivery of session related events ;
+  - `notificationAuthToken` : Authentication token for callback API ;
 
-  [Check the API Reference](/reference/checksimswap)
+<!-- [Check the API Reference](/reference/) -->
 
-With the SIM Swap CAMARA API, any digital service provider can integrate the functionality of checking changes in SIM renewals directly into their software. This can be done both alone and in combination with other external inputs. Additionally, they can combine other Open Gateway APIs related to anti-fraud measures that may be of interest.
+- **GET Get session information:** An operation to get the information about a specific QoD provisioning
 
-Aggregators play a crucial role in the anti-fraud industry. They can integrate this functionality into their software and build more sophisticated algorithms by combining other security checks, such as location verification, phone number verification, matching of contact information, external data sources, AI algorithms, etc. To achieve this, aggregators can use other Open Gateway APIs like Device Location Verification, Number Verification, or KYC-Match.
+<!-- [Check the API Reference](/reference/) -->
 
-By using the SIM Swap CAMARA API, developers can significantly enhance the security and reliability of their applications, providing a robust defense against SIM swap fraud.
+- **DELETE Free resources related to QoS session:** An operation to terminate a QoD provisioning, identified by Id .  Path parameter required:  
 
-## Why Sim Swap?
+  - `sessionId`: Session ID that was obtained from the createSession operation
 
-### Understanding SIM Swap Fraud
+<!-- [Check the API Reference](/reference/) -->
 
-SIM Swap is a serious form of account takeover fraud. Your mobile phone is the most common device used to manage a wide range of products and services – from food delivery or gym accounts to car insurance or bank accounts. Each of these services requires a personal account to perform various transactions.
+By utilizing the QoD Service, developers of applications can capitalize on the usability, ubiquity, security, quickness, and simplicity of the APIs to manage their End Users networking and focus on the experiences they want to offer.
 
-Account takeover fraud is one of the most impactful types of cybercrime. When a fraudster gains control of a user's account, they can exploit all the functionalities associated with that account. The quickest way to monetize this fraud is by transferring money or making purchases. However, other severe consequences can occur, such as implicating the real customer in criminal activities.
 
-### How SIM Cards are Used by Telecom Operators
+## Why QoD Wifi?
 
-A SIM card is a small card inside your mobile phone, identified by a unique number. Telecom operators maintain a link between this number and your phone number. If your phone number is linked to a different SIM card, phone calls and SMS messages intended for you will be redirected to another mobile phone.
+### Optimize client’s networking
 
-This is where SIM swap fraud becomes dangerous. The "new" mobile phone can be used to reset passwords and validate fraudulent transactions. Essentially, this allows the fraudster to take over your accounts and misuse them for malicious purposes.
+With QoD Wifi, you can activate the best networking configuration that suits better to the needs of your applications in real time. Regardless of whether your application requires a  short boost with better throughput or a temporal control on the maximum jitter or latency. 
 
-### Protecting Against SIM Swap Fraud
+### Seamless User Experience
 
-To safeguard against SIM swap fraud, it is crucial to be aware of how your personal and financial information is used and protected. Use strong, unique passwords for your accounts, enable two-factor authentication, and monitor your accounts for any suspicious activity. Always be cautious of unsolicited requests for personal information, whether over the phone, via SMS, or through email.
+Your clients will enjoy the enhanced services you build with the capabilities brough to you by the QoD service without even noticing their network has been modified. This allows you to upsell advanced features with the security they will not suffer undesirable network issues.
 
-By understanding the mechanics of SIM swap fraud and taking proactive steps to protect your accounts, you can significantly reduce the risk of falling victim to this type of cybercrime.
+### Improve your client’s satisfaction
+
+You can control and monitor the network conditions and adapt to them whenever your applications are being used. 
+
+This will helps when customers didn’t experience your application as they should, and you weren’t able to manage.
+
+### Quick and easy onboarding
+
+With the QoD service, you can configure the network of your clients easily with only a couple of lines of code.
+
+You will not have to guess and discover the available networking capabilities of their clients and will focus on what matters more to your business.
+
+
 
