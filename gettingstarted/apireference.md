@@ -26,7 +26,7 @@ For a faster and easier authorization it is recomended to use a [CIBA](../about/
 - <u>credentials</u>: The username is your client_id and your password is you client_secret. You can get both from the info in your aplication. If you are using [the Sandbox](https://sandbox.opengateway.telefonica.com/my-apps) you have this information in My Apps page, clicking in your app.
 
 When finished, you page will look similar to the image below.
-![CIBA Auth example](./images/CIBA%20auth.png)
+![CIBA Auth example](https://github.com/Telefonica/opengateway-developers-website/raw/main/gettingstarted/images/CIBA%20auth)
 
 ### Step 3: Get the access token
 For this step, go to the *Retrieve an access token* secction. Because this tutorial is using the CIBA, you must copy the authorization code in the *ACCESSTOKENCIBAREQUEST* tab:
@@ -34,10 +34,10 @@ For this step, go to the *Retrieve an access token* secction. Because this tutor
 - <u>auth_req_id</u>: The *auth_req_id* you get in response of the last step
 
 When finished, you page will look similar to the image below.
-![CIBA Auth example](./images/Access%20token.png)
+![CIBA Auth example](https://github.com/Telefonica/opengateway-developers-website/raw/main/gettingstarted/images/Access%20token.png)
 
 ### Step 4: Make your calls
 The API Reference is now prepared to make calls to the Open Gateway's APIs. Check that the credentials you made are just for one API because of the purpose. Everytime you change the API you are consuming, you must change the purpose.
 The variable common to all APIs is the *access_token* you get in response of the last step, which should be placed in the authentication section.
 
-![CIBA Auth example](./images/SIM%20Swap%20call.png)
+![CIBA Auth example](https://github.com/Telefonica/opengateway-developers-website/raw/main/gettingstarted/images/SIM%20Swap%20call.png)
