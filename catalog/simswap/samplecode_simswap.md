@@ -8,6 +8,8 @@ The following code shows, for didactic purposes, a hypothetical or sample SDK, i
 
 Sample code on how to consume the API without an SDK, directly with HTTP requests, is also provided, and it is common and valid no matter what your partner is, thanks to the CAMARA standardization. If you do not use an SDK you need to code the HTTP calls and additional stuff like encoding your credentials, calling authorization endpoints, handling tokens, etc. You can check our sample [Postman collection](https://bxbucket.blob.core.windows.net/bxbucket/opengateway-web/uploads/OpenGateway.postman_collection.json) as a reference.
 
+>**.callout_info** It is recomended to use the [API Reference tool](https://developers.opengateway.telefonica.com/reference/) for faster calls of our APIs
+
 ### Table of contents
 - [Backend flow](#backend-flow)
     - [Authorization](#authorization)
@@ -19,6 +21,9 @@ Sample code on how to consume the API without an SDK, directly with HTTP request
     - [API usage](#api-usage-1)
 
 ## Code samples
+> **.callout_warn** These are code examples
+> - Remember to replace 'my-app-id' and 'my-app-secret' with the credentials of your app. (If you are using our Sandbox, you can get them [here](https://sandbox.opengateway.telefonica.com/my-apps)).
+> - Remember also to replace "aggregator/opengateway-sdk" with the SDK from your aggregator. If you are using our sandbox SDK, check info and installation of de Sandbox SDK [here](../../gettingstarted/sandbox/sdkreference.md)
 
 ### Backend flow
 
@@ -30,6 +35,18 @@ First step is to instantiate the SIM Swap service class included in the correspo
 
 Since Open Gateway authorization is 3-legged, meaning it identifies the application, the operator and the operator's subscriber, who is also the end-user holder of the mobile line, each check for a different phone number needs its own SDK class instantiation, or access token if not using an SDK.
 
+```python Sample SDK for Python
+from aggregator_opengateway_sdk import ClientCredentials, SimSwap
+
+credentials = ClientCredentials(
+    client_id='my-app-id',
+    client_secret='my-app-secret'
+)
+
+customer_phone_number = '+34555555555'
+
+simswap_client = SimSwap(credentials=credentials, phone_number=customer_phone_number)
+```
 ```node Sample SDK for Node.js
 import { ClientCredentials, SIMSwap } from "aggregator/opengateway-sdk"
 
@@ -54,18 +71,6 @@ ClientCredentials credentials = new ClientCredentials(
 final String customerPhoneNumber = "+34555555555";
 
 SIMSwap simswapClient = new SIMSwap(credentials, null, customerPhoneNumber);
-```
-```python Sample SDK for Python
-from aggregator_opengateway_sdk import ClientCredentials, SIMSwap
-
-credentials = ClientCredentials(
-    clientid='my-app-id',
-    clientsecret='my-app-secret'
-)
-
-customer_phone_number = '+34555555555'
-
-simswap_client = SIMSwap(client=credentials, phone_number=customer_phone_number)
 ```
 ```ecmascript HTTP using JavaScript (ES6)
 // First step:
@@ -248,6 +253,11 @@ access_token = response.json().get("access_token")
 
 Once your app is authenticated it only takes a single line of code to use the service API and effectively get a result.
 
+```python Sample SDK for Python
+result = simswap_client.retrieve_date()
+
+print(f"SIM was swapped: {result.strftime('%B %d, %Y, %I:%M:%S %p')}")
+```
 ```node Sample SDK for Node.js
 let result = await simswapClient.retrieveDate()
 
@@ -259,11 +269,6 @@ CompletableFuture<Boolean> resultFuture = simswapClient.retrieveDate();
 resultFuture.thenAccept(result -> {
     System.out.println("SIM was swapped: " + DateTimeFormatter.ISO_LOCAL_DATE.format(result));
 })
-```
-```python Sample SDK for Python
-result = await simswap_client.retrieve_date()
-
-print(f"SIM was swapped: {result.strftime('%B %d, %Y, %I:%M:%S %p')}")
 ```
 ```ecmascript HTTP using JavaScript (ES6)
 const myHeaders = new Headers();
@@ -396,10 +401,10 @@ fetch(url, requestOptions);
         <input type="hidden" name="response_type" value="code">
         <input type="hidden" name="purpose" value="dpv:FraudPreventionAndDetection#sim-swap">
         <input type="hidden" name="redirect_uri" value="/simswap-callback">
-        
+
         <label for="state">Your phone number:</label>
         <input type="text" id="state" name="state" value="+34555555555" required>
-        
+
         <button type="submit">Check</button>
     </form>
 </body>

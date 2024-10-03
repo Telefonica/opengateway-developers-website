@@ -35,3 +35,19 @@ Additionally, the SIM Swap's Unified API Access feature ensures access to networ
 ### Number Verification API
 
 The standardized Number Verification API enhances the security of your users' identities and credentials. This API provides a quick, convenient, reliable, and secure method for verifying user information, ensuring robust protection against unauthorized access.
+
+### Device location
+
+The standardised Device Location Verification API provides the option of verifying the geographical location of a given SIM-based device and validating whether it is within a requested geographical area without spoofing or GPS.
+
+This solution validates the location of a device to enable services or allow transactions by verifying the location.
+
+### Device status
+
+The standardised Device Status API provides information regarding particular conditions of devices equipped with the end-user's SIM card, such as whether the device is in a roaming state and the country it is in.
+
+Again, this API enables use cases around specific services related to the end-user's situation, or preventing frauds from foreign locations.
+
+### Quality on Demand Mobile (QoD Mobile) API
+
+The standardized QoD Mobile API allows you to manage and control your customers' mobile connectivity. This capability enables you to focus on creating the best possible user experiences, ensuring optimal performance and reliability for mobile applications.
