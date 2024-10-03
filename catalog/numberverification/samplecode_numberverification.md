@@ -22,6 +22,8 @@ Sample code on how to consume the API without an SDK, directly with HTTP request
     - [Using the service API](#using-the-service-api)
 
 ## Code samples
+> 📘 Note
+>
 > These are code examples
 > - Remember to replace 'my-app-id' and 'my-app-secret' with the credentials of your app. (If you are using our Sandbox, you can get them [here](https://sandbox.opengateway.telefonica.com/my-apps)). 
 > - Remember also to replace "aggregator/opengateway-sdk" with the SDK from your aggregator. If you are using our sandbox SDK, check info and installation of de Sandbox SDK [here](../../gettingstarted/sandbox/sdkreference.md)
