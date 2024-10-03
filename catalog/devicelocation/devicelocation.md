@@ -12,7 +12,7 @@ Additionally, the API is a valuable tool for fraud prevention, as it can quickly
  
 Furthermore, by knowing a user's location, businesses can offer more personalized and context-aware services, increasing customer engagement and satisfaction. The API's versatility makes it applicable across various industries, including retail, telecom, and logistics. For merchants, it also contributes to reducing chargebacks by verifying the location of a device during transactions.
 
-![DeviceLocation](./images/DeviceLocation.jpg)
+![DeviceLocation](https://github.com/Telefonica/opengateway-developers-website/raw/main/catalog/simswap/images/DeviceLocation.png)
 
 ## Overview of the SIM Swap CAMARA API
 
