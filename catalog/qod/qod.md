@@ -1,5 +1,5 @@
 ---
-title: QoD Wifi
+title: QoD
 excerpt: The QoD API allows the developer to prioritize network traffic on certain devices on demand.
 category: 66aa4f941e51e7000fa353ce
 ---
@@ -9,11 +9,11 @@ An example of an application that aims to enrich the public experience when atte
 To do this, the application must ensure that the end user has adequate connectivity to watch it, regardless of the
 number of simultaneous users watching the sporting event in the same location. 
 
-## Overview of the QoD Wifi CAMARA API
+## Overview of the QoD CAMARA API
 
 ### High level definition
 
-The QoD Wifi CAMARA API is a software interface that enable application developers to integrate network configuration and optimization functionalities into their software, without the need for the End Users to run complex processes on their devices.
+The QoD CAMARA API is a software interface that enable application developers to integrate network configuration and optimization functionalities into their software, without the need for the End Users to run complex processes on their devices.
 
 This functionality easily allows applications to gain the ability to interact seamlessly with mobile network operator systems, so developers can focus on provide a better user experience.
 
@@ -27,35 +27,38 @@ The QoD CAMARA API specifies the following three operations:
   - `ueId`: User equipment identifier ;
   - `asId`: Application server identifier ;
   - `qos` : Enum: "QOS_E" (Qualifier for enhanced communication profile),  "QOS_S" (Qualifier for the requested QoS profile S), "QOS_M" (Qualifier for the requested QoS profile M) ,  "QOS_L" (Qualifier for the requested QoS profile L);
+
+
   
 Other parameters :
-
   - `duration`: Session duration in seconds (maximal value of 24 hours is used if not set);
   - `uePorts` : Ports may be specified as a list of ranges or single ports ;
   - `asPorts` : Ports may be specified as a list of ranges or single ports ;
-  - `notificationUrl` : Allows asynchronous delivery of session related events ;
+  - `notificationUri` : Allows asynchronous delivery of session related events ;
   - `notificationAuthToken` : Authentication token for callback API ;
 
 <!-- [Check the API Reference](/reference/) -->
 
-- **GET Get session information:** An operation to get the information about a specific QoD provisioning
+- **GET Get session information:** An operation to get the information about a specific QoD provisioning.Path parameter required:  
+
+  - `sessionId`:Session ID that was obtained from the createSession operation.
 
 <!-- [Check the API Reference](/reference/) -->
 
 - **DELETE Free resources related to QoS session:** An operation to terminate a QoD provisioning, identified by Id .  Path parameter required:  
 
-  - `sessionId`: Session ID that was obtained from the createSession operation
+  - `sessionId`: Session ID that was obtained from the createSession operation.
 
 <!-- [Check the API Reference](/reference/) -->
 
 By utilizing the QoD Service, developers of applications can capitalize on the usability, ubiquity, security, quickness, and simplicity of the APIs to manage their End Users networking and focus on the experiences they want to offer.
 
 
-## Why QoD Wifi?
+## Why QoD?
 
 ### Optimize client’s networking
 
-With QoD Wifi, you can activate the best networking configuration that suits better to the needs of your applications in real time. Regardless of whether your application requires a  short boost with better throughput or a temporal control on the maximum jitter or latency. 
+With QoD, you can activate the best networking configuration that suits better to the needs of your applications in real time. Regardless of whether your application requires a  short boost with better throughput or a temporal control on the maximum jitter or latency. 
 
 ### Seamless User Experience
 
