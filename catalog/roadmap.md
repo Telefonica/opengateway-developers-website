@@ -10,26 +10,6 @@ The following APIs are already available on most telcos' API exposure platforms,
 
 Get sure to get onboarded on the Open Gateway Developer Hub to get early access to these APIs and start testing them in our <a href="/docs/sandbox">Sandbox environment</a>.
 
-### Device location
-
-The standardised Device Location Verification API provides the option of verifying the geographical location of a given SIM-based device and validating whether it is within a requested geographical area without spoofing or GPS.
-
-This solution validates the location of a device to enable services or allow transactions by verifying the location.
-
-[Overview and API Reference](/docs/devicelocation)
-
-### Device status
-
-The standardised Device Status API provides information regarding particular conditions of devices equipped with the end-user's SIM card, such as whether the device is in a roaming state and the country it is in.
-
-Again, this API enables use cases around specific services related to the end-user's situation, or preventing frauds from foreign locations.
-
-[Overview and API Reference](/docs/devicestatus)
-
-### Quality on Demand Mobile (QoD Mobile) API
-
-The standardized QoD Mobile API allows you to manage and control your customers' mobile connectivity. This capability enables you to focus on creating the best possible user experiences, ensuring optimal performance and reliability for mobile applications.
-
 ***Pending for availability***
 
 ### Home Devices Quality on Demand (QoD WiFi) API
