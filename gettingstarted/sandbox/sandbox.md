@@ -27,8 +27,8 @@ Once you are approved in at least one of our programs and you log in to the priv
 
 | API |  Available  | Soon Available | 
 |:-----|:--------:|------:|
-| Sim Swap | Movistar Spain, Mock Operator | VIVO Brasil, O2 Germany, Blau Germany |
-| Number Verification | Mock Operator |  Movistar Spain, VIVO Brasil, O2 Germany, Blau Germany |
-| Device Location | Mock Operator |  Movistar Spain, VIVO Brasil, O2 Germany, Blau Germany |
-| Device Status | Mock Operator |  Movistar Spain, VIVO Brasil, O2 Germany, Blau Germany |
-| Quality on Demand |  |  Mock Operator, Movistar Spain, VIVO Brasil, O2 Germany, Blau Germany |
+| Sim Swap | Movistar Spain, mock operator | VIVO Brasil, O2 Germany, Blau Germany |
+| Number Verification | Movistar Spain, mock operator | VIVO Brasil, O2 Germany, Blau Germany |
+| Device Location | Movistar Spain, mock operator | VIVO Brasil, O2 Germany, Blau Germany |
+| Device Status | mock operator |  Movistar Spain, VIVO Brasil, O2 Germany, Blau Germany |
+| Quality on Demand | Movistar Spain, mock operator | VIVO Brasil, O2 Germany, Blau Germany |

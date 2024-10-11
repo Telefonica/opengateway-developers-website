@@ -8,7 +8,7 @@ The standardised Device Status API provides the ability to check the roaming sta
 
 This solution allows you to control resource management during international roaming in a more secure way.
 
-![DeviceStatus](https://github.com/Telefonica/opengateway-developers-website/raw/main/catalog/simswap/images/DeviceStatus.png)
+![DeviceStatus](https://github.com/Telefonica/opengateway-developers-website/raw/main/catalog/devicestatus/images/DeviceStatus.png)
 
 ## Overview of the Device Status API
 

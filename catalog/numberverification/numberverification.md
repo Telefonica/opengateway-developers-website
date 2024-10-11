@@ -29,11 +29,11 @@ The Number Verification CAMARA API enables developers to seamlessly integrate au
 Integration with channel partners and service aggregators streamlines the incorporation of telco functionalities with additional security algorithms, backup authentication methods, or external data sources. This collaboration enhances service reliability and security, leveraging APIs like Device Location Verification or SIM SWAP within the Open Gateway framework.
 
 ##  Why Number Verification?
-![NumberVerification Before](https://github.com/Telefonica/opengateway-developers-website/raw/main/catalog/simswap/images/NV(1).png)
+![NumberVerification Before](https://github.com/Telefonica/opengateway-developers-website/raw/main/catalog/numberverification/images/NV(1).png)
 
 In today's digital landscape, verifying phone number ownership is critical to prevent identity fraud and secure online transactions. The Number Verification CAMARA API offers a reliable solution to **authenticate users by confirming their phone numbers**. This ensures that only legitimate users gain access to digital services, bolstering security measures and building trust among customers.
 
-![NumberVerification Before](https://github.com/Telefonica/opengateway-developers-website/raw/main/catalog/simswap/images/NV(2).png)
+![NumberVerification After](https://github.com/Telefonica/opengateway-developers-website/raw/main/catalog/numberverification/images/NV(2).png)
 
 ### How does the Number Verification API help to facilitate authentication? 
 
