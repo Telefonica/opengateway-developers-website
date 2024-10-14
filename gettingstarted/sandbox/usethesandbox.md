@@ -30,6 +30,8 @@ For every application you create, you will need to follow these simple steps to 
 
 		The production mode is disabled by default for Privacy reasons, but you can enable it by filling in your legal information and accepting the terms and conditions in the form that the Sandbox console will offer you for that purpose. You will have to provide some mobile phone numbers of your own which will be added to a whitelist that will allow you to test the APIs in production mode from your own devices and will block API usage accessing someone else's personal data.
 
+![Production mode and mock mode of Sandbox](https://github.com/Telefonica/opengateway-developers-website/raw/main/gettingstarted/sandbox/images/production_mock.png)
+
 	- **Mock mode**
 
 		You can test your application without the need to have a SIM card from one of our mobile operators. The Sandbox will provide you with a mock response for every API call you make.
