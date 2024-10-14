@@ -23,6 +23,8 @@ Once you are approved in at least one of our programs and you log in to the priv
 
 ![Access to the Sandbox console from the website private area](https://github.com/Telefonica/opengateway-developers-website/raw/main/gettingstarted/sandbox/images/access.png?raw=true)
 
+> Please note that the usage of credentials granted from our Sandbox might be subject to some limitations in order to let you test without the obligations of a commercial contract. The [terms and conditions](https://opengateway.telefonica.com/en/terms-conditions-developers-hub) of our developer or partner programs will apply.
+
 ## Available APIs in the Sandbox
 
 | API |  Available  | Soon Available | 
