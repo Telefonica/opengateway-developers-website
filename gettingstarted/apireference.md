@@ -8,7 +8,7 @@ An API reference is a comprehensive document that provides detailed information 
 
 In our developers’ website, you will find also a simple tool that uses your real credentials to make test calls.
 
-> If you do not have an application in the sandbox, [go to the Developer Hub](https://opengateway.telefonica.com/developer-hub) and sign up.
+> 📘 If you do not have an application in the sandbox, [go to the Developer Hub](https://opengateway.telefonica.com/developer-hub) and sign up.
 
 ## Before getting started
 ### Purposes
