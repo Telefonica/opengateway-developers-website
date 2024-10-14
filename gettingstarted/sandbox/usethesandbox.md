@@ -8,7 +8,7 @@ category: 66d5624a492663000f4ed527
 
 Open Gateway APIs access is granted to applications, not developers, so every application can have limited access to the scope and for the purpose it needs.
 
-[More information on Privacy](/docs/privacy)
+[More information on Privacy](../../about/privacy.md)
 
 Therefore the way to get credentials to test the APIs is to register an application in the Sandbox console. You will use your application credentials to authenticate your requests to the APIs from any test you code no matter if it is actually a comprehensive application or just a tiny script to run from the a command line interface.
 
