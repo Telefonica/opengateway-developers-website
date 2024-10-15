@@ -4,6 +4,10 @@ excerpt: Welcome to Open Gateway APIs, your gateway to leveraging advanced netwo
 category: 66840b9dac745a002559ffad
 ---
 
+> 📘 Note
+>
+> To try out our APIs, visit the [Sandbox](https://opengateway.telefonica.com/developer-hub/unirse).
+
 ## What is Open Gateway?
 
 Open Gateway is a initiative spearheaded by the [GSMA](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/) in collaboration with leading telecommunications operators, cloud providers, and aggregators worldwide. Our mission is to create a standardized framework of Application Programming Interfaces (APIs) that enable simplified and universal access to cutting-edge mobile network capabilities and associated services. By leveraging Open Gateway APIs, developers can focus on building exceptional applications while we handle the complexities of network integration.
