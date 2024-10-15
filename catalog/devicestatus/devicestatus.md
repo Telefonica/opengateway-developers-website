@@ -68,7 +68,7 @@ The standardized API provides uniform access to other telecom capabilities, such
 > - eventType (Select the various events - In one of these patterns: ROAMING_STATUS or ROAMING_ON or ROAMING_OFF or ROAMING_CHANGE_COUNTRY )
 
 
-> ⚙️ Data received in the request response
+> ⚙️ Data received in the response
 >
 > - If the device is roaming, it returns "roaming": true ;
 > - If the device is not roaming, returns "roaming": false.

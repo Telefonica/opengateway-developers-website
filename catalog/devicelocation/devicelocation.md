@@ -75,7 +75,7 @@ The API's standardization ensures uniform access across multiple telecom provide
 > - accuracy (precision of the data passed in km, put in the format: 2)
 
 
-> ⚙️ Data received in the request response
+> ⚙️ Data received in the response
 >
 > If the device is not in place, it returns verificationResult: false . If the device is in the specified location, the value is verificationResult: true .
 
