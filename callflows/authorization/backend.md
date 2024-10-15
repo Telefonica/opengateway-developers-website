@@ -4,6 +4,10 @@ excerpt: If your use case does not involve end-user's interaction you will want 
 category: 66d57750d3f60b0011576376
 ---
 
+> 📘 Note
+>
+> To try out our APIs, visit the [Sandbox](https://opengateway.telefonica.com/developer-hub/unirse).
+
 From a developer perspective, the backend authorization flow consists of two sequential steps implemented by performing HTTP requests to the following Open Gateway Channel Partner's API gateway endpoints, compliant with the ODIC standard **CIBA** (Client-Initiated Backchannel Authentication Flow).
 
 ## Backend authorization flow steps
