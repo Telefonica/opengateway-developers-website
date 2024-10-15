@@ -4,11 +4,14 @@ excerpt: Find out how to start testing the Open Gateway APIs with our tools in t
 category: 66d5624a492663000f4ed527
 ---
 
+> 📘 Note
+>
+> To try out our APIs, visit the [Sandbox](https://opengateway.telefonica.com/developer-hub/unirse).If you do not have an application in the sandbox,go go to the Developer Hub and sign up.
+
+
 An API reference is a comprehensive document that provides detailed information about an API (Application Programming Interface), including how to use its functions, methods, endpoints, parameters, and data structures. It serves as a guide for developers who want to integrate or interact with the API in their applications.
 
 In our developers’ website, you will find also a simple tool that uses your real credentials to make test calls.
-
-> If you do not have an application in the sandbox, [go to the Developer Hub](https://opengateway.telefonica.com/developer-hub) and sign up.
 
 ## Before getting started
 ### Purposes
