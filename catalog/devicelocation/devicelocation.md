@@ -53,3 +53,29 @@ As a standardized API, it allows seamless integration into your applications wit
 
 ###  Footprint for your identity service
 The API's standardization ensures uniform access across multiple telecom providers, expanding your business reach and ensuring consistent functionality across different carriers.
+
+
+## General Informations
+
+> ⚙️ Problem Solved ? 
+>
+> When you want to know the location of a device.
+
+
+> ⚙️ How it works 
+>
+> By providing latitude and longitude, it is checked whether the device is in that location.
+
+
+> ⚙️ Parameters sent in the request 
+>
+> - msisdn (mobile phone number in the format - +551199999999) 
+> - latitude (latitude in the format: -23.5042623 )
+> - longitude (longitude in the format -46.8575631)
+> - accuracy (precision of the data passed in km, put in the format: 2)
+
+
+> ⚙️ Data received in the request response
+>
+> If the device is not in place, it returns verificationResult: false . If the device is in the specified location, the value is verificationResult: true .
+
