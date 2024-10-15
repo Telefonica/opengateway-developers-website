@@ -4,6 +4,10 @@ excerpt: The following samples show how to use the [Open Gateway Number Verifica
 category: 66aa4f941e51e7000fa353ce
 ---
 
+> 📘 Note
+>
+> To try out our APIs, visit the [Sandbox](https://opengateway.telefonica.com/developer-hub/unirse).
+
 Although the API consumption flow for this API must be always triggered from such end-user's device - therefore from the application's frontend - according to its intrinsic feature, the flow will always complete on the backend. The following code shows, for didactic purposes, a hypothetical or sample SDK used on the backend, in several programming languages, from a generic Open Gateway's channel partner, also known as aggregator.
 
 The final implementation will depend on the channel partner's development tools offering. Some of them might even provide you with both backend SDKs and frontend SDKs, the latter handling details such as network interface switching for proper mobile line identification. Apart from this extra frontend features (available upon channel partner discretion), note that channel partners' Open Gateway SDKs are just code modules wrapping authentication and API calls providing an interface in your app's programming for convenience.
