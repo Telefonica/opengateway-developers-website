@@ -44,3 +44,40 @@ In today's digital landscape, verifying phone number ownership is critical to pr
 The Number Verification API utilizes telco mechanisms to authenticate users seamlessly based on their device's connection to the network. This method contrasts with traditional authentication solutions by enhancing user convenience and security. Unlike manual processes or plain-text codes, network-based validation requires no user interaction, bolstering protection against unauthorized access.
 
 This API verifies that the provided mobile phone number (MSISDN) matches the device initiating data communication, ensuring users interact with digital services from authenticated devices.
+
+
+## General Informations
+
+> ⚙️ Problem Solved ? 
+>
+> When you want to validate the user's digital identity.
+
+
+> ⚙️ How it works 
+>
+> - Check if the registered phone number matches the number provided by the operator
+> -  Excellent resource to reduce the number of steps when validating an application.
+
+
+> ⚙️ Parameters sent in the request 
+>
+> - phoneNumber: “34612345678” (mobile phone number in the format - +551199999999)
+
+
+> ⚙️ Data received in the response
+>
+> - POST 
+>
+>  {
+>		"devicePhoneNumberVerified": true
+>  }
+>
+> - GET
+>
+>	{
+>		"devicePhoneNumber": "+34612345678"
+>	}
+>
+>
+
+

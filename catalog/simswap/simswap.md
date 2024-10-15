@@ -77,7 +77,7 @@ By understanding the mechanics of SIM swap fraud and taking proactive steps to p
 > -  maxAge: period of hours to be checked for SIM change (minimum 1 hour / maximum 2400 hours / default 240 hours)  
 
 
-> ⚙️ Data received in the request response
+> ⚙️ Data received in the response
 >
 > Returns swapped true if the SIM Card was changed and swapped false if it was not changed 
 
