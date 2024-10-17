@@ -4,9 +4,7 @@ excerpt: In this guide we will go through the different ways to integrate with O
 category: 66d57750d3f60b0011576376
 ---
 
-> 📘 Note
->
-> To try out our APIs, visit the [Sandbox](https://opengateway.telefonica.com/developer-hub/unirse).
+> 📘 To try out our APIs, visit the [Sandbox](https://opengateway.telefonica.com/developer-hub/unirse).
 
 ## RESTful by design 
 
