@@ -12,7 +12,7 @@ There is two paths you can take according to your profile and the maturity of yo
 
 ## Telefónica Open Gateway Developer Hub
 
-The Open Gateway Developer Hub is your ultimate resource for prototyping and testing your use cases with ease by using our Sandbox, and access to exclusive content like videos or webinars. Join a thriving community of developers, get support, and explore new features with the Open Gateway Developer Hub, the essential platform for all your development needs.
+The Open Gateway Developer Hub is your ultimate resource for prototyping and testing your use cases with ease by using our [Sandbox](../gettingstarted/sandbox/sandbox.md), and access to exclusive content like videos or webinars. Join a thriving community of developers, get support, and explore new features with the Open Gateway Developer Hub, the essential platform for all your development needs.
 
 By joining our Developer Hub you will get early access to the Open Gateway APIs, whether there are already available through any of our Channel Partners or not, as well as the latest news and updates on the Open Gateway initiative.
 
@@ -28,7 +28,7 @@ Our Sandbox will offer you a set of APIs to test, through the same interfaces an
 
 When you are ready to move to production, you will need to contact one of our Channel Partners and shift your concepts into actual applications which could need porting part of your code, specially if using our Sandbox's SDK, to the Channel Partner's toolkits and be completed with the proper environmental and operational stuff.
 
-[Check how to get onboarded and start using our Sandbox](sandbox/sandbox.md)
+[Check how to get onboarded and start using our Sandbox](../gettingstarted/sandbox/sandbox.md)
 
 ## Telefónica Open Gateway Partner Program
 

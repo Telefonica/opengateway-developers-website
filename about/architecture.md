@@ -44,4 +44,8 @@ To interact with the Open Gateway APIs, developers will interface with them thro
 
 An aggregator in telecommunications and APIs refers to a pivotal entity that consolidates services and functionalities from multiple providers into a unified platform or interface. This consolidation simplifies access to diverse offerings for end-users, developers, or businesses, enhancing efficiency and fostering innovation within the digital ecosystem.
 
-You can also test our Open Gateway APIs by joining to our [Developer Hub](https://opengateway.telefonica.com/developer-hub) and using resources like its Sandbox environment.
+To make a faster and easier test for our Open Gateway APIs you can follow this steps:
+
+- [Join the Developer Hub](https://opengateway.telefonica.com/developer-hub) and gain access to exclusive content and our Sandbox (it's free) 
+- [Get your credentials in our Sandbox](../gettingstarted/sandbox/usethesandbox.md)
+- [Set up the API Reference](../gettingstarted/apireference.md)
