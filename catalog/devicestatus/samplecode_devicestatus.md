@@ -6,7 +6,8 @@ category: 66aa4f941e51e7000fa353ce
 
 The following code shows, for didactic purposes, a hypothetical or sample SDK, in several programming languages, from a generic Open Gateway's channel partner, also known as aggregator. The final implementation will depend on the channel partner's development tools offering. Note that channel partners' Open Gateway SDKs are just code modules wrapping authorization and API calls providing an interface in your app's programming for convenience.
 
-Sample code on how to consume the API without an SDK, directly with HTTP requests, is also provided, and it is common and valid no matter what your partner is, thanks to the CAMARA standardization. If you do not use an SDK you need to code the HTTP calls and additional stuff like encoding your credentials, calling authorization endpoints, handling tokens, etc. You can check our sample [Postman collection](https://bxbucket.blob.core.windows.net/bxbucket/opengateway-web/uploads/OpenGateway.postman_collection.json) as a reference.
+This sample code consumes the API without an SDK, using direct HTTP requests. However, you can use an SDK if your aggregator provides one.
+Currently, our Sandbox SDK does not have Device Status implemented.
 
 > 📘 It is recomended to use the [API Reference tool](https://developers.opengateway.telefonica.com/reference/) for faster calls of our APIs
 
@@ -14,11 +15,6 @@ Sample code on how to consume the API without an SDK, directly with HTTP request
 - [Backend flow](#backend-flow)
     - [Authorization](#authorization)
     - [API usage](#api-usage)
-- [Frontend flow](#frontend-flow)
-    - [Authorization](#authorization-1)
-        - [Requesting the authorization code from the frontend](#requesting-the-authorization-code-from-the-frontend)
-        - [Getting the access token from the callback endpoint at the backend](#getting-the-access-token-from-the-callback-endpoint-at-the-backend)
-    - [API usage](#api-usage-1)
 
 ## Code samples
 > 📘 These are code examples
@@ -83,8 +79,6 @@ def get_token(headers, ciba):
 ```
 
 #### API usage
-
-Once your app is authenticated it only takes a single line of code to use the service API and effectively get a result.
 
 ```python Sample HTTP with Python
 if __name__ == "__main__":
