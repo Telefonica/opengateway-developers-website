@@ -61,11 +61,13 @@ Returns:
 
 ## Usage sample
 
-The following is a sample Python script you can run from your command line to check if a SIM card swap happened in the last n days (2nd argument) for a given phone number (1st argument):
+> 📘 These are code examples
+> 
+> Check other examples in the [catalog](../../catalog/available.md)
 
 ```python
 import sys
-from opengateway_sandbox_sdk import Simswap
+from opengateway_sandbox_sdk import SimSwap
 
 APP_CLIENT_ID = "obtained-from-the-sandbox-console"
 APP_CLIENT_SECRET = "obtained-from-the-sandbox-console"
@@ -74,7 +76,7 @@ def main() -> None:
     phone_number = sys.argv[1]
     max_age = int(sys.argv[2]) if len(sys.argv) > 2 else 2400
 
-    simswap_client = Simswap(APP_CLIENT_ID, APP_CLIENT_SECRET, phone_number)
+    simswap_client = SimSwap(APP_CLIENT_ID, APP_CLIENT_SECRET, phone_number)
     print(f'CIBA auth success')
 
     if simswap_client.check(max_age=2400):
