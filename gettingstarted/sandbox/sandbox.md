@@ -3,7 +3,9 @@ title: Sandbox
 excerpt: In this section you will find how to use the Telefónica Open Gateway Sandbox environment to test the Open Gateway APIs without the need to subscribe to a Channel Partner. Your tests won't be charged and won't be suitable for going into a production stage, so it is a great chance to learn and prototype, as a previous step to go commercial.
 category: 66d5624a492663000f4ed527
 ---
-The Sandbox in Open Gateway is a secure and free testing environment that allows developers to experiment with Open Gateway APIs without any risk to live systems. This isolated space is designed to help developers validate their applications, ensuring they work as intended before deployment. By providing access to all the necessary tools and resources, the Sandbox allows developers to simulate real-world scenarios and thoroughly test API integrations.
+[The Sandbox](https://sandbox.opengateway.telefonica.com/products-selection) in Open Gateway is a secure and free testing environment that allows developers to experiment with Open Gateway APIs without any risk to live systems. This isolated space is designed to help developers validate their applications, ensuring they work as intended before deployment. By providing access to all the necessary tools and resources, the Sandbox allows developers to simulate real-world scenarios and thoroughly test API integrations.
+
+> 📘 Get your free access to the Sandbox [here](https://sandbox.opengateway.telefonica.com/products-selection)
 
 One of the key advantages of the Open Gateway Sandbox is its ability to offer a risk-free environment where developers can troubleshoot issues, refine their code, and optimize performance without impacting actual data or services. This ensures that any potential bugs or errors are identified and resolved early in the development process, leading to more reliable and secure applications when they go live.
 
