@@ -4,6 +4,10 @@ excerpt: The SIM Swap API from Open Gateway allows to check for SIM card swaps f
 category: 66aa4f941e51e7000fa353ce
 ---
 
+> 📘 Note
+>
+> To try out our APIs, visit the [Sandbox](https://opengateway.telefonica.com/developer-hub/unirse).
+
 The standardized SIM Swap API enables seamless integration of SIM swap detection and management functionality into your applications. This API enhances security by identifying potentially fraudulent activity and providing an additional layer of protection against unauthorized access.
 
 Additionally, the SIM Swap's Unified API Access feature ensures access to network capabilities of various carriers through a single, standardized interface. This simplifies integration and improves efficiency for developers by consolidating access to multiple carrier networks.
@@ -54,4 +58,34 @@ This is where SIM swap fraud becomes dangerous. The "new" mobile phone can be us
 To safeguard against SIM swap fraud, it is crucial to be aware of how your personal and financial information is used and protected. Use strong, unique passwords for your accounts, enable two-factor authentication, and monitor your accounts for any suspicious activity. Always be cautious of unsolicited requests for personal information, whether over the phone, via SMS, or through email.
 
 By understanding the mechanics of SIM swap fraud and taking proactive steps to protect your accounts, you can significantly reduce the risk of falling victim to this type of cybercrime.
+
+
+## General Informations
+
+> ⚙️ Problem Solved ? 
+>
+> When was the last SIM change?
+
+
+> ⚙️ How it works 
+>
+> Checks when the last SIM Card exchange was carried out on a mobile line or if this exchange was carried out within a specific period
+
+> ⚙️ Parameters sent in the request 
+>
+> - phoneNumber: Cell phone number that will be verified for exchange
+> -  maxAge: period of hours to be checked for SIM change (minimum 1 hour / maximum 2400 hours / default 240 hours)  
+
+
+> ⚙️ Data received in the response
+>
+> Returns swapped true if the SIM Card was changed and swapped false if it was not changed 
+
+
+
+
+
+
+
+
 

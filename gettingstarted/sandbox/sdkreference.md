@@ -4,6 +4,10 @@ excerpt: Reference guide to the Sandbox Python SDK on how to authorize, instanti
 category: 66d5624a492663000f4ed527
 ---
 
+> 📘 Note
+>
+> To try out our APIs, visit the [Sandbox](https://opengateway.telefonica.com/developer-hub/unirse).
+
 The current scope of the Sandbox SDK is limited since it is meant to showcase how an SDK integration is like. Check the [API Integration guide](/docs/apiintegration) to understand the pros and cons of using an SDK when compared to implement HTTP requests.
 
 Available languages:

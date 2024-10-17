@@ -4,6 +4,10 @@ excerpt: Find out how to start testing the Open Gateway APIs in our Sandbox or g
 category: 66d5624a492663000f4ed527
 ---
 
+> 📘 Note
+>
+> To try out our APIs, visit the [Sandbox](https://opengateway.telefonica.com/developer-hub/unirse).
+
 # Open Gateway Programs 
 
 Once you are familiar with the Open Gateway initiative and the APIs we offer, you will want to have to access additional resources and start testing the APIs into your own prototype applications to perform proofs of concept on your use cases.
