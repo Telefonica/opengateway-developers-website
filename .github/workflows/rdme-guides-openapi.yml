@@ -58,3 +58,7 @@ jobs:
         with:
           rdme: openapi catalog/qod/qod_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=66d7828a08fb2000497d3cfd
       
+      - name: Run `openapi` command 🚀
+        uses: readmeio/rdme@v8
+        with:
+          rdme: openapi catalog/knowyourcustomer/kyc_match_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=66d7828a08fb2000497d3cfd
