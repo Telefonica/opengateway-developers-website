@@ -4,9 +4,7 @@ excerpt: Learn how to effectively use the Open Gateway Sandbox, a free and secur
 category: 66d5624a492663000f4ed527
 ---
 
-> 📘 Note
->
-> To try out our APIs, visit the [Sandbox](https://opengateway.telefonica.com/developer-hub/unirse).
+> 📘 To try out our APIs, visit the [Sandbox](https://opengateway.telefonica.com/developer-hub/unirse).
 
 ## Registering your application
 
