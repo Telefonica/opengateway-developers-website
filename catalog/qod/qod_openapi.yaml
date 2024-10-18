@@ -1,7 +1,9 @@
 openapi: 3.0.3
 info:
   title: Quality on Demand
-  description: Service Enabling Network Function API for QoS control
+  description: |
+    Service Enabling Network Function API for QoS control
+  version: 0.8.1
   termsOfService: http://swagger.io/terms/
   contact:
     name: Telefónica Open Gateway DevRel
@@ -10,10 +12,6 @@ info:
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
-  version: 0.8.1
-externalDocs:
-  description: Product documentation at Camara
-  url: https://github.com/camaraproject/
 servers:
   - url: "{host}/qod/{version}"
     variables:
