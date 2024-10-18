@@ -32,7 +32,13 @@ paths:
       security:
         - three_legged:
           - qod
-      description: Creates a new QoS session on demand
+      description: |
+        Creates a new QoS session on demand
+
+        Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following purpose:
+
+        `dpv:RequestedServiceProvision#qod`
+        
       operationId: createSession
       requestBody:
         description: Creates a new session
@@ -123,6 +129,13 @@ paths:
       summary: QoD /sessions
       tags:
         - QoD sessions
+      description: |
+        Gets information about an active QoS session
+
+        Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following purpose:
+
+        `dpv:RequestedServiceProvision#qod`
+
       security:
         - three_legged:
           - qod
@@ -162,6 +175,13 @@ paths:
       summary: QoD /sessions
       tags:
         - QoD sessions
+      description: |
+        Cancels an active QoS session
+
+        Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following purpose:
+
+        `dpv:RequestedServiceProvision#qod`
+        
       security:
         - three_legged:
           - qod
@@ -203,8 +223,14 @@ paths:
           - qod
       description: |
         Important: this endpoint is to be implemented by the API consumer.
+
         The QoD server will call this endpoint whenever any network related event occurs.
         Currently only SESSION_TERMINATED event is implemented. Any other network events are ignored.
+
+        Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following purpose:
+
+        `dpv:RequestedServiceProvision#qod`
+
       operationId: postNotification
       requestBody:
         required: true

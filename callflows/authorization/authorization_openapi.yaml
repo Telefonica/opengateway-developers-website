@@ -25,7 +25,7 @@ paths:
       security:
         - none: []
       description: |
-        Authorize an application to access a resource from the user device
+        Authorizes an application to access a resource from the user device
       operationId: authorize
       parameters: 
         - name: response_type
@@ -89,7 +89,7 @@ paths:
       security:
         - basicAuth: []
       description: |
-        Authorize an application to access a resource from the backend
+        Authorizes an application to access a resource from the backend
       operationId: bcAuthorize
       requestBody:
         content:
@@ -118,7 +118,7 @@ paths:
       security: 
         - basicAuth: []
       description: |
-        Retrieve an access token from the authorization code (frontend) or auth_req_id (backend)
+        Retrieves an access token from the authorization code (frontend) or auth_req_id (backend)
       operationId: token
       requestBody: 
         content:

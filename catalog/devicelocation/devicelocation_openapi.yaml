@@ -33,7 +33,7 @@ paths:
         - three_legged:
           - device-location-read
       description: |
-        Verify the location of a device with a given coordinates and accuracy
+        Verifies the location of a device with a given coordinates and accuracy
 
         Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following purpose:
 

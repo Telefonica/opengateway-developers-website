@@ -67,6 +67,13 @@ paths:
       tags:
         - Match
 
+      description: |
+        Matches a customer identity by checking a set of attributes related against the account data bound to their phone number.
+
+        Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following purpose:
+
+        `dpv:FraudPreventionAndDetection#kyc`
+
       operationId: KYC_Match
 
       security:
