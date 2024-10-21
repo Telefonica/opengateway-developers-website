@@ -461,6 +461,79 @@ app.listen(port, () => {
     console.log(`SIM Swap callback URL is running`);
 })
 ```
+```python HTTP using Python
+from flask import Flask, request, jsonify
+
+client_id = "my-app-id"
+client_secret = "my-app-secret"
+app_credentials = f"{client_id}:{client_secret}"
+credentials = base64.b64encode(app_credentials.encode('utf-8')).decode('utf-8')
+api_purpose = "dpv:FraudPreventionAndDetection#sim-swap"
+
+app = Flask(__name__)
+
+@app.route('/simswap-callback', methods=['GET'])
+def callback():
+    code = request.args.get('code', '')
+    phone_number = request.args.get('state', '')
+    headers = {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Authorization": f"Basic {credentials}"
+    }
+    data = {
+        "grant_type": "authorization_code",
+        "code": code
+    }
+    response = requests.post(
+        "https://opengateway.aggregator.com/token",
+        headers=headers,
+        data=data
+    )
+    access_token = response.json().get("access_token")
+
+if __name__ == '__main__':
+    app.run()
+```
+```node HTTP using Node.js
+import express from "express"
+
+let clientId = "my-app-id"
+let clientSecret = "my-app-secret"
+let appCredentials = btoa(`${clientId}:${clientSecret}`)
+let apiPurpose = "dpv:FraudPreventionAndDetection#sim-swap"
+
+const app = express()
+const port = 3000
+
+app.get('/simswap-callback', (req, res) => {
+    const code = req.query.code
+    const phoneNumber = req.query.state
+
+    let accessToken
+
+    const myHeaders = new Headers()
+    myHeaders.append("Content-Type", "application/x-www-form-urlencode")
+    myHeaders.append("Authorization", `Basic ${appCredentials}`)
+    const requestBody = JSON.stringify({
+        "grant_type": "authorization_code",
+        "code": code
+    })
+    const requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: requestBody
+    }
+    fetch("https://opengateway.aggregator.com/token", requestOptions)
+        .then(response => response.json())
+        .then(result => {
+            accessToken = result.access_token
+        })
+})
+
+app.listen(port, () => {
+    console.log(`SIM Swap callback URL is running`);
+})
+```
 
 #### API usage
 
@@ -475,4 +548,43 @@ print(f"SIM was swapped: {result.strftime('%B %d, %Y, %I:%M:%S %p')}")
 let result = await simswapClient.retrieveDate(phoneNumber)
 
 console.log(`SIM was swapped: ${result.toLocaleString('en-GB', { timeZone: 'UTC' })}`)
+```
+```python HTTP using Python
+headers = {
+    "Content-Type": "application/json",
+    "Authorization": f"Bearer {access_token}"
+}
+data = {
+    "phoneNumber": phone_number
+}
+response = requests.post(
+    "https://opengateway.aggregator.com/sim-swap/v0/retrieve-date",
+    headers=headers,
+    json=data
+)
+result = response.json().get("latestSimChange")
+
+print(f"SIM was swapped: {result.strftime('%B %d, %Y, %I:%M:%S %p')}")
+```
+```node HTTP using Node.js
+const myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+myHeaders.append("Authorization", `Bearer ${accessToken}`);
+
+const requestBody = JSON.stringify({
+  "phoneNumber": phoneNumber
+})
+const requestOptions = {
+  method: "POST",
+  headers: myHeaders,
+  body: requestBody
+}
+
+fetch("https://opengateway.aggregator.com/sim-swap/v0/retrieve-date", requestOptions)
+  .then(response => response.json())
+  .then(result => {
+    const verified = result.latestSimChange
+    
+    console.log(`SIM was swapped: ${result.toLocaleString('en-GB', { timeZone: 'UTC' })}`)
+  })
 ```
