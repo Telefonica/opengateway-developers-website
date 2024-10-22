@@ -23,7 +23,7 @@ paths:
       tags:
         - Authorize an application
       security:
-        - none: []
+        - {}
       description: |
         Authorizes an application to access a resource from the user device
       operationId: authorize
