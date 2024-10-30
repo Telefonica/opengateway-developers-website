@@ -4,9 +4,7 @@ excerpt: The SIM Swap API from Open Gateway allows to check for SIM card swaps f
 category: 66aa4f941e51e7000fa353ce
 ---
 
-> 📘 Note
->
-> To try out our APIs, visit the [Sandbox](https://opengateway.telefonica.com/developer-hub/unirse).
+> 📘 To try out our APIs, visit the [Sandbox](https://opengateway.telefonica.com/developer-hub/unirse).
 
 The standardized SIM Swap API enables seamless integration of SIM swap detection and management functionality into your applications. This API enhances security by identifying potentially fraudulent activity and providing an additional layer of protection against unauthorized access.
 
