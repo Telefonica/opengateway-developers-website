@@ -39,12 +39,12 @@ def basic_auth():
     client_id='my-app-id',
     client_secret='my-app-secret'
     credentials = f"{client_id}:{client_secret}"
-    return base64.b64encode(credentials.encode('utf-8')).decode('utf-8')
+    return base64.b64encode(credentials.encode()).decode()
 
 ## CIBA
 def cibauth(headers, number):
     payload = {
-            "login_hint": f"phone_number:{number}",
+            "login_hint": number,
             "purpose": "dpv:FraudPreventionAndDetection#device-location-read"
     }
     try:
@@ -117,7 +117,6 @@ except:
 if __name__ == "__main__":
     number = "+34666666666"
     credentials = basic_auth()
-    print(credentials)
     headers = {
             "accept": "application/json",
             "content-type": "application/x-www-form-urlencoded",
