@@ -1,0 +1,20 @@
+name: CODEOWNERS Check
+
+on:
+  pull_request:
+    paths:
+      - '**/CODEOWNERS'
+
+jobs:
+  check-changes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Check for CODEOWNERS changes
+        run: |
+          if [ -f "CODEOWNERS" ]; then
+            echo "Changes detected in CODEOWNERS file. Please review and seek necessary approvals before merging."
+            exit 1
+          fi
