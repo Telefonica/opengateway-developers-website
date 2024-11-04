@@ -10,6 +10,8 @@ Open Gateway enables software developers to leverage Telco Application Programmi
 
 Open Gateway utilizes these Telco APIs to offer a unified standard interface across multiple operator networks worldwide, abstracting the inherent complexities associated with their systems and infrastructures. This approach simplifies integration and enhances interoperability for developers and applications alike.
 
+![available_apis](https://github.com/Telefonica/opengateway-developers-website/raw/main/images/available_apis.png)
+
 ## Technical Description of Open Gateway APIs
 
 ### Interoperability and Open Standards

@@ -30,7 +30,6 @@ The Device Location Camara API specifies one operation:
 
 [Check the API Reference](/reference/verifylocation-1)
 
-
 ## Why device location API
 
 The standardised Device Location Verification API provides the option of verifying the geographical location of a given SIM-based device and validating whether it is within a requested geographical area without spoofing or GPS.
