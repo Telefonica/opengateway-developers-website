@@ -4,6 +4,8 @@ excerpt: Welcome to Open Gateway APIs, your gateway to leveraging advanced netwo
 category: 66840b9dac745a002559ffad
 ---
 
+> 📘 To try out our APIs, visit the [Sandbox](https://opengateway.telefonica.com/developer-hub/unirse).
+
 ## What is Open Gateway?
 
 Open Gateway is a initiative spearheaded by the [GSMA](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/) in collaboration with leading telecommunications operators, cloud providers, and aggregators worldwide. Our mission is to create a standardized framework of Application Programming Interfaces (APIs) that enable simplified and universal access to cutting-edge mobile network capabilities and associated services. By leveraging Open Gateway APIs, developers can focus on building exceptional applications while we handle the complexities of network integration.
@@ -39,10 +41,10 @@ We understand that integrating new technologies can be challenging. That's why O
 
 Getting started with Open Gateway APIs is easy:
 
-1. **Explore Available APIs:** Browse our API catalog to discover the various network capabilities and services that you can integrate into your applications.
+1. **Explore Available APIs:** Browse our [API catalog](../catalog/available.md) to discover the various network capabilities and services that you can integrate into your applications.
 2. **Find a channel partner or use our Sandbox:** Identify a channel partner or join to the [Developer Hub](https://opengateway.telefonica.com/developer-hub) in order to use the APIs. 
-3. **Register and Obtain Credentials:** Sign up for an account and obtain the necessary API credentials to access the services.
-4. **Read the Documentation:** Familiarize yourself with our comprehensive documentation to understand how to make API calls, handle responses, and implement best practices.
+3. **Register and Obtain Credentials:** Sign up for an account and [obtain the necessary API credentials](https://opengateway.telefonica.com/developer-hub) to access the services.
+4. **Read the Documentation:** Familiarize yourself with our comprehensive documentation to understand [how to make API calls](../gettingstarted/apireference.md), handle responses, and implement best practices.
 5. **Start Building:** Begin integrating Open Gateway APIs into your applications, leveraging the powerful network capabilities to create innovative and high-performance solutions.
 
 
@@ -51,6 +53,6 @@ Getting started with Open Gateway APIs is easy:
 
 Open Gateway APIs open up a world of possibilities for developers looking to harness the power of advanced network capabilities. Our standardized, secure, and easy-to-use APIs provide the foundation for creating exceptional applications that meet the demands of today's connected world. Start your journey with Open Gateway today and transform your ideas into reality.
 
-By becoming a part of the Open Gateway community, you join a global network of developers, innovators, and industry leaders dedicated to advancing the digital ecosystem.  Please, join to our [Developer Hub](https://opengateway.telefonica.com/developer-hub) for exclusive content and to use the Sandbox to test the Open Gateway APIs.
+By becoming a part of the Open Gateway community, you join a global network of developers, innovators, and industry leaders dedicated to advancing the digital ecosystem.  Join to our [Developer Hub](https://opengateway.telefonica.com/developer-hub) for exclusive content and to use the Sandbox to test the Open Gateway APIs.
 
 Welcome to the future of network integration. Welcome to Open Gateway APIs.

@@ -4,13 +4,17 @@ excerpt: Learn how to effectively use the Open Gateway Sandbox, a free and secur
 category: 66d5624a492663000f4ed527
 ---
 
+> 📘 To try out our APIs, visit the [Sandbox](https://opengateway.telefonica.com/developer-hub/unirse).
+
 ## Registering your application
 
 Open Gateway APIs access is granted to applications, not developers, so every application can have limited access to the scope and for the purpose it needs.
 
-[More information on Privacy](/docs/privacy)
+[More information on Privacy](../../about/privacy.md)
 
 Therefore the way to get credentials to test the APIs is to register an application in the Sandbox console. You will use your application credentials to authenticate your requests to the APIs from any test you code no matter if it is actually a comprehensive application or just a tiny script to run from the a command line interface.
+
+> 📘 To use the Sandbox, you must [join the Developer Hub](https://opengateway.telefonica.com/en/developer-hub) and enter in your [private area](https://opengateway.telefonica.com/en/profile/technical-toolbox/sandbox)
 
 For every application you create, you will need to follow these simple steps to configure it:
 
@@ -27,6 +31,8 @@ For every application you create, you will need to follow these simple steps to 
 		Movistar (Spain) is already available for testing from the Telefónica Open Gateway Sandbox, and other Telefónica operators in other countries will be added soon.
 
 		The production mode is disabled by default for Privacy reasons, but you can enable it by filling in your legal information and accepting the terms and conditions in the form that the Sandbox console will offer you for that purpose. You will have to provide some mobile phone numbers of your own which will be added to a whitelist that will allow you to test the APIs in production mode from your own devices and will block API usage accessing someone else's personal data.
+
+![Production mode and mock mode of Sandbox](https://github.com/Telefonica/opengateway-developers-website/raw/main/gettingstarted/sandbox/images/production_mock.png)
 
 	- **Mock mode**
 
@@ -76,11 +82,13 @@ Note that if you selected the Production mode, you will have to wait for the app
 
 ## Using the APIs
 
-So far you have used the Sandbox console to register your application as the client to the APIs which means your application is the entity granted access with its credentials.
+So far you have used the Sandbox console to register your application as the client to the APIs, which means your application is the entity granted access with its credentials.
+
+> You can use this credentials directly in the [API reference](../apireference.md)
 
 Now you will use such credentials to effectively consume de APIs from your code. You can use any programming language and any platform that supports HTTP requests, or you can use the Sandbox SDK for convenience. Our Open Gateway Sandbox provides you with a Python SDK and will publish SDKs in other common languages soon.
 
-[Check the pros and cons of using HTTP integration or SDKs to consume the APIs](/docs/apiintegration)
+[Check the pros and cons of using HTTP integration or SDKs to consume the APIs](./sdkreference.md)
 
 When it comes to our Sandbox's SDK, the following particular considerations apply:
 - Once you shift to a Channel Partner in a commercial stage, your production code will need to use their SDKs instead of the Sandbox's one you used for testing and prototyping or, in the worst case, you will have to use the HTTP integration method instead if no SDK is available for your app's language.
@@ -95,7 +103,7 @@ The path URL to add to the base URL for each API is defined in the API reference
 
 #### API reference
 
-You can check the OpenAPI v3 specification of each API in the list of [Available APIs](/docs/available) or in the [API Roadmap](/docs/roadmap).
+You can check the OpenAPI v3 specification of each API in the list of [Available APIs](../../catalog/available.md) or in the [API Roadmap](../../catalog/roadmap.md).
 
 You will be able to test the APIs from their specification pages on the Sandbox by setting the `host` variable to its default value, which is the Sandbox API gateway base URL.
 

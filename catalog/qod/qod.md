@@ -4,6 +4,8 @@ excerpt: The QoD API allows the developer to prioritize network traffic on certa
 category: 66aa4f941e51e7000fa353ce
 ---
 
+> 📘 To try out our APIs, visit the [Sandbox](https://opengateway.telefonica.com/developer-hub/unirse).
+
 An example of an application that aims to enrich the public experience when attending a live sporting event, an advanced feature for your viewers may be watching replays of relevant games. 
 
 To do this, the application must ensure that the end user has adequate connectivity to watch it, regardless of the
@@ -27,32 +29,29 @@ The QoD CAMARA API specifies the following three operations:
   - `ueId`: User equipment identifier ;
   - `asId`: Application server identifier ;
   - `qos` : Enum: "QOS_E" (Qualifier for enhanced communication profile),  "QOS_S" (Qualifier for the requested QoS profile S), "QOS_M" (Qualifier for the requested QoS profile M) ,  "QOS_L" (Qualifier for the requested QoS profile L);
-
-
   
-Other parameters :
-  - `duration`: Session duration in seconds (maximal value of 24 hours is used if not set);
-  - `uePorts` : Ports may be specified as a list of ranges or single ports ;
-  - `asPorts` : Ports may be specified as a list of ranges or single ports ;
-  - `notificationUri` : Allows asynchronous delivery of session related events ;
-  - `notificationAuthToken` : Authentication token for callback API ;
+  Other parameters :
+    - `duration`: Session duration in seconds (maximal value of 24 hours is used if not set);
+    - `uePorts` : Ports may be specified as a list of ranges or single ports ;
+    - `asPorts` : Ports may be specified as a list of ranges or single ports ;
+    - `notificationUri` : Allows asynchronous delivery of session related events ;
+    - `notificationAuthToken` : Authentication token for callback API ;
 
-<!-- [Check the API Reference](/reference/) -->
+[Check the API Reference](/reference/createsession)
 
 - **GET Get session information:** An operation to get the information about a specific QoD provisioning.Path parameter required:  
 
   - `sessionId`:Session ID that was obtained from the createSession operation.
 
-<!-- [Check the API Reference](/reference/) -->
+[Check the API Reference](/reference/getsession)
 
 - **DELETE Free resources related to QoS session:** An operation to terminate a QoD provisioning, identified by Id .  Path parameter required:  
 
   - `sessionId`: Session ID that was obtained from the createSession operation.
 
-<!-- [Check the API Reference](/reference/) -->
+[Check the API Reference](/reference/deletesession)
 
 By utilizing the QoD Service, developers of applications can capitalize on the usability, ubiquity, security, quickness, and simplicity of the APIs to manage their End Users networking and focus on the experiences they want to offer.
-
 
 ## Why QoD?
 

@@ -4,15 +4,17 @@ excerpt: The following samples show how to use the [Open Gateway Number Verifica
 category: 66aa4f941e51e7000fa353ce
 ---
 
+> 📘 Note
+>
+> To try out our APIs, visit the [Sandbox](https://opengateway.telefonica.com/developer-hub/unirse).
+
 Although the API consumption flow for this API must be always triggered from such end-user's device - therefore from the application's frontend - according to its intrinsic feature, the flow will always complete on the backend. The following code shows, for didactic purposes, a hypothetical or sample SDK used on the backend, in several programming languages, from a generic Open Gateway's channel partner, also known as aggregator.
 
 The final implementation will depend on the channel partner's development tools offering. Some of them might even provide you with both backend SDKs and frontend SDKs, the latter handling details such as network interface switching for proper mobile line identification. Apart from this extra frontend features (available upon channel partner discretion), note that channel partners' Open Gateway SDKs are just code modules wrapping authentication and API calls providing an interface in your app's programming for convenience.
 
 Sample code on how to consume the API without an SDK, directly with HTTP requests, is also provided, and it is common and valid no matter what your partner is, thanks to the CAMARA standardization. If you do not use an SDK you need to code the HTTP calls and additional stuff like encoding your credentials, calling authorization endpoints, handling tokens, etc. You can check our sample [Postman collection](https://bxbucket.blob.core.windows.net/bxbucket/opengateway-web/uploads/OpenGateway.postman_collection.json) as a reference.
 
-> 📘 Note
->
-> It is recomended to use the [API Reference tool](https://developers.opengateway.telefonica.com/reference/) for faster calls of our APIs
+> 📘 It is recomended to use the [API Reference tool](https://developers.opengateway.telefonica.com/reference/) for faster calls of our APIs
 
 ### Table of contents
 - [Frontend](#frontend)
@@ -22,9 +24,7 @@ Sample code on how to consume the API without an SDK, directly with HTTP request
     - [Using the service API](#using-the-service-api)
 
 ## Code samples
-> 📘 Note
->
-> These are code examples
+> 📘 These are code examples
 > - Remember to replace 'my-app-id' and 'my-app-secret' with the credentials of your app. (If you are using our Sandbox, you can get them [here](https://sandbox.opengateway.telefonica.com/my-apps)). 
 > - Remember also to replace "aggregator/opengateway-sdk" with the SDK from your aggregator. If you are using our sandbox SDK, check info and installation of de Sandbox SDK [here](../../gettingstarted/sandbox/sdkreference.md)
 

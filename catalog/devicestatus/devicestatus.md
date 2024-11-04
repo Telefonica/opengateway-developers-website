@@ -4,6 +4,8 @@ excerpt: The Device Status API makes it possible to check the roaming status of 
 category: 66aa4f941e51e7000fa353ce
 ---
 
+> 📘 To try out our APIs, visit the [Sandbox](https://opengateway.telefonica.com/developer-hub/unirse).
+
 The standardised Device Status API provides the ability to check the roaming status of a given SIM-based device without identity theft or GPS.
 
 This solution allows you to control resource management during international roaming in a more secure way.
@@ -49,3 +51,23 @@ Since it is a standardized API, integration is straightforward and doesn’t req
 ### Unified Access to Telecom Functions
 
 The standardized API provides uniform access to other telecom capabilities, such as detecting if a user is roaming, through a single interface. This ensures consistency and flexibility across different carriers and markets.
+
+
+## General Informations
+
+> ⚙️ Problem Solved ? 
+>
+> Check if a device is roaming or not.
+
+
+> ⚙️ Parameters sent in the request 
+>
+> - msisdn (mobile phone number in the format - +551199999999) 
+> - eventType (Select the various events - In one of these patterns: ROAMING_STATUS or ROAMING_ON or ROAMING_OFF or ROAMING_CHANGE_COUNTRY )
+
+
+> ⚙️ Data received in the response
+>
+> - If the device is roaming, it returns "roaming": true ;
+> - If the device is not roaming, returns "roaming": false.
+

@@ -4,13 +4,15 @@ excerpt: The following samples show how to use the [Open Gateway SIM Swap API](h
 category: 66aa4f941e51e7000fa353ce
 ---
 
+> 📘 Note
+>
+> To try out our APIs, visit the [Sandbox](https://opengateway.telefonica.com/developer-hub/unirse).
+
 The following code shows, for didactic purposes, a hypothetical or sample SDK, in several programming languages, from a generic Open Gateway's channel partner, also known as aggregator. The final implementation will depend on the channel partner's development tools offering. Note that channel partners' Open Gateway SDKs are just code modules wrapping authorization and API calls providing an interface in your app's programming for convenience.
 
 Sample code on how to consume the API without an SDK, directly with HTTP requests, is also provided, and it is common and valid no matter what your partner is, thanks to the CAMARA standardization. If you do not use an SDK you need to code the HTTP calls and additional stuff like encoding your credentials, calling authorization endpoints, handling tokens, etc. You can check our sample [Postman collection](https://bxbucket.blob.core.windows.net/bxbucket/opengateway-web/uploads/OpenGateway.postman_collection.json) as a reference.
 
-> 📘 Note
->
-> It is recomended to use the [API Reference tool](https://developers.opengateway.telefonica.com/reference/) for faster calls of our APIs
+> 📘 It is recomended to use the [API Reference tool](https://developers.opengateway.telefonica.com/reference/) for faster calls of our APIs
 
 ### Table of contents
 - [Backend flow](#backend-flow)
@@ -23,9 +25,7 @@ Sample code on how to consume the API without an SDK, directly with HTTP request
     - [API usage](#api-usage-1)
 
 ## Code samples
-> 📘 Note
->
-> These are code examples
+> 📘 These are code examples
 > - Remember to replace 'my-app-id' and 'my-app-secret' with the credentials of your app. (If you are using our Sandbox, you can get them [here](https://sandbox.opengateway.telefonica.com/my-apps)).
 > - Remember also to replace "aggregator/opengateway-sdk" with the SDK from your aggregator. If you are using our sandbox SDK, check info and installation of de Sandbox SDK [here](../../gettingstarted/sandbox/sdkreference.md)
 
@@ -461,6 +461,79 @@ app.listen(port, () => {
     console.log(`SIM Swap callback URL is running`);
 })
 ```
+```python HTTP using Python
+from flask import Flask, request, jsonify
+
+client_id = "my-app-id"
+client_secret = "my-app-secret"
+app_credentials = f"{client_id}:{client_secret}"
+credentials = base64.b64encode(app_credentials.encode('utf-8')).decode('utf-8')
+api_purpose = "dpv:FraudPreventionAndDetection#sim-swap"
+
+app = Flask(__name__)
+
+@app.route('/simswap-callback', methods=['GET'])
+def callback():
+    code = request.args.get('code', '')
+    phone_number = request.args.get('state', '')
+    headers = {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Authorization": f"Basic {credentials}"
+    }
+    data = {
+        "grant_type": "authorization_code",
+        "code": code
+    }
+    response = requests.post(
+        "https://opengateway.aggregator.com/token",
+        headers=headers,
+        data=data
+    )
+    access_token = response.json().get("access_token")
+
+if __name__ == '__main__':
+    app.run()
+```
+```node HTTP using Node.js
+import express from "express"
+
+let clientId = "my-app-id"
+let clientSecret = "my-app-secret"
+let appCredentials = btoa(`${clientId}:${clientSecret}`)
+let apiPurpose = "dpv:FraudPreventionAndDetection#sim-swap"
+
+const app = express()
+const port = 3000
+
+app.get('/simswap-callback', (req, res) => {
+    const code = req.query.code
+    const phoneNumber = req.query.state
+
+    let accessToken
+
+    const myHeaders = new Headers()
+    myHeaders.append("Content-Type", "application/x-www-form-urlencode")
+    myHeaders.append("Authorization", `Basic ${appCredentials}`)
+    const requestBody = JSON.stringify({
+        "grant_type": "authorization_code",
+        "code": code
+    })
+    const requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: requestBody
+    }
+    fetch("https://opengateway.aggregator.com/token", requestOptions)
+        .then(response => response.json())
+        .then(result => {
+            accessToken = result.access_token
+        })
+})
+
+app.listen(port, () => {
+    console.log(`SIM Swap callback URL is running`);
+})
+```
 
 #### API usage
 
@@ -475,4 +548,43 @@ print(f"SIM was swapped: {result.strftime('%B %d, %Y, %I:%M:%S %p')}")
 let result = await simswapClient.retrieveDate(phoneNumber)
 
 console.log(`SIM was swapped: ${result.toLocaleString('en-GB', { timeZone: 'UTC' })}`)
+```
+```python HTTP using Python
+headers = {
+    "Content-Type": "application/json",
+    "Authorization": f"Bearer {access_token}"
+}
+data = {
+    "phoneNumber": phone_number
+}
+response = requests.post(
+    "https://opengateway.aggregator.com/sim-swap/v0/retrieve-date",
+    headers=headers,
+    json=data
+)
+result = response.json().get("latestSimChange")
+
+print(f"SIM was swapped: {result.strftime('%B %d, %Y, %I:%M:%S %p')}")
+```
+```node HTTP using Node.js
+const myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+myHeaders.append("Authorization", `Bearer ${accessToken}`);
+
+const requestBody = JSON.stringify({
+  "phoneNumber": phoneNumber
+})
+const requestOptions = {
+  method: "POST",
+  headers: myHeaders,
+  body: requestBody
+}
+
+fetch("https://opengateway.aggregator.com/sim-swap/v0/retrieve-date", requestOptions)
+  .then(response => response.json())
+  .then(result => {
+    const verified = result.latestSimChange
+    
+    console.log(`SIM was swapped: ${result.toLocaleString('en-GB', { timeZone: 'UTC' })}`)
+  })
 ```

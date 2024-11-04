@@ -4,6 +4,8 @@ excerpt: The Device Location API from Open Gateway allows to check if a mobile p
 category: 66aa4f941e51e7000fa353ce
 ---
 
+> 📘 To try out our APIs, visit the [Sandbox](https://opengateway.telefonica.com/developer-hub/unirse).
+
 The Device Location API is a software interface that allows applications to confirm if a user's device is in its intended location. The network must track a device's location at all times to effectively provide telecommunications services. This capability is utilized to offer device location as a service.
 
 The Device Location API enhances security by verifying that a device is in the expected location during transactions, which helps prevent fraud and unauthorized activities. This verification process also streamlines authentication, leading to faster and smoother transactions, ultimately improving the user experience. 
@@ -48,3 +50,29 @@ As a standardized API, it allows seamless integration into your applications wit
 
 ###  Footprint for your identity service
 The API's standardization ensures uniform access across multiple telecom providers, expanding your business reach and ensuring consistent functionality across different carriers.
+
+
+## General Informations
+
+> ⚙️ Problem Solved ? 
+>
+> When you want to know the location of a device.
+
+
+> ⚙️ How it works 
+>
+> By providing latitude and longitude, it is checked whether the device is in that location.
+
+
+> ⚙️ Parameters sent in the request 
+>
+> - msisdn (mobile phone number in the format - +551199999999) 
+> - latitude (latitude in the format: -23.5042623 )
+> - longitude (longitude in the format -46.8575631)
+> - accuracy (precision of the data passed in km, put in the format: 2)
+
+
+> ⚙️ Data received in the response
+>
+> If the device is not in place, it returns verificationResult: false . If the device is in the specified location, the value is verificationResult: true .
+

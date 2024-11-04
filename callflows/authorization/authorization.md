@@ -4,6 +4,8 @@ excerpt: In this guide you will find a briefly introduction to authorization mec
 category: 66d57750d3f60b0011576376
 ---
 
+> 📘 To try out our APIs, visit the [Sandbox](https://opengateway.telefonica.com/developer-hub/unirse).
+
 ## Authorization standards
 
 As standardized by CAMARA, Open Gateway API access will be secured using [OpenID Connect](https://openid.net/specs/openid-connect-core-1_0.html) (OIDC) on top of OAuth 2.0 protocol. Operators are aligned in introducing the concept of **purpose** in order to fully comply with data protection regulations, such as the GDPR regulation in Europe, to protect user privacy. More on this in the [Privacy guide](/docs/privacy).

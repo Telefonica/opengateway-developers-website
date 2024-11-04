@@ -43,7 +43,7 @@ paths:
         - three_legged:
           - check-sim-swap
       description: |
-        Check if SIM swap has been performed during a past period
+        Checks if SIM swap has been performed during a past period
 
         Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following purpose:
 
@@ -89,7 +89,7 @@ paths:
         - three_legged:
           - retrieve-sim-swap-date  
       description: |
-        Get timestamp of last MSISDN <-> IMSI pairing change for a mobile user account provided with MSIDN.
+        Gets the timestamp of last MSISDN <-> IMSI pairing change for a mobile user account provided with MSIDN.
 
         Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following purpose:
 

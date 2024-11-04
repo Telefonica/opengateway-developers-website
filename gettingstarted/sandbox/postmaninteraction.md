@@ -4,10 +4,13 @@ excerpt: Learn how to explore the functionality of the Sandbox environment using
 category: 66d5624a492663000f4ed527
 ---
 
+> 📘 To try out our APIs, visit the [Sandbox](https://opengateway.telefonica.com/developer-hub/unirse).
+
 # Interact with the Open Gateway Sandbox using Postman
 
-Here you can access the postman collection [postman_collection.json](https://github.com/Telefonica/opengateway-postman/raw/main/postman_collection.json) and the environment with variables that you will have to configure to work with your sandbox credentials
-[sandbox.postman_environment.json](https://github.com/Telefonica/opengateway-postman/raw/main/sandbox.postman_environment.json). To import a Postman collection, you will need to follow the steps below:  
+Here you can download the postman collection <a href="https://github.com/Telefonica/opengateway-postman/raw/main/postman_collection.json" download>Postman collection</a> and the <a href="https://github.com/Telefonica/opengateway-postman/raw/main/sandbox.postman_environment.json" download> Sandbox enviroment</a> with variables that you will have to configure to work with your sandbox credentials. 
+
+To import a Postman collection, you will need to follow the steps below:  
 
 1. Open Postman and click on the ‘Import’ button in the top left corner of the interface.
 2. Select ‘File’ and browse for the collection file you wish to import into your system.
