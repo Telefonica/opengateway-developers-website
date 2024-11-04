@@ -7,7 +7,8 @@ category: 66aa4f941e51e7000fa353ce
 The following code shows, for didactic purposes, a hypothetical or sample SDK, in several programming languages, from a generic Open Gateway's channel partner, also known as aggregator. The final implementation will depend on the channel partner's development tools offering. Note that channel partners' Open Gateway SDKs are just code modules wrapping authorization and API calls providing an interface in your app's programming for convenience.
 
 This sample code consumes the API without an SDK, using direct HTTP requests. However, you can use an SDK if your aggregator provides one.
-Currently, our Sandbox SDK does not have Device Status implemented.
+
+Note that currently, our Sandbox SDK does not have Device Status implemented.
 
 > 📘 It is recomended to use the [API Reference tool](https://developers.opengateway.telefonica.com/reference/) for faster calls of our APIs
 
@@ -37,19 +38,19 @@ athorize_url = "https://opengateway.aggregator.com/bc-authorize"
 token_url = "https://opengateway.aggregator.com/token"
 verify_url = "https://sandbox.opengateway.agregator.com/device-status/v0/roaming"
 
-client_id = "your_client_id"
-client_secret = "your_client_secret"
+client_id = "my-app-id"
+client_secret = "my-app-secret"
 
 ## Basic Auth
 def basic_auth():
     credentials = f"{client_id}:{client_secret}"
     return base64.b64encode(credentials.encode()).decode()
 
-## CIBA token
+## CIBA
 def cibauth(headers, number):
     payload = {
             "login_hint": number,
-            "purpose":"dpv:FraudPreventionAndDetection#device-status-roaming-read"
+            "purpose": "dpv:FraudPreventionAndDetection#device-status-roaming-read"
     }
     try:
         response = requests.post(ciba_url, data=payload, headers=headers)
@@ -58,7 +59,7 @@ def cibauth(headers, number):
     except:
         status_code = response.status_code
         error_msg = response.json().get("error_description")
-        print(f"Error {status_code}: {error_msg}")
+        print(f"1 - Error {status_code}: {error_msg}")
         sys.exit(1)
 
 ## Token
@@ -74,15 +75,37 @@ def get_token(headers, ciba):
     except:
         status_code = response.status_code
         error_msg = response.json().get("message")
-        print(f"Error {status_code}: {error_msg}")
+        print(f"2 - Error {status_code}: {error_msg}")
         sys.exit(1)
 ```
 
 #### API usage
 
 ```python Sample HTTP with Python
+# DEVICE STATUS
+def verify_number(token, number):
+    payload = {
+            "ueId": { "msisdn": number },
+    }
+    headers = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "authorization": f"Bearer {token}"
+    }
+    try:
+        response = requests.post(verify_url, json=payload, headers=headers)
+        response.raise_for_status()
+        return response.json()
+        #return response.text
+    except:
+        status_code = response.status_code
+        error_msg = response.json().get("error")
+        print(f"3 - Error {status_code}: {error_msg}")
+        sys.exit(1)
+
+# MAIN
 if __name__ == "__main__":
-    number = "+34666555343" # False number
+    number = "+34666555343"
     credentials = basic_auth()
     headers = {
             "accept": "application/json",
