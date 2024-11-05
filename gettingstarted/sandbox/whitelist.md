@@ -8,7 +8,7 @@ category: 66d5624a492663000f4ed527
 
 Having actual operator's mobile lines in you whitelist is mandatory for testing the APIs in the production mode. This way, you as a tester can make real calls to the operators' APIs and get real responses without compromising anyone else's privacy by accessing just your own line's data.
 
-Check the [Privacy](/docs/privacy.md) section for more information on why Open Gateway is Privacy by Design.
+Check the [Privacy](/docs/privacy) guide for more information on why Open Gateway is Privacy by Design.
 
 ## Adding your mobile lines to the whitelist
 
