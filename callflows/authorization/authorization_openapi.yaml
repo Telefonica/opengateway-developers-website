@@ -27,7 +27,7 @@ paths:
       description: |
         Authorizes an application to access a resource from the user device
 
-        **NOTE**: In case you are using our Sandbox as a host, please take into account that the `login_hint` parameter, although optional according to the OpenID Connect specification, is mandatory in order to inform about the end-user identifier so the Sandbox checks its whitelist for privacy reasons. Check the [Whitelist](/docs/sandbox/whitelist) guide for more information.
+        **NOTE**: In case you are using our Sandbox as a host, please take into account that the `login_hint` parameter, although optional according to the OpenID Connect specification, is mandatory in order to inform about the end-user identifier so the Sandbox checks its whitelist for privacy reasons. Check the [Whitelist](/docs/whitelist) guide for more information.
       operationId: authorize
       parameters: 
         - name: response_type
