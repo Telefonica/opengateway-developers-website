@@ -10,7 +10,7 @@ Open Gateway enables software developers to leverage Telco Application Programmi
 
 Open Gateway utilizes these Telco APIs to offer a unified standard interface across multiple operator networks worldwide, abstracting the inherent complexities associated with their systems and infrastructures. This approach simplifies integration and enhances interoperability for developers and applications alike.
 
-![available_apis](https://github.com/Telefonica/opengateway-developers-website/raw/main/images/available_apis.png)
+![available_apis](https://github.com/Telefonica/opengateway-developers-website/raw/main/catalog/images/available_apis.png)
 
 ## Technical Description of Open Gateway APIs
 
@@ -28,7 +28,9 @@ Open Gateway APIs implement robust security and authentication mechanisms to pro
 
 ## Commercially available APIs
 
-As the Open Gateway Channel Partners start aggregating the APIs from the operators, the following APIs are already available in some regions for developers to use:
+The following APIs are already commercially available in some regions for developers to use through our Channel Partners. For seamless integration and access to our services, please contact our authorized aggregation partners.
+
+<a href="https://opengateway.telefonica.com/en/partner-program" target="_blank">Check the benefits of joining the Telefónica Open Gateway Partner Program</a>
 
 ### SIM Swap
 
@@ -39,6 +41,10 @@ Additionally, the SIM Swap's Unified API Access feature ensures access to networ
 ### Number Verification API
 
 The standardized Number Verification API enhances the security of your users' identities and credentials. This API provides a quick, convenient, reliable, and secure method for verifying user information, ensuring robust protection against unauthorized access.
+
+## Technically available APIs
+
+The following APIs are available for testing and can be accessed in mock or production mode in certain regions. This setup allows for evaluating functionality and integration in a controlled environment.
 
 ### Device location
 
@@ -55,3 +61,7 @@ Again, this API enables use cases around specific services related to the end-us
 ### Quality on Demand Mobile (QoD Mobile) API
 
 The standardized QoD Mobile API allows you to manage and control your customers' mobile connectivity. This capability enables you to focus on creating the best possible user experiences, ensuring optimal performance and reliability for mobile applications.
+
+### Know Your Customer (KYC) API
+
+The standardized Know Your Customer (KYC) API enables real-time verification of customer information, providing an efficient way to validate the authenticity of personal data provided by users. By leveraging this API, businesses can mitigate risks associated with identity fraud, and enhance overall customer trust.
