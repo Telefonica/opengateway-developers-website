@@ -46,14 +46,11 @@ info:
   version: 0.1.0
 
 servers:
-  - url: "{host}/kyc-match/{version}"
+  - url: "{host}/kyc-match"
     variables:
       host:
         default: sandbox.opengateway.telefonica.com/apigateway
         description: API gateway URL
-      version:
-        default: v0
-        description: Version of the KYC-Match API
 
 tags:
   - name: Match
@@ -61,9 +58,9 @@ tags:
     description: Operations to match a customer identity against the account data bound to their phone number.
 
 paths:
-  /match:
+  /v0/match:
     post:
-      summary: KYC Match /match
+      summary: KYC Match v0.1 /match
       tags:
         - Match a customer identity
 
@@ -74,7 +71,7 @@ paths:
 
         `dpv:FraudPreventionAndDetection#kyc`
 
-      operationId: KYC_Match
+      operationId: KYC_Match_v0.1
 
       security:
         - three_legged:
@@ -89,7 +86,7 @@ paths:
           application/json:
 
             schema:
-              $ref: '#/components/schemas/KYC_MatchRequestBody'
+              $ref: '#/components/schemas/KYC_MatchRequestBody_0.1'
             examples:
               KYC_MatchRequestBodyExample:
                 value:
@@ -125,7 +122,7 @@ paths:
             application/json:
 
               schema:
-                $ref: '#/components/schemas/KYC_MatchResponse'
+                $ref: '#/components/schemas/KYC_MatchResponse_0.1'
               examples:
                 KYC_Match200Example:
                   value:
@@ -169,7 +166,127 @@ paths:
 
         '504':
           $ref: '#/components/responses/Generic504'
+  /v0.2/match:
+    post:
+      summary: KYC Match v0.2 /match
+      tags:
+        - Match a customer identity      
 
+      description: |
+        Verify matching of a number of attributes related to a customer identity against the verified data bound to their phone number in the Operator systems. Regardless of whether the `phoneNumber` is explicitly stated in the request body, at least one of the other fields must be provided, otherwise a `HTTP 400 - KNOW_YOUR_CUSTOMER.INVALID_PARAM_COMBINATION` error will be returned.
+
+        In order to proceed with the match check, some Operators may have the requirement to perform an additional level of validation based on the `idDocument` property. This means that, in those cases, the `idDocument` is required and the provided value needs to match the one stored in the Operator system associated with the indicated `phoneNumber`. This validation will be done before proceeding with the match check of the rest of the properties. The following two rules apply only in the cases where the Operator have the requirement to validate the `idDocument`:
+        - If no `idDocument` is provided, then a `HTTP 403 - KNOW_YOUR_CUSTOMER.ID_DOCUMENT_REQUIRED` error will be returned.
+        - If the provided `idDocument` does not match the one stored in the Operator systems, then a `HTTP 403 - KNOW_YOUR_CUSTOMER.ID_DOCUMENT_MISMATCH` error will be returned.
+        - There is a corner case where the Operator requires the `idDocument` to perform the match validation for the rest of the properties, but it also needs to be able to perform the validation only for the `idDocument` itself. In this case, if only the `idDocument` is provided along with the phoneNumber (either in the request body or extracted from the access token) then the match will be performed as with any other attribute and the response will contain the result of the match operation.
+
+        The API will return the result of the matching process for each requested attribute. This means that the response will **only** contain the attributes for which validation has been requested. Possible values are:
+          - **true**: the attribute provided matches with the one in the Operator systems.
+          - **false**: the attribute provided does not match with the one in the Operator systems.
+          - **not_available**: the attribute is not available to validate.
+        
+        Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following purpose:
+
+        `dpv:FraudPreventionAndDetection#kyc`
+
+      operationId: KYC_Match_v0.2
+
+      security:
+        - three_legged:
+          - kyc
+
+      parameters:
+        - $ref: '#/components/parameters/x-correlator'
+        
+      requestBody:
+        required: true
+        content:
+          application/json:
+
+            schema:
+              $ref: '#/components/schemas/KYC_MatchRequestBody'
+            examples:
+              KYC_MatchRequestBodyExample:
+                value:
+                  phoneNumber: '+34629255833'
+                  idDocument: 66666666q
+                  name: Federica Sanchez Arjona
+                  givenName: Federica
+                  familyName: Sanchez Arjona
+                  nameKanaHankaku: federica
+                  nameKanaZenkaku: Ｆｅｄｅｒｉｃａ
+                  middleNames: Sanchez
+                  familyNameAtBirth: YYYY
+                  address: Tokyo-to Chiyoda-ku Iidabashi 3-10-10
+                  streetName: Nicolas Salmeron
+                  streetNumber: 4
+                  postalCode: 1028460
+                  region: Tokyo
+                  locality: ZZZZ
+                  country: JP
+                  houseNumberExtension: VVVV
+                  birthdate: '1978-08-22'
+                  email: abc@example.com
+                  gender: MALE
+
+      responses:
+        '200':
+          description: OK
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+
+          content:
+            application/json:
+
+              schema:
+                $ref: '#/components/schemas/KYC_MatchResponse'
+              examples:
+                KYC_Match200Example:
+                  value:
+                    idDocumentMatch: 'true'
+                    nameMatch: 'true'
+                    givenNameMatch: 'not_available'
+                    familyNameMatch: 'not_available'
+                    nameKanaHankakuMatch: 'true'
+                    nameKanaZenkakuMatch: 'false'
+                    middleNamesMatch: 'true'
+                    familyNameAtBirthMatch: 'false'
+                    familyNameAtBirthMatchScore: 90
+                    addressMatch: 'true'
+                    streetNameMatch: 'true'
+                    streetNumberMatch: 'true'
+                    postalCodeMatch: 'true'
+                    regionMatch: 'true'
+                    localityMatch: 'not_available'
+                    countryMatch: 'true'
+                    houseNumberExtensionMatch: 'not_available'
+                    birthdateMatch: 'false'
+                    emailMatch: 'false'
+                    emailMatchScore: 87
+                    genderMatch: 'false'
+
+        '400':
+          $ref: '#/components/responses/Generic400'
+
+        '401':
+          $ref: '#/components/responses/Generic401'
+
+        '403':
+          $ref: '#/components/responses/Generic403'
+
+        '404':
+          $ref: '#/components/responses/Generic404'
+
+        '500':
+          $ref: '#/components/responses/Generic500'
+
+        '503':
+          $ref: '#/components/responses/Generic503'
+
+        '504':
+          $ref: '#/components/responses/Generic504'
+        
 components:
   securitySchemes:
     three_legged:
@@ -196,7 +313,7 @@ components:
         type: string
         
   schemas:
-    KYC_MatchRequestBody:
+    KYC_MatchRequestBody_0.1:
       type: object
       description: Payload to validate the customer data.
 
@@ -286,7 +403,97 @@ components:
             - FEMALE
             - OTHER
 
-    KYC_MatchResponse:
+    KYC_MatchRequestBody:
+      type: object
+      description: Payload to validate the customer data.
+
+      properties:
+        phoneNumber:
+          type: string
+          description: A public identifier addressing a telephone subscription. In mobile networks it corresponds to the MSISDN (Mobile Station International Subscriber Directory Number). In order to be globally unique it has to be formatted in international format, according to E.164 standard, prefixed with '+'.
+
+
+        idDocument:
+          type: string
+          description: Id number associated to the official identity document in the country. It may contain alphanumeric characters.
+
+        name:
+          type: string
+          description: Complete name of the customer, usually composed of first/given name and last/family/sur- name in a country.  Depending on the country, the order of first/give name and last/family/sur- name varies, and middle name could be included.  It can use givenName, middleNames, familyName and/or familyNameAtBirth. For example, in ESP, name+familyName; in NLD, it can be name+middleNames+familyName or name+middleNames+familyNameAtBirth, etc.
+
+        givenName:
+          type: string
+          description: First/given name or compound first/given name of the customer.
+          
+        familyName:
+          type: string
+          description: Last name, family name, or surname of the customer.
+          
+        nameKanaHankaku:
+          type: string
+          description: Complete name of the customer in Hankaku-Kana format (reading of name) for Japan.
+
+        nameKanaZenkaku:
+          type: string
+          description: Complete name of the customer in Zenkaku-Kana format (reading of name) for Japan.
+
+        middleNames:
+          type: string
+          description: Middle name/s of the customer.
+
+        familyNameAtBirth:
+          type: string
+          description: Last/family/sur- name at birth of the customer.
+
+        address:
+          type: string
+          description: Complete address of the customer.  For some countries, it is built following the usual concatenation of parameters in a country, but for other countries, this is not the case.  For some countries, it can use streetName, streetNumber and/or houseNumberExtension. For example, in ESP, streetName+streetNumber; in NLD, it can be streetName+streetNumber or streetName+streetNumber+houseNumberExtension.
+          
+        streetName:
+          type: string
+          description: Name of the street of the customer's address. It should not include the type of the street.
+
+        streetNumber:
+          type: string
+          description: The street number of the customer's address.  Number identifying a specific property on the 'streetName'.
+
+        postalCode:
+          type: string
+          description: Zip code or postal code
+
+        region:
+          type: string
+          description: Region/prefecture of the customer's address
+
+        locality:
+          type: string
+          description: Locality of the customer's address
+
+        country:
+          type: string
+          description: Country of the customer's address. Format ISO 3166-1 alpha-2
+
+        houseNumberExtension:
+          type: string
+          description: Specific identifier of the house needed depending on the property type. For example, number of apartment in an apartment building.
+
+        birthdate:
+          type: string
+          description: The birthdate of the customer, in ISO 8601 calendar date format (YYYY-MM-DD).
+
+        email:
+          type: string
+          description: Email address of the customer in the RFC specified format (local-part@domain).
+
+        gender:
+          type: string
+          description: Gender of the customer (Male/Female/Other).
+          enum:
+            - MALE
+            - FEMALE
+            - OTHER
+        
+    KYC_MatchResponse_0.1:
       type: object
       properties:
 
@@ -442,6 +649,125 @@ components:
                 - 'true'
                 - 'false'
                 - 'not_available'
+
+    KYC_MatchResponse:
+      type: object
+      properties:
+        idDocumentMatch:
+          allOf:
+            - $ref: '#/components/schemas/MatchResult'
+            - description: Indicates whether Id number associated to the ID document of the customer matches with the one on the Operator's system.
+        nameMatch:
+          allOf:
+            - $ref: '#/components/schemas/MatchResult'
+            - description: Indicates whether the complete name of the customer matches with the one on the Operator's system.
+        nameMatchScore:
+          $ref: '#/components/schemas/MatchScoreResult'
+        givenNameMatch:
+          allOf:
+            - $ref: '#/components/schemas/MatchResult'
+            - description: Indicates whether First name/given name of the customer matches with the one on the Operator's system.
+        givenNameMatchScore:
+          $ref: '#/components/schemas/MatchScoreResult'
+        familyNameMatch:
+          allOf:
+            - $ref: '#/components/schemas/MatchResult'
+            - description: Indicates whether last name/ family name/ surname of the customer matches with the one on the Operator's system.
+        familyNameMatchScore:
+          $ref: '#/components/schemas/MatchScoreResult'
+        nameKanaHankakuMatch:
+          allOf:
+            - $ref: '#/components/schemas/MatchResult'
+            - description: Indicates whether complete name of the customer in Hankaku-Kana format (reading of name) for Japan matches with the one on the Operator's system.
+        nameKanaHankakuMatchScore:
+          $ref: '#/components/schemas/MatchScoreResult'
+        nameKanaZenkakuMatch:
+          allOf:
+            - $ref: '#/components/schemas/MatchResult'
+            - description: Indicates whether complete name of the customer in Zenkaku-Kana format (reading of name) for Japan matches with the one on the Operator's system.
+        nameKanaZenkakuMatchScore:
+          $ref: '#/components/schemas/MatchScoreResult'
+        middleNamesMatch:
+          allOf:
+            - $ref: '#/components/schemas/MatchResult'
+            - description: Indicates whether the middle names of the customer matches with the one on the Operator's system.
+        middleNamesScore:
+          $ref: '#/components/schemas/MatchScoreResult'
+        familyNameAtBirthMatch:
+          allOf:
+            - $ref: '#/components/schemas/MatchResult'
+            - description: Indicates whether the Family Name At Birth of the customer matches with the one on the Operator's system.
+        familyNameAtBirthMatchScore:
+          $ref: '#/components/schemas/MatchScoreResult'
+        addressMatch:
+          allOf:
+            - $ref: '#/components/schemas/MatchResult'
+            - description: Indicates whether complete address of the customer matches with the one on the Operator's system.
+        addressMatchScore:
+          $ref: '#/components/schemas/MatchScoreResult'
+        streetNameMatch:
+          allOf:
+            - $ref: '#/components/schemas/MatchResult'
+            - description: Indicates whether the street name of the customer matches with the one on the Operator's system.
+        streetNameMatchScore:
+          $ref: '#/components/schemas/MatchScoreResult'
+        streetNumberMatch:
+          allOf:
+            - $ref: '#/components/schemas/MatchResult'
+            - description: Indicates whether the street number of the customer matches with the one on the Operator's system.
+        streetNumberMatchScore:
+          $ref: '#/components/schemas/MatchScoreResult'
+        postalCodeMatch:
+          allOf:
+            - $ref: '#/components/schemas/MatchResult'
+            - description: Indicates whether the postal code / zip code of the customer matches with the one on the Operator's system.
+        regionMatch:
+          allOf:
+            - $ref: '#/components/schemas/MatchResult'
+            - description: Indicates whether the region of the customer's address matches with the one on the Operator's system.
+        regionMatchScore:
+          $ref: '#/components/schemas/MatchScoreResult'
+        localityMatch:
+          allOf:
+            - $ref: '#/components/schemas/MatchResult'
+            - description: Indicates whether the locality of the customer's address matches with the one on the Operator's system.
+        localityMatchScore:
+          $ref: '#/components/schemas/MatchScoreResult'
+        countryMatch:
+          allOf:
+            - $ref: '#/components/schemas/MatchResult'
+            - description: Indicates whether the country of the customer's address matches with the one on the Operator's system.
+        houseNumberExtensionMatch:
+          allOf:
+            - $ref: '#/components/schemas/MatchResult'
+            - description: Indicates whether the house number extension of the customer's address with the one on the Operator's system.
+        birthdateMatch:
+          allOf:
+            - $ref: '#/components/schemas/MatchResult'
+            - description: Indicates whether the birthdate of the customer matches with the one on the Operator's system.
+        emailMatch:
+          allOf:
+            - $ref: '#/components/schemas/MatchResult'
+            - description: Indicates whether the email address of the customer matches with the one on the Operator's system.
+        emailMatchScore:
+          $ref: '#/components/schemas/MatchScoreResult'
+        genderMatch:
+          allOf:
+            - $ref: '#/components/schemas/MatchResult'
+            - description: Indicates whether the gender of the customer matches with the one on the Operator's system.
+            
+    MatchResult:
+      type: string
+      enum:
+          - 'true'
+          - 'false'
+          - 'not_available'
+
+    MatchScoreResult:
+      type: integer
+      description: Indicates the similarity score assigned to the input value when it does not exactly match the value stored in the operator's system. This property shall only be returned when the value of the corresponding match field is `false`.
+      minimum: 0
+      maximum: 100
 
     ErrorInfo:
       type: object
