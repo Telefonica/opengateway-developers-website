@@ -8,7 +8,7 @@ category: 66aa4f941e51e7000fa353ce
 
 The standardised Know Your Customer API allows you to validate user contact information against data from Mobile Network Operators (MNOs), ensuring accuracy and improving both conversion rates and the quality of user onboarding for new services.
 
-This API provides a quick and efficient method to verify customer contact details, helping you comply with AML/KYC regulations and prevent identity fraud, including synthetic identities and identity theft. Additionally, by utilizing this standardized API, you can expand your user reach across multiple MNOs.
+This API provides a quick and efficient method to verify customer contact details, helping you prevent identity fraud, including synthetic identities and identity theft. Additionally, by utilizing this standardized API, you can expand your user reach across multiple MNOs.
 
 
 ## Overview of the Know Your Customer API
@@ -27,17 +27,11 @@ The Know Your Customer Camara API specifies one operation:
 
 ## Why Know Your Customer?
 
-By integrating this API, you can elevate the user experience by enabling, for example, personalised offers on travel services and improve security by quickly identifying and addressing potentially fraudulent SIM card locations.
-
 This API provides a streamlined solution for accessing network capabilities across various operators. By offering a single, standardized interface, it simplifies the integration process and reduces the complexity associated with managing multiple operator-specific APIs. This unified access not only saves development time and resources but also ensures consistent performance and reliability across different network environments. As a result, businesses can focus on delivering high-quality services without worrying about the underlying network intricacies.
 
 ### Fraud prevention
 
 Utilizing the KYC-Match API helps mitigate risks associated with your customers’ identities, including synthetic identity fraud and fraudulent transactions stemming from identity theft.
-
-### Legal compliance
-
-This API ensures your adherence to Anti Money Laundering (AML) and Know Your Customer (KYC) regulations, enhancing your credibility and reliability in the industry.
 
 ###  Conversion rate and ​high-quality users
 
