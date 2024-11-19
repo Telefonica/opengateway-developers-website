@@ -13,18 +13,15 @@ info:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
 servers:
-  - url: "{host}/qod/{version}"
+  - url: "{host}/qod/v0"
     variables:
       host:
         default: sandbox.opengateway.telefonica.com/apigateway
         description: API gateway URL
-      version:
-        default: v0
-        description: Version of the QoD API
 paths:
   /sessions:
     post:
-      summary: QoD /sessions
+      summary: Create QoD session v0.8
       tags:
         - QoD sessions
       security:
@@ -124,7 +121,7 @@ paths:
           $ref: "#/components/responses/Generic503"
   /sessions/{sessionId}:
     get:
-      summary: QoD /sessions
+      summary: Check QoD session v0.8
       tags:
         - QoD sessions
       description: |
@@ -170,7 +167,7 @@ paths:
         "503":
           $ref: "#/components/responses/Generic503"
     delete:
-      summary: QoD /sessions
+      summary: Cancel QoD session v0.8
       tags:
         - QoD sessions
       description: |
@@ -213,7 +210,7 @@ paths:
           $ref: "#/components/responses/Generic503"
   /notifications:
     post:
-      summary: QoD /notifications
+      summary: Listen for QoD notifications v0.8
       tags:
         - Session notifications callback
       security:

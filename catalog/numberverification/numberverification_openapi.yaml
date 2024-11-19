@@ -35,18 +35,15 @@ info:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
 servers:
-  - url: "{host}/number-verification/{version}"
+  - url: "{host}/number-verification/v0"
     variables:
       host:
         default: sandbox.opengateway.telefonica.com/apigateway
         description: gateway URL
-      version:
-        default: v0
-        description: Version of the Number Verification API
 paths:
   /verify:
     post:
-      summary: Number Verification /verify
+      summary: Verify number v0.3
       tags: 
         -  Verify a phone number
       description: |

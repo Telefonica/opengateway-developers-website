@@ -15,20 +15,17 @@ externalDocs:
   description: Product documentation at CAMARA
   url: https://github.com/camaraproject/
 servers:
-  - url: "{host}/device-status/{version}"
+  - url: "{host}/device-status/v0"
     variables:
       host:
         default: sandbox.opengateway.telefonica.com/apigateway
         description: API gateway URL
-      version:
-        default: v0
-        description: Version of the Device Status API
 paths:
    /roaming:
     post:
-      summary: Device Status /roaming
+      summary: Check roaming status v0.4
       tags:
-        - Get a device roaming status
+        - Get a device status
       security:
         - three_legged:
           - device-status-roaming-read

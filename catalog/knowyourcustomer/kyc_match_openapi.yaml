@@ -60,9 +60,9 @@ tags:
 paths:
   /v0/match:
     post:
-      summary: KYC Match v0.1 /match
+      summary: Verify match v0.1
       tags:
-        - Match a customer identity
+        - Verify a customer identity
 
       description: |
         Matches a customer identity by checking a set of attributes related against the account data bound to their phone number.
@@ -168,11 +168,15 @@ paths:
           $ref: '#/components/responses/Generic504'
   /v0.2/match:
     post:
-      summary: KYC Match v0.2 /match
+      summary: Verify match v0.2
       tags:
-        - Match a customer identity      
+        - Verify a customer identity      
 
       description: |
+        Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following purpose:
+
+        `dpv:FraudPreventionAndDetection#kyc-match:match`
+
         Verify matching of a number of attributes related to a customer identity against the verified data bound to their phone number in the Operator systems. Regardless of whether the `phoneNumber` is explicitly stated in the request body, at least one of the other fields must be provided, otherwise a `HTTP 400 - KNOW_YOUR_CUSTOMER.INVALID_PARAM_COMBINATION` error will be returned.
 
         In order to proceed with the match check, some Operators may have the requirement to perform an additional level of validation based on the `idDocument` property. This means that, in those cases, the `idDocument` is required and the provided value needs to match the one stored in the Operator system associated with the indicated `phoneNumber`. This validation will be done before proceeding with the match check of the rest of the properties. The following two rules apply only in the cases where the Operator have the requirement to validate the `idDocument`:
@@ -185,10 +189,6 @@ paths:
           - **false**: the attribute provided does not match with the one in the Operator systems.
           - **not_available**: the attribute is not available to validate.
         
-        Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following purpose:
-
-        `dpv:FraudPreventionAndDetection#kyc`
-
       operationId: KYC_Match_v0.2
 
       security:

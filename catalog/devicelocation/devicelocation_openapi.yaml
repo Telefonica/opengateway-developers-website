@@ -15,20 +15,17 @@ externalDocs:
   description: Product documentation at Camara
   url: https://github.com/camaraproject/
 servers:
-  - url: "{host}/location/{version}"
+  - url: "{host}/location/v0"
     variables:
       host:
         default: sandbox.opengateway.telefonica.com/apigateway
         description: API gateway URL
-      version:
-        default: v0
-        description: Version of the Device Location API
 paths:
   /verify:
     post:
       tags:
         - Verify a device location
-      summary: Device Location /verify
+      summary: Verify location v0.1
       security: 
         - three_legged:
           - device-location-read

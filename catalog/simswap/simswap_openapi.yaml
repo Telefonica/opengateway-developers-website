@@ -25,18 +25,15 @@ externalDocs:
   description: Product documentation at Camara
   url: https://github.com/camaraproject/
 servers:
-  - url: "{host}/sim-swap/{version}"
+  - url: "{host}/sim-swap/v0"
     variables:
       host:
         default: sandbox.opengateway.telefonica.com/apigateway
         description: API gateway URL
-      version:
-        default: v0
-        description: Version of the SIM Swap API
 paths:
   /check:
     post:
-      summary: SIM Swap /check
+      summary: Check SIM Swap v0.4
       tags: 
         -  Check for a SIM swap
       security:
@@ -82,7 +79,7 @@ paths:
           $ref: "#/components/responses/Generic504"
   /retrieve-date:
     post:
-      summary: SIM Swap /retrieve-date
+      summary: Retrieve last SIM Swap date v0.4
       tags: 
         -  Retrieve latest SIM swap date
       security:
