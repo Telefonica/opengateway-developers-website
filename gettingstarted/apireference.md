@@ -26,7 +26,7 @@ Each API has a string called “purpose” that defines the intended use of that
 
 ## Config the API Reference step by step
 ### Step 1: Get the authorization code
-For a faster and easier authorization it is recomended to use a [CIBA](../about/glossary.md). This CIBA is going to authorize an application to access a resource from the backend:
+For a faster and easier authorization it is recommended to use a [CIBA](../about/glossary.md). This CIBA is going to authorize an application to access a resource from the backend:
 - <u>login_hint</u>: The phone number you own and provided when creating your application. If you are using [the Sandbox](https://sandbox.opengateway.telefonica.com/my-apps), it is the number you provided when requesting access to production. If your application is a mock, you can enter any invented number that does not end with 9. The sintax is <id_type>:<id_value> (tel:+34666555432)
 - <u>purpose</u>: The purpose string for the API you want to call. You can check the purpose by clicking on one of the test calls in this API reference. If not, you have a list in the *Before Getting Started* section of this page.
 - <u>credentials</u>: The username is your client_id and your password is you client_secret. You can get both from the info in your aplication. If you are using [a Sandbox app](https://sandbox.opengateway.telefonica.com/my-apps) you have this information in My Apps page, clicking in your app.

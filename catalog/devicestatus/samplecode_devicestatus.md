@@ -10,7 +10,7 @@ This sample code consumes the API without an SDK, using direct HTTP requests. Ho
 
 Note that currently, our Sandbox SDK does not have Device Status implemented.
 
-> 📘 It is recomended to use the [API Reference tool](https://developers.opengateway.telefonica.com/reference/) for faster calls of our APIs
+> 📘 It is recommended to use the [API Reference tool](https://developers.opengateway.telefonica.com/reference/) for faster calls of our APIs
 
 ### Table of contents
 - [Backend flow](#backend-flow)
