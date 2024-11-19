@@ -46,7 +46,7 @@ servers:
 paths:
   /verify:
     post:
-      summary: Number Verification /verify
+      summary: Verify number v0.3
       tags: 
         -  Verify a phone number
       description: |

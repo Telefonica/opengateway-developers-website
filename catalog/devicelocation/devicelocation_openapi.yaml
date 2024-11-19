@@ -28,7 +28,7 @@ paths:
     post:
       tags:
         - Verify a device location
-      summary: Device Location /verify
+      summary: Verify location v0.1
       security: 
         - three_legged:
           - device-location-read

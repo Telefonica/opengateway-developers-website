@@ -26,9 +26,9 @@ servers:
 paths:
    /roaming:
     post:
-      summary: Device Status /roaming
+      summary: Check roaming status v0.4
       tags:
-        - Get a device roaming status
+        - Get a device status
       security:
         - three_legged:
           - device-status-roaming-read
