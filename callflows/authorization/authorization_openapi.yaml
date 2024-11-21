@@ -27,6 +27,8 @@ paths:
       description: |
         Authorizes an application to access a resource from the user device
 
+        Check the [Frontend authorization flow guide](/docs/frontend) for more information.
+
         **NOTE**: In case you are using our Sandbox as a host, please take into account that the `login_hint` parameter, although optional according to the OpenID Connect specification, is mandatory in order to inform about the end-user identifier so the Sandbox checks its whitelist for privacy reasons. Check the [Whitelist](/docs/whitelist) guide for more information.
       operationId: authorize
       parameters: 
@@ -92,6 +94,8 @@ paths:
         - basicAuth: []
       description: |
         Authorizes an application to access a resource from the backend
+
+        Check the [Backend authorization flow guide](/docs/backend) for more information.
       operationId: bcAuthorize
       requestBody:
         content:
@@ -121,6 +125,8 @@ paths:
         - basicAuth: []
       description: |
         Retrieves an access token from the authorization code (frontend) or auth_req_id (backend)
+
+        Check the [Authorization guide](/docs/authorization) for more information.
       operationId: token
       requestBody: 
         content:

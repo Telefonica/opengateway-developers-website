@@ -34,6 +34,7 @@ paths:
 
         `dpv:RequestedServiceProvision#qod`
         
+        You can explore our [QoD sample code](/docs/samplecode_qod) for additional guidance on using this API.
       operationId: createSession
       requestBody:
         description: Creates a new session

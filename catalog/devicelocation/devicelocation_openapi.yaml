@@ -35,6 +35,8 @@ paths:
         Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following purpose:
 
         `dpv:FraudPreventionAndDetection#device-location-read`
+                
+        You can explore our [Device Location Verification sample code](/docs/samplecode_devicelocation) for additional guidance on using this API.
       operationId: verifyLocation
       requestBody:
         content:

@@ -54,6 +54,8 @@ paths:
         Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following purpose:
 
         `dpv:FraudPreventionAndDetection#number-verification-verify-read`
+
+        You can explore our [Number Verification sample code](/docs/samplecode_numberverification) for additional guidance on using this API.
       operationId: phoneNumberVerify
       requestBody:
         content:
