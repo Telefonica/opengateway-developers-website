@@ -2,6 +2,8 @@
 
 This repository is the source of content to the Open Gateway's developers website. Each page in the website must be linked to a markdown file in this repository and will get updated and published as the result of a pull request for every change.
 
+Visit [developers.opengateway.telefonica.com](https://developers.opengateway.telefonica.com)
+
 ## Table of contents
 The contents in this repo are meant to be organized in the following structure and order. Folding and sorting to be set by the Readme.com site admin in the website configuration:
 
