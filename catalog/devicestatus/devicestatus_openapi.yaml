@@ -32,7 +32,7 @@ paths:
       description: |
         Gets the current roaming status of a device and the country information
 
-        Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following purpose:
+        Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following scope:
 
         `dpv:FraudPreventionAndDetection#device-status-roaming-read`
                 

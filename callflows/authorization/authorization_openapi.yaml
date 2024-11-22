@@ -46,9 +46,9 @@ paths:
           required: true
           schema:
             type: string
-        - name: purpose
+        - name: scope
           in: query
-          description: The purpose of the authorization
+          description: The purpose and scope of the authorization. Check every API reference description for the proper scope.
           required: true
           schema:
             type: string
@@ -165,12 +165,12 @@ components:
         login_hint:
           type: string
           description: <id_type>:<id_value>
-        purpose:
+        scope:
           type: string
           description: dpv:<w3c_purpose>#<scope>
       required:
         - login_hint
-        - purpose
+        - scope
     AuthorizationRequestId:
       type: object
       properties:

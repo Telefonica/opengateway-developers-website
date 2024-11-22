@@ -16,7 +16,7 @@ The flow triggers as a GET request for an authorization from the end-user connec
 Your application's frontend needs to include the following parameters in the request's query string:
 - `response_type=code`: The response type must be set to `code` to get an authorization code.
 - `client_id`: The client ID of your application, as registered in the Channel Partner's developer portal.
-- `purpose`: The purpose of the API call, according to the Open Gateway API product subscribed. It actually includes both the value for the W3C standard DPV purpose and a value for the scope in the following format `dpv:<w3c_purpose>#<scope>`. You can find the proper value for this parameter, for each API, in the API Reference section.
+- `scope`: The scope and purpose of the API call, according to the Open Gateway API product subscribed. It actually includes both the value for the W3C standard DPV purpose and a value for the scope in the following format `dpv:<w3c_purpose>#<scope>`. You can find the proper value for this parameter, for each API, in the API Reference section.
 - `redirect_uri`: The URI where the authorization code will be sent back to your application backend. This URI must be registered in the Channel Partner's developer portal as part of the application configuration.
 - `state`: This is an optional parameter according to the OIDC standard, but you will want to pass an end-user device identifier here, commonly the phone number, if you need to include this value in the request body when calling the service API from the backend once the authorization flow completes and an access token is retrieved.
 
@@ -46,7 +46,7 @@ The following restrictions apply:
 
 ```curl
 curl --request GET \
-     --url 'https://sandbox.opengateway.telefonica.com/apigateway/authorize?response_type=code&client_id=your_app_client_id&purpose=dpv%3AFraudPreventionAndDetection%23sim-swap&redirect_uri=https%3A%2F%2Fmybackend%2Fcallback' \
+     --url 'https://sandbox.opengateway.telefonica.com/apigateway/authorize?response_type=code&client_id=your_app_client_id&scope=dpv%3AFraudPreventionAndDetection%23sim-swap&redirect_uri=https%3A%2F%2Fmybackend%2Fcallback' \
      --header 'accept: application/json'
 ```
 
@@ -82,7 +82,7 @@ curl --request POST \
 
 [Check the API reference](/reference/token)
 
-Once you get the access token, you can use it to authorize you HTTP request to the Open Gateway service API accordingly with the `purpose` passed as a value in the authorization request above.
+Once you get the access token, you can use it to authorize you HTTP request to the Open Gateway service API accordingly with the `scope` passed as a value in the authorization request above.
 	
 ## Frontend authorization flow sequence diagram
 

@@ -45,13 +45,13 @@ let userPhoneNumber = "+34555555555";
 
 let clientId = "my-app-id";
 let clientSecret = "my-app-secret";
-let apiPurpose = "dpv:FraudPreventionAndDetection#number-verification-verify-read";
+let apiScope = "dpv:FraudPreventionAndDetection#number-verification-verify-read";
 let myCallbackEndpoint = "https://my_app_server/numberverification-callback";
 
 const params = {
   client_id: clientId,
   response_type: "code",
-  purpose: apiPurpose,
+  scope: apiScope,
   redirect_uri: myCallbackEndpoint,
   state: userPhoneNumber // Using `state` as the parameter that is always forwarded to the redirect_uri
 };
@@ -88,7 +88,7 @@ fetch(url, requestOptions);
     <form id="apiRequestForm" action="https://opengateway.aggregator.com/authorize" method="GET">
         <input type="hidden" name="client_id" value="my-app-id">
         <input type="hidden" name="response_type" value="code">
-        <input type="hidden" name="purpose" value="dpv:FraudPreventionAndDetection#number-verification-verify-read">
+        <input type="hidden" name="scope" value="dpv:FraudPreventionAndDetection#number-verification-verify-read">
         <input type="hidden" name="redirect_uri" value="/numberverification-callback">
         
         <label for="state">Your phone number:</label>
@@ -189,7 +189,7 @@ import express from "express"
 let clientId = "my-app-id"
 let clientSecret = "my-app-secret"
 let appCredentials = btoa(`${clientId}:${clientSecret}`)
-let apiPurpose = "dpv:FraudPreventionAndDetection#number-verification-verify-read"
+let apiScope = "dpv:FraudPreventionAndDetection#number-verification-verify-read"
 
 const app = express()
 const port = 3000

@@ -5,11 +5,11 @@ box As the app developer<br/>you don't need to interact<br/>with the operator
     participant OP as End-user's mobile<br/>operator
 end
 
-BE->>CP: POST <cp>/bc-authorize<br/>purpose=dpv:<purpose>#35;<scope><br/>login_hint=<id_type>:<id>
+BE->>CP: POST <cp>/bc-authorize<br/>scope=dpv:<purpose>#35;<scope><br/>login_hint=<id_type>:<id>
 activate BE
     activate CP
         CP->>CP: Operator<br/>resolution
-        CP->>OP: POST <operator>/bc-authorize<br/>purpose=dpv:<purpose>#35;<scope><br/>login_hint=<id_type>:<id>
+        CP->>OP: POST <operator>/bc-authorize<br/>scope=dpv:<purpose>#35;<scope><br/>login_hint=<id_type>:<id>
         activate OP
                 OP->>OP: Identifies subscriber<br/>from the login_hint<br/>and generates and operator_auth_req_id
             OP-->>CP: 200 (ok)<br/>operator_auth_req_id
