@@ -15,9 +15,9 @@ The flow triggers as a POST request for an authorization from your application's
 
 Your application's backend needs to include the following parameters in the request body:
 - `login_hint`: The login hint to be used by the operator to identify the end-user, in the following format `<identifier_type>:<identifier>`, those being:
-	- `tel` for phone numbers. The `login_hint` must be a tel URI as defined in [RFC 3966](https://www.rfc-editor.org/info/rfc3966) for global phone numbers without visual separators in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I/en) format. For example, `tel:+34666666666`.
+	- `tel` or `phone_number` for phone numbers. The `login_hint` must be a tel URI as defined in [RFC 3966](https://www.rfc-editor.org/info/rfc3966) for global phone numbers without visual separators in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I/en) format. For example, `tel:+34666666666` or `phone_number:+34666666666`.
 	- `ipport` for IPv4 and IPv6 addresses, that can optionally include a port. For example, `ipport:80.90.34.2:16790`, `ipport:80.90.34.2`, `ipport:[2001:db8::1]:8080` or `ipport:[2001:db8::1]`
-- `purpose`: The purpose of the API call, according to the Open Gateway API product subscribed. It actually includes both the value for the W3C standard DPV purpose and a value for the scope in the following format `dpv:<w3c_purpose>#<scope>`. You can find the proper value for this parameter, for each API, in the API Reference section.
+- `scope`: The scope and purpose of the API call, according to the Open Gateway API product subscribed. It actually includes both the value for the W3C standard DPV purpose and a value for the scope in the following format `dpv:<w3c_purpose>#<scope>`. You can find the proper value for this parameter, for each API, in the API Reference section.
 
 This request must be authorized with the following values as basic authentication:
 - `client_id`: The client ID of your application, as registered in the Channel Partner's developer portal.
@@ -31,7 +31,7 @@ curl --request POST \
      --header 'accept: application/json' \
      --header 'content-type: application/x-www-form-urlencoded' \
      --data 'login_hint=tel:+34655555555' \
-     --data 'purpose=dpv:FraudPreventionAndDetection#sim-swap' \
+     --data 'scope=dpv:FraudPreventionAndDetection#sim-swap' \
      -u "your_app_client_id:your_app_client_secret"
 ```
 
@@ -65,7 +65,7 @@ curl --request POST \
 
 [Check the API reference](/reference/token)
 
-Once you get the access token, you can use it to authorize you HTTP request to the Open Gateway service API accordingly with the `purpose` passed as a value in the authorization request above.
+Once you get the access token, you can use it to authorize you HTTP request to the Open Gateway service API accordingly with the `scope` passed as a value in the authorization request above.
 	
 ## Backend authorization flow sequence diagram
 

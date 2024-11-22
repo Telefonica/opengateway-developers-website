@@ -94,7 +94,7 @@ let deviceIpPortAddress = getDeviceIP(); // e.g. '203.0.113.25:8080'
 let clientId = "my-app-id";
 let clientSecret = "my-app-secret";
 let appCredentials = btoa(`${clientId}:${clientSecret}`);
-let apiPurpose = "dpv:RequestedServiceProvision#qod";
+let apiScope = "dpv:RequestedServiceProvision#qod";
 
 const myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
@@ -102,7 +102,7 @@ myHeaders.append("Authorization", `Basic ${appCredentials}`);
 
 const urlencoded = new URLSearchParams();
 urlencoded.append("login_hint", `ipport:${deviceIpPortAddress}`);
-urlencoded.append("purpose", apiPurpose);
+urlencoded.append("scope", apiScope);
 
 const requestOptions = {
   method: "POST",
@@ -155,13 +155,13 @@ String clientId = "my-app-id";
 String clientSecret = "my-app-secret";
 String appCredentials = clientId + ":" + clientSecret;
 String credentials = Base64.getEncoder().encodeToString(appCredentials.getBytes(StandardCharsets.UTF_8));
-String apiPurpose = "dpv:RequestedServiceProvision#qod";
+String apiScope = "dpv:RequestedServiceProvision#qod";
 
 HttpClient client = HttpClient.newHttpClient();
 
 Map<Object, Object> data = new HashMap<>();
 data.put("login_hint", "ipport:" + deviceIpPortAddress);
-data.put("purpose", apiPurpose);
+data.put("scope", apiScope);
 
 StringBuilder requestBody = new StringBuilder();
 for (Map.Entry<Object, Object> entry : data.entrySet()) {
@@ -224,7 +224,7 @@ client_id = "my-app-id"
 client_secret = "my-app-secret"
 app_credentials = f"{client_id}:{client_secret}"
 credentials = base64.b64encode(app_credentials.encode('utf-8')).decode('utf-8')
-api_purpose = "dpv:RequestedServiceProvision#qod"
+api_scope = "dpv:RequestedServiceProvision#qod"
 
 headers = {
     "Content-Type": "application/x-www-form-urlencoded",
@@ -233,7 +233,7 @@ headers = {
 
 data = {
     "login_hint": f"ipport:{device_ip_address}",
-    "purpose": api_purpose
+    "scope": api_scope
 }
 
 response = requests.post(
@@ -402,13 +402,13 @@ The following samples show how your application can trigger the authentication f
 ```JavaScript
 let clientId = "my-app-id";
 let clientSecret = "my-app-secret";
-let apiPurpose = "dpv:RequestedServiceProvision#qod";
+let apiScope = "dpv:RequestedServiceProvision#qod";
 let myAuthCallbackEndpoint = "https://my_app_server/qod-auth-callback";
 
 const params = {
   client_id: clientId,
   response_type: "code",
-  purpose: apiPurpose,
+  scope: apiScope,
   redirect_uri: myAuthCallbackEndpoint
 };
 
@@ -446,7 +446,7 @@ fetch(url, requestOptions);
     <form id="apiRequestForm" action="https://opengateway.aggregator.com/authorize" method="GET">
         <input type="hidden" name="client_id" value="my-app-id">
         <input type="hidden" name="response_type" value="code">
-        <input type="hidden" name="purpose" value="dpv:RequestedServiceProvision#qod">
+        <input type="hidden" name="scope" value="dpv:RequestedServiceProvision#qod">
         <input type="hidden" name="redirect_uri" value="/qod-auth-callback">
         
         <label for="create">This will create an improved connectivity session for your device</label>

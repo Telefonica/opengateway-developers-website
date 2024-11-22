@@ -32,7 +32,7 @@ paths:
       description: |
         Verifies the location of a device with a given coordinates and accuracy
 
-        Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following purpose:
+        Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following scope:
 
         `dpv:FraudPreventionAndDetection#device-location-read`
                 

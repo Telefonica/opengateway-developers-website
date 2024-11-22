@@ -45,7 +45,7 @@ def basic_auth():
 def cibauth(headers, number):
     payload = {
             "login_hint": number,
-            "purpose": "dpv:FraudPreventionAndDetection#device-location-read"
+            "scope": "dpv:FraudPreventionAndDetection#device-location-read"
     }
     try:
         response = requests.post(ciba_url, data=payload, headers=headers)

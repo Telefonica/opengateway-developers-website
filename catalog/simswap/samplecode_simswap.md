@@ -85,7 +85,7 @@ let customerPhoneNumber = "+34555555555";
 let clientId = "my-app-id";
 let clientSecret = "my-app-secret";
 let appCredentials = btoa(`${clientId}:${clientSecret}`);
-let apiPurpose = "dpv:FraudPreventionAndDetection#sim-swap";
+let apiScope = "dpv:FraudPreventionAndDetection#sim-swap";
 
 const myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
@@ -93,7 +93,7 @@ myHeaders.append("Authorization", `Basic ${appCredentials}`);
 
 const urlencoded = new URLSearchParams();
 urlencoded.append("login_hint", `phone_number:${customerPhoneNumber}`);
-urlencoded.append("purpose", apiPurpose);
+urlencoded.append("scope", apiScope);
 
 const requestOptions = {
   method: "POST",
@@ -144,13 +144,13 @@ String clientId = "my-app-id";
 String clientSecret = "my-app-secret";
 String appCredentials = clientId + ":" + clientSecret;
 String credentials = Base64.getEncoder().encodeToString(appCredentials.getBytes(StandardCharsets.UTF_8));
-String apiPurpose = "dpv:FraudPreventionAndDetection#sim-swap";
+String apiScope = "dpv:FraudPreventionAndDetection#sim-swap";
 
 HttpClient client = HttpClient.newHttpClient();
 
 Map<Object, Object> data = new HashMap<>();
 data.put("login_hint", "phone_number:" + customerPhoneNumber);
-data.put("purpose", apiPurpose);
+data.put("scope", apiScope);
 
 StringBuilder requestBody = new StringBuilder();
 for (Map.Entry<Object, Object> entry : data.entrySet()) {
@@ -211,7 +211,7 @@ client_id = "my-app-id"
 client_secret = "my-app-secret"
 app_credentials = f"{client_id}:{client_secret}"
 credentials = base64.b64encode(app_credentials.encode('utf-8')).decode('utf-8')
-api_purpose = "dpv:FraudPreventionAndDetection#sim-swap"
+api_scope = "dpv:FraudPreventionAndDetection#sim-swap"
 
 headers = {
     "Content-Type": "application/x-www-form-urlencoded",
@@ -220,7 +220,7 @@ headers = {
 
 data = {
     "login_hint": f"phone_number:{customer_phone_number}",
-    "purpose": api_purpose
+    "scope": api_scope
 }
 
 response = requests.post(
@@ -360,13 +360,13 @@ let userPhoneNumber = "+34555555555";
 
 let clientId = "my-app-id";
 let clientSecret = "my-app-secret";
-let apiPurpose = "dpv:FraudPreventionAndDetection#sim-swap";
+let apiScope = "dpv:FraudPreventionAndDetection#sim-swap";
 let myCallbackEndpoint = "https://my_app_server/simswap-callback";
 
 const params = {
   client_id: clientId,
   response_type: "code",
-  purpose: apiPurpose,
+  scope: apiScope,
   redirect_uri: myCallbackEndpoint,
   state: userPhoneNumber // Using `state` as the parameter that is always forwarded to the redirect_uri
 };
@@ -403,7 +403,7 @@ fetch(url, requestOptions);
     <form id="apiRequestForm" action="https://opengateway.aggregator.com/authorize" method="GET">
         <input type="hidden" name="client_id" value="my-app-id">
         <input type="hidden" name="response_type" value="code">
-        <input type="hidden" name="purpose" value="dpv:FraudPreventionAndDetection#sim-swap">
+        <input type="hidden" name="scope" value="dpv:FraudPreventionAndDetection#sim-swap">
         <input type="hidden" name="redirect_uri" value="/simswap-callback">
 
         <label for="state">Your phone number:</label>
@@ -468,7 +468,7 @@ client_id = "my-app-id"
 client_secret = "my-app-secret"
 app_credentials = f"{client_id}:{client_secret}"
 credentials = base64.b64encode(app_credentials.encode('utf-8')).decode('utf-8')
-api_purpose = "dpv:FraudPreventionAndDetection#sim-swap"
+api_scope = "dpv:FraudPreventionAndDetection#sim-swap"
 
 app = Flask(__name__)
 
@@ -500,7 +500,7 @@ import express from "express"
 let clientId = "my-app-id"
 let clientSecret = "my-app-secret"
 let appCredentials = btoa(`${clientId}:${clientSecret}`)
-let apiPurpose = "dpv:FraudPreventionAndDetection#sim-swap"
+let apiScope = "dpv:FraudPreventionAndDetection#sim-swap"
 
 const app = express()
 const port = 3000

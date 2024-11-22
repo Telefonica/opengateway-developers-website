@@ -9,7 +9,7 @@ end
 
 EU-->>FE: Uses an app's<br/>Open Gateway-enhanced<br/>feature
 activate FE
-    FE->>CP: GET <cp>/authorize<br/>?redirect_uri=app_callback_url<br/>&purpose=dpv:<purpose>#35;<scope>
+    FE->>CP: GET <cp>/authorize<br/>?redirect_uri=app_callback_url<br/>&scope=dpv:<purpose>#35;<scope>
     activate CP
         CP->>CP: Operator<br/>resolution
     CP-->>FE: 302 (redirect) Location:<br/><operator>/authorize?redirect_uri=cp_callback_url

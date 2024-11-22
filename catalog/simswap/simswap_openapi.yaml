@@ -42,7 +42,7 @@ paths:
       description: |
         Checks if SIM swap has been performed during a past period
 
-        Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following purpose:
+        Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following scope:
 
         `dpv:FraudPreventionAndDetection#sim-swap`
 
@@ -88,9 +88,9 @@ paths:
         - three_legged:
           - retrieve-sim-swap-date  
       description: |
-        Gets the timestamp of last MSISDN <-> IMSI pairing change for a mobile user account provided with MSIDN.
+        Gets the timestamp of last MSISDN <-> IMSI pairing change for a mobile user account provided with MSISDN.
 
-        Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following purpose:
+        Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following scope:
 
         `dpv:FraudPreventionAndDetection#sim-swap`
 
