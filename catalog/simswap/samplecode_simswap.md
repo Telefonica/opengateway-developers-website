@@ -263,12 +263,12 @@ result = simswap_client.retrieve_date()
 print(f"SIM was swapped: {result.strftime('%B %d, %Y, %I:%M:%S %p')}")
 ```
 ```node Sample SDK for Node.js
-let result = await simswapClient.retrieveDate()
+let result = await simswapClient.retrieve_date()
 
 console.log(`SIM was swapped: ${result.toLocaleString('en-GB', { timeZone: 'UTC' })}`)
 ```
 ```java Sample SDK for Java
-CompletableFuture<Boolean> resultFuture = simswapClient.retrieveDate();
+CompletableFuture<Boolean> resultFuture = simswapClient.retrieve_date();
 
 resultFuture.thenAccept(result -> {
     System.out.println("SIM was swapped: " + DateTimeFormatter.ISO_LOCAL_DATE.format(result));
@@ -545,7 +545,7 @@ result = await simswap_client.retrieve_date(phone_number)
 print(f"SIM was swapped: {result.strftime('%B %d, %Y, %I:%M:%S %p')}")
 ```
 ```node Sample SDK for Node.js
-let result = await simswapClient.retrieveDate(phoneNumber)
+let result = await simswapClient.retrieve_date(phoneNumber)
 
 console.log(`SIM was swapped: ${result.toLocaleString('en-GB', { timeZone: 'UTC' })}`)
 ```
