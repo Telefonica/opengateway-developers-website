@@ -69,7 +69,7 @@ paths:
 
         Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following scope:
 
-        `dpv:FraudPreventionAndDetection#kyc`
+        `dpv:FraudPreventionAndDetection#know-your-customer:match`
 
       operationId: KYC_Match_v0.1
 
