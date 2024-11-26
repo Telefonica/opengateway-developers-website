@@ -8,7 +8,7 @@ category: 66d5624a492663000f4ed527
 
 # Interact with the Open Gateway Sandbox using Postman
 
-Here you can download the postman collection <a href="https://github.com/Telefonica/opengateway-postman/raw/main/postman_collection.json" download>Postman collection</a> and the <a href="https://github.com/Telefonica/opengateway-postman/raw/main/sandbox.postman_environment.json" download> Sandbox enviroment</a> with variables that you will have to configure to work with your sandbox credentials. 
+Here you can download the postman collection <a href="https://github.com/Telefonica/opengateway-postman">Postman collection</a> and the <a href="https://github.com/Telefonica/opengateway-postman"> Sandbox enviroment</a> with variables that you will have to configure to work with your sandbox credentials. 
 
 To import a Postman collection, you will need to follow the steps below:  
 
@@ -28,8 +28,6 @@ To use a Postmam collection:
 	- Authenticate your app and its user (an alternative authentication method will soon be available for frontend use) > Authorization (OIDC) / CIBA (Backend) / 1st Authorization request.
 	- Get an access token with which to make the service API call > Authorization (OIDC) / CIBA (Backend) / 2nd Get access token.
 	- Make the call to the service API, among those available: Service APIs 
-  
-
 
 2. Service APIs / Select a specific call to view the details and configuration options.
 
