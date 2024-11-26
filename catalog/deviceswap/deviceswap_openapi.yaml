@@ -29,7 +29,7 @@ paths:
 
         Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following scope:
 
-        `dpv:FraudPreventionAndDetection#device-swap:retrieve-date`
+        `dpv:FraudPreventionAndDetection#device-swap`
       operationId: retrieveDeviceSwapDate
       security:
         - three_legged:
@@ -75,7 +75,7 @@ paths:
 
         Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following scope:
 
-        `dpv:FraudPreventionAndDetection#device-swap:check`
+        `dpv:FraudPreventionAndDetection#device-swap`
       operationId: checkDeviceSwap
       security:
         - three_legged:
