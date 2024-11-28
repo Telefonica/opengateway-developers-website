@@ -4,9 +4,9 @@ excerpt: The Device Location Verification API from Open Gateway allows to check 
 category: 66aa4f941e51e7000fa353ce
 ---
 
-> 📘 To try out our APIs, visit the [Sandbox](https://opengateway.telefonica.com/developer-hub/unirse).
+The Device Location API is a software interface that allows applications to confirm if a user's device is in its intended location. The network must track a device's location at all times to effectively provide telecommunications services. This capability is utilized to offer device location as a service.
 
-The Device Location Verification API enhances security by verifying that a device is in the expected location during transactions, which helps prevent fraud and unauthorized activities. This verification process also streamlines authentication, leading to faster and smoother transactions, ultimately improving the user experience. 
+The Device Location API enhances security by verifying that a device is in the expected location during transactions, which helps prevent fraud and unauthorized activities. This verification process also streamlines authentication, leading to faster and smoother transactions, ultimately improving the user experience. 
 
 Additionally, the API is a valuable tool for fraud prevention, as it can quickly detect and mitigate potential threats by identifying discrepancies between the claimed and actual device locations. It also helps businesses comply with regulatory requirements in industries where location verification is essential, such as finance and gaming. 
  
@@ -14,7 +14,10 @@ Furthermore, by verifying a user's location, businesses can offer more personali
 
 ![DeviceLocation](https://github.com/Telefonica/opengateway-developers-website/raw/main/catalog/devicelocation/images/DeviceLocation.png)
 
-## Overview of the Device Location Verification CAMARA API
+> 📘 Want to give it a try?
+> Apply to join the [Developer Hub](https://opengateway.telefonica.com/en/developer-hub) and gain access to our Sandbox.
+
+## Overview of the SIM Swap CAMARA API
 
 ### High level definition
 

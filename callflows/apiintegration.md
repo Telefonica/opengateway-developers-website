@@ -4,8 +4,6 @@ excerpt: In this guide we will go through the different ways to integrate with O
 category: 66d57750d3f60b0011576376
 ---
 
-> 📘 To try out our APIs, visit the [Sandbox](https://opengateway.telefonica.com/developer-hub/unirse).
-
 ## RESTful by design 
 
 Since Open Gateway APIs are RESTful, you will always be able to integrate them by performing HTTP requests from any programming language providing such capability. However, most Channel Partners will provide you with SDKs in several programming languages which, by performing such requests themselves under the hood, will make your life easier when it comes to accessing the telco features that Open Gateway offers to your application.
@@ -41,3 +39,6 @@ These are some pros and cons you could get from the following two ways of integr
 	- It is up to your Channel Partner to provide SDKs in different programming languages including your app's one
 	- Depending on your Channel Partner and your use case, you could need to implement a frontend authorization flow and there could be a lack of frontend SDKs (e.g. for native mobile apps) which would lead you to integrate the frontend authorization by performing HTTP requests anyway
 	- Once you have integrated the SDKs from a Channel Partner, you would need some re-engineering to switch to another Channel Partner's Open Gateway platform, since each one offer their owns and SDK interfaces are not standardized at CAMARA.
+
+> 📘 Want to give Open Gateway APIs a try?
+> Apply to join the [Developer Hub](https://opengateway.telefonica.com/en/developer-hub) and gain access to our Sandbox.

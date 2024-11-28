@@ -4,8 +4,6 @@ excerpt: The Open Gateway API Architecture is a cutting-edge framework designed 
 category: 66840b9dac745a002559ffad
 ---
 
-> 📘 To try out our APIs, visit the [Sandbox](https://opengateway.telefonica.com/developer-hub/unirse).
-
 ## Introduction to Open Gateway API Architecture
 
 The Open Gateway APIs manages API calls and credentials, ensuring they are routed correctly to respective mobile operators. Its intuitive interface enables developers to effortlessly choose and subscribe to network APIs offered by multiple operators across different regions. This transforms Open Gateway into a convenient marketplace that simplifies procurement processes while maintaining a seamless user experience.

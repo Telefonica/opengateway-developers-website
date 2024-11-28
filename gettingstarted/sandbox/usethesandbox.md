@@ -4,8 +4,6 @@ excerpt: Learn how to effectively use the Open Gateway Sandbox, a free and secur
 category: 66d5624a492663000f4ed527
 ---
 
-> 📘 To try out our APIs, visit the [Sandbox](https://opengateway.telefonica.com/developer-hub/unirse).
-
 ## Registering your application
 
 Open Gateway APIs access is granted to applications, not developers, so every application can have limited access to the scope and for the purpose it needs.
@@ -14,7 +12,8 @@ Open Gateway APIs access is granted to applications, not developers, so every ap
 
 Therefore the way to get credentials to test the APIs is to register an application in the Sandbox console. You will use your application credentials to authenticate your requests to the APIs from any test you code no matter if it is actually a comprehensive application or just a tiny script to run from the a command line interface.
 
-> 📘 To use the Sandbox, you must [join the Developer Hub](https://opengateway.telefonica.com/en/developer-hub) and enter in your [private area](https://opengateway.telefonica.com/en/profile/technical-toolbox/sandbox)
+> 📘 How to access the Open Gateway Sandbox
+> To use the Sandbox, you must [join the Developer Hub](https://opengateway.telefonica.com/en/developer-hub) and enter in your [private area](https://opengateway.telefonica.com/en/profile/technical-toolbox/sandbox)
 
 For every application you create, you will need to follow these simple steps to configure it:
 

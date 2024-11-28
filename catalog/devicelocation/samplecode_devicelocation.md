@@ -6,7 +6,8 @@ category: 66aa4f941e51e7000fa353ce
 
 The following code shows, for didactic purposes, a hypothetical or sample SDK, in several programming languages, from a generic Open Gateway's channel partner, also known as aggregator. The final implementation will depend on the channel partner's development tools offering. Note that channel partners' Open Gateway SDKs are just code modules wrapping authorization and API calls providing an interface in your app's programming for convenience.
 
-> 📘 It is recommended to use the [API Reference tool](https://developers.opengateway.telefonica.com/reference/) for faster calls of our APIs
+> 📘 Want to give it a try before coding?
+> Check the [API interactive reference](https://developers.opengateway.telefonica.com/reference/verifylocation-1)
 
 ### Table of contents
 - [Backend flow](#backend-flow)
@@ -14,9 +15,13 @@ The following code shows, for didactic purposes, a hypothetical or sample SDK, i
     - [API usage](#api-usage)
 
 ## Code samples
-> 📘 These are code examples
-> - Remember to replace 'my-app-id' and 'my-app-secret' with the credentials of your app. (If you are using our Sandbox, you can get them [here](https://sandbox.opengateway.telefonica.com/my-apps)).
-> - Remember also to change the urls with your aggregator urls. If you are using the Sandbox, the url is https://sandbox.opengateway.telefonica.com/apigateway/
+
+> 📘 Note
+> These are code samples and not finalized ready-to-run code:
+> - Remember to replace 'my-app-id' and 'my-app-secret' with the credentials of your app.
+If you registered your test app on our Sandbox, you can retrieve its credentials [here](https://sandbox.opengateway.telefonica.com/my-apps). 
+> - Remember also to replace "aggregator/opengateway-sdk" with the SDK from your aggregator.
+If you are using our sandbox SDK, check info and installation of de Sandbox SDK [here](/docs/sdkreference)
 
 ### Backend flow
 

@@ -4,9 +4,10 @@ excerpt: The Number Verification API is a pivotal tool for bolstering security a
 category: 66aa4f941e51e7000fa353ce
 ---
 
-> 📘 To try out our APIs, visit the [Sandbox](https://opengateway.telefonica.com/developer-hub/unirse).
-
 Built as part of the Open Gateway initiative, the Number Verification API provides developers universal access to essential network functionalities. Whether you're enhancing user registration processes, securing transactions, or optimizing user engagement strategies, integrating the Number Verification API enriches your application's security posture while ensuring a seamless user experience.
+
+> 📘 Want to give it a try?
+> Apply to join the [Developer Hub](https://opengateway.telefonica.com/en/developer-hub) and gain access to our Sandbox.
 
 ## Overview of the Number Verification CAMARA API
 

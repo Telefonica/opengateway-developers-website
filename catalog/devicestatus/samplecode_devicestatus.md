@@ -10,7 +10,8 @@ This sample code consumes the API without an SDK, using direct HTTP requests. Ho
 
 Note that currently, our Sandbox SDK does not have Device Status implemented.
 
-> 📘 It is recommended to use the [API Reference tool](https://developers.opengateway.telefonica.com/reference/) for faster calls of our APIs
+> 📘 Want to give it a try before coding?
+> Check the [API interactive reference](https://developers.opengateway.telefonica.com/reference/getroamingstatus)
 
 ### Table of contents
 - [Backend flow](#backend-flow)
@@ -18,9 +19,13 @@ Note that currently, our Sandbox SDK does not have Device Status implemented.
     - [API usage](#api-usage)
 
 ## Code samples
-> 📘 These are code examples
-> - Remember to replace 'my-app-id' and 'my-app-secret' with the credentials of your app. (If you are using our Sandbox, you can get them [here](https://sandbox.opengateway.telefonica.com/my-apps)).
-> - Remember also to change the urls with your aggregator urls. If you are using the Sandbox, the url is https://sandbox.opengateway.telefonica.com/apigateway/
+
+> 📘 Note
+> These are code samples and not finalized ready-to-run code:
+> - Remember to replace 'my-app-id' and 'my-app-secret' with the credentials of your app.
+If you registered your test app on our Sandbox, you can retrieve its credentials [here](https://sandbox.opengateway.telefonica.com/my-apps). 
+> - Remember also to replace "aggregator/opengateway-sdk" with the SDK from your aggregator.
+If you are using our sandbox SDK, check info and installation of de Sandbox SDK [here](/docs/sdkreference)
 
 ### Backend flow
 

@@ -4,8 +4,6 @@ excerpt: If your application offers a human interface to provide your users with
 category: 66d57750d3f60b0011576376
 ---
 
-> 📘 To try out our APIs, visit the [Sandbox](https://opengateway.telefonica.com/developer-hub/unirse).
-
 From a developer perspective, the frontend authorization flow consists of two sequential steps implemented by performing HTTP requests to the following Open Gateway Channel Partner's API gateway endpoints, compliant with the OIDC standard **Authorization Code Flow**.
 
 ## Frontend authorization flow steps
@@ -51,6 +49,9 @@ curl --request GET \
 ```
 
 [Check the API reference](/reference/authorize)
+
+> 📘 Want to give it a try?
+> Apply to join the [Developer Hub](https://opengateway.telefonica.com/en/developer-hub) and gain access to our Sandbox.
 
 ### Access token retrieval
 The authorization code received in the previous step will be used to get an access token from the Channel Partner's API gateway, by performing a POST request to the token endpoint.

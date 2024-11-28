@@ -4,12 +4,13 @@ excerpt: The QoD API allows the developer to prioritize network traffic on certa
 category: 66aa4f941e51e7000fa353ce
 ---
 
-> 📘 To try out our APIs, visit the [Sandbox](https://opengateway.telefonica.com/developer-hub/unirse).
-
 An example of an application that aims to enrich the public experience when attending a live sporting event, an advanced feature for your viewers may be watching replays of relevant games. 
 
 To do this, the application must ensure that the end user has adequate connectivity to watch it, regardless of the
 number of simultaneous users watching the sporting event in the same location. 
+
+> 📘 Want to give it a try?
+> Apply to join the [Developer Hub](https://opengateway.telefonica.com/en/developer-hub) and gain access to our Sandbox.
 
 ## Overview of the QoD CAMARA API
 
