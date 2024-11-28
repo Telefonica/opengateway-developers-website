@@ -4,13 +4,14 @@ excerpt: The Open Gateway initiative is led to create a standardized framework o
 category: 66aa4f941e51e7000fa353ce
 ---
 
-> 📘 To try out our APIs, visit the [Sandbox](https://opengateway.telefonica.com/developer-hub/unirse).
-
 Open Gateway enables software developers to leverage Telco Application Programming Interfaces (Telco APIs) for building applications that seamlessly integrate our underlying networks' capabilities and operators' data. These APIs provide a consistent method for accessing analytical and statistical data from networks, facilitating the implementation of customer experience-focused use cases. Open Gateway empowers developers to retrieve network information and request configuration changes efficiently.
 
 Open Gateway utilizes these Telco APIs to offer a unified standard interface across multiple operator networks worldwide, abstracting the inherent complexities associated with their systems and infrastructures. This approach simplifies integration and enhances interoperability for developers and applications alike.
 
 ![available_apis](https://github.com/Telefonica/opengateway-developers-website/raw/main/catalog/images/available_apis.png)
+
+> 📘 Want to give Open Gateway APIs a try?
+> Apply to join the [Developer Hub](https://opengateway.telefonica.com/en/developer-hub) and gain access to our Sandbox.
 
 ## Technical Description of Open Gateway APIs
 

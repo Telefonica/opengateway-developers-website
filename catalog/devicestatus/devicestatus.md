@@ -4,13 +4,14 @@ excerpt: The Device Status API makes it possible to check the roaming status of 
 category: 66aa4f941e51e7000fa353ce
 ---
 
-> 📘 To try out our APIs, visit the [Sandbox](https://opengateway.telefonica.com/developer-hub/unirse).
-
 The standardised Device Status API provides the ability to check the roaming status of a given SIM-based device without identity theft or GPS.
 
 This solution allows you to control resource management during international roaming in a more secure way.
 
 ![DeviceStatus](https://github.com/Telefonica/opengateway-developers-website/raw/main/catalog/devicestatus/images/DeviceStatus.png)
+
+> 📘 Want to give it a try?
+> Apply to join the [Developer Hub](https://opengateway.telefonica.com/en/developer-hub) and gain access to our Sandbox.
 
 ## Overview of the Device Status API
 

@@ -4,15 +4,12 @@ excerpt: The following samples show how to use the [Open Gateway SIM Swap API](h
 category: 66aa4f941e51e7000fa353ce
 ---
 
-> 📘 Note
->
-> To try out our APIs, visit the [Sandbox](https://opengateway.telefonica.com/developer-hub/unirse).
-
 The following code shows, for didactic purposes, a hypothetical or sample SDK, in several programming languages, from a generic Open Gateway's channel partner, also known as aggregator. The final implementation will depend on the channel partner's development tools offering. Note that channel partners' Open Gateway SDKs are just code modules wrapping authorization and API calls providing an interface in your app's programming for convenience.
 
 Sample code on how to consume the API without an SDK, directly with HTTP requests, is also provided, and it is common and valid no matter what your partner is, thanks to the CAMARA standardization. If you do not use an SDK you need to code the HTTP calls and additional stuff like encoding your credentials, calling authorization endpoints, handling tokens, etc. You can check our sample [Postman collection](https://github.com/Telefonica/opengateway-postman) as a reference.
 
-> 📘 It is recommended to use the [API Reference tool](https://developers.opengateway.telefonica.com/reference/) for faster calls of our APIs
+> 📘 Want to give it a try before coding?
+> Check the [API interactive reference](https://developers.opengateway.telefonica.com/reference/checksimswap)
 
 ### Table of contents
 - [Backend flow](#backend-flow)
@@ -25,9 +22,13 @@ Sample code on how to consume the API without an SDK, directly with HTTP request
     - [API usage](#api-usage-1)
 
 ## Code samples
-> 📘 These are code examples
-> - Remember to replace 'my-app-id' and 'my-app-secret' with the credentials of your app. (If you are using our Sandbox, you can get them [here](https://sandbox.opengateway.telefonica.com/my-apps)).
-> - Remember also to replace "aggregator/opengateway-sdk" with the SDK from your aggregator. If you are using our sandbox SDK, check info and installation of de Sandbox SDK [here](../../gettingstarted/sandbox/sdkreference.md)
+
+> 📘 Note
+> These are code samples and not finalized ready-to-run code:
+> - Remember to replace 'my-app-id' and 'my-app-secret' with the credentials of your app.
+If you registered your test app on our Sandbox, you can retrieve its credentials [here](https://sandbox.opengateway.telefonica.com/my-apps). 
+> - Remember also to replace "aggregator/opengateway-sdk" with the SDK from your aggregator.
+If you are using our sandbox SDK, check info and installation of de Sandbox SDK [here](/docs/sdkreference)
 
 ### Backend flow
 

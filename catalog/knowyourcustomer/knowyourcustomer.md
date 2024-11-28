@@ -4,12 +4,12 @@ excerpt: The Know Your Customer API makes it possible to validates users info wi
 category: 66aa4f941e51e7000fa353ce
 ---
 
-> 📘 To try out our APIs, visit the [Sandbox](https://opengateway.telefonica.com/developer-hub/unirse).
-
 The standardised Know Your Customer API allows you to validate user contact information against data from Mobile Network Operators (MNOs), ensuring accuracy and improving both conversion rates and the quality of user onboarding for new services.
 
 This API provides a quick and efficient method to verify customer contact details, helping you prevent identity fraud, including synthetic identities and identity theft. Additionally, by utilizing this standardized API, you can expand your user reach across multiple MNOs.
 
+> 📘 Want to give it a try?
+> Apply to join the [Developer Hub](https://opengateway.telefonica.com/en/developer-hub) and gain access to our Sandbox.
 
 ## Overview of the Know Your Customer API
 

@@ -4,8 +4,6 @@ excerpt: Learn how to explore the functionality of the Sandbox environment using
 category: 66d5624a492663000f4ed527
 ---
 
-> 📘 To try out our APIs, visit the [Sandbox](https://opengateway.telefonica.com/developer-hub/unirse).
-
 # Interact with the Open Gateway Sandbox using Postman
 
 Here you can download the postman collection <a href="https://github.com/Telefonica/opengateway-postman">Postman collection</a> and the <a href="https://github.com/Telefonica/opengateway-postman"> Sandbox enviroment</a> with variables that you will have to configure to work with your sandbox credentials. 
