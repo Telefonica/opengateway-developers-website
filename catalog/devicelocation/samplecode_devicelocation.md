@@ -1,6 +1,6 @@
 ---
 title: Sample code for Device Location Verification
-excerpt: The following samples show how to use the [Open Gateway Device Location Verifiaction API](https://opengateway.telefonica.com/en/apis/device-status), 
+excerpt: The following samples show how to use the [Open Gateway Device Location Verification API](https://opengateway.telefonica.com/en/apis/device-status), 
 category: 66aa4f941e51e7000fa353ce
 ---
 
