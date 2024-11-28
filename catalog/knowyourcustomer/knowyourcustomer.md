@@ -23,7 +23,7 @@ The Know Your Customer Camara API specifies one operation:
 
 - **POST /match**: answers the question 'is this informacion true?'
 
-[Check the API Reference](/reference/kyc_match)
+[Check the API Reference](/reference/kyc_match_v01)
 
 ## Why Know Your Customer?
 
