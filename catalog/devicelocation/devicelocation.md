@@ -66,8 +66,8 @@ The API's standardization ensures uniform access across multiple telecom provide
 
 > ⚙️ Parameters sent in the request 
 >
-> - msisdn (mobile phone number in the format - +551199999999) 
-> - latitude (latitude in the format: -23.5042623 )
+> - msisdn (mobile phone number in the format: +551199999999) 
+> - latitude (latitude in the format: -23.5042623)
 > - longitude (longitude in the format -46.8575631)
 > - accuracy (precision of the radius of the circle in km: 2)
 
