@@ -1,6 +1,6 @@
 ---
 title: Sample code for Device Location Verification
-excerpt: The following samples show how to use the [Open Gateway Device Location Verification API](https://opengateway.telefonica.com/en/apis/device-status), 
+excerpt: The following samples show how to use the [Open Gateway Device Location Verification API](https://opengateway.telefonica.com/en/apis/device-location), 
 category: 66aa4f941e51e7000fa353ce
 ---
 
@@ -30,111 +30,95 @@ Most likely, this API will be consumed in a backend flow, since it is the applic
 #### Authorization
 
 ```python Sample HTTP using Python
-import requests
-import base64
-import sys
 
-ciba_url = "https://sandbox.opengateway.telefonica.com/apigateway/bc-authorize"
-token_url = "https://sandbox.opengateway.telefonica.com/apigateway/token"
-verify_url = "https://sandbox.opengateway.telefonica.com/apigateway/location/v0/verify"
+# First step:
+# Perform an authorization request
 
-# AUTHENTICATION
-## Basic Auth
-def basic_auth():
-    client_id='my-app-id',
-    client_secret='my-app-secret'
-    credentials = f"{client_id}:{client_secret}"
-    return base64.b64encode(credentials.encode()).decode()
+customer_phone_number = "+34555555555"
 
-## CIBA
-def cibauth(headers, number):
-    payload = {
-            "login_hint": number,
-            "scope": "dpv:FraudPreventionAndDetection#device-location-read"
-    }
-    try:
-        response = requests.post(ciba_url, data=payload, headers=headers)
-        response.raise_for_status()
-        return response.json().get("auth_req_id")
-    except:
-        status_code = response.status_code
-        error_msg = response.json().get("error_description")
-        print(f"Error {status_code}: {error_msg}")
-        sys.exit(1)
+client_id = "my-app-id"
+client_secret = "my-app-secret"
+app_credentials = f"{client_id}:{client_secret}"
+credentials = base64.b64encode(app_credentials.encode('utf-8')).decode('utf-8')
+api_scope = "dpv:FraudPreventionAndDetection#device-location-read"
 
-## Token
-def get_token(headers, ciba):
-    payload = {
-            "auth_req_id": ciba,
-            "grant_type": "urn:openid:params:grant-type:ciba"
-    }
-    try:
-        response = requests.post(token_url, data=payload, headers=headers)
-        response.raise_for_status()
-        return response.json().get("access_token")
-    except:
-        status_code = response.status_code
-        error_msg = response.json().get("message")
-        print(f"Error {status_code}: {error_msg}")
-        sys.exit(1)
+headers = {
+    "Content-Type": "application/x-www-form-urlencoded",
+    "Authorization": f"Basic {credentials}"
+}
 
-# Check if the number is in Distrito Telefónica
-def verify_number(token, number):
-    url = "https://sandbox.opengateway.telefonica.com/apigateway/location/v0/verify"
-    payload = {
-            "ueId": { "msisdn": "+34666666666" },
-            "latitude": 40.5150,
-            "longitude": -3.6640,
-            "accuracy": 50
-    }
-    headers = {
-            "accept": "application/json",
-            "content-type": "application/json",
-            "authorization": f"Bearer {token}"
-    }
-    try:
-        response = requests.post(url, json=payload, headers=headers)
-        response.raise_for_status()
-        return response.json()
-    except:
-        status_code = response.status_code
-        error_msg = response.json().get("message")
-        print(f"Error 3 {status_code}: {error_msg}")
-        sys.exit(1)
+data = {
+    "login_hint": f"phone_number:{customer_phone_number}",
+    "scope": api_scope
+}
+
+response = requests.post(
+    "https://opengateway.aggregator.com/bc-authorize",
+    headers=headers,
+    data=data
+)
+
+auth_req_id = response.json().get("auth_req_id")
+
+# Second step:
+# Requesting an access token with the auth_req_id included in the result above
+
+headers = {
+    "Content-Type": "application/x-www-form-urlencoded",
+    "Authorization": f"Basic {credentials}"
+}
+
+data = {
+    "grant_type": "urn:openid:params:grant-type:ciba",
+    "auth_req_id": auth_req_id
+}
+
+response = requests.post(
+    "https://opengateway.aggregator.com/token",
+    headers=headers,
+    data=data
+)
+
+access_token = response.json().get("access_token")
 ```
+
 ```python Sample SDK for Python
-import sys
 from opengateway_sandbox_sdk import ClientCredentials, DeviceLocation
 
 credentials = ClientCredentials(
     client_id='yout_client_id',
     client_secret='your_client_secret'
     )
-phone_number = "+34666666666"
-try:
-    device_client = DeviceLocation(credentials, phone_number)
-except:
-    sys.exit(1)
+customer_phone_number = "+34666666666"
+
+device_client = DeviceLocation(credentials=credentials, phone_number=customer_phone_number)
 ```
 #### API usage
 
 ```python Sample HTTP with Python
-if __name__ == "__main__":
-    number = "+34666666666"
-    credentials = basic_auth()
-    headers = {
-            "accept": "application/json",
-            "content-type": "application/x-www-form-urlencoded",
-            "authorization": f"Basic {credentials}"
-    }
-    ciba_response = cibauth(headers, number)
-    token = get_token(headers, ciba_response)
-    verify = verify_number(token, number)
+headers = {
+    "Content-Type": "application/json",
+    "Authorization": f"Bearer {access_token}"
+}
 
-    print(f"Is device {number} in Distrito Telefónica?: {verify.get("verificationResult")}")
+data = {
+    "ueId": { "msisdn": customer_phone_number }, # as set in the authorization step
+    "latitude": 40.5150,
+    "longitude": -3.6640,
+    "accuracy": 2
+}
+response = requests.post(
+    "https://opengateway.aggregator.com/location/v0/verify",
+    headers=headers,
+    json=data
+)
+
+result = response.json()
+
+print (f"Is the device in location? {result.get("verificationResult")}")
 ```
 ```python Sample SDK for Python
-    res = device_client.verify(phone_number, 40.5150, -3.6640, 50)
+    result = device_client.verify(phone_number, 40.5150, -3.6640, 50)
 
-    print(res)
+    print (f"Is the device in location? {result}")
 ```
