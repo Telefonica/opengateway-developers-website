@@ -6,6 +6,8 @@ category: 66aa4f941e51e7000fa353ce
 
 The following code shows, for didactic purposes, a hypothetical or sample SDK, in several programming languages, from a generic Open Gateway's channel partner, also known as aggregator. The final implementation will depend on the channel partner's development tools offering. Note that channel partners' Open Gateway SDKs are just code modules wrapping authorization and API calls providing an interface in your app's programming for convenience.
 
+Sample code on how to consume the API without an SDK, directly with HTTP requests, is also provided, and it is common and valid no matter what your partner is, thanks to the CAMARA standardization. If you do not use an SDK you need to code the HTTP calls and additional stuff like encoding your credentials, calling authorization endpoints, handling tokens, etc. You can check our sample [Postman collection](https://github.com/Telefonica/opengateway-postman) as a reference.
+
 > 📘 Want to give it a try before coding?
 > Check the [API interactive reference](https://developers.opengateway.telefonica.com/reference/verifylocation-1)
 
@@ -27,7 +29,24 @@ If you are using our sandbox SDK, check info and installation of de Sandbox SDK 
 
 Most likely, this API will be consumed in a backend flow, since it is the application owner not the end-user who wants to take advantage of its functionality. The authorization protocol used in Open Gateway for backend flows is the OIDC standard CIBA (Client-Initiated Backchannel Authentication). You can check the CAMARA documentation on this flow [here](https://github.com/camaraproject/IdentityAndConsentManagement/blob/release-0.1.0/documentation/CAMARA-API-access-and-user-consent.md#ciba-flow-backend-flow).
 
+First step is to instantiate the DeviceLocation service class included in the corresponding SDK. By providing your app's credentials to the class constructor, it handles the CIBA authorization on its behalf. Providing the phone number as well, as an identifier of the line to be checked for SIM swaps, allows authorization to be 3-legged and enables end-user consent management, and will let your app to just effectively use the API in a single line of code below.
+
 #### Authorization
+
+Since Open Gateway authorization is 3-legged, meaning it identifies the application, the operator and the operator's subscriber, who is also the end-user holder of the mobile line, each check for a different phone number needs its own SDK class instantiation, or access token if not using an SDK.
+
+```Sample SDK for Python
+from opengateway_sandbox_sdk import ClientCredentials, DeviceLocation
+
+credentials = ClientCredentials(
+    client_id='yout_client_id',
+    client_secret='your_client_secret'
+)
+
+customer_phone_number = "+34666666666"
+
+devicelocation_client = DeviceLocation(credentials=credentials, phone_number=customer_phone_number)
+```
 
 ```python Sample HTTP using Python
 
@@ -82,17 +101,6 @@ response = requests.post(
 access_token = response.json().get("access_token")
 ```
 
-```python Sample SDK for Python
-from opengateway_sandbox_sdk import ClientCredentials, DeviceLocation
-
-credentials = ClientCredentials(
-    client_id='yout_client_id',
-    client_secret='your_client_secret'
-    )
-customer_phone_number = "+34666666666"
-
-device_client = DeviceLocation(credentials=credentials, phone_number=customer_phone_number)
-```
 #### API usage
 
 ```python Sample HTTP with Python
@@ -105,7 +113,7 @@ data = {
     "ueId": { "msisdn": customer_phone_number }, # as set in the authorization step
     "latitude": 40.5150,
     "longitude": -3.6640,
-    "accuracy": 2
+    "accuracy": 10
 }
 response = requests.post(
     "https://opengateway.aggregator.com/location/v0/verify",
@@ -118,7 +126,7 @@ result = response.json()
 print (f"Is the device in location? {result.get("verificationResult")}")
 ```
 ```python Sample SDK for Python
-    result = device_client.verify(phone_number, 40.5150, -3.6640, 50)
+    result = devicelocation_client.verify(40.5150, -3.6640, 10, phone_number)
 
     print (f"Is the device in location? {result}")
 ```
