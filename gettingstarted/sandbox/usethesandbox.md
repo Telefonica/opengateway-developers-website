@@ -41,7 +41,7 @@ For every application you create, you will need to follow these simple steps to 
 
 ![Usage mode](https://github.com/Telefonica/opengateway-developers-website/raw/main/gettingstarted/sandbox/images/usage-mode.png?raw=true)
 
-1. Briefly describe your application as part of the application onboarding process so that mobile operators can understand the purpose of your tests and validate it.
+3. Briefly describe your application as part of the application onboarding process so that mobile operators can understand the purpose of your tests and validate it.
 
 	Since it is a testing environment, your application won't be rejected as per this information, but our Sandbox uses standard procedures to register applications in the mobile operators' systems which takes this data as mandatory.
 
