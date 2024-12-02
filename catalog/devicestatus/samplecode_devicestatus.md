@@ -31,7 +31,9 @@ If you are using our sandbox SDK, check info and installation of de Sandbox SDK 
 
 ### Backend flow
 
-Most likely, this API will be consumed in a backend flow, since it is the application owner not the end-user who wants to take advantage of its functionality. The authorization protocol used in Open Gateway for backend flows is the OIDC standard CIBA (Client-Initiated Backchannel Authentication). You can check the CAMARA documentation on this flow [here](https://github.com/camaraproject/IdentityAndConsentManagement/blob/release-0.1.0/documentation/CAMARA-API-access-and-user-consent.md#ciba-flow-backend-flow).
+The consumption of this api in a backend flow opens up many possibilities, from anti-fraud services such as bank transaction verification, logistics (for courier services or IoT), or even for travel applications, where it provides us with solutions and advice for cost savings.
+
+ The authorization protocol used in Open Gateway for backend flows is the OIDC standard CIBA (Client-Initiated Backchannel Authentication). You can check the CAMARA documentation on this flow [here](https://github.com/camaraproject/IdentityAndConsentManagement/blob/release-0.1.0/documentation/CAMARA-API-access-and-user-consent.md#ciba-flow-backend-flow).
 
 First step is to instantiate the DeviceStatus service class included in the corresponding SDK. By providing your app's credentials to the class constructor, it handles the CIBA authorization on its behalf. Providing the phone number as well, as an identifier of the line to be checked for DeviceStatus, allows authorization to be 3-legged and enables end-user consent management, and will let your app to just effectively use the API in a single line of code below.
 
@@ -341,7 +343,9 @@ print(f"Roaming? {result.get('roaming')} \n Country: {result.get('countryName')[
 
 ### Frontend flow
 
-Although it is not necessary for device status that the user's device is involved in the flow, consider that it is always easier to get the phone number on the frontend than on the backend, i.e. more accurate in terms of data quality at each end. If you wanted to start the service API consumption from a frontend application, you would need to implement the OIDC's Authorization Code Flow instead of CIBA. This flow implies your application providing a callback URL that you will need to publish online hosted on your backend server, and in which your application's backend will get a `code` authorizing it to use the Open Gateway APIs for your end-user.
+Although it is not necessary for the user’s device to participate in the flow for the device status, it is important to consider that the roaming status can be used as an additional authentication factor or for managing a subscription service in a way that content can be adjusted based on the country. It can also be used to automatically adjust schedules when there is a time zone change, for example, when taking medications where the number of hours elapsed is more important than the current time.
+
+If you wanted to start the service API consumption from a frontend application, you would need to implement the OIDC's Authorization Code Flow instead of CIBA. This flow implies your application providing a callback URL that you will need to publish online hosted on your backend server, and in which your application's backend will get a `code` authorizing it to use the Open Gateway APIs for your end-user.
 
 This flow allows the mobile network operator to effectively identify the user by resolving the IP address of their device, running your application, by getting an HTTP redirection and returning a `code` that will reach out to your callback URL. You can check the CAMARA documentation on the Authorization Code Flow [here](https://github.com/camaraproject/IdentityAndConsentManagement/blob/release-0.1.0/documentation/CAMARA-API-access-and-user-consent.md#authorization-code-flow-frontend-flow).
 
