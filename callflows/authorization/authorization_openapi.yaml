@@ -17,37 +17,6 @@ servers:
         default: sandbox.opengateway.telefonica.com/apigateway
         description: API gateway URL
 paths:
-  /bc-authorize:
-    post:
-      summary: CIBA
-      tags:
-        - Authorize an application
-      security:
-        - basicAuth: []
-      description: |
-        Authorizes an application to access a resource from the backend
-
-        Check the [Backend authorization flow guide](/docs/backend) for more information.
-      operationId: bcAuthorize
-      requestBody:
-        content:
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: "#/components/schemas/AuthorizeRequest"
-        required: true
-      responses:
-        "200":
-          description: Returns an authorization code
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/AuthorizationRequestId"
-        "400":
-          $ref: "#/components/responses/Generic400"
-        "401":
-          $ref: "#/components/responses/Generic401"
-        "403":
-          $ref: "#/components/responses/Generic403"
   /authorize:
     get:
       summary: Auth Code Flow
@@ -55,8 +24,6 @@ paths:
         - Authorize an application
       security:
         - {}
-      x-readme:
-        explorer-enabled: false
       description: |
         Authorizes an application to access a resource from the user device
 
@@ -112,6 +79,37 @@ paths:
       responses:
         "302":
           description: Redirects to the `redirect_uri` with the authorization code in the query string
+        "400":
+          $ref: "#/components/responses/Generic400"
+        "401":
+          $ref: "#/components/responses/Generic401"
+        "403":
+          $ref: "#/components/responses/Generic403"
+  /bc-authorize:
+    post:
+      summary: CIBA
+      tags:
+        - Authorize an application
+      security:
+        - basicAuth: []
+      description: |
+        Authorizes an application to access a resource from the backend
+
+        Check the [Backend authorization flow guide](/docs/backend) for more information.
+      operationId: bcAuthorize
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: "#/components/schemas/AuthorizeRequest"
+        required: true
+      responses:
+        "200":
+          description: Returns an authorization code
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AuthorizationRequestId"
         "400":
           $ref: "#/components/responses/Generic400"
         "401":
