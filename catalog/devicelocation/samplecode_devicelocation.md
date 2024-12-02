@@ -40,7 +40,7 @@ First step is to instantiate the DeviceLocation service class included in the co
 Since Open Gateway authorization is 3-legged, meaning it identifies the application, the operator and the operator's subscriber, who is also the end-user holder of the mobile line, each check for a different phone number needs its own SDK class instantiation, or access token if not using an SDK.
 
 ```python Sample SDK for Python
-from opengateway_sandbox_sdk import ClientCredentials, DeviceLocation
+from aggregator_opengateway_sdk import ClientCredentials, DeviceLocation
 
 credentials = ClientCredentials(
     client_id='yout_client_id',
@@ -466,7 +466,7 @@ Samples represent how to publish the callback URL in Python or Node.js, so the c
 
 ```python Sample SDK for Python
 from flask import Flask, request, jsonify
-from opengateway_sandbox_sdk import ClientCredentials, DeviceLocation
+from aggregator_opengateway_sdk import ClientCredentials, DeviceLocation
 
 credentials = ClientCredentials(
     clientid='my-app-id',
