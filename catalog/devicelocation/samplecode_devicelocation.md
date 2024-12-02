@@ -255,8 +255,69 @@ access_token = response.json().get("access_token")
 ```
 
 #### API usage
+```python Sample SDK for Python
+result = devicelocation_client.verify(40.5150, -3.6640, 10, customer_phone_number) # as set in the authorization step
 
-```python Sample HTTP with Python
+print (f"Is the device in location? {result}")
+```
+```node Sample SDK for Node.js
+let result = deviceLocationClient.verify(40.5150, -3.6640, 10)
+
+console.log (`Is the device in location? ${result}`)
+```
+```java Sample SDK for Java
+CompletableFuture<Boolean> resultFuture = deviceLocationClient.verify(40.5150, -3.6640, 10);
+resultFuture.thenAccept(result -> {
+    System.out.println("Is the device in location? " + result);
+})
+```
+```ecmascript HTTP using Javascript(ES6)
+const myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+myHeaders.append("Authorization", `Bearer ${accessToken}`);
+
+const requestBody = JSON.stringify({
+  "phoneNumber": customerPhoneNumber // as set in the authorization step
+  "latitude": 40.5150,
+  "longitude": -3.6640,
+  "accuracy": 10
+});
+
+const requestOptions = {
+  method: "POST",
+  headers: myHeaders,
+  body: requestBody
+};
+
+fetch("https://opengateway.aggregator.com/location/v0/verify", requestOptions)
+  .then(response => response.json())
+  .then(result => {
+    console.log(`Is device in location? ${result.verificationResult}`)
+  })
+})
+```
+
+```java HTTP using Java
+JSONObject requestBody = new JSONObject();
+requestBody.put("phoneNumber", customerPhoneNumber); // as set in the authorization step
+requestBody.put("latitude", 40.5150);
+requestBody.put("longitude", -3.6640);
+requestBody.put("accuracy", 10);
+
+HttpRequest request = HttpRequest.newBuilder()
+    .uri(URI.create("https://opengateway.aggregator.com/location/v0/verify"))
+    .header("Content-Type", "application/json")
+    .header("Authorization", "Bearer " + accessToken)
+    .POST(BodyPublishers.ofString(requestBody.toString()))
+    .build();
+
+HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
+JSONObject jsonResponse = new JSONObject(response.body());
+String deviceInLocation = jsonResponse.getString("verificationResult");
+
+System.out.println("Is device in location?" + deviceInLocation);
+```
+```python HTTP with Python
 headers = {
     "Content-Type": "application/json",
     "Authorization": f"Bearer {access_token}"
@@ -276,13 +337,9 @@ response = requests.post(
 
 result = response.json()
 
-print (f"Is the device in location? {result.get("verificationResult")}")
+print (f"Is the device in location? {result.get('verificationResult')}")
 ```
-```python Sample SDK for Python
-    result = devicelocation_client.verify(40.5150, -3.6640, 10, customer_phone_number) # as set in the authorization step
 
-    print (f"Is the device in location? {result}")
-```
 
 ### Frontend flow
 
