@@ -67,3 +67,8 @@ jobs:
         uses: readmeio/rdme@v8
         with:
           rdme: openapi catalog/deviceswap/deviceswap_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=6746056170f5f7001f8ac2b4
+
+      - name: Run `openapi` command 🚀
+        uses: readmeio/rdme@v8
+        with:
+          rdme: openapi catalog/homedevicesqod/homedevices_qod_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=674f4ea88f080d003d0f97ee
