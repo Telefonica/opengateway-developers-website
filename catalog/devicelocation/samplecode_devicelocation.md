@@ -41,7 +41,7 @@ verify_url = "https://sandbox.opengateway.telefonica.com/apigateway/location/v0/
 # AUTHENTICATION
 ## Basic Auth
 def basic_auth():
-    client_id='my-app-id',
+    client_id='my-app-id'
     client_secret='my-app-secret'
     credentials = f"{client_id}:{client_secret}"
     return base64.b64encode(credentials.encode()).decode()
