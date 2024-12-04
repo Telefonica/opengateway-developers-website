@@ -8,6 +8,10 @@ category: 66840b9dac745a002559ffad
 
 Open Gateway is a initiative spearheaded by the [GSMA](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/) in collaboration with leading telecommunications operators, cloud providers, and aggregators worldwide. Our mission is to create a standardized framework of Application Programming Interfaces (APIs) that enable simplified and universal access to cutting-edge mobile network capabilities and associated services. By leveraging Open Gateway APIs, developers can focus on building exceptional applications while we handle the complexities of network integration.
 
+> 📘 Want to give Open Gateway APIs a try?
+> Apply to join the [Developer Hub](https://opengateway.telefonica.com/en/developer-hub) and gain access to our Sandbox.
+
+
 ## Why Open Gateway APIs?
 
 In today's fast-paced digital landscape, interoperability and efficiency are crucial for success. Open Gateway APIs are designed to:
@@ -45,8 +49,6 @@ Getting started with Open Gateway APIs is easy:
 4. **Read the Documentation:** Familiarize yourself with our comprehensive documentation to understand [how to make API calls](../gettingstarted/apireference.md), handle responses, and implement best practices.
 5. **Start Building:** Begin integrating Open Gateway APIs into your applications, leveraging the powerful network capabilities to create innovative and high-performance solutions.
 
-> 📘 Want to give Open Gateway APIs a try?
-> Apply to join the [Developer Hub](https://opengateway.telefonica.com/en/developer-hub) and gain access to our Sandbox.
 
 ## Join the Open Gateway Community
 
