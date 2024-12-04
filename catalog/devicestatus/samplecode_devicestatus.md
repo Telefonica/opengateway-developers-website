@@ -343,7 +343,7 @@ print(f"Roaming? {result.get('roaming')} \n Country: {result.get('countryName')[
 
 ### Frontend flow
 
-Although it is not necessary for the user’s device to participate in the flow for the device status, it is important to consider that the roaming status can be used as an additional authentication factor or for managing a subscription service in a way that content can be adjusted based on the country. It can also be used to automatically adjust schedules when there is a time zone change, for example, when taking medications where the number of hours elapsed is more important than the current time.
+While some use cases of the Device Status API do not involve the user’s device in the API usage flow, others can utilize the API to check roaming status directly from the frontend. For example, a mobile application could use it as an additional authentication factor or to adjust its content based on the user’s country.
 
 If you wanted to start the service API consumption from a frontend application, you would need to implement the OIDC's Authorization Code Flow instead of CIBA. This flow implies your application providing a callback URL that you will need to publish online hosted on your backend server, and in which your application's backend will get a `code` authorizing it to use the Open Gateway APIs for your end-user.
 
