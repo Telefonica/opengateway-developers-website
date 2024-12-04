@@ -83,7 +83,7 @@ Note that if you selected the Production mode, you will have to wait for the app
 
 So far you have used the Sandbox console to register your application as the client to the APIs, which means your application is the entity granted access with its credentials.
 
-> You can use this credentials directly in the [API reference](./apireference)
+> You can use this credentials directly in the [API reference](/reference)
 
 Now you will use such credentials to effectively consume de APIs from your code. You can use any programming language and any platform that supports HTTP requests, or you can use the Sandbox SDK for convenience. Our Open Gateway Sandbox provides you with a Python SDK and will publish SDKs in other common languages soon.
 
