@@ -102,7 +102,7 @@ The path URL to add to the base URL for each API is defined in the API reference
 
 #### API reference
 
-You can check the OpenAPI v3 specification of each API in the list of [Available APIs](../../catalog/available.md) or in the [API Roadmap](../../catalog/roadmap.md).
+You can check the OpenAPI v3 specification of each API in the [API Reference section](./apireference).
 
 You will be able to test the APIs from their specification pages on the Sandbox by setting the `host` variable to its default value, which is the Sandbox API gateway base URL.
 
