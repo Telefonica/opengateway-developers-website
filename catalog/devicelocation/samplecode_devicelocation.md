@@ -343,7 +343,7 @@ print (f"Is the device in location? {result.get('verificationResult')}")
 
 ### Frontend flow
 
-There are many use cases where it might be interesting for the flow to start from a frontend device. For example, checking the status of your pets when you hire a walking service, so that it can send you alerts when they move away from your home, allowing you to ensure that the service is working properly. 
+There are additional use cases where the app on the end-user’s device directly utilizes the Device Location API to enable features. Examples include checking in at a venue or accessing content restricted to specific geographic zones.
 
 If you wanted to start the service API consumption from a frontend application, you would need to implement the OIDC's Authorization Code Flow instead of CIBA. This flow implies your application providing a callback URL that you will need to publish online hosted on your backend server, and in which your application's backend will get a `code` authorizing it to use the Open Gateway APIs for your end-user.
 
