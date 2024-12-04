@@ -31,7 +31,7 @@ If you are using our sandbox SDK, check info and installation of de Sandbox SDK 
 
 ### Backend flow
 
-The consumption of this api in a backend flow opens up many possibilities, from anti-fraud services such as bank transaction verification, logistics (for courier services or IoT), or even for travel applications, where it provides us with solutions and advice for cost savings.
+The consumption of this API in a backend flow opens up many possibilities, from anti-fraud services such as bank transaction verification, logistics (for courier services or IoT), and even personalized campaigns by tourism operators.
 
  The authorization protocol used in Open Gateway for backend flows is the OIDC standard CIBA (Client-Initiated Backchannel Authentication). You can check the CAMARA documentation on this flow [here](https://github.com/camaraproject/IdentityAndConsentManagement/blob/release-0.1.0/documentation/CAMARA-API-access-and-user-consent.md#ciba-flow-backend-flow).
 
