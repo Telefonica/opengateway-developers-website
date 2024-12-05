@@ -13,7 +13,7 @@ One of the key advantages of the [Open Gateway Sandbox](https://opengateway.tele
 
 Additionally, the free access to the Sandbox makes it an invaluable resource for developers, especially those working on tight budgets or within smaller teams. It provides all the benefits of a robust testing environment without the associated costs, allowing developers to focus on creating high-quality applications. By using the Sandbox, developers can ensure that their solutions are fully functional, secure, and optimized, paving the way for a smoother and more successful deployment.
 
-Please note that the usage of credentials granted from our Sandbox might be subject to some limitations in order to let you test without the obligations of a commercial contract. The terms and conditions of our developer or partner programs will apply.
+Please note that the usage of credentials granted from our Sandbox might be subject to some limitations in order to let you test without the obligations of a commercial contract. The [terms and conditions](https://opengateway.telefonica.com/en/terms-conditions-developers-hub) of our developer or partner programs will apply.
 
 ## Getting onboarded
 
