@@ -12,7 +12,6 @@ The Sandbox in Open Gateway is a secure and free testing environment that allows
 One of the key advantages of the [Open Gateway Sandbox](https://opengateway.telefonica.com/developer-hub/unirse) is its ability to offer a risk-free environment where developers can troubleshoot issues, refine their code, and optimize performance without impacting actual data or services. This ensures that any potential bugs or errors are identified and resolved early in the development process, leading to more reliable and secure applications when they go live.
 
 Additionally, the free access to the Sandbox makes it an invaluable resource for developers, especially those working on tight budgets or within smaller teams. It provides all the benefits of a robust testing environment without the associated costs, allowing developers to focus on creating high-quality applications. By using the Sandbox, developers can ensure that their solutions are fully functional, secure, and optimized, paving the way for a smoother and more successful deployment.
-Please note that the usage of credentials granted from our Sandbox might be subject to some limitations in order to let you test without the obligations of a commercial contract. The terms and conditions of our developer or partner programs will apply.
 
 Please note that the usage of credentials granted from our Sandbox might be subject to some limitations in order to let you test without the obligations of a commercial contract. The terms and conditions of our developer or partner programs will apply.
 
