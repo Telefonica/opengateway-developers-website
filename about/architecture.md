@@ -47,5 +47,5 @@ An aggregator in telecommunications and APIs refers to a pivotal entity that con
 To make a faster and easier test for our Open Gateway APIs you can follow this steps:
 
 - [Join the Developer Hub](https://opengateway.telefonica.com/developer-hub) and gain access to exclusive content and our Sandbox (it's free) 
-- [Get your credentials in our Sandbox](../gettingstarted/sandbox/usethesandbox.md)
-- [Set up the API Reference](../gettingstarted/apireference.md)
+- [Get your credentials in our Sandbox](/docs/usethesandbox)
+- [Set up the API Reference](/docs/apireference)
