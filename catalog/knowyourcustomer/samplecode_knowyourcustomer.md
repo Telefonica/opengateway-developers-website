@@ -394,8 +394,7 @@ print (f"Postal Code matches the user's? {postalCode.addressMatch}")
 
 ### Frontend flow
 
-There are many use cases where it might be beneficial for the flow to start from a frontend device. For example, nowadays, many services authenticate based on the network we connect to, such as video platforms. Using this API to verify user identification when using a payment service can be very interesting. Authentication or identity verification services can be implemented by randomly requesting the verification of a specific field, similar to current CAPTCHA systems.
-
+There are many cases where it might be convenient for the flow to start from a frontend device. In particular, if your frontend doesn't know about end-user's actual phone number or you CRM or database cannot inform your application which one it is, or such data's quality is not reliable enough, you will want to let the frontend authentication flow to identify the end-user by using the mobile network their are connected to when using your app.
 If you wanted to start the service API consumption from a frontend application, you would need to implement the OIDC's Authorization Code Flow instead of CIBA. This flow implies your application providing a callback URL that you will need to publish online hosted on your backend server, and in which your application's backend will get a `code` authorizing it to use the Open Gateway APIs for your end-user.
 
 This flow allows the mobile network operator to effectively identify the user by resolving the IP address of their device, running your application, by getting an HTTP redirection and returning a `code` that will reach out to your callback URL. You can check the CAMARA documentation on the Authorization Code Flow [here](https://github.com/camaraproject/IdentityAndConsentManagement/blob/release-0.1.0/documentation/CAMARA-API-access-and-user-consent.md#authorization-code-flow-frontend-flow).
