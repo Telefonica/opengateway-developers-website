@@ -33,7 +33,7 @@ If you are using our sandbox SDK, check info and installation of de Sandbox SDK 
 
 Using the KYC (Know Your Customer) API from the backend flow is highly beneficial, as it is a powerful tool for validating identities and preventing identity theft when processing user data from online forms. The authorization protocol used in Open Gateway for backend flows is the OIDC standard CIBA (Client-Initiated Backchannel Authentication). You can check the CAMARA documentation on this flow [here](https://github.com/camaraproject/IdentityAndConsentManagement/blob/release-0.1.0/documentation/CAMARA-API-access-and-user-consent.md#ciba-flow-backend-flow).
 
-First step is to instantiate the KYCMatch service class included in the corresponding SDK. By providing your app's credentials to the class constructor, it handles the CIBA authorization on its behalf. Providing the phone number as well, as an identifier of the line to be checked for KYCMatch, allows authorization to be 3-legged and enables end-user consent management, and will let your app to just effectively use the API in a single line of code below.
+First step is to instantiate the KYCMatch service class included in the corresponding SDK. By providing your app's credentials to the class constructor, it handles the CIBA authorization on its behalf. Providing the phone number of the end-user as well, as an identifier of the customer profile on the operator to be checked for KYCMatch, allows authorization to be 3-legged and enables end-user consent management, and will let your app to just effectively use the API in a single line of code below.
 
 #### Authorization
 
