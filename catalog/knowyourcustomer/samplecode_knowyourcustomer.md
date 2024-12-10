@@ -1,6 +1,6 @@
 ---
-title: Sample code for Know Your Customer
-excerpt: The following samples show how to use the [Open Gateway Kown your customer API](https://opengateway.telefonica.com/en/apis/kyc-match), 
+title: Sample code for KYC Match
+excerpt: The following samples show how to use the [Open Gateway Know Your Customer (KYC) API's Match operation](https://opengateway.telefonica.com/en/apis/kyc-match)
 category: 66aa4f941e51e7000fa353ce
 ---
 
@@ -31,7 +31,7 @@ If you are using our sandbox SDK, check info and installation of de Sandbox SDK 
 
 ### Backend flow
 
-Using the KYC (Know Your Customer) API from the backend flow is highly beneficial, as it is a powerful tool for validating identities and preventing identity theft when processing user data from online forms. The authorization protocol used in Open Gateway for backend flows is the OIDC standard CIBA (Client-Initiated Backchannel Authentication). You can check the CAMARA documentation on this flow [here](https://github.com/camaraproject/IdentityAndConsentManagement/blob/release-0.1.0/documentation/CAMARA-API-access-and-user-consent.md#ciba-flow-backend-flow).
+Using the KYC (Know Your Customer) API Match operation from the backend flow is highly beneficial, as it is a powerful tool for validating identities and preventing identity theft when processing user data from online forms. The authorization protocol used in Open Gateway for backend flows is the OIDC standard CIBA (Client-Initiated Backchannel Authentication). You can check the CAMARA documentation on this flow [here](https://github.com/camaraproject/IdentityAndConsentManagement/blob/release-0.1.0/documentation/CAMARA-API-access-and-user-consent.md#ciba-flow-backend-flow).
 
 First step is to instantiate the KYCMatch service class included in the corresponding SDK. By providing your app's credentials to the class constructor, it handles the CIBA authorization on its behalf. Providing the phone number of the end-user as well, as an identifier of the customer profile on the operator to be checked for KYCMatch, allows authorization to be 3-legged and enables end-user consent management, and will let your app to just effectively use the API in a single line of code below.
 
@@ -317,7 +317,7 @@ resultFuture.thenAccept(result -> {
     System.out.println("Postal Code matches the user's? " + result.postalCodeMatch);
 });
 ```
-```ecmascript HTTP using Javascript(ES6)
+```ecmascript HTTP using Javascript (ES6)
 const myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 myHeaders.append("Authorization", `Bearer ${accessToken}`);
@@ -343,7 +343,6 @@ fetch("https://opengateway.aggregator.com/kyc-match/v0-0.2/match", requestOption
   })
 })
 ```
-
 ```java HTTP using Java
 JSONObject requestBody = new JSONObject();
 requestBody.put("address", "Plaza María Pita, 1");
@@ -395,6 +394,7 @@ print (f"Postal Code matches the user's? {postalCode.addressMatch}")
 ### Frontend flow
 
 There are many cases where it might be convenient for the flow to start from a frontend device. In particular, if your frontend doesn't know about end-user's actual phone number or you CRM or database cannot inform your application which one it is, or such data's quality is not reliable enough, you will want to let the frontend authentication flow to identify the end-user by using the mobile network their are connected to when using your app.
+
 If you wanted to start the service API consumption from a frontend application, you would need to implement the OIDC's Authorization Code Flow instead of CIBA. This flow implies your application providing a callback URL that you will need to publish online hosted on your backend server, and in which your application's backend will get a `code` authorizing it to use the Open Gateway APIs for your end-user.
 
 This flow allows the mobile network operator to effectively identify the user by resolving the IP address of their device, running your application, by getting an HTTP redirection and returning a `code` that will reach out to your callback URL. You can check the CAMARA documentation on the Authorization Code Flow [here](https://github.com/camaraproject/IdentityAndConsentManagement/blob/release-0.1.0/documentation/CAMARA-API-access-and-user-consent.md#authorization-code-flow-frontend-flow).
