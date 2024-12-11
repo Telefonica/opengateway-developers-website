@@ -40,6 +40,15 @@ First step is to instantiate the SIM Swap service class included in the correspo
 
 Since Open Gateway authorization is 3-legged, meaning it identifies the application, the operator and the operator's subscriber, who is also the end-user holder of the mobile line, each check for a different phone number needs its own SDK class instantiation, or access token if not using an SDK.
 
+```python Sandbox SDK for Python
+from opengateway_sandbox_sdk import ClientCredentials, Simswap
+
+client_id='my-app-id',
+client_secret='my-app-secret'
+customer_phone_number = '+34555555555'
+
+simswap_client = Simswap(app_client_id, app_client_secret, customer_phone_number)
+```
 ```python Sample SDK for Python
 from aggregator_opengateway_sdk import ClientCredentials, SimSwap
 
@@ -258,6 +267,11 @@ access_token = response.json().get("access_token")
 
 Once your app is authenticated it only takes a single line of code to use the service API and effectively get a result.
 
+```python Sandbox SDK for Python
+result = simswap_client.retrieve_date()
+
+print(f"SIM was swapped: {result.strftime('%B %d, %Y, %I:%M:%S %p')}")
+```
 ```python Sample SDK for Python
 result = simswap_client.retrieve_date()
 
@@ -420,9 +434,9 @@ fetch(url, requestOptions);
 
 Samples represent how to publish the callback URL in Python or Node.js, so the code from the Auth Code Flow can be received. The same can be achieved in any other language with capabilities to run an HTTP server and listen for the redirect from the authorization flow:
 
-```python Sample SDK for Python
+```python Sandbox SDK for Python
 from flask import Flask, request, jsonify
-from aggregator_opengateway_sdk import ClientCredentials, SIMSwap
+from opengateway_sandbox_sdk import ClientCredentials, Simswap
 
 credentials = ClientCredentials(
     clientid='my-app-id',
@@ -435,7 +449,27 @@ app = Flask(__name__)
 def callback():
     code = request.args.get('code', '')
     phone_number = request.args.get('state', '')
-    simswap_client = SIMSwap(client=credentials, auth_code=code)
+    simswap_client = Simswap(client=credentials, auth_code=code)
+
+if __name__ == '__main__':
+    app.run()
+```
+```python Sample SDK for Python
+from flask import Flask, request, jsonify
+from aggregator_opengateway_sdk import ClientCredentials, SimSwap
+
+credentials = ClientCredentials(
+    clientid='my-app-id',
+    clientsecret='my-app-secret'
+)
+
+app = Flask(__name__)
+
+@app.route('/simswap-callback', methods=['GET'])
+def callback():
+    code = request.args.get('code', '')
+    phone_number = request.args.get('state', '')
+    simswap_client = SimSwap(client=credentials, auth_code=code)
 
 if __name__ == '__main__':
     app.run()
@@ -540,6 +574,11 @@ app.listen(port, () => {
 
 Once your app is authenticated it only takes a single line of code to use the service API and effectively get a result.
 
+```python Sandbox SDK for Python
+result = await simswap_client.retrieve_date(phone_number)
+
+print(f"SIM was swapped: {result.strftime('%B %d, %Y, %I:%M:%S %p')}")
+```
 ```python Sample SDK for Python
 result = await simswap_client.retrieve_date(phone_number)
 
