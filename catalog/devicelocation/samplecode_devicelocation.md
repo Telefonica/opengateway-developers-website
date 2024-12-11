@@ -39,6 +39,18 @@ First step is to instantiate the DeviceLocation service class included in the co
 
 Since Open Gateway authorization is 3-legged, meaning it identifies the application, the operator and the operator's subscriber, who is also the end-user holder of the mobile line, each check for a different phone number needs its own SDK class instantiation, or access token if not using an SDK.
 
+```python Sandbox SDK for Python
+from opengateway_sandbox_sdk import ClientCredentials, DeviceLocation
+
+credentials = ClientCredentials(
+    client_id='yout_client_id',
+    client_secret='your_client_secret'
+)
+
+customer_phone_number = "+34666666666"
+
+devicelocation_client = DeviceLocation(credentials=credentials, phone_number=customer_phone_number)
+```
 ```python Sample SDK for Python
 from aggregator_opengateway_sdk import ClientCredentials, DeviceLocation
 
@@ -255,6 +267,11 @@ access_token = response.json().get("access_token")
 ```
 
 #### API usage
+```python Sandbox SDK for Python
+result = devicelocation_client.verify(40.5150, -3.6640, 10, customer_phone_number) # as set in the authorization step
+
+print (f"Is the device in location? {result}")
+```
 ```python Sample SDK for Python
 result = devicelocation_client.verify(40.5150, -3.6640, 10, customer_phone_number) # as set in the authorization step
 
@@ -466,6 +483,27 @@ fetch(url, requestOptions);
 
 Samples represent how to publish the callback URL in Python or Node.js, so the code from the Auth Code Flow can be received. The same can be achieved in any other language with capabilities to run an HTTP server and listen for the redirect from the authorization flow:
 
+```python Sandbox SDK for Python
+from flask import Flask, request, jsonify
+from opengateway_sandbox_sdk import ClientCredentials, DeviceLocation
+
+credentials = ClientCredentials(
+    clientid='my-app-id',
+    clientsecret='my-app-secret'
+)
+
+app = Flask(__name__)
+
+@app.route('/device-location-callback', methods=['GET'])
+def callback():
+    code = request.args.get('code', '')
+    state = request.args.get('state', '')
+
+    devicelocation_client = DeviceLocation(credentials=credentials, code=code)
+
+if __name__ == '__main__':
+    app.run()
+```
 ```python Sample SDK for Python
 from flask import Flask, request, jsonify
 from aggregator_opengateway_sdk import ClientCredentials, DeviceLocation
@@ -585,6 +623,13 @@ app.listen(port, () => {
 
 Once your app is authenticated it only takes a single line of code to use the service API and effectively get a result.
 
+```python Sandbox SDK for Python
+data = json.loads(state)
+
+result = await device_client.verify(data['latitude'], data['longitude'], data['accuracy'], data['phone_number'])
+
+print(f"Is the device in location? {result}")
+```
 ```python Sample SDK for Python
 data = json.loads(state)
 

@@ -109,6 +109,26 @@ As the opposite to the flow triggering, this API consumption flow will always co
 
 Samples represent how to publish the callback URL in Python or Node.js, so the code from the Auth Code Flow can be received. The same can be achieved in any other language with capabilities to run an HTTP server and listen for the redirect from the authentication flow:
 
+```python Sandbox SDK for Python
+from flask import Flask, request, jsonify
+from opengateway_sandbox_sdk import ClientCredentials, NumberVerification
+
+credentials = ClientCredentials(
+    clientid='my-app-id',
+    clientsecret='my-app-secret'
+)
+
+app = Flask(__name__)
+
+@app.route('/numberverification-callback', methods=['GET'])
+def callback():
+    code = request.args.get('code', '')
+    phone_number = request.args.get('state', '')
+    api_client = NumberVerification(credentials, code)
+
+if __name__ == '__main__':
+    app.run()
+```
 ```python Sample SDK for Python
 from flask import Flask, request, jsonify
 from aggregator_opengateway_sdk import ClientCredentials, NumberVerification
@@ -230,6 +250,11 @@ app.listen(port, () => {
 
 Once your app is authenticated it only takes a single line of code to use the service API and effectively get a result.
 
+```python Sandbox SDK for Python
+result = await api_client.verify(phone_number)
+
+print(f"Phone number {'verified' if result else 'does not match mobile line'}")
+```
 ```python Sample SDK for Python
 result = await api_client.verify(phone_number)
 

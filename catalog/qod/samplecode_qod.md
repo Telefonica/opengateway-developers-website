@@ -41,8 +41,7 @@ First step is to instantiate the Quality on Demand service class included in the
 
 Since Open Gateway authentication is 3-legged, meaning it identifies the application, the operator and the operator's mobile line providing the device with connectivity, each operation on a different device needs its own SDK class instantiation with its IP address, or access token if not using an SDK.
 
-##### [TAB] SDK for Node.js
-```Node
+```node Sample SDK for Node.js
 import { QoDMobile, ClientCredentials, QoSProfiles } from "aggregator/opengateway-sdk"
 
 const credentials: ClientCredentials(
@@ -55,8 +54,7 @@ let deviceIpPortAddress = getDeviceIP() // e.g. '203.0.113.25:8080'
 const qodClient = new QoDMobile(credentials, null, deviceIpPortAddress)
 ```
 
-##### [TAB] SDK for Java
-```Java
+```java Sample SDK for Java
 import aggregator.opengatewaysdk.ClientCredentials;
 import aggregator.opengatewaysdk.QoDMobile;
 import aggregator.opengatewaysdk.QoSProfiles;
@@ -71,8 +69,7 @@ String deviceIpPortAddress = this.getDeviceIP(); // e.g. "203.0.113.25:8080"
 QoDMobile qodClient = new QoDMobile(credentials, null, deviceIpPortAddress);
 ```
 
-##### [TAB] SDK for Python
-```Python
+```python Sample SDK for Python
 from aggregator_opengateway_sdk import QoDMobile, ClientCredentials, QoSProfiles
 
 credentials = ClientCredentials(
@@ -85,8 +82,7 @@ device_ip_address = self.get_device_ip() # e.g. '203.0.113.25:8080'
 qod_client = QoDMobile(client=credentials, ip_address=device_ip_address)
 ```
 
-##### [TAB] HTTP using JavaScript (ES6)
-```JavaScript
+```ecmascript HTTP using JavaScript (ES6)
 // First step:
 // Perform an authorization request
 
@@ -145,8 +141,7 @@ fetch("https://opengateway.aggregator.com/token", requestOptions)
   })
 ```
 
-##### [TAB] HTTP using Java
-```Java
+```java HTTP using Java
 // First step:
 // Perform an authorization request
 
@@ -214,8 +209,7 @@ JSONObject jsonResponse = new JSONObject(response.body());
 String accessToken = jsonResponse.getString("access_token");
 ```
 
-##### [TAB] HTTP using Python
-```Python
+```python Sample HTTP using Python
 # First step:
 # Perform an authorization request
 
@@ -272,29 +266,22 @@ access_token = response.json().get("access_token")
 Once your app is authenticated it only takes a single line of code to use the service API and effectively optimize device connectivity.
 
 
-##### [TAB] SDK for Node.js
-```Node
+```node Sample SDK for Node.js
 const duration = 300 // Seconds
 
 qodClient.setQualityOfService(duration, QoSProfiles.QOS_E)
 ```
-
-##### [TAB] SDK for Java
-```Java
+```java Sample SDK for Java
 int duration = 300; // Seconds
 
 qodClient.setQualityOfService(duration, QoSProfiles.QOS_E);
 ```
-
-##### [TAB] SDK for Python
-```Python
+```python Sample SDK for Python
 duration = 300 # Seconds
 
 qod_client.set_quality(duration, QoSProfiles.QOS_E)
 ```
-
-##### [TAB] HTTP using JavaScript (ES6)
-```JavaScript
+```ecmascript HTTP using Javascript(ES6)
 const myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 myHeaders.append("Authorization", `Bearer ${accessToken}`);
@@ -325,9 +312,7 @@ fetch("https://opengateway.aggregator.com/qod/v0/sessions", requestOptions)
     console.log(`Session created with id: ${result.sessionId}`)
   })
 ```
-
-##### [TAB] HTTP using Java
-```Java
+```java HTTP using Java
 JSONObject requestBody = new JSONObject();
 JSONObject device = new JSONObject();
 JSONObject ipv4Address = new JSONObject();
@@ -354,9 +339,7 @@ String sessionId = jsonResponse.getString("sessionId");
 
 System.out.println("Session created with id: " + sessionId);
 ```
-
-##### [TAB] HTTP using Python
-```Python
+```python HTTP with Python
 headers = {
     "Content-Type": "application/json",
     "Authorization": f"Bearer {access_token}"
@@ -399,8 +382,7 @@ You can check the CAMARA documentation on this flow [here](https://github.com/ca
 
 The following samples show how your application can trigger the authentication flow from the frontend either from code or by submitting a simple HTML form. The same can be achieved from code in any other programming language with the ability to perform HTTP requests:
 
-##### [TAB] HTTP using JavaScript (ES6)
-```JavaScript
+```ecmascript HTTP using JavaScript (ES6)
 let clientId = "my-app-id";
 let clientSecret = "my-app-secret";
 let apiScope = "dpv:RequestedServiceProvision#qod";
@@ -426,9 +408,7 @@ const requestOptions = {
 
 fetch(url, requestOptions);
 ```
-
-##### [TAB] HTML form
-```HTML
+```html HTML form
 <!--
     In this example you need your auth callback URL to continue the flow calling the service API
     and providing an HTML response to be shown in the web browser displaying the result.
@@ -461,8 +441,7 @@ fetch(url, requestOptions);
 
 Samples represent how to publish the auth callback URL in Python or Node.js, so the code from the Auth Code Flow can be received. The same can be achieved in any other language with capabilities to run an HTTP server and listen for the redirect from the authentication flow:
 
-##### [TAB] SDK for Python
-```Python
+```python Sample SDK for Python
 from flask import Flask, request, jsonify
 from aggregator_opengateway_sdk import ClientCredentials, QoDMobile, QoSProfiles
 
@@ -481,9 +460,7 @@ def auth_callback():
 if __name__ == '__main__':
     app.run()
 ```
-
-##### [TAB] SDK for Node.js
-```Node
+```node Sample SDK for Node.js
 import { ClientCredentials, QoDMobile } from "aggregator/opengateway-sdk"
 import express from "express"
 
@@ -511,16 +488,13 @@ Once we have instantiated the SDK class with the authorization code received fro
 
 For that, still in the code of the auth callback URL endpoint listener, following to the QoDMobile class instantiation, follow the samples below:
 
-##### [TAB] SDK for Python
-```Python
+```python Sample SDK for Python
     ip = request.remote_addr
     port = request.environ.get('REMOTE_PORT')
 
     qod_client.set_quality(300, QoSProfiles.QOS_E, client_ip=ip, client_port=port)
 ```
-
-##### [TAB] SDK for Node.js
-```Node
+```node Sample SDK for Node.js
     const ip = req.ip
     const port = req.socket.remotePort
 
