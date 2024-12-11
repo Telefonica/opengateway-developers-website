@@ -31,10 +31,7 @@ If you are using our sandbox SDK, check info and installation of de Sandbox SDK 
 
 ### Backend flow
 
-The Device Swap API can be integrated into various backend use cases to improve security and prevent fraud. Some common use cases may include preventing fraudulent payments: Mitigating the risk of unauthorized transactions and fraudulent payments by verifying device integrity, i.e. that the user's device has not changed, it can also be used to monitor and protect high-risk transactions thus preventing fraudulent activities, identity theft, ....
-Additionally, the Device Swap API can be utilized to enhance overall user trust and security, providing a robust layer of protection against various types of cyber threats. By integrating this API, businesses can ensure that their systems are safeguarded against fraudulent activities, thereby maintaining the integrity and trustworthiness of their services.
-
- The authorization protocol used in Open Gateway for backend flows is the OIDC standard CIBA (Client-Initiated Backchannel Authentication). You can check the CAMARA documentation on this flow [here](https://github.com/camaraproject/IdentityAndConsentManagement/blob/release-0.1.0/documentation/CAMARA-API-access-and-user-consent.md#ciba-flow-backend-flow).
+Most likely, this API will be consumed in a backend flow, since it is the application owner not the end-user who wants to take advantage of its functionality. The authorization protocol used in Open Gateway for backend flows is the OIDC standard CIBA (Client-Initiated Backchannel Authentication). You can check the CAMARA documentation on this flow [here](https://github.com/camaraproject/IdentityAndConsentManagement/blob/release-0.1.0/documentation/CAMARA-API-access-and-user-consent.md#ciba-flow-backend-flow).
 
 First step is to instantiate the Device Swap service class included in the corresponding SDK. By providing your app's credentials to the class constructor, it handles the CIBA authorization on its behalf. Providing the phone number as well, as an identifier of the line to be checked for Device swaps, allows authorization to be 3-legged and enables end-user consent management, and will let your app to just effectively use the API in a single line of code below.
 
@@ -338,9 +335,7 @@ print(f"SIM was swapped: {result.get('latestDeviceChange').strftime('%B %d, %Y, 
 
 ### Frontend flow
 
-Initiating the user authentication flow from the user’s device using the Device Swap API makes a lot of sense. Integrating this API can help detect and prevent fraudulent activities such as SIM cloning and identity theft. Additionally, it can serve as an extra authentication factor to verify the legitimacy of login attempts. This approach not only enhances security but also ensures that any changes to the user’s device are thoroughly checked before access is granted.
-
-If you wanted to start the service API consumption from a frontend application, you would need to implement the OIDC's Authorization Code Flow instead of CIBA. This flow implies your application providing a callback URL that you will need to publish online hosted on your backend server, and in which your application's backend will get a `code` authorizing it to use the Open Gateway APIs for your end-user.
+Although it is not common to face a use case for Device Swap where the user device is involved in the flow and, at the same time, it is easier to get the phone number on the frontend that on the backend, or it is more precise in terms of data quality on each end, if you wanted to start the service API consumption from a frontend application, you would need to implement the OIDC's Authorization Code Flow instead of CIBA. This flow implies your application providing a callback URL that you will need to publish online hosted on your backend server, and in which your application's backend will get a `code` authorizing it to use the Open Gateway APIs for your end-user.
 
 This flow allows the mobile network operator to effectively identify the user by resolving the IP address of their device, running your application, by getting an HTTP redirection and returning a `code` that will reach out to your callback URL. You can check the CAMARA documentation on the Authorization Code Flow [here](https://github.com/camaraproject/IdentityAndConsentManagement/blob/release-0.1.0/documentation/CAMARA-API-access-and-user-consent.md#authorization-code-flow-frontend-flow).
 
