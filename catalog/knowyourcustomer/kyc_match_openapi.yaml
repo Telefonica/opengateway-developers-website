@@ -1,39 +1,6 @@
 openapi: 3.0.3
 info:
   title: Know Your Customer Match
-
-  description: |
-
-    This API provides the customer with the ability to compare the information it (Service Provider, SP) has for a particular mobile phone user with that on file (and verified) by the mobile phone user's Operator in their own KYC records, in order for the SP to confirm the accuracy of the information and provide a specific service to the mobile phone user.
-
-    ## Relevant Definitions and concepts
-
-    * **KYC**: stands for Know Your Customer and it is the process of a business verifying the identity of their clients and assessing their suitability, along with the potential risks of illegal intentions towards the business relationship.
-
-    ## API Functionality
-
-    This API allows API clients to verify the matching of a number of attributes related to a customer identity against the account data bound to their phone number.  The API is intended to be used in the following scenarios, for example:
-
-    * To verify the user personal data during the digital registration of an account to a 3rd party service.
-
-    * To prevent fraud, wrong or imprecise information, and/or facilitate the onboarding of a mobile phone user to a 3rd party service.
-
-    The following figure is the generic high-level flows of this API.  
-
-    <img width="848" alt="KYC_Match_flow" src="https://github.com/ToshiWakayama-KDDI/KnowYourCustomer-Toshi/assets/53090722/3f9acdcb-9f8d-4177-a586-7e426b8ac33d">
-
-    Note:
-
-    * Before calling this API, 3rd parties / enterprise customers who want to use this API should make contact with API provider/ MNO for use of this API.  As that will depend on each API provider / MNO's business process as well as GSMA Open Gateway standard process, it is out of scope of this API definition.
-
-    * When calling this API, at the beginning, there should be required processes for Authentication / Authorisation / End User Consent capturing.  As those processes are defined as CAMARA commonality standards, they are out of scope of this API definition, however, use of the OpenID Connect (OIDC) is stated as security scheme.
-
-    ## Resources and Operations overview
-
-    The API provides the following endpoint:
-
-    * An endpoint to verify the matching of a number of attributes related to a mobile phone user identity against the account data bound to their phone number.
-
   termsOfService: http://swagger.io/terms/
   contact:
     name: Telefónica Open Gateway DevRel
@@ -70,16 +37,13 @@ paths:
         Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following scope:
 
         `dpv:FraudPreventionAndDetection#know-your-customer:match`
-
+      
       operationId: KYC_Match_v0.1
 
       security:
         - three_legged:
           - kyc
 
-      parameters:
-        - $ref: '#/components/parameters/x-correlator'
-        
       requestBody:
         required: true
         content:
@@ -113,10 +77,13 @@ paths:
 
       responses:
         '200':
-          description: OK
-          headers:
-            x-correlator:
-              $ref: '#/components/headers/x-correlator'
+          description: |
+            OK
+            
+            The API will return the result of the matching process for each requested attribute. This means that the response will **only** contain the attributes for which validation has been requested. Possible values are:
+            * `true`: the attribute provided matches with the one in the Operator systems.
+            * `false`: the attribute provided does not match with the one in the Operator systems.
+            * `not_available`: the attribute is not available to validate.
 
           content:
             application/json:
@@ -176,18 +143,6 @@ paths:
         Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following scope:
 
         `dpv:FraudPreventionAndDetection#kyc-match:match`
-
-        Verify matching of a number of attributes related to a customer identity against the verified data bound to their phone number in the Operator systems. Regardless of whether the `phoneNumber` is explicitly stated in the request body, at least one of the other fields must be provided, otherwise a `HTTP 400 - KNOW_YOUR_CUSTOMER.INVALID_PARAM_COMBINATION` error will be returned.
-
-        In order to proceed with the match check, some Operators may have the requirement to perform an additional level of validation based on the `idDocument` property. This means that, in those cases, the `idDocument` is required and the provided value needs to match the one stored in the Operator system associated with the indicated `phoneNumber`. This validation will be done before proceeding with the match check of the rest of the properties. The following two rules apply only in the cases where the Operator have the requirement to validate the `idDocument`:
-        - If no `idDocument` is provided, then a `HTTP 403 - KNOW_YOUR_CUSTOMER.ID_DOCUMENT_REQUIRED` error will be returned.
-        - If the provided `idDocument` does not match the one stored in the Operator systems, then a `HTTP 403 - KNOW_YOUR_CUSTOMER.ID_DOCUMENT_MISMATCH` error will be returned.
-        - There is a corner case where the Operator requires the `idDocument` to perform the match validation for the rest of the properties, but it also needs to be able to perform the validation only for the `idDocument` itself. In this case, if only the `idDocument` is provided along with the phoneNumber (either in the request body or extracted from the access token) then the match will be performed as with any other attribute and the response will contain the result of the match operation.
-
-        The API will return the result of the matching process for each requested attribute. This means that the response will **only** contain the attributes for which validation has been requested. Possible values are:
-          - **true**: the attribute provided matches with the one in the Operator systems.
-          - **false**: the attribute provided does not match with the one in the Operator systems.
-          - **not_available**: the attribute is not available to validate.
         
       operationId: KYC_Match_v0.2
 
@@ -195,9 +150,6 @@ paths:
         - three_legged:
           - kyc
 
-      parameters:
-        - $ref: '#/components/parameters/x-correlator'
-        
       requestBody:
         required: true
         content:
@@ -231,10 +183,13 @@ paths:
 
       responses:
         '200':
-          description: OK
-          headers:
-            x-correlator:
-              $ref: '#/components/headers/x-correlator'
+          description: |
+            OK
+
+            The API will return the result of the matching process for each requested attribute. This means that the response will **only** contain the attributes for which validation has been requested. Possible values are:
+            * `true`: the attribute provided matches with the one in the Operator systems.
+            * `false`: the attribute provided does not match with the one in the Operator systems.
+            * `not_available`: the attribute is not available to validate.
 
           content:
             application/json:
@@ -298,20 +253,6 @@ components:
           scopes:
             kyc: KYC Match operation
 
-  headers:
-    x-correlator:
-      description: Correlation id for the different services
-      schema:
-        type: string
-
-  parameters:
-    x-correlator:
-      name: x-correlator
-      in: header
-      description: Correlation id for the different services
-      schema:
-        type: string
-        
   schemas:
     KYC_MatchRequestBody_0.1:
       type: object
@@ -320,16 +261,32 @@ components:
       properties:
         phoneNumber:
           type: string
-          description: A public identifier addressing a telephone subscription. In mobile networks it corresponds to the MSISDN (Mobile Station International Subscriber Directory Number). In order to be globally unique it has to be formatted in international format, according to E.164 standard, optionally prefixed with '+'.
+          description: |
+            A public identifier addressing a telephone subscription. In mobile networks it corresponds to the MSISDN (Mobile Station International Subscriber Directory Number). In order to be globally unique it has to be formatted in international format, according to E.164 standard, optionally prefixed with '+'.
 
-
+            The `phoneNumber` is optional in the request body. Regardless of whether the `phoneNumber` is explicitly stated in the request body or not, at least one of the other request body parameters must be provided to perform the match check. Otherwise, an error will be returned:
+        
+            `HTTP 400 - KNOW_YOUR_CUSTOMER.INVALID_PARAM_COMBINATION`
+      
         idDocument:
           type: string
-          description: Id number associated to the official identity document in the country. It may contain alphanumeric characters.
+          description: |
+            Id number associated to the official identity document in the country. It may contain alphanumeric characters.
+
+            In order to proceed with the match check, some Operators may have the requirement to perform an additional level of validation based on the `idDocument` property. This means that, in those cases, the `idDocument` is required and the provided value needs to match the one stored in the Operator system associated with the indicated `phoneNumber`.
+        
+            This validation will be done before proceeding with the match check of the rest of the properties. In these cases where the Operator has the requirement to validate the `idDocument`, the following two rules apply:
+            * If no `idDocument` is provided, then the following error will be returned:
+              
+              `HTTP 403 - KNOW_YOUR_CUSTOMER.ID_DOCUMENT_REQUIRED`
+            * If the provided `idDocument` does not match the one stored in the Operator systems, then the following error will be returned:
+              
+              `HTTP 403 - KNOW_YOUR_CUSTOMER.ID_DOCUMENT_MISMATCH`
+            * There is a corner case where the Operator requires the `idDocument` to perform the match validation for the rest of the properties, but it also needs to be able to perform the validation only for the `idDocument` itself. In this case, if only the `idDocument` is provided along with the `phoneNumber` (either in the request body or extracted from the access token) then the match will be performed as with any other attribute and the response will contain the result of the match operation.
 
         name:
           type: string
-          description: Complete name of the customer, usually composed of first/given name and last/family/sur- name in a country.  Depending on the country, the order of first/give name and last/family/sur- name varies, and middle name could be included.  It can use givenName, middleNames, familyName and/or familyNameAtBirth. For example, in ESP, name+familyName; in NLD, it can be name+middleNames+familyName or name+middleNames+familyNameAtBirth, etc.
+          description: Customer's full name (givenName + familyName).
 
         givenName:
           type: string
@@ -341,11 +298,11 @@ components:
           
         nameKanaHankaku:
           type: string
-          description: Complete name of the customer in Hankaku-Kana format (reading of name) for Japan.
+          description: Customer's full name (givenName + familyName) in Hankaku-Kana format (reading of name) for Japan.
 
         nameKanaZenkaku:
           type: string
-          description: Complete name of the customer in Zenkaku-Kana format (reading of name) for Japan.
+          description: Customer's full name (givenName + familyName) in Zenkaku-Kana format (reading of name) for Japan.
 
         middleNames:
           type: string
@@ -357,7 +314,7 @@ components:
 
         address:
           type: string
-          description: Complete address of the customer.  For some countries, it is built following the usual concatenation of parameters in a country, but for other countires, this is not the case.  For some countries, it can use streetName, streetNumber and/or houseNumberExtension. For example, in ESP, streetName+streetNumber; in NLD, it can be streetName+streetNumber or streetName+streetNumber+houseNumberExtension.
+          description: Customer's address (StreetNumber + PostalCode).
           
         streetName:
           type: string
@@ -410,16 +367,32 @@ components:
       properties:
         phoneNumber:
           type: string
-          description: A public identifier addressing a telephone subscription. In mobile networks it corresponds to the MSISDN (Mobile Station International Subscriber Directory Number). In order to be globally unique it has to be formatted in international format, according to E.164 standard, prefixed with '+'.
+          description:  |
+            A public identifier addressing a telephone subscription. In mobile networks it corresponds to the MSISDN (Mobile Station International Subscriber Directory Number). In order to be globally unique it has to be formatted in international format, according to E.164 standard, optionally prefixed with '+'.
 
+            The `phoneNumber` is optional in the request body. Regardless of whether the `phoneNumber` is explicitly stated in the request body or not, at least one of the other request body parameters must be provided to perform the match check. Otherwise, an error will be returned:
+        
+            `HTTP 400 - KNOW_YOUR_CUSTOMER.INVALID_PARAM_COMBINATION`
 
         idDocument:
           type: string
-          description: Id number associated to the official identity document in the country. It may contain alphanumeric characters.
+          description: |
+            Id number associated to the official identity document in the country. It may contain alphanumeric characters.
+
+            In order to proceed with the match check, some Operators may have the requirement to perform an additional level of validation based on the `idDocument` property. This means that, in those cases, the `idDocument` is required and the provided value needs to match the one stored in the Operator system associated with the indicated `phoneNumber`.
+        
+            This validation will be done before proceeding with the match check of the rest of the properties. In these cases where the Operator has the requirement to validate the `idDocument`, the following two rules apply:
+            * If no `idDocument` is provided, then the following error will be returned:
+              
+              `HTTP 403 - KNOW_YOUR_CUSTOMER.ID_DOCUMENT_REQUIRED`
+            * If the provided `idDocument` does not match the one stored in the Operator systems, then the following error will be returned:
+              
+              `HTTP 403 - KNOW_YOUR_CUSTOMER.ID_DOCUMENT_MISMATCH`
+            * There is a corner case where the Operator requires the `idDocument` to perform the match validation for the rest of the properties, but it also needs to be able to perform the validation only for the `idDocument` itself. In this case, if only the `idDocument` is provided along with the `phoneNumber` (either in the request body or extracted from the access token) then the match will be performed as with any other attribute and the response will contain the result of the match operation.
 
         name:
           type: string
-          description: Complete name of the customer, usually composed of first/given name and last/family/sur- name in a country.  Depending on the country, the order of first/give name and last/family/sur- name varies, and middle name could be included.  It can use givenName, middleNames, familyName and/or familyNameAtBirth. For example, in ESP, name+familyName; in NLD, it can be name+middleNames+familyName or name+middleNames+familyNameAtBirth, etc.
+          description: Customer's full name (givenName + familyName).
 
         givenName:
           type: string
@@ -431,11 +404,11 @@ components:
           
         nameKanaHankaku:
           type: string
-          description: Complete name of the customer in Hankaku-Kana format (reading of name) for Japan.
+          description: Customer's full name (givenName + familyName) in Hankaku-Kana format (reading of name) for Japan.
 
         nameKanaZenkaku:
           type: string
-          description: Complete name of the customer in Zenkaku-Kana format (reading of name) for Japan.
+          description: Customer's full name (givenName + familyName) in Zenkaku-Kana format (reading of name) for Japan.
 
         middleNames:
           type: string
@@ -447,7 +420,7 @@ components:
 
         address:
           type: string
-          description: Complete address of the customer.  For some countries, it is built following the usual concatenation of parameters in a country, but for other countries, this is not the case.  For some countries, it can use streetName, streetNumber and/or houseNumberExtension. For example, in ESP, streetName+streetNumber; in NLD, it can be streetName+streetNumber or streetName+streetNumber+houseNumberExtension.
+          description: Customer's address (StreetNumber + PostalCode).
           
         streetName:
           type: string
@@ -507,7 +480,7 @@ components:
 
         nameMatch:
           type: string
-          description: Indicates whether the complete name of the customer matches with the one on the OB system.
+          description: Indicates whether the customer's full name (givenName + familyName) matches with the one on the OB system.
           enum:
                 - 'true'
                 - 'false'
@@ -531,7 +504,7 @@ components:
 
         nameKanaHankakuMatch:
           type: string
-          description: Indicates whether complete name of the customer in Hankaku-Kana format (reading of name) for Japan matches with the one on the OB systems.
+          description: Indicates whether customer's full name (givenName + familyName) in Hankaku-Kana format (reading of name) for Japan matches with the one on the OB systems.
           enum:
                 - 'true'
                 - 'false'
@@ -539,7 +512,7 @@ components:
 
         nameKanaZenkakuMatch:
           type: string
-          description: Indicates whether complete name of the customer in Zenkaku-Kana format (reading of name) for Japan matches with the one on the OB systems.
+          description: Indicates whether customer's full name (givenName + familyName) in Zenkaku-Kana format (reading of name) for Japan matches with the one on the OB systems.
           enum:
                 - 'true'
                 - 'false'
@@ -564,7 +537,7 @@ components:
 
         addressMatch:
           type: string
-          description: Indicates whether complete address of the customer matches with the one on the OB systems.
+          description: Indicates whether customer's address (StreetNumber + PostalCode) matches with the one on the OB systems.
           enum:
                 - 'true'
                 - 'false'
@@ -660,7 +633,7 @@ components:
         nameMatch:
           allOf:
             - $ref: '#/components/schemas/MatchResult'
-            - description: Indicates whether the complete name of the customer matches with the one on the Operator's system.
+            - description: Indicates whether the customer's full name (givenName + familyName) matches with the one on the Operator's system.
         nameMatchScore:
           $ref: '#/components/schemas/MatchScoreResult'
         givenNameMatch:
@@ -678,13 +651,13 @@ components:
         nameKanaHankakuMatch:
           allOf:
             - $ref: '#/components/schemas/MatchResult'
-            - description: Indicates whether complete name of the customer in Hankaku-Kana format (reading of name) for Japan matches with the one on the Operator's system.
+            - description: Indicates whether customer's full name (givenName + familyName) in Hankaku-Kana format (reading of name) for Japan matches with the one on the Operator's system.
         nameKanaHankakuMatchScore:
           $ref: '#/components/schemas/MatchScoreResult'
         nameKanaZenkakuMatch:
           allOf:
             - $ref: '#/components/schemas/MatchResult'
-            - description: Indicates whether complete name of the customer in Zenkaku-Kana format (reading of name) for Japan matches with the one on the Operator's system.
+            - description: Indicates whether customer's full name (givenName + familyName) in Zenkaku-Kana format (reading of name) for Japan matches with the one on the Operator's system.
         nameKanaZenkakuMatchScore:
           $ref: '#/components/schemas/MatchScoreResult'
         middleNamesMatch:
@@ -702,7 +675,7 @@ components:
         addressMatch:
           allOf:
             - $ref: '#/components/schemas/MatchResult'
-            - description: Indicates whether complete address of the customer matches with the one on the Operator's system.
+            - description: Indicates whether customer's address (StreetNumber + PostalCode) matches with the one on the Operator's system.
         addressMatchScore:
           $ref: '#/components/schemas/MatchScoreResult'
         streetNameMatch:
@@ -793,9 +766,9 @@ components:
         In addition to regular scenario of `INVALID_ARGUMENT`, another scenario may exist.
 
         - Indicated param combination is invalid (`"code": "KNOW_YOUR_CUSTOMER.INVALID_PARAM_COMBINATION","message": "Indicated parameter combination is invalid"`)
-      headers:
-        x-correlator:
-          $ref: '#/components/headers/x-correlator'
+          
+          Regardless of whether the `phoneNumber` is explicitly stated in the request body or not (since it is optional), at least one of the other request body parameters must be provided to perform the match check. Otherwise, this error will be returned.
+
       content:
 
         application/json:
@@ -816,9 +789,6 @@ components:
 
     Generic401:
       description: Authentication problem with the client request. Unauthorized error.  Access Token related errors.
-      headers:
-        x-correlator:
-          $ref: '#/components/headers/x-correlator'
       content:
         application/json:
 
@@ -839,9 +809,6 @@ components:
         - Phone number cannot be deducted from access token context.(`{"code": "KNOW_YOUR_CUSTOMER.INVALID_TOKEN_CONTEXT","message": "Phone number mismatch with access token context"}`)
         - The idDocument property is missing.(`{"code": "KNOW_YOUR_CUSTOMER.ID_DOCUMENT_REQUIRED","message": "The idDocument is required to perform the properties validation"}`)
         - The idDocument does not match the one associated to the provided phoneNumber in the OB systems.(`{"code": "KNOW_YOUR_CUSTOMER.ID_DOCUMENT_MISMATCH","message": "The idDocument needs to match the one associated with the provided phoneNumber"}`)
-      headers:
-        x-correlator:
-          $ref: '#/components/headers/x-correlator'
       content:
 
         application/json:
@@ -873,9 +840,6 @@ components:
     Generic404:
       description: |
         Not Found error.  Error if URL is wrong / user is not found.
-      headers:
-        x-correlator:
-          $ref: '#/components/headers/x-correlator'
       content:
         application/json:
 
@@ -891,9 +855,6 @@ components:
 
     Generic500:
       description: Server error.  Problem with MNO's server side.  Some processing error within MNO's servers.
-      headers:
-        x-correlator:
-          $ref: '#/components/headers/x-correlator'
       content:
         application/json:
 
@@ -908,9 +869,6 @@ components:
 
     Generic503:
       description: Service unavailable. Typically the server is down.  Problem with MNO's server side.  Any unexpected error within MNO's servers.
-      headers:
-        x-correlator:
-          $ref: '#/components/headers/x-correlator'
       content:
         application/json:
 
@@ -925,9 +883,6 @@ components:
 
     Generic504:
       description: Request time exceeded. If it happens repeatedly, consider reducing the request complexity
-      headers:
-        x-correlator:
-          $ref: '#/components/headers/x-correlator'
       content:
         application/json:
 
