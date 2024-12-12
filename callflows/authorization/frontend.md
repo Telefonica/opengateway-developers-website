@@ -21,7 +21,7 @@ Your application's frontend needs to include the following parameters in the req
 > 📘 If your are using our Sandbox
 > An optional parameter, according to OpenID Connect, `login_hint` must be always passed with the end-user's phone number if you are testing on a production environment. This is a requirement for the Sandbox if you want to test on your real mobile line, which must be whitelisted for privacy reasons. Check the [Sandbox line whitelist](/docs/whitelist) guide for more information.
 > - `login_hint`: The login hint to be used by the operator to identify the end-user, in the following format `<identifier_type>:<identifier>`, those being:
->	- `tel` or `phone_number` for phone numbers. The `login_hint` must be a tel URI as defined in [RFC 3966](https://www.rfc-editor.org/info/rfc3966) for global phone numbers without visual separators in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I/en) format. For example, `tel:+34666666666` or `phone_number:+34666666666`.
+>	- `tel` for phone numbers. The `login_hint` must be a tel URI as defined in [RFC 3966](https://www.rfc-editor.org/info/rfc3966) for global phone numbers without visual separators in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I/en) format. For example, `tel:+34666666666`.
 >	- `ipport` for IPv4 and IPv6 addresses, that can optionally include a port. For example, `ipport:80.90.34.2:16790`, `ipport:80.90.34.2`, `ipport:[2001:db8::1]:8080` or `ipport:[2001:db8::1]`
 
 #### Handling the response

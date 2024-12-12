@@ -102,7 +102,7 @@ myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
 myHeaders.append("Authorization", `Basic ${appCredentials}`);
 
 const urlencoded = new URLSearchParams();
-urlencoded.append("login_hint", `phone_number:${customerPhoneNumber}`);
+urlencoded.append("login_hint", `tel:${customerPhoneNumber}`);
 urlencoded.append("scope", apiScope);
 
 const requestOptions = {
@@ -159,7 +159,7 @@ String apiScope = "dpv:FraudPreventionAndDetection#sim-swap";
 HttpClient client = HttpClient.newHttpClient();
 
 Map<Object, Object> data = new HashMap<>();
-data.put("login_hint", "phone_number:" + customerPhoneNumber);
+data.put("login_hint", "tel:" + customerPhoneNumber);
 data.put("scope", apiScope);
 
 StringBuilder requestBody = new StringBuilder();
@@ -229,7 +229,7 @@ headers = {
 }
 
 data = {
-    "login_hint": f"phone_number:{customer_phone_number}",
+    "login_hint": f"tel:{customer_phone_number}",
     "scope": api_scope
 }
 

@@ -94,7 +94,7 @@ myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
 myHeaders.append("Authorization", `Basic ${appCredentials}`);
 
 const urlencoded = new URLSearchParams();
-urlencoded.append("login_hint", `phone_number:${customerPhoneNumber}`);
+urlencoded.append("login_hint", `tel:${customerPhoneNumber}`);
 urlencoded.append("scope", apiScope);
 
 const requestOptions = {
@@ -151,7 +151,7 @@ String apiScope = "dpv:FraudPreventionAndDetection#device-status-roaming-read";
 HttpClient client = HttpClient.newHttpClient();
 
 Map<Object, Object> data = new HashMap<>();
-data.put("login_hint", "phone_number:" + customerPhoneNumber);
+data.put("login_hint", "tel:" + customerPhoneNumber);
 data.put("scope", apiScope);
 
 StringBuilder requestBody = new StringBuilder();
@@ -222,7 +222,7 @@ headers = {
 }
 
 data = {
-    "login_hint": f"phone_number:{customer_phone_number}",
+    "login_hint": f"tel:{customer_phone_number}",
     "scope": api_scope
 }
 
@@ -383,7 +383,7 @@ const params = {
   response_type: "code",
   scope: apiScope,
   redirect_uri: myCallbackEndpoint,
-  login_hint: `phone_number:${userPhoneNumber}`,
+  login_hint: `tel:${userPhoneNumber}`,
   state: encodeURIComponent(JSON.stringify(deviceStatusParams)) // Using `state` as the parameter that is always forwarded to the redirect_uri
 };
 
@@ -421,7 +421,7 @@ fetch(url, requestOptions);
                 phone_number: phoneInput
             };
 
-            document.getElementById('login_hint').value = 'phone_number:' + phoneInput;
+            document.getElementById('login_hint').value = 'tel:' + phoneInput;
             document.getElementById('state').value = encodeURIComponent(JSON.stringify(deviceStatusParams));
 
             document.getElementById('apiRequestForm').submit();
