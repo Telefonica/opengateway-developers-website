@@ -53,6 +53,18 @@ customer_phone_number = "+34777777777"
 
 devicestatus_client = DeviceStatus(credentials=credentials, phone_number=customer_phone_number)
 ```
+```node Sandbox SDK for Node.js
+const { DeviceStatus } = require('@telefonica/opengateway-sandbox-sdk');
+
+const credentials = {
+    clientId: 'my-app-id',
+    clientSecret: 'my-app-secret'
+}
+
+const CUSTOMER_PHONE_NUMBER = '+34666666666'
+
+const deviceStatusClient = new DeviceStatus(credentials, undefined, CUSTOMER_PHONE_NUMBER)
+```
 ```node Sample SDK for Node.js
 import { ClientCredentials, DeviceStatus } from "aggregator/opengateway-sdk"
 
@@ -575,6 +587,14 @@ data = json.loads(state)
 result = await device_client.verify(data['latitude'], data['longitude'], data['accuracy'], data['phone_number'])
 
 print(f"Is device in roaming status? {result.roaming}")
+```
+```node Sandbox SDK for Node.js
+const data = JSON.parse(state);
+
+let result = deviceStatusClient.roaming(undefined, data.phoneNumber, undefined, undefined, undefined);
+
+
+console.log(`Is device in roaming status? ${result.roaming}`)
 ```
 ```node Sample SDK for Node.js
 const data = JSON.parse(state);

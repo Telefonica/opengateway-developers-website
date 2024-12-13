@@ -53,7 +53,6 @@ let deviceIpPortAddress = getDeviceIP() // e.g. '203.0.113.25:8080'
 
 const qodClient = new QoDMobile(credentials, null, deviceIpPortAddress)
 ```
-
 ```java Sample SDK for Java
 import aggregator.opengatewaysdk.ClientCredentials;
 import aggregator.opengatewaysdk.QoDMobile;
@@ -68,7 +67,6 @@ String deviceIpPortAddress = this.getDeviceIP(); // e.g. "203.0.113.25:8080"
 
 QoDMobile qodClient = new QoDMobile(credentials, null, deviceIpPortAddress);
 ```
-
 ```python Sample SDK for Python
 from aggregator_opengateway_sdk import QoDMobile, ClientCredentials, QoSProfiles
 
@@ -81,7 +79,6 @@ device_ip_address = self.get_device_ip() # e.g. '203.0.113.25:8080'
 
 qod_client = QoDMobile(client=credentials, ip_address=device_ip_address)
 ```
-
 ```ecmascript HTTP using JavaScript (ES6)
 // First step:
 // Perform an authorization request
@@ -140,7 +137,6 @@ fetch("https://opengateway.aggregator.com/token", requestOptions)
     accessToken = result.access_token;
   })
 ```
-
 ```java HTTP using Java
 // First step:
 // Perform an authorization request
@@ -208,7 +204,6 @@ HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
 JSONObject jsonResponse = new JSONObject(response.body());
 String accessToken = jsonResponse.getString("access_token");
 ```
-
 ```python Sample HTTP using Python
 # First step:
 # Perform an authorization request
@@ -441,24 +436,28 @@ fetch(url, requestOptions);
 
 Samples represent how to publish the auth callback URL in Python or Node.js, so the code from the Auth Code Flow can be received. The same can be achieved in any other language with capabilities to run an HTTP server and listen for the redirect from the authentication flow:
 
-```python Sample SDK for Python
-from flask import Flask, request, jsonify
-from aggregator_opengateway_sdk import ClientCredentials, QoDMobile, QoSProfiles
+```node Sandbox SDK for Node.js
+import sandboxSdk from '@telefonica/opengateway-sandbox-sdk';
+const { QoDMobile } = sandboxSdk;
+import express from "express":
 
-credentials = ClientCredentials(
-    clientid='my-app-id',
-    clientsecret='my-app-secret'
-)
+const credentials = {
+    clientId: 'my-app-id',
+    clientSecret: 'my-app-secret'
+}
 
-app = Flask(__name__)
+const app = express();
+const port = 3000;
 
-@app.route('/qod-auth-callback', methods=['GET'])
-def auth_callback():
-    code = request.args.get('code', '')
-    qod_client = QoDMobile(client=credentials, auth_code=code)
+app.get('/qod-auth-callback', (req, res) => {
+    const code = req.query.code;
+    const phoneNumber = req.query.state;
+    const qodClient = new QoDMobile(credentials, code);
+})
 
-if __name__ == '__main__':
-    app.run()
+app.listen(port, () => {
+    console.log(`QoD authorization callback URL is running`);
+})
 ```
 ```node Sample SDK for Node.js
 import { ClientCredentials, QoDMobile } from "aggregator/opengateway-sdk"
@@ -481,6 +480,25 @@ app.listen(port, () => {
     console.log(`QoD authorization callback URL is running`);
 })
 ```
+```python Sample SDK for Python
+from flask import Flask, request, jsonify
+from aggregator_opengateway_sdk import ClientCredentials, QoDMobile, QoSProfiles
+
+credentials = ClientCredentials(
+    clientid='my-app-id',
+    clientsecret='my-app-secret'
+)
+
+app = Flask(__name__)
+
+@app.route('/qod-auth-callback', methods=['GET'])
+def auth_callback():
+    code = request.args.get('code', '')
+    qod_client = QoDMobile(client=credentials, auth_code=code)
+
+if __name__ == '__main__':
+    app.run()
+```
 
 #### API Usage
 
@@ -488,6 +506,23 @@ Once we have instantiated the SDK class with the authorization code received fro
 
 For that, still in the code of the auth callback URL endpoint listener, following to the QoDMobile class instantiation, follow the samples below:
 
+```node Sandbox SDK for Node.js
+
+    const result = await qodClient.sessions(
+        300,                                 // duration
+        undefined,                           // externalId
+        phoneNumber,                         // msisdn: The mobile number
+        undefined,                           // ipv4Addr
+        undefined,                           // ipv6Addr
+        undefined,                           // uePort
+        undefined,
+        'QOS_E',                             // QOS_E - Qualifier for enhanced communication profile
+        'http://my-server/notification-uri', //notificationUri: The URI for notifications
+        'my-notification-auth-token'         // notificationAuthToken
+    );
+        
+    console.log(result);
+```
 ```python Sample SDK for Python
     ip = request.remote_addr
     port = request.environ.get('REMOTE_PORT')

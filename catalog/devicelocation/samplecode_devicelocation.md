@@ -63,6 +63,18 @@ customer_phone_number = "+34666666666"
 
 devicelocation_client = DeviceLocation(credentials=credentials, phone_number=customer_phone_number)
 ```
+```node Sandbox SDK for Node.js
+const { DeviceLocation } = require('@telefonica/opengateway-sandbox-sdk');
+
+const credentials = {
+    clientId: 'my-app-id',
+    clientSecret: 'my-app-secret'
+}
+
+const CUSTOMER_PHONE_NUMBER = '+34666666666'
+
+const deviceLocationClient = new DeviceLocation(credentials, undefined, CUSTOMER_PHONE_NUMBER)
+```
 ```node Sample SDK for Node.js
 import { ClientCredentials, DeviceLocation } from "aggregator/opengateway-sdk"
 
@@ -276,6 +288,11 @@ print (f"Is the device in location? {result}")
 result = devicelocation_client.verify(40.5150, -3.6640, 10, customer_phone_number) # as set in the authorization step
 
 print (f"Is the device in location? {result}")
+```
+```node Sandbox SDK for Node.js
+let result = deviceLocationClient.verify(40.5150, -3.6640, 10)
+
+console.log (`Is the device in location? ${result}`)
 ```
 ```node Sample SDK for Node.js
 let result = deviceLocationClient.verify(40.5150, -3.6640, 10)
@@ -526,7 +543,8 @@ if __name__ == '__main__':
     app.run()
 ```
 ```node Sample SDK for Node.js
-import { ClientCredentials, DeviceLocation } from "aggregator/opengateway-sdk"
+import sandboxSdk from '@telefonica/opengateway-sandbox-sdk';
+const { DeviceLocation } = sandboxSdk;
 import express from "express"
 
 const credentials: ClientCredentials(
@@ -636,6 +654,13 @@ data = json.loads(state)
 result = await device_client.verify(data['latitude'], data['longitude'], data['accuracy'], data['phone_number'])
 
 print(f"Is the device in location? {result}")
+```
+```node Sandbox SDK for Node.js
+const data = JSON.parse(state);
+
+let result = deviceLocationClient.verify(data.latitude, data.longitude, data.radius, data.phoneNumber);
+
+console.log(`Is the device in location? ${result}`)
 ```
 ```node Sample SDK for Node.js
 const data = JSON.parse(state);
