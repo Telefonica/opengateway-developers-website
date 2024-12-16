@@ -68,11 +68,11 @@ const { Simswap } = sandboxSdk;
 const credentials = {
     clientId: 'my-app-id',
     clientSecret: 'my-app-secret'
-};
+}
 
-const CUSTOMER_PHONE_NUMBER = '+34555555555';
+const CUSTOMER_PHONE_NUMBER = '+34555555555'
 
-const simswapClient = new Simswap(credentials.clientId, credentials.clientSecret, CUSTOMER_PHONE_NUMBER);
+const simswapClient = new Simswap(credentials.clientId, credentials.clientSecret, CUSTOMER_PHONE_NUMBER)
 ```
 ```node Sample SDK for Node.js
 import { ClientCredentials, SIMSwap } from "aggregator/opengateway-sdk"
