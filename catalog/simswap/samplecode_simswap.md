@@ -296,7 +296,7 @@ let result = await simswapClient.retrieveDate();
 console.log(`SIM was swapped: ${result.toLocaleString('en-GB', { timeZone: 'UTC' })}`)
 ```
 ```node Sample SDK for Node.js
-let result = await simswapClient.retrieve_date();
+let result = await simswapClient.retrieve_date()
 
 console.log(`SIM was swapped: ${result.toLocaleString('en-GB', { timeZone: 'UTC' })}`)
 ```
