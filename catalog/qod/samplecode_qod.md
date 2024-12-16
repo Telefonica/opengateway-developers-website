@@ -437,26 +437,26 @@ fetch(url, requestOptions);
 Samples represent how to publish the auth callback URL in Python or Node.js, so the code from the Auth Code Flow can be received. The same can be achieved in any other language with capabilities to run an HTTP server and listen for the redirect from the authentication flow:
 
 ```node Sandbox SDK for Node.js
-import sandboxSdk from '@telefonica/opengateway-sandbox-sdk';
-const { QoDMobile } = sandboxSdk;
-import express from "express":
+import sandboxSdk from '@telefonica/opengateway-sandbox-sdk'
+const { QoDMobile } = sandboxSdk
+import express from "express"
 
 const credentials = {
     clientId: 'my-app-id',
     clientSecret: 'my-app-secret'
 }
 
-const app = express();
-const port = 3000;
+const app = express()
+const port = 3000
 
 app.get('/qod-auth-callback', (req, res) => {
-    const code = req.query.code;
-    const phoneNumber = req.query.state;
-    const qodClient = new QoDMobile(credentials, code);
+    const code = req.query.code
+    const phoneNumber = req.query.state
+    const qodClient = new QoDMobile(credentials, code)
 })
 
 app.listen(port, () => {
-    console.log(`QoD authorization callback URL is running`);
+    console.log(`QoD authorization callback URL is running`)
 })
 ```
 ```node Sample SDK for Node.js
@@ -477,7 +477,7 @@ app.get('/qod-auth-callback', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log(`QoD authorization callback URL is running`);
+    console.log(`QoD authorization callback URL is running`)
 })
 ```
 ```python Sample SDK for Python

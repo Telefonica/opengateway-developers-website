@@ -64,7 +64,8 @@ customer_phone_number = "+34666666666"
 devicelocation_client = DeviceLocation(credentials=credentials, phone_number=customer_phone_number)
 ```
 ```node Sandbox SDK for Node.js
-const { DeviceLocation } = require('@telefonica/opengateway-sandbox-sdk');
+import sandboxSdk from '@telefonica/opengateway-sandbox-sdk'
+const { DeviceLocation } = sandboxSdk
 
 const credentials = {
     clientId: 'my-app-id',
@@ -543,8 +544,8 @@ if __name__ == '__main__':
     app.run()
 ```
 ```node Sample SDK for Node.js
-import sandboxSdk from '@telefonica/opengateway-sandbox-sdk';
-const { DeviceLocation } = sandboxSdk;
+import sandboxSdk from '@telefonica/opengateway-sandbox-sdk'
+const { DeviceLocation } = sandboxSdk
 import express from "express"
 
 const credentials: ClientCredentials(

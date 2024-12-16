@@ -54,7 +54,7 @@ customer_phone_number = "+34777777777"
 devicestatus_client = DeviceStatus(credentials=credentials, phone_number=customer_phone_number)
 ```
 ```node Sandbox SDK for Node.js
-const { DeviceStatus } = require('@telefonica/opengateway-sandbox-sdk');
+const { DeviceStatus } = require('@telefonica/opengateway-sandbox-sdk')
 
 const credentials = {
     clientId: 'my-app-id',

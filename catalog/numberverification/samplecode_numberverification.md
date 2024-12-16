@@ -130,8 +130,8 @@ if __name__ == '__main__':
     app.run()
 ```
 ```node Sandbox SDK for Node.js
-import sandboxSdk from '@telefonica/opengateway-sandbox-sdk';
-const { NumberVerification } = sandboxSdk;
+import sandboxSdk from '@telefonica/opengateway-sandbox-sdk'
+const { NumberVerification } = sandboxSdk
 import express from "express"
 
 const credentials: ClientCredentials(
@@ -149,7 +149,7 @@ app.get('/numberverification-callback', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log(`Number verification callback URL is running`);
+    console.log(`Number verification callback URL is running`)
 })
 ```
 ```python Sample SDK for Python
@@ -191,7 +191,7 @@ app.get('/numberverification-callback', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log(`Number verification callback URL is running`);
+    console.log(`Number verification callback URL is running`)
 })
 ```
 ```python HTTP using Python
