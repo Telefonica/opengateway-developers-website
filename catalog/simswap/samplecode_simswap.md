@@ -291,7 +291,7 @@ result = simswap_client.retrieve_date()
 print(f"SIM was swapped: {result.strftime('%B %d, %Y, %I:%M:%S %p')}")
 ```
 ```node Sandbox SDK for Node.js
-let result = await simswapClient.retrieveDate();
+let result = await simswapClient.retrieveDate()
 
 console.log(`SIM was swapped: ${result.toLocaleString('en-GB', { timeZone: 'UTC' })}`)
 ```
