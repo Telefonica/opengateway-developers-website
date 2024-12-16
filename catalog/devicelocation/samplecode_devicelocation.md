@@ -657,9 +657,9 @@ result = await device_client.verify(data['latitude'], data['longitude'], data['a
 print(f"Is the device in location? {result}")
 ```
 ```node Sandbox SDK for Node.js
-const data = JSON.parse(state);
+const data = JSON.parse(state)
 
-let result = deviceLocationClient.verify(data.latitude, data.longitude, data.radius, data.phoneNumber);
+let result = deviceLocationClient.verify(data.latitude, data.longitude, data.radius, data.phoneNumber)
 
 console.log(`Is the device in location? ${result}`)
 ```
