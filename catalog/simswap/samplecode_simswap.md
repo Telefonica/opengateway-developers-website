@@ -500,19 +500,19 @@ import express from "express";
 const credentials = {
     clientId: 'my-app-id',
     clientSecret: 'my-app-secret'
-};
+}
 
-const app = express();
-const port = 3000;
+const app = express()
+const port = 3000
 
 app.get('/simswap-callback', (req, res) => {
-    const code = req.query.code;
-    const phoneNumber = req.query.state;
-    const simswapClient = new Simswap(credentials.clientId, credentials.clientSecret, undefined, code);
+    const code = req.query.code
+    const phoneNumber = req.query.state
+    const simswapClient = new Simswap(credentials.clientId, credentials.clientSecret, undefined, code)
 })
 
 app.listen(port, () => {
-    console.log(`SIM Swap callback URL is running`);
+    console.log(`SIM Swap callback URL is running`)
 })
 ```
 ```node Sample SDK for Node.js
