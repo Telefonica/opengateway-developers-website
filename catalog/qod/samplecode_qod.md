@@ -521,7 +521,7 @@ For that, still in the code of the auth callback URL endpoint listener, followin
         'my-notification-auth-token'         // notificationAuthToken
     );
         
-    console.log(result);
+    console.log(result)
 ```
 ```python Sample SDK for Python
     ip = request.remote_addr
