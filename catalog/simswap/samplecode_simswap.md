@@ -62,8 +62,8 @@ customer_phone_number = '+34555555555'
 simswap_client = SimSwap(credentials=credentials, phone_number=customer_phone_number)
 ```
 ```node Sandbox SDK for Node.js
-import sandboxSdk from '@telefonica/opengateway-sandbox-sdk';
-const { Simswap } = sandboxSdk;
+import sandboxSdk from '@telefonica/opengateway-sandbox-sdk'
+const { Simswap } = sandboxSdk
 
 const credentials = {
     clientId: 'my-app-id',
@@ -493,9 +493,9 @@ if __name__ == '__main__':
     app.run()
 ```
 ```node Sandbox SDK for Node.js
-import sandboxSdk from '@telefonica/opengateway-sandbox-sdk';
-const { DeviceLocation, DeviceStatus, Simswap, NumberVerification } = sandboxSdk;
-import express from "express";
+import sandboxSdk from '@telefonica/opengateway-sandbox-sdk'
+const { DeviceLocation, DeviceStatus, Simswap, NumberVerification } = sandboxSdk
+import express from "express"
 
 const credentials = {
     clientId: 'my-app-id',
