@@ -264,7 +264,7 @@ app.get('/numberverification-callback', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log(`Number verification callback URL is running`);
+    console.log(`Number verification callback URL is running`)
 })
 
 ```
@@ -311,9 +311,9 @@ result = response.json().get("devicePhoneNumberVerified")
 print(f"Phone number {'verified' if result else 'does not match mobile line'}")
 ```
 ```node HTTP using Node.js
-const myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
-myHeaders.append("Authorization", `Bearer ${accessToken}`);
+const myHeaders = new Headers()
+myHeaders.append("Content-Type", "application/json")
+myHeaders.append("Authorization", `Bearer ${accessToken}`)
 
 const requestBody = JSON.stringify({
   "phoneNumber": phoneNumber
