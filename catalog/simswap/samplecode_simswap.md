@@ -61,6 +61,19 @@ customer_phone_number = '+34555555555'
 
 simswap_client = SimSwap(credentials=credentials, phone_number=customer_phone_number)
 ```
+```node Sandbox SDK for Node.js
+import sandboxSdk from '@telefonica/opengateway-sandbox-sdk'
+const { Simswap } = sandboxSdk
+
+const credentials = {
+    clientId: 'my-app-id',
+    clientSecret: 'my-app-secret'
+}
+
+const CUSTOMER_PHONE_NUMBER = '+34555555555'
+
+const simswapClient = new Simswap(credentials.clientId, credentials.clientSecret, CUSTOMER_PHONE_NUMBER)
+```
 ```node Sample SDK for Node.js
 import { ClientCredentials, SIMSwap } from "aggregator/opengateway-sdk"
 
@@ -277,6 +290,11 @@ result = simswap_client.retrieve_date()
 
 print(f"SIM was swapped: {result.strftime('%B %d, %Y, %I:%M:%S %p')}")
 ```
+```node Sandbox SDK for Node.js
+let result = await simswapClient.retrieveDate()
+
+console.log(`SIM was swapped: ${result.toLocaleString('en-GB', { timeZone: 'UTC' })}`)
+```
 ```node Sample SDK for Node.js
 let result = await simswapClient.retrieve_date()
 
@@ -474,6 +492,29 @@ def callback():
 if __name__ == '__main__':
     app.run()
 ```
+```node Sandbox SDK for Node.js
+import sandboxSdk from '@telefonica/opengateway-sandbox-sdk'
+const { DeviceLocation, DeviceStatus, Simswap, NumberVerification } = sandboxSdk
+import express from "express"
+
+const credentials = {
+    clientId: 'my-app-id',
+    clientSecret: 'my-app-secret'
+}
+
+const app = express()
+const port = 3000
+
+app.get('/simswap-callback', (req, res) => {
+    const code = req.query.code
+    const phoneNumber = req.query.state
+    const simswapClient = new Simswap(credentials.clientId, credentials.clientSecret, undefined, code)
+})
+
+app.listen(port, () => {
+    console.log(`SIM Swap callback URL is running`)
+})
+```
 ```node Sample SDK for Node.js
 import { ClientCredentials, SIMSwap } from "aggregator/opengateway-sdk"
 import express from "express"
@@ -583,6 +624,11 @@ print(f"SIM was swapped: {result.strftime('%B %d, %Y, %I:%M:%S %p')}")
 result = await simswap_client.retrieve_date(phone_number)
 
 print(f"SIM was swapped: {result.strftime('%B %d, %Y, %I:%M:%S %p')}")
+```
+```node Sandbox SDK for Node.js
+let result = await simswapClient.retrieveDate(phoneNumber)
+
+console.log(`SIM was swapped: ${result.toLocaleString('en-GB', { timeZone: 'UTC' })}`)
 ```
 ```node Sample SDK for Node.js
 let result = await simswapClient.retrieve_date(phoneNumber)
