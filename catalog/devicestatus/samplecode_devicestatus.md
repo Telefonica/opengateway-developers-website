@@ -503,7 +503,7 @@ app.get('/device-status-callback', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log(`Device Status callback URL is running`);
+    console.log(`Device Status callback URL is running`)
 })
 ```
 ```python HTTP using Python
@@ -589,17 +589,17 @@ result = await device_client.verify(data['latitude'], data['longitude'], data['a
 print(f"Is device in roaming status? {result.roaming}")
 ```
 ```node Sandbox SDK for Node.js
-const data = JSON.parse(state);
+const data = JSON.parse(state)
 
-let result = deviceStatusClient.roaming(undefined, data.phoneNumber, undefined, undefined, undefined);
+let result = deviceStatusClient.roaming(undefined, data.phoneNumber, undefined, undefined, undefined)
 
 
 console.log(`Is device in roaming status? ${result.roaming}`)
 ```
 ```node Sample SDK for Node.js
-const data = JSON.parse(state);
+const data = JSON.parse(state)
 
-let result = deviceStatusClient.roaming(data.phoneNumber);
+let result = deviceStatusClient.roaming(data.phoneNumber)
 
 
 console.log(`Is device in roaming status? ${result.roaming}`)
