@@ -43,7 +43,7 @@ Since Open Gateway authorization is 3-legged, meaning it identifies the applicat
 from opengateway_sandbox_sdk import ClientCredentials, DeviceLocation
 
 credentials = ClientCredentials(
-    client_id='yout_client_id',
+    client_id='your_client_id',
     client_secret='your_client_secret'
 )
 
@@ -306,32 +306,30 @@ resultFuture.thenAccept(result -> {
     System.out.println("Is the device in location? " + result);
 })
 ```
-```ecmascript HTTP using Javascript(ES6)
-const myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
-myHeaders.append("Authorization", `Bearer ${accessToken}`);
+```ecmascript HTTP using Javascript (ES6)
+const apiHeaders = new Headers();
+apiHeaders.append("Content-Type", "application/json");
+apiHeaders.append("Authorization", `Bearer ${accessToken}`);
 
-const requestBody = JSON.stringify({
-  "phoneNumber": customerPhoneNumber // as set in the authorization step
+const apiRequestBody = JSON.stringify({
+  "phoneNumber": customerPhoneNumber, // as set in the authorization step
   "latitude": 40.5150,
   "longitude": -3.6640,
   "accuracy": 10
 });
 
-const requestOptions = {
+const apiRequestOptions = {
   method: "POST",
-  headers: myHeaders,
-  body: requestBody
+  headers: apiHeaders,
+  body: apiRequestBody
 };
 
-fetch("https://opengateway.aggregator.com/location/v0/verify", requestOptions)
+fetch("https://opengateway.aggregator.com/location/v0/verify", apiRequestOptions)
   .then(response => response.json())
   .then(result => {
     console.log(`Is device in location? ${result.verificationResult}`)
   })
-})
 ```
-
 ```java HTTP using Java
 JSONObject requestBody = new JSONObject();
 requestBody.put("phoneNumber", customerPhoneNumber); // as set in the authorization step
@@ -543,6 +541,29 @@ def callback():
 if __name__ == '__main__':
     app.run()
 ```
+```node Sandbox SDK for Node.js
+import sandboxSdk from '@telefonica/opengateway-sandbox-sdk'
+const { DeviceLocation } = sandboxSdk
+import express from "express"
+
+const credentials = {
+    clientId: 'my-app-id',
+    clientSecret: 'my-app-secret'
+}
+
+const app = express()
+const port = 3000
+
+app.get('/device-location-callback', (req, res) => {
+    const code = req.query.code
+    const state = req.query.state
+    const deviceLocationClient = new DeviceLocation(credentials, code)
+})
+
+app.listen(port, () => {
+    console.log(`Device Location callback URL is running`)
+})
+```
 ```node Sample SDK for Node.js
 import sandboxSdk from '@telefonica/opengateway-sandbox-sdk'
 const { DeviceLocation } = sandboxSdk
@@ -563,7 +584,7 @@ app.get('/device-location-callback', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log(`Device Location callback URL is running`);
+    console.log(`Device Location callback URL is running`)
 })
 ```
 ```python HTTP using Python
@@ -634,7 +655,7 @@ app.get('/device-location-callback', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log(`Device Location callback URL is running`);
+    console.log(`Device Location callback URL is running`)
 })
 ```
 

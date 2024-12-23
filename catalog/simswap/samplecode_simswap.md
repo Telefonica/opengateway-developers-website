@@ -43,11 +43,11 @@ Since Open Gateway authorization is 3-legged, meaning it identifies the applicat
 ```python Sandbox SDK for Python
 from opengateway_sandbox_sdk import ClientCredentials, Simswap
 
-client_id='my-app-id',
-client_secret='my-app-secret'
+client_id='your_client_id',
+client_secret='your_client_secret'
 customer_phone_number = '+34555555555'
 
-simswap_client = Simswap(app_client_id, app_client_secret, customer_phone_number)
+simswap_client = Simswap(client_id, client_secret, customer_phone_number)
 ```
 ```python Sample SDK for Python
 from aggregator_opengateway_sdk import ClientCredentials, SimSwap
@@ -66,8 +66,8 @@ import sandboxSdk from '@telefonica/opengateway-sandbox-sdk'
 const { Simswap } = sandboxSdk
 
 const credentials = {
-    clientId: 'my-app-id',
-    clientSecret: 'my-app-secret'
+    clientId: 'your_client_id',
+    clientSecret: 'your_client_secret'
 }
 
 const CUSTOMER_PHONE_NUMBER = '+34555555555'
@@ -498,8 +498,8 @@ const { DeviceLocation, DeviceStatus, Simswap, NumberVerification } = sandboxSdk
 import express from "express"
 
 const credentials = {
-    clientId: 'my-app-id',
-    clientSecret: 'my-app-secret'
+    clientId: 'your_client_id',
+    clientSecret: 'your_client_secret'
 }
 
 const app = express()
