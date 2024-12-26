@@ -68,8 +68,8 @@ import sandboxSdk from '@telefonica/opengateway-sandbox-sdk'
 const { DeviceLocation } = sandboxSdk
 
 const credentials = {
-    clientId: 'my-app-id',
-    clientSecret: 'my-app-secret'
+    clientId: 'your_client_id',
+    clientSecret: 'your_client_secret'
 }
 
 const CUSTOMER_PHONE_NUMBER = '+34666666666'

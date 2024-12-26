@@ -43,7 +43,7 @@ Since Open Gateway authorization is 3-legged, meaning it identifies the applicat
 ```python Sandbox SDK for Python
 from opengateway_sandbox_sdk import ClientCredentials, Simswap
 
-client_id='your_client_id',
+client_id='your_client_id'
 client_secret='your_client_secret'
 customer_phone_number = '+34555555555'
 
@@ -70,7 +70,7 @@ const credentials = {
     clientSecret: 'your_client_secret'
 }
 
-const CUSTOMER_PHONE_NUMBER = '+34555555555'
+const CUSTOMER_PHONE_NUMBER = '+34666666666'
 
 const simswapClient = new Simswap(credentials.clientId, credentials.clientSecret, CUSTOMER_PHONE_NUMBER)
 ```
