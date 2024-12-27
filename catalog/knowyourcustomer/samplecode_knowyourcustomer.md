@@ -318,30 +318,29 @@ resultFuture.thenAccept(result -> {
 });
 ```
 ```ecmascript HTTP using Javascript (ES6)
-const myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
-myHeaders.append("Authorization", `Bearer ${accessToken}`);
+const apiHeaders = new Headers();
+apiHeaders.append("Content-Type", "application/json");
+apiHeaders.append("Authorization", `Bearer ${accessToken}`);
 
-const requestBody = JSON.stringify({
+const apiRequestBody = JSON.stringify({
     "address": "Plaza María Pita, 1",
     "idDocument": "66666666q",
     "postalCode": 15004
 });
 
-const requestOptions = {
+const apiRequestOptions = {
   method: "POST",
-  headers: myHeaders,
-  body: requestBody
+  headers: apiHeaders,
+  body: apiRequestBody
 };
 
-fetch("https://opengateway.aggregator.com/kyc-match/v0-0.2/match", requestOptions)
+fetch("https://opengateway.aggregator.com/kyc-match/v0-0.2/match", apiRequestOptions)
   .then(response => response.json())
   .then(result => {
     console.log (`Address matches the user's? ${result.addressMatch}`);
     console.log (`Address matches the user's? ${result.idDocumentMatch}`);
     console.log (`Address matches the user's? ${result.addressMatch}`);
   })
-})
 ```
 ```java HTTP using Java
 JSONObject requestBody = new JSONObject();
@@ -607,19 +606,19 @@ app.get('/kyc-match-callback', (req, res) => {
 
     let accessToken
 
-    const myHeaders = new Headers()
-    myHeaders.append("Content-Type", "application/x-www-form-urlencode")
-    myHeaders.append("Authorization", `Basic ${appCredentials}`)
-    const requestBody = JSON.stringify({
+    const tokenHeaders = new Headers()
+    tokenHeaders.append("Content-Type", "application/x-www-form-urlencode")
+    tokenHeaders.append("Authorization", `Basic ${appCredentials}`)
+    const tokenRequestBody = JSON.stringify({
         "grant_type": "authorization_code",
         "code": code
     })
-    const requestOptions = {
+    const tokenRequestOptions = {
         method: "POST",
-        headers: myHeaders,
-        body: requestBody
+        headers: tokenHeaders,
+        body: tokenRequestBody
     }
-    fetch("https://opengateway.aggregator.com/token", requestOptions)
+    fetch("https://opengateway.aggregator.com/token", tokenRequestOptions)
         .then(response => response.json())
         .then(result => {
             accessToken = result.access_token
@@ -655,10 +654,10 @@ print (f"Postal Code matches the user's? {result.postalCode}")
 const data = JSON.parse(state);
 
 let result = kycMatchClient.match({
-    birthdate=data.birthdate,
-    postalCode=data.postalCode,
-    idDocument=data.idDocument,
-    phoneNumber= data.phoneNumber
+    birthdate: data.birthdate,
+    postalCode: data.postalCode,
+    idDocument: data.idDocument,
+    phoneNumber: data.phoneNumber
 });
 
 console.log(`Phone number matches the user's? ${result.phoneNumberMatch}`)
@@ -695,31 +694,26 @@ print (f"Id matches the user's? {result.idDocumentMatch}")
 print (f"Postal Code matches the user's? {result.postalCodeMatch}")
 ```
 ```node HTTP using Node.js
-const data = JSON.parse(state);
+const data = JSON.parse(state)
 
-const address = data.address;
-const idDocument = data.idDocument;
-const postalCode = data.postalCode;
-const phoneNumber = data.phoneNumber;
+const apiHeaders = new Headers()
+apiHeaders.append("Content-Type", "application/json")
+apiHeaders.append("Authorization", `Bearer ${accessToken}`)
 
-const myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
-myHeaders.append("Authorization", `Bearer ${accessToken}`);
-
-const requestBody = JSON.stringify({
-    birthdate=data.birthdate,
-    postalCode=data.postalCode,
-    idDocument=data.idDocument,
-    phoneNumber=data.phoneNumber
+const apiRequestBody = JSON.stringify({
+    birthdate: data.birthdate,
+    postalCode: data.postalCode,
+    idDocument: data.idDocument,
+    phoneNumber: data.phoneNumber
 })
 
-const requestOptions = {
+const apiRequestOptions = {
   method: "POST",
-  headers: myHeaders,
-  body: requestBody
+  headers: apiHeaders,
+  body: apiRequestBody
 }
 
-fetch("https://opengateway.aggregator.com/kyc-match/v0-0.2/match", requestOptions)
+fetch("https://opengateway.aggregator.com/kyc-match/v0-0.2/match", apiRequestOptions)
   .then(response => response.json())
   .then(result => {  
     console.log(`Phone number matches the user's? ${result.phoneNumberMatch}`);

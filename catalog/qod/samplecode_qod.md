@@ -115,23 +115,23 @@ fetch("https://opengateway.aggregator.com/bc-authorize", requestOptions)
 // Second step:
 // Requesting an access token with the auth_req_id included in the result above
 
-const myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
-myHeaders.append("Authorization", `Basic ${appCredentials}`);
+const tokenHeaders = new Headers();
+tokenHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+tokenHeaders.append("Authorization", `Basic ${appCredentials}`);
 
-const urlencoded = new URLSearchParams();
+urlencoded = new URLSearchParams();
 urlencoded.append("grant_type", "urn:openid:params:grant-type:ciba");
 urlencoded.append("auth_req_id", authReqId);
 
-const requestOptions = {
+const tokenRequestOptions = {
   method: "POST",
-  headers: myHeaders,
+  headers: tokenHeaders,
   body: urlencoded
 };
 
 let accessToken;
 
-fetch("https://opengateway.aggregator.com/token", requestOptions)
+fetch("https://opengateway.aggregator.com/token", tokenRequestOptions)
   .then(response => response.json())
   .then(result => {
     accessToken = result.access_token;
@@ -276,12 +276,12 @@ duration = 300 # Seconds
 
 qod_client.set_quality(duration, QoSProfiles.QOS_E)
 ```
-```ecmascript HTTP using Javascript(ES6)
-const myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
-myHeaders.append("Authorization", `Bearer ${accessToken}`);
+```ecmascript HTTP using Javascript (ES6)
+const apiHeaders = new Headers();
+apiHeaders.append("Content-Type", "application/json");
+apiHeaders.append("Authorization", `Bearer ${accessToken}`);
 
-const requestBody = JSON.stringify({
+const apiRequestBody = JSON.stringify({
   "device": {
     "ipv4Address": {
       "publicAddress": "203.0.113.25",
@@ -295,13 +295,13 @@ const requestBody = JSON.stringify({
   }
 });
 
-const requestOptions = {
+const apiRequestOptions = {
   method: "POST",
-  headers: myHeaders,
-  body: requestBody
+  headers: apiHeaders,
+  body: apiRequestBody
 };
 
-fetch("https://opengateway.aggregator.com/qod/v0/sessions", requestOptions)
+fetch("https://opengateway.aggregator.com/qod/v0/sessions", apiRequestOptions)
   .then(response => response.json())
   .then(result => {
     console.log(`Session created with id: ${result.sessionId}`)

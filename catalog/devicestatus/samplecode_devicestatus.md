@@ -275,27 +275,26 @@ print (`Is the device in roaming status? ${result}`)
 
     })
 ```
-```ecmascript HTTP using Javascript(ES6)
-const myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
-myHeaders.append("Authorization", `Bearer ${accessToken}`);
+```ecmascript HTTP using Javascript (ES6)
+const apiHeaders = new Headers();
+apiHeaders.append("Content-Type", "application/json");
+apiHeaders.append("Authorization", `Bearer ${accessToken}`);
 
-const requestBody = JSON.stringify({
+const apiRequestBody = JSON.stringify({
   "phoneNumber": customerPhoneNumber // as set in the authorization step
 });
 
-const requestOptions = {
+const apiRequestOptions = {
   method: "POST",
-  headers: myHeaders,
-  body: requestBody
+  headers: apiHeaders,
+  body: apiRequestBody
 };
 
-fetch("https://opengateway.aggregator.com/device-status/v0/roaming", requestOptions)
+fetch("https://opengateway.aggregator.com/device-status/v0/roaming", apiRequestOptions)
   .then(response => response.json())
   .then(result => {
     console.log(`Roaming? ${result.roaming} \nCountry: ${result.countryName[0]} (${result.countryCode})`);
   })
-})
 ```
 ```java HTTP using Java
 JSONObject requestBody = new JSONObject();
@@ -449,6 +448,30 @@ fetch(url, requestOptions);
 
 Samples represent how to publish the callback URL in Python or Node.js, so the code from the Auth Code Flow can be received. The same can be achieved in any other language with capabilities to run an HTTP server and listen for the redirect from the authorization flow:
 
+```node Sandbox SDK for Node.js
+import sandboxSdk from '@telefonica/opengateway-sandbox-sdk'
+const { DeviceStatus } = sandboxSdk
+
+import express from "express"
+
+const credentials = {
+    clientId: 'your_client_id',
+    clientSecret: 'your_client_secret'
+}
+
+const app = express()
+const port = 3000
+
+app.get('/device-status-callback', (req, res) => {
+    const code = req.query.code
+    const state = req.query.state
+    const deviceStatusClient = new DeviceStatus(credentials, code)
+})
+
+app.listen(port, () => {
+    console.log(`Device Status callback URL is running`)
+})
+```
 ```python Sample SDK for Python
 from flask import Flask, request, jsonify
 from aggregator_opengateway_sdk import ClientCredentials, DeviceStatus
@@ -578,7 +601,6 @@ print(f"Is device in roaming status? {result.roaming}")
 const data = JSON.parse(state)
 
 let result = deviceStatusClient.roaming(undefined, data.phoneNumber, undefined, undefined, undefined)
-
 
 console.log(`Is device in roaming status? ${result.roaming}`)
 ```

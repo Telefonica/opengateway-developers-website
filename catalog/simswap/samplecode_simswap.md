@@ -135,23 +135,23 @@ fetch("https://opengateway.aggregator.com/bc-authorize", requestOptions)
 // Second step:
 // Requesting an access token with the auth_req_id included in the result above
 
-const myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
-myHeaders.append("Authorization", `Basic ${appCredentials}`);
+const tokenHeaders = new Headers();
+tokenHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+tokenHeaders.append("Authorization", `Basic ${appCredentials}`);
 
-const urlencoded = new URLSearchParams();
+urlencoded = new URLSearchParams();
 urlencoded.append("grant_type", "urn:openid:params:grant-type:ciba");
 urlencoded.append("auth_req_id", authReqId);
 
-const requestOptions = {
+const tokenRequestOptions = {
   method: "POST",
-  headers: myHeaders,
+  headers: tokenHeaders,
   body: urlencoded
 };
 
 let accessToken;
 
-fetch("https://opengateway.aggregator.com/token", requestOptions)
+fetch("https://opengateway.aggregator.com/token", tokenRequestOptions)
   .then(response => response.json())
   .then(result => {
     accessToken = result.access_token;
@@ -308,21 +308,21 @@ resultFuture.thenAccept(result -> {
 })
 ```
 ```ecmascript HTTP using JavaScript (ES6)
-const myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
-myHeaders.append("Authorization", `Bearer ${accessToken}`);
+const apiHeaders = new Headers();
+apiHeaders.append("Content-Type", "application/json");
+apiHeaders.append("Authorization", `Bearer ${accessToken}`);
 
-const requestBody = JSON.stringify({
+const apiRequestBody = JSON.stringify({
   "phoneNumber": customerPhoneNumber // as set in the authorization step
 });
 
-const requestOptions = {
+const apiRequestOptions = {
   method: "POST",
-  headers: myHeaders,
-  body: requestBody
+  headers: apiHeaders,
+  body: apiRequestBody
 };
 
-fetch("https://opengateway.aggregator.com/sim-swap/v0/retrieve-date", requestOptions)
+fetch("https://opengateway.aggregator.com/sim-swap/v0/retrieve-date", apiRequestOptions)
   .then(response => response.json())
   .then(result => {
     console.log(`SIM was swapped: ${result.latestSimChange}`)
@@ -494,7 +494,7 @@ if __name__ == '__main__':
 ```
 ```node Sandbox SDK for Node.js
 import sandboxSdk from '@telefonica/opengateway-sandbox-sdk'
-const { DeviceLocation, DeviceStatus, Simswap, NumberVerification } = sandboxSdk
+const { Simswap } = sandboxSdk
 import express from "express"
 
 const credentials = {
@@ -587,19 +587,19 @@ app.get('/simswap-callback', (req, res) => {
 
     let accessToken
 
-    const myHeaders = new Headers()
-    myHeaders.append("Content-Type", "application/x-www-form-urlencode")
-    myHeaders.append("Authorization", `Basic ${appCredentials}`)
-    const requestBody = JSON.stringify({
+    const tokenHeaders = new Headers()
+    tokenHeaders.append("Content-Type", "application/x-www-form-urlencode")
+    tokenHeaders.append("Authorization", `Basic ${appCredentials}`)
+    const tokenRequestBody = JSON.stringify({
         "grant_type": "authorization_code",
         "code": code
     })
-    const requestOptions = {
+    const tokenRequestOptions = {
         method: "POST",
-        headers: myHeaders,
-        body: requestBody
+        headers: tokenHeaders,
+        body: tokenRequestBody
     }
-    fetch("https://opengateway.aggregator.com/token", requestOptions)
+    fetch("https://opengateway.aggregator.com/token", tokenRequestOptions)
         .then(response => response.json())
         .then(result => {
             accessToken = result.access_token

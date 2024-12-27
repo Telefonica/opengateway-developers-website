@@ -274,27 +274,26 @@ resultFuture.thenAccept(result -> {
     System.out.println("Device was swapped: " + DateTimeFormatter.ISO_LOCAL_DATE.format(result));
 });
 ```
-```ecmascript HTTP using Javascript(ES6)
-const myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
-myHeaders.append("Authorization", `Bearer ${accessToken}`);
+```ecmascript HTTP using Javascript (ES6)
+const apiHeaders = new Headers();
+apiHeaders.append("Content-Type", "application/json");
+apiHeaders.append("Authorization", `Bearer ${accessToken}`);
 
-const requestBody = JSON.stringify({
+const apiRequestBody = JSON.stringify({
   "phoneNumber": customerPhoneNumber // as set in the authorization step
 });
 
-const requestOptions = {
+const apiRequestOptions = {
   method: "POST",
-  headers: myHeaders,
-  body: requestBody
+  headers: apiHeaders,
+  body: apiRequestBody
 };
 
-fetch("https://opengateway.aggregator.com/device-swap/v0.1/retrieve-date", requestOptions)
+fetch("https://opengateway.aggregator.com/device-swap/v0.1/retrieve-date", apiRequestOptions)
   .then(response => response.json())
   .then(result => {
     console.log(`SIM was swapped: ${result.latestDeviceChange}`)
   })
-})
 ```
 ```java HTTP using Java
 JSONObject requestBody = new JSONObject();
@@ -592,21 +591,21 @@ print(f"Device was swapped: {result.strftime('%B %d, %Y, %I:%M:%S %p')}")
 ```node HTTP using Node.js
 const data = JSON.parse(state);
 
-const myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
-myHeaders.append("Authorization", `Bearer ${accessToken}`);
+const apiHeaders = new Headers();
+apiHeaders.append("Content-Type", "application/json");
+apiHeaders.append("Authorization", `Bearer ${accessToken}`);
 
-const requestBody = JSON.stringify({
+const apiRequestBody = JSON.stringify({
   "phoneNumber": data.phoneNumber
 })
 
-const requestOptions = {
+const apiRequestOptions = {
   method: "POST",
-  headers: myHeaders,
-  body: requestBody
+  headers: apiHeaders,
+  body: apiRequestBody
 }
 
-fetch("https://opengateway.aggregator.com/device-swap/v0.1/retrieve-date", requestOptions)
+fetch("https://opengateway.aggregator.com/device-swap/v0.1/retrieve-date", apiRequestOptions)
   .then(response => response.json())
   .then(result => {  
     const verified = result.latestDeviceChange
