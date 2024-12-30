@@ -75,7 +75,7 @@ credentials = ClientCredentials(
     clientsecret='my-app-secret'
 )
 
-device_ip_address = self.get_device_ip() # e.g. '203.0.113.25:8080'
+device_ip_address = self.get_device_ip()  # e.g. '203.0.113.25:8080'
 
 qod_client = QoDMobile(client=credentials, ip_address=device_ip_address)
 ```
@@ -205,10 +205,13 @@ JSONObject jsonResponse = new JSONObject(response.body());
 String accessToken = jsonResponse.getString("access_token");
 ```
 ```python Sample HTTP using Python
+import base64
+import json
+import requests
 # First step:
 # Perform an authorization request
 
-device_ip_address = self.get_device_ip() # e.g. '203.0.113.25:8080'
+device_ip_address = get_device_ip()  # e.g. '203.0.113.25:8080'
 
 client_id = "my-app-id"
 client_secret = "my-app-secret"
@@ -267,12 +270,12 @@ const duration = 300 // Seconds
 qodClient.setQualityOfService(duration, QoSProfiles.QOS_E)
 ```
 ```java Sample SDK for Java
-int duration = 300; // Seconds
+int duration = 300;  // Seconds
 
 qodClient.setQualityOfService(duration, QoSProfiles.QOS_E);
 ```
 ```python Sample SDK for Python
-duration = 300 # Seconds
+duration = 300  # Seconds
 
 qod_client.set_quality(duration, QoSProfiles.QOS_E)
 ```
@@ -481,7 +484,7 @@ app.listen(port, () => {
 })
 ```
 ```python Sample SDK for Python
-from flask import Flask, request, jsonify
+from flask import Flask, request
 from aggregator_opengateway_sdk import ClientCredentials, QoDMobile, QoSProfiles
 
 credentials = ClientCredentials(
@@ -490,6 +493,7 @@ credentials = ClientCredentials(
 )
 
 app = Flask(__name__)
+
 
 @app.route('/qod-auth-callback', methods=['GET'])
 def auth_callback():
@@ -524,10 +528,10 @@ For that, still in the code of the auth callback URL endpoint listener, followin
     console.log(result)
 ```
 ```python Sample SDK for Python
-    ip = request.remote_addr
-    port = request.environ.get('REMOTE_PORT')
+ip = request.remote_addr
+port = request.environ.get('REMOTE_PORT')
 
-    qod_client.set_quality(300, QoSProfiles.QOS_E, client_ip=ip, client_port=port)
+qod_client.set_quality(300, QoSProfiles.QOS_E, client_ip=ip, client_port=port)
 ```
 ```node Sample SDK for Node.js
     const ip = req.ip

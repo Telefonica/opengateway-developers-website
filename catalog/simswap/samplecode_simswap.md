@@ -41,7 +41,7 @@ First step is to instantiate the SIM Swap service class included in the correspo
 Since Open Gateway authorization is 3-legged, meaning it identifies the application, the operator and the operator's subscriber, who is also the end-user holder of the mobile line, each check for a different phone number needs its own SDK class instantiation, or access token if not using an SDK.
 
 ```python Sandbox SDK for Python
-from opengateway_sandbox_sdk import ClientCredentials, Simswap
+from opengateway_sandbox_sdk import Simswap
 
 client_id = 'your_client_id'
 client_secret = 'your_client_secret'
@@ -225,6 +225,8 @@ JSONObject jsonResponse = new JSONObject(response.body());
 String accessToken = jsonResponse.getString("access_token");
 ```
 ```python Sample HTTP using Python
+import base64
+import requests
 # First step:
 # Perform an authorization request
 
@@ -352,7 +354,7 @@ headers = {
 }
 
 data = {
-    "phoneNumber": customer_phone_number, # as set in the authorization step
+    "phoneNumber": customer_phone_number,  # as set in the authorization step
 }
 
 response = requests.post(
@@ -453,7 +455,7 @@ fetch(url, requestOptions);
 Samples represent how to publish the callback URL in Python or Node.js, so the code from the Auth Code Flow can be received. The same can be achieved in any other language with capabilities to run an HTTP server and listen for the redirect from the authorization flow:
 
 ```python Sandbox SDK for Python
-from flask import Flask, request, jsonify
+from flask import Flask, request
 from opengateway_sandbox_sdk import ClientCredentials, Simswap
 
 credentials = ClientCredentials(
@@ -462,6 +464,7 @@ credentials = ClientCredentials(
 )
 
 app = Flask(__name__)
+
 
 @app.route('/simswap-callback', methods=['GET'])
 def callback():
@@ -473,7 +476,7 @@ if __name__ == '__main__':
     app.run()
 ```
 ```python Sample SDK for Python
-from flask import Flask, request, jsonify
+from flask import Flask, request
 from aggregator_opengateway_sdk import ClientCredentials, SimSwap
 
 credentials = ClientCredentials(
@@ -482,6 +485,7 @@ credentials = ClientCredentials(
 )
 
 app = Flask(__name__)
+
 
 @app.route('/simswap-callback', methods=['GET'])
 def callback():
@@ -538,7 +542,9 @@ app.listen(port, () => {
 })
 ```
 ```python Sample HTTP using Python
-from flask import Flask, request, jsonify
+import base64
+import requests
+from flask import Flask, request
 
 client_id = "my-app-id"
 client_secret = "my-app-secret"
@@ -547,6 +553,7 @@ credentials = base64.b64encode(app_credentials.encode('utf-8')).decode('utf-8')
 api_scope = "dpv:FraudPreventionAndDetection#sim-swap"
 
 app = Flask(__name__)
+
 
 @app.route('/simswap-callback', methods=['GET'])
 def callback():
