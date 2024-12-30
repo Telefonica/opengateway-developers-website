@@ -1,15 +1,13 @@
 #!/bin/bash
 
-# Directorio a buscar
 CATALOG_PATH="../catalog"
 TMP_FOLDER="./tmp"
 
 # Remove previous execution data
 rm -rf "$TMP_FOLDER"
-
-# Create Output Folder if not exist
 mkdir -p "$TMP_FOLDER"
 
+# Function to place "API usage" code of node files in the correct place
 process_node_js_file() {
         awk '
         function process_node_js_file(file) {
@@ -79,6 +77,7 @@ process_node_js_file() {
         ' "$1"
     }
 
+# Function to place "API usage" code of python files in the correct place
 process_python_file() {
 awk '
 function process_python_file(file) {
@@ -137,6 +136,7 @@ BEGIN {
 ' "$1"
     }
 
+# Loop through samplecode_ files
 for samplecode_file in $(find "$CATALOG_PATH" -maxdepth 3 -type f -name "samplecode_*.md"); do
 # Extract the part of the file name between samplecode_ and .md
     filename=$(basename "$samplecode_file")
@@ -200,15 +200,16 @@ for samplecode_file in $(find "$CATALOG_PATH" -maxdepth 3 -type f -name "samplec
         print >> fileName
     }
     ' "$samplecode_file"
-    
-    # Fix node files to reorder code
+    # At this point, we have a folder for each programming language and all the code blocks 
+    # that have the same title have been put together.
+    # Reordering the code in the auth code node files
     for file in "$TMP_FOLDER/js/$name"/Auth_code*Node.js.js; do
         if [ -f "$file" ]; then
             process_node_js_file "$file"
         fi
     done
 
-    # Fix authcode python files
+    # Reordering the code in the auth code python files
     for file in "$TMP_FOLDER/py/$name"/Auth_code*Python.py; do
         if [ -f "$file" ]; then
             process_python_file "$file"
@@ -217,7 +218,7 @@ for samplecode_file in $(find "$CATALOG_PATH" -maxdepth 3 -type f -name "samplec
     echo "Processing $name ==> $samplecode_file"
 done
 
-# Execute test
+# Execute test and linter
 echo "################### Python test ##################################"
 python python_test.py
 echo "################### Node test ##################################"
