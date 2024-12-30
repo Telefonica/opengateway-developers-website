@@ -45,7 +45,7 @@ Since Open Gateway authorization is 3-legged, meaning it identifies the applicat
 from aggregator_opengateway_sdk import ClientCredentials, DeviceStatus
 
 credentials = ClientCredentials(
-    client_id='yout_client_id',
+    client_id='your_client_id',
     client_secret='your_client_secret'
 )
 
@@ -204,7 +204,8 @@ JSONObject jsonResponse = new JSONObject(response.body());
 String accessToken = jsonResponse.getString("access_token");
 ```
 ```python Sample HTTP using Python
-
+import base64
+import requests
 # First step:
 # Perform an authorization request
 
@@ -258,9 +259,9 @@ access_token = response.json().get("access_token")
 
 #### API usage
 ```python Sample SDK for Python
-result = devicestatus_client.roaming(customer_phone_number) # as set in the authorization step
+result = devicestatus_client.roaming(customer_phone_number)  # as set in the authorization step
 
-print (f"Is device in roaming status? {result}")
+print(f"Is device in roaming status? {result}")
 ```
 ```node Sample SDK for Node.js
 let result = deviceStatusClient.roaming(undefined, customer_phone_number, undefined, undefined, undefinend)
@@ -317,14 +318,14 @@ System.out.println("Roaming? " + roaming +
                 "\nCountry: " + countryName + 
                 " (" + countryCode + ")");
 ```
-```python HTTP with Python
+```python Sample HTTP using Python
 headers = {
     "Content-Type": "application/json",
     "Authorization": f"Bearer {access_token}"
 }
 
 data = {
-    "ueId": { "msisdn": customer_phone_number }, # as set in the authorization step
+    "ueId": {"msisdn": customer_phone_number},   # as set in the authorization step
 }
 response = requests.post(
     "https://opengateway.aggregator.com/device-status/v0/roaming",
@@ -473,7 +474,8 @@ app.listen(port, () => {
 })
 ```
 ```python Sample SDK for Python
-from flask import Flask, request, jsonify
+import json
+from flask import Flask, request
 from aggregator_opengateway_sdk import ClientCredentials, DeviceStatus
 
 credentials = ClientCredentials(
@@ -482,6 +484,7 @@ credentials = ClientCredentials(
 )
 
 app = Flask(__name__)
+
 
 @app.route('/device-status-callback', methods=['GET'])
 def callback():
@@ -515,8 +518,11 @@ app.listen(port, () => {
     console.log(`Device Status callback URL is running`)
 })
 ```
-```python HTTP using Python
-from flask import Flask, request, jsonify
+```python Sample HTTP using Python
+import base64
+import json
+import requests
+from flask import Flask, request
 
 client_id = "my-app-id"
 client_secret = "my-app-secret"
@@ -524,6 +530,7 @@ app_credentials = f"{client_id}:{client_secret}"
 credentials = base64.b64encode(app_credentials.encode('utf-8')).decode('utf-8')
 
 app = Flask(__name__)
+
 
 @app.route('/device-status-callback', methods=['GET'])
 def callback():
@@ -543,8 +550,9 @@ def callback():
         data=data
     )
     access_token = response.json().get("access_token")
-    if __name__ == '__main__':
-        app.run()
+
+if __name__ == '__main__':
+    app.run()
 ```
 ```node HTTP using Node.js
 import express from "express"
@@ -593,7 +601,7 @@ Once your app is authenticated it only takes a single line of code to use the se
 ```python Sample SDK for Python
 data = json.loads(state)
 
-result = await device_client.verify(data['latitude'], data['longitude'], data['accuracy'], data['phone_number'])
+result = await devicestatus_client.verify(data['latitude'], data['longitude'], data['accuracy'], data['phone_number'])
 
 print(f"Is device in roaming status? {result.roaming}")
 ```
@@ -612,7 +620,7 @@ let result = deviceStatusClient.roaming(data.phoneNumber)
 
 console.log(`Is device in roaming status? ${result.roaming}`)
 ```
-```python HTTP using Python
+```python Sample HTTP using Python
 data = json.loads(state)
 
 phone_number = data['phone_number']
@@ -622,7 +630,7 @@ headers = {
     "Authorization": f"Bearer {access_token}"
 }
 payload = {
-    "ueId": { "msisdn": phone_number }
+    "ueId": {"msisdn": phone_number}
 }
 response = requests.post(
     "https://opengateway.aggregator.com/device-status/v0/roaming",

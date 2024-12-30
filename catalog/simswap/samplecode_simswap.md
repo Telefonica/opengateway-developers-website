@@ -43,8 +43,8 @@ Since Open Gateway authorization is 3-legged, meaning it identifies the applicat
 ```python Sandbox SDK for Python
 from opengateway_sandbox_sdk import ClientCredentials, Simswap
 
-client_id='your_client_id'
-client_secret='your_client_secret'
+client_id = 'your_client_id'
+client_secret = 'your_client_secret'
 customer_phone_number = '+34555555555'
 
 simswap_client = Simswap(client_id, client_secret, customer_phone_number)
@@ -224,7 +224,7 @@ HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
 JSONObject jsonResponse = new JSONObject(response.body());
 String accessToken = jsonResponse.getString("access_token");
 ```
-```python HTTP using Python
+```python Sample HTTP using Python
 # First step:
 # Perform an authorization request
 
@@ -345,7 +345,7 @@ String swapDate = jsonResponse.getString("latestSimChange");
 
 System.out.println("SIM was swapped: " +  DateTimeFormatter.ISO_LOCAL_DATE.format(swapDate));
 ```
-```python HTTP using Python
+```python Sample HTTP using Python
 headers = {
     "Content-Type": "application/json",
     "Authorization": f"Bearer {access_token}"
@@ -537,7 +537,7 @@ app.listen(port, () => {
     console.log(`SIM Swap callback URL is running`);
 })
 ```
-```python HTTP using Python
+```python Sample HTTP using Python
 from flask import Flask, request, jsonify
 
 client_id = "my-app-id"
@@ -635,7 +635,7 @@ let result = await simswapClient.retrieve_date(phoneNumber)
 
 console.log(`SIM was swapped: ${result.toLocaleString('en-GB', { timeZone: 'UTC' })}`)
 ```
-```python HTTP using Python
+```python Sample HTTP using Python
 headers = {
     "Content-Type": "application/json",
     "Authorization": f"Bearer {access_token}"

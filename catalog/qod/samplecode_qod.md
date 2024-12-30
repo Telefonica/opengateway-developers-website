@@ -334,7 +334,7 @@ String sessionId = jsonResponse.getString("sessionId");
 
 System.out.println("Session created with id: " + sessionId);
 ```
-```python HTTP with Python
+```python Sample HTTP using Python
 headers = {
     "Content-Type": "application/json",
     "Authorization": f"Bearer {access_token}"

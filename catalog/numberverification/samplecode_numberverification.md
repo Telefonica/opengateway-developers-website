@@ -194,7 +194,7 @@ app.listen(port, () => {
     console.log(`Number verification callback URL is running`)
 })
 ```
-```python HTTP using Python
+```python Sample HTTP using Python
 from flask import Flask, request, jsonify
 
 client_id = "my-app-id"
@@ -293,7 +293,7 @@ let result = await apiClient.verify(phoneNumber)
 
 console.log(`Phone number ${result ? "verified" : "does not match mobile line"}`)
 ```
-```python HTTP using Python
+```python Sample HTTP using Python
 headers = {
     "Content-Type": "application/json",
     "Authorization": f"Bearer {access_token}"
