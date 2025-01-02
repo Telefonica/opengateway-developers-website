@@ -110,7 +110,7 @@ As the opposite to the flow triggering, this API consumption flow will always co
 Samples represent how to publish the callback URL in Python or Node.js, so the code from the Auth Code Flow can be received. The same can be achieved in any other language with capabilities to run an HTTP server and listen for the redirect from the authentication flow:
 
 ```python Sandbox SDK for Python
-from flask import Flask, request, jsonify
+from flask import Flask, request
 from opengateway_sandbox_sdk import ClientCredentials, NumberVerification
 
 credentials = ClientCredentials(
@@ -119,6 +119,7 @@ credentials = ClientCredentials(
 )
 
 app = Flask(__name__)
+
 
 @app.route('/numberverification-callback', methods=['GET'])
 def callback():
@@ -153,7 +154,7 @@ app.listen(port, () => {
 })
 ```
 ```python Sample SDK for Python
-from flask import Flask, request, jsonify
+from flask import Flask, request
 from aggregator_opengateway_sdk import ClientCredentials, NumberVerification
 
 credentials = ClientCredentials(
@@ -162,6 +163,7 @@ credentials = ClientCredentials(
 )
 
 app = Flask(__name__)
+
 
 @app.route('/numberverification-callback', methods=['GET'])
 def callback():
@@ -194,8 +196,10 @@ app.listen(port, () => {
     console.log(`Number verification callback URL is running`)
 })
 ```
-```python HTTP using Python
-from flask import Flask, request, jsonify
+```python Sample HTTP using Python
+import base64
+import requests
+from flask import Flask, request
 
 client_id = "my-app-id"
 client_secret = "my-app-secret"
@@ -204,6 +208,7 @@ credentials = base64.b64encode(app_credentials.encode('utf-8')).decode('utf-8')
 api_purpose = "dpv:FraudPreventionAndDetection#number-verification-verify-read"
 
 app = Flask(__name__)
+
 
 @app.route('/numberverification-callback', methods=['GET'])
 def callback():
@@ -293,7 +298,7 @@ let result = await apiClient.verify(phoneNumber)
 
 console.log(`Phone number ${result ? "verified" : "does not match mobile line"}`)
 ```
-```python HTTP using Python
+```python Sample HTTP using Python
 headers = {
     "Content-Type": "application/json",
     "Authorization": f"Bearer {access_token}"

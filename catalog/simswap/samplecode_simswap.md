@@ -41,13 +41,13 @@ First step is to instantiate the SIM Swap service class included in the correspo
 Since Open Gateway authorization is 3-legged, meaning it identifies the application, the operator and the operator's subscriber, who is also the end-user holder of the mobile line, each check for a different phone number needs its own SDK class instantiation, or access token if not using an SDK.
 
 ```python Sandbox SDK for Python
-from opengateway_sandbox_sdk import ClientCredentials, Simswap
+from opengateway_sandbox_sdk import Simswap
 
-client_id='my-app-id',
-client_secret='my-app-secret'
+client_id = 'your_client_id'
+client_secret = 'your_client_secret'
 customer_phone_number = '+34555555555'
 
-simswap_client = Simswap(app_client_id, app_client_secret, customer_phone_number)
+simswap_client = Simswap(client_id, client_secret, customer_phone_number)
 ```
 ```python Sample SDK for Python
 from aggregator_opengateway_sdk import ClientCredentials, SimSwap
@@ -66,11 +66,11 @@ import sandboxSdk from '@telefonica/opengateway-sandbox-sdk'
 const { Simswap } = sandboxSdk
 
 const credentials = {
-    clientId: 'my-app-id',
-    clientSecret: 'my-app-secret'
+    clientId: 'your_client_id',
+    clientSecret: 'your_client_secret'
 }
 
-const CUSTOMER_PHONE_NUMBER = '+34555555555'
+const CUSTOMER_PHONE_NUMBER = '+34666666666'
 
 const simswapClient = new Simswap(credentials.clientId, credentials.clientSecret, CUSTOMER_PHONE_NUMBER)
 ```
@@ -135,23 +135,23 @@ fetch("https://opengateway.aggregator.com/bc-authorize", requestOptions)
 // Second step:
 // Requesting an access token with the auth_req_id included in the result above
 
-const myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
-myHeaders.append("Authorization", `Basic ${appCredentials}`);
+const tokenHeaders = new Headers();
+tokenHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+tokenHeaders.append("Authorization", `Basic ${appCredentials}`);
 
-const urlencoded = new URLSearchParams();
+urlencoded = new URLSearchParams();
 urlencoded.append("grant_type", "urn:openid:params:grant-type:ciba");
 urlencoded.append("auth_req_id", authReqId);
 
-const requestOptions = {
+const tokenRequestOptions = {
   method: "POST",
-  headers: myHeaders,
+  headers: tokenHeaders,
   body: urlencoded
 };
 
 let accessToken;
 
-fetch("https://opengateway.aggregator.com/token", requestOptions)
+fetch("https://opengateway.aggregator.com/token", tokenRequestOptions)
   .then(response => response.json())
   .then(result => {
     accessToken = result.access_token;
@@ -224,7 +224,9 @@ HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
 JSONObject jsonResponse = new JSONObject(response.body());
 String accessToken = jsonResponse.getString("access_token");
 ```
-```python HTTP using Python
+```python Sample HTTP using Python
+import base64
+import requests
 # First step:
 # Perform an authorization request
 
@@ -308,21 +310,21 @@ resultFuture.thenAccept(result -> {
 })
 ```
 ```ecmascript HTTP using JavaScript (ES6)
-const myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
-myHeaders.append("Authorization", `Bearer ${accessToken}`);
+const apiHeaders = new Headers();
+apiHeaders.append("Content-Type", "application/json");
+apiHeaders.append("Authorization", `Bearer ${accessToken}`);
 
-const requestBody = JSON.stringify({
+const apiRequestBody = JSON.stringify({
   "phoneNumber": customerPhoneNumber // as set in the authorization step
 });
 
-const requestOptions = {
+const apiRequestOptions = {
   method: "POST",
-  headers: myHeaders,
-  body: requestBody
+  headers: apiHeaders,
+  body: apiRequestBody
 };
 
-fetch("https://opengateway.aggregator.com/sim-swap/v0/retrieve-date", requestOptions)
+fetch("https://opengateway.aggregator.com/sim-swap/v0/retrieve-date", apiRequestOptions)
   .then(response => response.json())
   .then(result => {
     console.log(`SIM was swapped: ${result.latestSimChange}`)
@@ -345,14 +347,14 @@ String swapDate = jsonResponse.getString("latestSimChange");
 
 System.out.println("SIM was swapped: " +  DateTimeFormatter.ISO_LOCAL_DATE.format(swapDate));
 ```
-```python HTTP using Python
+```python Sample HTTP using Python
 headers = {
     "Content-Type": "application/json",
     "Authorization": f"Bearer {access_token}"
 }
 
 data = {
-    "phoneNumber": customer_phone_number, # as set in the authorization step
+    "phoneNumber": customer_phone_number,  # as set in the authorization step
 }
 
 response = requests.post(
@@ -453,7 +455,7 @@ fetch(url, requestOptions);
 Samples represent how to publish the callback URL in Python or Node.js, so the code from the Auth Code Flow can be received. The same can be achieved in any other language with capabilities to run an HTTP server and listen for the redirect from the authorization flow:
 
 ```python Sandbox SDK for Python
-from flask import Flask, request, jsonify
+from flask import Flask, request
 from opengateway_sandbox_sdk import ClientCredentials, Simswap
 
 credentials = ClientCredentials(
@@ -462,6 +464,7 @@ credentials = ClientCredentials(
 )
 
 app = Flask(__name__)
+
 
 @app.route('/simswap-callback', methods=['GET'])
 def callback():
@@ -473,7 +476,7 @@ if __name__ == '__main__':
     app.run()
 ```
 ```python Sample SDK for Python
-from flask import Flask, request, jsonify
+from flask import Flask, request
 from aggregator_opengateway_sdk import ClientCredentials, SimSwap
 
 credentials = ClientCredentials(
@@ -482,6 +485,7 @@ credentials = ClientCredentials(
 )
 
 app = Flask(__name__)
+
 
 @app.route('/simswap-callback', methods=['GET'])
 def callback():
@@ -494,12 +498,12 @@ if __name__ == '__main__':
 ```
 ```node Sandbox SDK for Node.js
 import sandboxSdk from '@telefonica/opengateway-sandbox-sdk'
-const { DeviceLocation, DeviceStatus, Simswap, NumberVerification } = sandboxSdk
+const { Simswap } = sandboxSdk
 import express from "express"
 
 const credentials = {
-    clientId: 'my-app-id',
-    clientSecret: 'my-app-secret'
+    clientId: 'your_client_id',
+    clientSecret: 'your_client_secret'
 }
 
 const app = express()
@@ -537,8 +541,10 @@ app.listen(port, () => {
     console.log(`SIM Swap callback URL is running`);
 })
 ```
-```python HTTP using Python
-from flask import Flask, request, jsonify
+```python Sample HTTP using Python
+import base64
+import requests
+from flask import Flask, request
 
 client_id = "my-app-id"
 client_secret = "my-app-secret"
@@ -547,6 +553,7 @@ credentials = base64.b64encode(app_credentials.encode('utf-8')).decode('utf-8')
 api_scope = "dpv:FraudPreventionAndDetection#sim-swap"
 
 app = Flask(__name__)
+
 
 @app.route('/simswap-callback', methods=['GET'])
 def callback():
@@ -587,19 +594,19 @@ app.get('/simswap-callback', (req, res) => {
 
     let accessToken
 
-    const myHeaders = new Headers()
-    myHeaders.append("Content-Type", "application/x-www-form-urlencode")
-    myHeaders.append("Authorization", `Basic ${appCredentials}`)
-    const requestBody = JSON.stringify({
+    const tokenHeaders = new Headers()
+    tokenHeaders.append("Content-Type", "application/x-www-form-urlencode")
+    tokenHeaders.append("Authorization", `Basic ${appCredentials}`)
+    const tokenRequestBody = JSON.stringify({
         "grant_type": "authorization_code",
         "code": code
     })
-    const requestOptions = {
+    const tokenRequestOptions = {
         method: "POST",
-        headers: myHeaders,
-        body: requestBody
+        headers: tokenHeaders,
+        body: tokenRequestBody
     }
-    fetch("https://opengateway.aggregator.com/token", requestOptions)
+    fetch("https://opengateway.aggregator.com/token", tokenRequestOptions)
         .then(response => response.json())
         .then(result => {
             accessToken = result.access_token
@@ -635,7 +642,7 @@ let result = await simswapClient.retrieve_date(phoneNumber)
 
 console.log(`SIM was swapped: ${result.toLocaleString('en-GB', { timeZone: 'UTC' })}`)
 ```
-```python HTTP using Python
+```python Sample HTTP using Python
 headers = {
     "Content-Type": "application/json",
     "Authorization": f"Bearer {access_token}"

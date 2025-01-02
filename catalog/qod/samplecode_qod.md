@@ -75,7 +75,7 @@ credentials = ClientCredentials(
     clientsecret='my-app-secret'
 )
 
-device_ip_address = self.get_device_ip() # e.g. '203.0.113.25:8080'
+device_ip_address = self.get_device_ip()  # e.g. '203.0.113.25:8080'
 
 qod_client = QoDMobile(client=credentials, ip_address=device_ip_address)
 ```
@@ -115,23 +115,23 @@ fetch("https://opengateway.aggregator.com/bc-authorize", requestOptions)
 // Second step:
 // Requesting an access token with the auth_req_id included in the result above
 
-const myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
-myHeaders.append("Authorization", `Basic ${appCredentials}`);
+const tokenHeaders = new Headers();
+tokenHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+tokenHeaders.append("Authorization", `Basic ${appCredentials}`);
 
-const urlencoded = new URLSearchParams();
+urlencoded = new URLSearchParams();
 urlencoded.append("grant_type", "urn:openid:params:grant-type:ciba");
 urlencoded.append("auth_req_id", authReqId);
 
-const requestOptions = {
+const tokenRequestOptions = {
   method: "POST",
-  headers: myHeaders,
+  headers: tokenHeaders,
   body: urlencoded
 };
 
 let accessToken;
 
-fetch("https://opengateway.aggregator.com/token", requestOptions)
+fetch("https://opengateway.aggregator.com/token", tokenRequestOptions)
   .then(response => response.json())
   .then(result => {
     accessToken = result.access_token;
@@ -205,10 +205,13 @@ JSONObject jsonResponse = new JSONObject(response.body());
 String accessToken = jsonResponse.getString("access_token");
 ```
 ```python Sample HTTP using Python
+import base64
+import json
+import requests
 # First step:
 # Perform an authorization request
 
-device_ip_address = self.get_device_ip() # e.g. '203.0.113.25:8080'
+device_ip_address = get_device_ip()  # e.g. '203.0.113.25:8080'
 
 client_id = "my-app-id"
 client_secret = "my-app-secret"
@@ -267,21 +270,21 @@ const duration = 300 // Seconds
 qodClient.setQualityOfService(duration, QoSProfiles.QOS_E)
 ```
 ```java Sample SDK for Java
-int duration = 300; // Seconds
+int duration = 300;  // Seconds
 
 qodClient.setQualityOfService(duration, QoSProfiles.QOS_E);
 ```
 ```python Sample SDK for Python
-duration = 300 # Seconds
+duration = 300  # Seconds
 
 qod_client.set_quality(duration, QoSProfiles.QOS_E)
 ```
-```ecmascript HTTP using Javascript(ES6)
-const myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
-myHeaders.append("Authorization", `Bearer ${accessToken}`);
+```ecmascript HTTP using Javascript (ES6)
+const apiHeaders = new Headers();
+apiHeaders.append("Content-Type", "application/json");
+apiHeaders.append("Authorization", `Bearer ${accessToken}`);
 
-const requestBody = JSON.stringify({
+const apiRequestBody = JSON.stringify({
   "device": {
     "ipv4Address": {
       "publicAddress": "203.0.113.25",
@@ -295,13 +298,13 @@ const requestBody = JSON.stringify({
   }
 });
 
-const requestOptions = {
+const apiRequestOptions = {
   method: "POST",
-  headers: myHeaders,
-  body: requestBody
+  headers: apiHeaders,
+  body: apiRequestBody
 };
 
-fetch("https://opengateway.aggregator.com/qod/v0/sessions", requestOptions)
+fetch("https://opengateway.aggregator.com/qod/v0/sessions", apiRequestOptions)
   .then(response => response.json())
   .then(result => {
     console.log(`Session created with id: ${result.sessionId}`)
@@ -334,7 +337,7 @@ String sessionId = jsonResponse.getString("sessionId");
 
 System.out.println("Session created with id: " + sessionId);
 ```
-```python HTTP with Python
+```python Sample HTTP using Python
 headers = {
     "Content-Type": "application/json",
     "Authorization": f"Bearer {access_token}"
@@ -481,7 +484,7 @@ app.listen(port, () => {
 })
 ```
 ```python Sample SDK for Python
-from flask import Flask, request, jsonify
+from flask import Flask, request
 from aggregator_opengateway_sdk import ClientCredentials, QoDMobile, QoSProfiles
 
 credentials = ClientCredentials(
@@ -490,6 +493,7 @@ credentials = ClientCredentials(
 )
 
 app = Flask(__name__)
+
 
 @app.route('/qod-auth-callback', methods=['GET'])
 def auth_callback():
@@ -524,10 +528,10 @@ For that, still in the code of the auth callback URL endpoint listener, followin
     console.log(result)
 ```
 ```python Sample SDK for Python
-    ip = request.remote_addr
-    port = request.environ.get('REMOTE_PORT')
+ip = request.remote_addr
+port = request.environ.get('REMOTE_PORT')
 
-    qod_client.set_quality(300, QoSProfiles.QOS_E, client_ip=ip, client_port=port)
+qod_client.set_quality(300, QoSProfiles.QOS_E, client_ip=ip, client_port=port)
 ```
 ```node Sample SDK for Node.js
     const ip = req.ip

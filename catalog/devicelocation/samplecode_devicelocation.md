@@ -43,7 +43,7 @@ Since Open Gateway authorization is 3-legged, meaning it identifies the applicat
 from opengateway_sandbox_sdk import ClientCredentials, DeviceLocation
 
 credentials = ClientCredentials(
-    client_id='yout_client_id',
+    client_id='your_client_id',
     client_secret='your_client_secret'
 )
 
@@ -55,7 +55,7 @@ devicelocation_client = DeviceLocation(credentials=credentials, phone_number=cus
 from aggregator_opengateway_sdk import ClientCredentials, DeviceLocation
 
 credentials = ClientCredentials(
-    client_id='yout_client_id',
+    client_id='your_client_id',
     client_secret='your_client_secret'
 )
 
@@ -68,8 +68,8 @@ import sandboxSdk from '@telefonica/opengateway-sandbox-sdk'
 const { DeviceLocation } = sandboxSdk
 
 const credentials = {
-    clientId: 'my-app-id',
-    clientSecret: 'my-app-secret'
+    clientId: 'your_client_id',
+    clientSecret: 'your_client_secret'
 }
 
 const CUSTOMER_PHONE_NUMBER = '+34666666666'
@@ -227,7 +227,8 @@ JSONObject jsonResponse = new JSONObject(response.body());
 String accessToken = jsonResponse.getString("access_token");
 ```
 ```python Sample HTTP using Python
-
+import base64
+import requests
 # First step:
 # Perform an authorization request
 
@@ -281,14 +282,14 @@ access_token = response.json().get("access_token")
 
 #### API usage
 ```python Sandbox SDK for Python
-result = devicelocation_client.verify(40.5150, -3.6640, 10, customer_phone_number) # as set in the authorization step
+result = devicelocation_client.verify(40.5150, -3.6640, 10, customer_phone_number)  # as set in the authorization step
 
-print (f"Is the device in location? {result}")
+print(f"Is the device in location? {result}")
 ```
 ```python Sample SDK for Python
-result = devicelocation_client.verify(40.5150, -3.6640, 10, customer_phone_number) # as set in the authorization step
+result = devicelocation_client.verify(40.5150, -3.6640, 10, customer_phone_number)  # as set in the authorization step
 
-print (f"Is the device in location? {result}")
+print(f"Is the device in location? {result}")
 ```
 ```node Sandbox SDK for Node.js
 let result = deviceLocationClient.verify(40.5150, -3.6640, 10)
@@ -306,32 +307,30 @@ resultFuture.thenAccept(result -> {
     System.out.println("Is the device in location? " + result);
 })
 ```
-```ecmascript HTTP using Javascript(ES6)
-const myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
-myHeaders.append("Authorization", `Bearer ${accessToken}`);
+```ecmascript HTTP using Javascript (ES6)
+const apiHeaders = new Headers();
+apiHeaders.append("Content-Type", "application/json");
+apiHeaders.append("Authorization", `Bearer ${accessToken}`);
 
-const requestBody = JSON.stringify({
-  "phoneNumber": customerPhoneNumber // as set in the authorization step
+const apiRequestBody = JSON.stringify({
+  "phoneNumber": customerPhoneNumber, // as set in the authorization step
   "latitude": 40.5150,
   "longitude": -3.6640,
   "accuracy": 10
 });
 
-const requestOptions = {
+const apiRequestOptions = {
   method: "POST",
-  headers: myHeaders,
-  body: requestBody
+  headers: apiHeaders,
+  body: apiRequestBody
 };
 
-fetch("https://opengateway.aggregator.com/location/v0/verify", requestOptions)
+fetch("https://opengateway.aggregator.com/location/v0/verify", apiRequestOptions)
   .then(response => response.json())
   .then(result => {
     console.log(`Is device in location? ${result.verificationResult}`)
   })
-})
 ```
-
 ```java HTTP using Java
 JSONObject requestBody = new JSONObject();
 requestBody.put("phoneNumber", customerPhoneNumber); // as set in the authorization step
@@ -352,14 +351,14 @@ String deviceInLocation = jsonResponse.getString("verificationResult");
 
 System.out.println("Is device in location?" + deviceInLocation);
 ```
-```python HTTP with Python
+```python Sample HTTP using Python
 headers = {
     "Content-Type": "application/json",
     "Authorization": f"Bearer {access_token}"
 }
 
 data = {
-    "ueId": { "msisdn": customer_phone_number }, # as set in the authorization step
+    "ueId": {"msisdn": customer_phone_number},   # as set in the authorization step
     "latitude": 40.5150,
     "longitude": -3.6640,
     "accuracy": 10
@@ -372,7 +371,7 @@ response = requests.post(
 
 result = response.json()
 
-print (f"Is the device in location? {result.get('verificationResult')}")
+print(f"Is the device in location? {result.get('verificationResult')}")
 ```
 
 
@@ -502,7 +501,8 @@ fetch(url, requestOptions);
 Samples represent how to publish the callback URL in Python or Node.js, so the code from the Auth Code Flow can be received. The same can be achieved in any other language with capabilities to run an HTTP server and listen for the redirect from the authorization flow:
 
 ```python Sandbox SDK for Python
-from flask import Flask, request, jsonify
+import json
+from flask import Flask, request
 from opengateway_sandbox_sdk import ClientCredentials, DeviceLocation
 
 credentials = ClientCredentials(
@@ -511,6 +511,7 @@ credentials = ClientCredentials(
 )
 
 app = Flask(__name__)
+
 
 @app.route('/device-location-callback', methods=['GET'])
 def callback():
@@ -523,7 +524,8 @@ if __name__ == '__main__':
     app.run()
 ```
 ```python Sample SDK for Python
-from flask import Flask, request, jsonify
+import json
+from flask import Flask, request
 from aggregator_opengateway_sdk import ClientCredentials, DeviceLocation
 
 credentials = ClientCredentials(
@@ -532,6 +534,7 @@ credentials = ClientCredentials(
 )
 
 app = Flask(__name__)
+
 
 @app.route('/device-location-callback', methods=['GET'])
 def callback():
@@ -542,6 +545,29 @@ def callback():
 
 if __name__ == '__main__':
     app.run()
+```
+```node Sandbox SDK for Node.js
+import sandboxSdk from '@telefonica/opengateway-sandbox-sdk'
+const { DeviceLocation } = sandboxSdk
+import express from "express"
+
+const credentials = {
+    clientId: 'my-app-id',
+    clientSecret: 'my-app-secret'
+}
+
+const app = express()
+const port = 3000
+
+app.get('/device-location-callback', (req, res) => {
+    const code = req.query.code
+    const state = req.query.state
+    const deviceLocationClient = new DeviceLocation(credentials, code)
+})
+
+app.listen(port, () => {
+    console.log(`Device Location callback URL is running`)
+})
 ```
 ```node Sample SDK for Node.js
 import sandboxSdk from '@telefonica/opengateway-sandbox-sdk'
@@ -563,11 +589,14 @@ app.get('/device-location-callback', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log(`Device Location callback URL is running`);
+    console.log(`Device Location callback URL is running`)
 })
 ```
-```python HTTP using Python
-from flask import Flask, request, jsonify
+```python Sample HTTP using Python
+from flask import Flask, request
+import base64
+import json
+import requests
 
 client_id = "my-app-id"
 client_secret = "my-app-secret"
@@ -575,6 +604,7 @@ app_credentials = f"{client_id}:{client_secret}"
 credentials = base64.b64encode(app_credentials.encode('utf-8')).decode('utf-8')
 
 app = Flask(__name__)
+
 
 @app.route('/device-location-callback', methods=['GET'])
 def callback():
@@ -634,7 +664,7 @@ app.get('/device-location-callback', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log(`Device Location callback URL is running`);
+    console.log(`Device Location callback URL is running`)
 })
 ```
 
@@ -645,14 +675,14 @@ Once your app is authenticated it only takes a single line of code to use the se
 ```python Sandbox SDK for Python
 data = json.loads(state)
 
-result = await device_client.verify(data['latitude'], data['longitude'], data['accuracy'], data['phone_number'])
+result = await devicelocation_client.verify(data['latitude'], data['longitude'], data['accuracy'], data['phone_number'])
 
 print(f"Is the device in location? {result}")
 ```
 ```python Sample SDK for Python
 data = json.loads(state)
 
-result = await device_client.verify(data['latitude'], data['longitude'], data['accuracy'], data['phone_number'])
+result = await devicelocation_client.verify(data['latitude'], data['longitude'], data['accuracy'], data['phone_number'])
 
 print(f"Is the device in location? {result}")
 ```
@@ -670,7 +700,7 @@ let result = deviceLocationClient.verify(data.latitude, data.longitude, data.rad
 
 console.log(`Is the device in location? ${result.verificationResult}`)
 ```
-```python HTTP using Python
+```python Sample HTTP using Python
 data = json.loads(state)
 
 latitude = data['latitude']
@@ -683,7 +713,7 @@ headers = {
     "Authorization": f"Bearer {access_token}"
 }
 payload = {
-    "ueId": { "msisdn": phone_number },
+    "ueId": {"msisdn": phone_number},
     "latitude": latitude,
     "longitude": longitude,
     "accuracy": accuracy

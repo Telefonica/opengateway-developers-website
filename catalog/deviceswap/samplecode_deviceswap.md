@@ -43,7 +43,7 @@ Since Open Gateway authorization is 3-legged, meaning it identifies the applicat
 from aggregator_opengateway_sdk import ClientCredentials, DeviceSwap
 
 credentials = ClientCredentials(
-    client_id='yout_client_id',
+    client_id='your_client_id',
     client_secret='your_client_secret'
 )
 
@@ -202,7 +202,8 @@ JSONObject jsonResponse = new JSONObject(response.body());
 String accessToken = jsonResponse.getString("access_token");
 ```
 ```python Sample HTTP using Python
-
+import base64
+import requests
 # First step:
 # Perform an authorization request
 
@@ -260,7 +261,7 @@ Once your app is authenticated it only takes a single line of code to use the se
 ```python Sample SDK for Python
 result = deviceswap_client.retrieve_date()
 
-print(f"Device was swapped: {result.strftime('%B %d, %Y, %I:%M:%S %p')}")")
+print(f"Device was swapped: {result.strftime('%B %d, %Y, %I:%M:%S %p')}")
 ```
 ```node Sample SDK for Node.js
 let result = await deviceSwapClient.retrieve_date();
@@ -274,27 +275,26 @@ resultFuture.thenAccept(result -> {
     System.out.println("Device was swapped: " + DateTimeFormatter.ISO_LOCAL_DATE.format(result));
 });
 ```
-```ecmascript HTTP using Javascript(ES6)
-const myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
-myHeaders.append("Authorization", `Bearer ${accessToken}`);
+```ecmascript HTTP using Javascript (ES6)
+const apiHeaders = new Headers();
+apiHeaders.append("Content-Type", "application/json");
+apiHeaders.append("Authorization", `Bearer ${accessToken}`);
 
-const requestBody = JSON.stringify({
+const apiRequestBody = JSON.stringify({
   "phoneNumber": customerPhoneNumber // as set in the authorization step
 });
 
-const requestOptions = {
+const apiRequestOptions = {
   method: "POST",
-  headers: myHeaders,
-  body: requestBody
+  headers: apiHeaders,
+  body: apiRequestBody
 };
 
-fetch("https://opengateway.aggregator.com/device-swap/v0.1/retrieve-date", requestOptions)
+fetch("https://opengateway.aggregator.com/device-swap/v0.1/retrieve-date", apiRequestOptions)
   .then(response => response.json())
   .then(result => {
     console.log(`SIM was swapped: ${result.latestDeviceChange}`)
   })
-})
 ```
 ```java HTTP using Java
 JSONObject requestBody = new JSONObject();
@@ -313,14 +313,14 @@ String swapDate = jsonResponse.getString("latestDeviceChange");
 
 System.out.println("Device was swapped: " +  DateTimeFormatter.ISO_LOCAL_DATE.format(swapDate));
 ```
-```python HTTP with Python
+```python Sample HTTP using Python
 headers = {
     "Content-Type": "application/json",
     "Authorization": f"Bearer {access_token}"
 }
 
 data = {
-    "phoneNumber": customer_phone_number, # as set in the authorization step
+    "phoneNumber": customer_phone_number,  # as set in the authorization step
 }
 
 response = requests.post(
@@ -434,7 +434,8 @@ fetch(url, requestOptions);
 Samples represent how to publish the callback URL in Python or Node.js, so the code from the Auth Code Flow can be received. The same can be achieved in any other language with capabilities to run an HTTP server and listen for the redirect from the authorization flow:
 
 ```python Sample SDK for Python
-from flask import Flask, request, jsonify
+import json
+from flask import Flask, request
 from aggregator_opengateway_sdk import ClientCredentials, DeviceSwap
 
 credentials = ClientCredentials(
@@ -443,6 +444,7 @@ credentials = ClientCredentials(
 )
 
 app = Flask(__name__)
+
 
 @app.route('/deviceswap-callback', methods=['GET'])
 def callback():
@@ -476,8 +478,11 @@ app.listen(port, () => {
     console.log(`Device Swap callback URL is running`);
 })
 ```
-```python HTTP using Python
-from flask import Flask, request, jsonify
+```python Sample HTTP using Python
+import base64
+import json
+import requests
+from flask import Flask, request
 
 client_id = "my-app-id"
 client_secret = "my-app-secret"
@@ -485,6 +490,7 @@ app_credentials = f"{client_id}:{client_secret}"
 credentials = base64.b64encode(app_credentials.encode('utf-8')).decode('utf-8')
 
 app = Flask(__name__)
+
 
 @app.route('/ds-retrieve-callback', methods=['GET'])
 def callback():
@@ -566,7 +572,7 @@ let result = deviceSwapClient.retrieve_date(data.phoneNumber)
 
 console.log(`Device was swapped: ${result.toLocaleString('en-GB', { timeZone: 'UTC' })}`)
 ```
-```python HTTP using Python
+```python Sample HTTP using Python
 data = json.loads(state)
 
 phone_number = data['phone_number']
@@ -592,21 +598,21 @@ print(f"Device was swapped: {result.strftime('%B %d, %Y, %I:%M:%S %p')}")
 ```node HTTP using Node.js
 const data = JSON.parse(state);
 
-const myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
-myHeaders.append("Authorization", `Bearer ${accessToken}`);
+const apiHeaders = new Headers();
+apiHeaders.append("Content-Type", "application/json");
+apiHeaders.append("Authorization", `Bearer ${accessToken}`);
 
-const requestBody = JSON.stringify({
+const apiRequestBody = JSON.stringify({
   "phoneNumber": data.phoneNumber
 })
 
-const requestOptions = {
+const apiRequestOptions = {
   method: "POST",
-  headers: myHeaders,
-  body: requestBody
+  headers: apiHeaders,
+  body: apiRequestBody
 }
 
-fetch("https://opengateway.aggregator.com/device-swap/v0.1/retrieve-date", requestOptions)
+fetch("https://opengateway.aggregator.com/device-swap/v0.1/retrieve-date", apiRequestOptions)
   .then(response => response.json())
   .then(result => {  
     const verified = result.latestDeviceChange
