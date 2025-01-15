@@ -11,11 +11,6 @@ Additionally, the SIM Swap's Unified API Access feature ensures access to networ
 > 📘 Want to give it a try?
 > Apply to join the [Developer Hub](https://opengateway.telefonica.com/en/developer-hub) and gain access to our Sandbox.
 
-### Watch the video and learn how to use the Sim Swap API
-
-[![SIM SWAP VIDEO](https://img.youtube.com/vi/zR4mHVZyP5I/0.jpg)](https://www.youtube.com/watch?v=zR4mHVZyP5I)
-
-
 ## Overview of the SIM Swap CAMARA API
 
 ### High level definition
