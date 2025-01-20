@@ -67,7 +67,7 @@ describe('Simswap Client', () => {
         fs.writeFileSync(filePath, fileContent, 'utf8');
 
         require('./tmp/js/simswap/CIBA_Sandbox_SDK_for_Node.js');
-        
+
         // Verifica que Simswap se llamó con los parámetros correctos
         expect(Simswap).toHaveBeenCalledWith(credentials.clientId, credentials.clientSecret, CUSTOMER_PHONE_NUMBER);
 

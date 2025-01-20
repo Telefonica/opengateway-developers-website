@@ -27,7 +27,7 @@ process_node_js_file() {
                     block_start_line = line_number
                     capture_lines = 1
                 }
-                
+
                 if (capture_lines) {
                     if (line ~ /^$/) {
                         capture_lines = 0
@@ -53,7 +53,7 @@ process_node_js_file() {
                     print original_lines[i] > file
                 }
             }
-            
+
             for (i = block_start_line; i <= line_number; i++) {
                 if (i in original_lines) {
                     print prev_indent original_lines[i] > file
@@ -97,7 +97,7 @@ function process_python_file(file) {
             indent = "    "
             capture_lines = 1
         }
-        
+
         if (capture_lines) {
             if (line ~ /^$/) {
                 capture_lines = 0
@@ -114,7 +114,7 @@ function process_python_file(file) {
             print original_lines[i] > file
         }
     }
-    
+
     for (i = insert_position; i <= line_number; i++) {
         if (i in original_lines) {
             if (original_lines[i] != "") {
@@ -153,7 +153,7 @@ for samplecode_file in $(find "$CATALOG_PATH" -maxdepth 3 -type f -name "samplec
 
     /^### (Frontend|Frontend flow|Backend|Backend Flow)/ {
         blockCode = $0
-        gsub(/### /, "", blockCode) # Remove ### 
+        gsub(/### /, "", blockCode) # Remove ###
         gsub(/Backend flow/, "CIBA", blockCode)
         gsub(/Frontend flow/, "Auth_code", blockCode)
         gsub(/Backend/, "Auth_code", blockCode)
@@ -200,7 +200,7 @@ for samplecode_file in $(find "$CATALOG_PATH" -maxdepth 3 -type f -name "samplec
         print >> fileName
     }
     ' "$samplecode_file"
-    # At this point, we have a folder for each programming language and all the code blocks 
+    # At this point, we have a folder for each programming language and all the code blocks
     # that have the same title have been put together.
     # Reordering the code in the auth code node files
     for file in "$TMP_FOLDER/js/$name"/Auth_code*Node.js.js; do
@@ -221,8 +221,8 @@ done
 # Execute test and linter
 echo "################### Python test ##################################"
 python python_test.py
-echo "################### Node test ##################################"
-npx jest nodeSandbox.test.js 
+echo "################### Node & html test ##################################"
+npx jest
 echo "################### Node linter ##################################"
 npx eslint 'tmp/js/**/*.js'
 echo "################### Python linter ##################################"

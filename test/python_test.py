@@ -8,15 +8,15 @@ class TestCibaSandbox(unittest.TestCase):
     def __init__(self, methodName='runTest', module_path=None):
         super(TestCibaSandbox, self).__init__(methodName)
         self.module_path = module_path
-    
+
     @patch('opengateway_sandbox_sdk.Simswap')
     def test_simswap(self, MockSimswap):
         mock_simswap_client = MockSimswap.return_value
         mock_simswap_client.retrieve_date.return_value = MagicMock(strftime=lambda x: "December 23, 2024, 09:49:42 AM")
-        
+
         # Importar el script después de aplicar los mocks
         module = importlib.import_module(self.module_path + 'CIBA_Sandbox_SDK_for_Python')
-        
+
         # Verificar que los métodos fueron llamados correctamente
         MockSimswap.assert_called_once_with(
             'your_client_id',
@@ -38,7 +38,7 @@ class TestCibaSandbox(unittest.TestCase):
         mock_devicelocation_client.verify.return_value = True
 
         module =importlib.import_module(self.module_path + 'CIBA_Sandbox_SDK_for_Python')
-        
+
         # Verificar que los métodos fueron llamados correctamente
         MockClientCredentials.assert_called_once_with(
             client_id = 'your_client_id',
@@ -67,7 +67,7 @@ if __name__ == '__main__':
     for api in os.listdir(base_dir):
         api_dir = os.path.join(base_dir, api)
         script_path = os.path.join(api_dir, 'CIBA_Sandbox_SDK_for_Python.py')
-        
+
         if os.path.isfile(script_path):
             module_path = base_dir.replace('/', '.') + '.' + api + '.'
             TestCibaSandbox.script_path = script_path
