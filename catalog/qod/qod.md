@@ -77,4 +77,29 @@ With the QoD service, you can configure the network of your clients easily with 
 You will not have to guess and discover the available networking capabilities of their clients and will focus on what matters more to your business.
 
 
+## General Informations
 
+> ⚙️ Problem Solved ? 
+>
+> Do I need to prioritize network data traffic on certain devices?
+
+
+> ⚙️ How it works 
+>
+> Prioritizes network data traffic on certain devices, thereby reducing browsing problems on those devices.
+
+
+> ⚙️ Parameters sent in the request 
+>
+> - msisdn: Cell phone number in the format - +551199999999
+> - ipv6addr: IPV6 address
+> - qos : Qos profiles, connectivity characteristics in use of long-distance network 
+> - duration : Duration of the process in seconds - if not passed, it will be considered 24 hours
+> - notificationUri : Address to be redirected to
+> - notificationAuthToken : Authentication key
+>
+
+
+> ⚙️ Data received in the response
+>
+> Returns swapped true if the SIM Card was changed and swapped false if it was not changed 
