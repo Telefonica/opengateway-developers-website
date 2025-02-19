@@ -76,13 +76,31 @@ By understanding the mechanics of SIM swap fraud and taking proactive steps to p
 
 > ⚙️ Parameters sent in the request 
 >
-> - phoneNumber: Cell phone number that will be verified for exchange
-> -  maxAge: period of hours to be checked for SIM change (minimum 1 hour / maximum 2400 hours / default 240 hours)  
+> - RETRIVE ENDPOINT :
+>   - phoneNumber: Cell phone number that will be verified for exchange
+>    
+> - CHECK ENDPOINT :
+>   - maxAge: period of hours to be checked for SIM change (minimum 1 hour / maximum 2400 hours / default 240 hours)  
+>   - phoneNumber: Cell phone number that will be verified for exchange
+> 
 
 
 > ⚙️ Data received in the response
+> 
+> - RETRIVE ENDPOINT :
+>   - Returns a timestap with when the last update
 >
-> Returns swapped true if the SIM Card was changed and swapped false if it was not changed 
+>   {
+>      "latestSimChange": "2025-02-19T17:20:53.000Z",
+>   }
+>
+> - CHECK ENDPOINT :
+>
+>   - Returns swapped true if the SIM Card was changed and swapped false if it was not changed 
+>
+>   {
+>     "swapped": true,
+>   }
 
 
 
