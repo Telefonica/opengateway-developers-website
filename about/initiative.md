@@ -21,10 +21,6 @@ In today's fast-paced digital landscape, interoperability and efficiency are cru
 - **Promote Interoperability:** Our APIs are built on open standards, ensuring compatibility across different networks and platforms, thus fostering a more connected and cohesive digital ecosystem.
 - **Improve Operational Efficiency:** Simplified access to network services reduces development time and operational overhead, allowing developers to focus on what they do best – creating great applications.
 
-## Current Status and Availability of GSMA Open Gateway APIs
-
-GSMA Open Gateway currently offers a variety of APIs, including those for Identity and Fraud Prevention, Location Services, and Communication Services. These APIs are available in numerous countries, with ongoing development and implementation efforts enhancing their reach and functionality. This initiative is paving the way for more seamless and secure telecommunications services worldwide. For more information on the current status, please visit [this website] (https://open-gateway.gsma.com).
-
 ## Key Features of Open Gateway APIs
 
 ### 1. Interoperability and Open Standards
