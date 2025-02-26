@@ -23,7 +23,7 @@ In today's fast-paced digital landscape, interoperability and efficiency are cru
 
 ## Current Status and Availability of GSMA Open Gateway APIs
 
-The GSMA Open Gateway currently offers a variety of APIs, including those for Authentication and Fraud Prevention, Location Services, and Communication Services. These APIs are available in numerous countries, with ongoing development and implementation efforts enhancing their reach and functionality. This initiative is paving the way for more seamless and secure telecommunications services worldwide. For more information on the current status, please visit [this website] (https://open-gateway.gsma.com).
+GSMA Open Gateway currently offers a variety of APIs, including those for Identity and Fraud Prevention, Location Services, and Communication Services. These APIs are available in numerous countries, with ongoing development and implementation efforts enhancing their reach and functionality. This initiative is paving the way for more seamless and secure telecommunications services worldwide. For more information on the current status, please visit [this website] (https://open-gateway.gsma.com).
 
 ## Key Features of Open Gateway APIs
 
