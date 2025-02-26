@@ -4,6 +4,9 @@ excerpt: Learn how to effectively use the Open Gateway Sandbox, a free and secur
 category: 66d5624a492663000f4ed527
 ---
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ug1YzuUUPp4?si=3HYXjWk7FhUVX4JH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
 ## Registering your application
 
 Open Gateway APIs access is granted to applications, not developers, so every application can have limited access to the scope and for the purpose it needs.
