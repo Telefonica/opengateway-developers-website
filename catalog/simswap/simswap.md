@@ -63,20 +63,20 @@ By understanding the mechanics of SIM swap fraud and taking proactive steps to p
 
 > ⚙️ Problem Solved ? 
 >
-> - RETRIVE ENDPOINT : When was the last SIM change?
-> - CHECK ENDPOINT : Has the Sim Card been changed, yes or no?
+> - RETRIEVE ENDPOINT : When was the last SIM change?
+> - CHECK ENDPOINT : Has the SIM Card been changed, yes or no?
 
 
 > ⚙️ How it works 
 >
-> - RETRIVE ENDPOINT : Returns and checks when the sim card has been changed;
+> - RETRIEVE ENDPOINT : Returns and checks when the sim card has been changed;
 > - CHECK ENDPOINT : Check whether or not the SIM card number has been changed
 > 
 
 
 > ⚙️ Parameters sent in the request 
 >
-> - RETRIVE ENDPOINT :
+> - RETRIEVE ENDPOINT :
 >   - phoneNumber: Cell phone number that will be verified for exchange
 >    
 > - CHECK ENDPOINT :
@@ -87,7 +87,7 @@ By understanding the mechanics of SIM swap fraud and taking proactive steps to p
 
 > ⚙️ Data received in the response
 > 
-> - RETRIVE ENDPOINT :
+> - RETRIEVE ENDPOINT :
 >   - Returns a timestap with when the last update
 >
 >   {
