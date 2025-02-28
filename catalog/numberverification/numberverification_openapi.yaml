@@ -55,6 +55,10 @@ paths:
 
         `dpv:FraudPreventionAndDetection#number-verification-verify-read`
 
+        Create an app on our [Sandbox](/docs/sandbox) to get credentials and [retrieve tokens](/reference/authorize) so you can perform API calls to our operators' production environments, or use the following convenience token to test in mock mode:
+        
+        `mock_sandbox_access_token`
+
         You can explore our [Number Verification sample code](/docs/samplecode_numberverification) for additional guidance on using this API.
       operationId: phoneNumberVerify
       requestBody:

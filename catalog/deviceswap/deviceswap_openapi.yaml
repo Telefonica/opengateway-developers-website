@@ -30,6 +30,10 @@ paths:
         Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following scope:
 
         `dpv:FraudPreventionAndDetection#device-swap`
+
+        Create an app on our [Sandbox](/docs/sandbox) to get credentials and [retrieve tokens](/reference/authorize) so you can perform API calls to our operators' production environments, or use the following convenience token to test in mock mode:
+        
+        `mock_sandbox_access_token`
       operationId: retrieveDeviceSwapDate
       security:
         - three_legged:
@@ -76,6 +80,10 @@ paths:
         Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following scope:
 
         `dpv:FraudPreventionAndDetection#device-swap`
+
+        Create an app on our [Sandbox](/docs/sandbox) to get credentials and [retrieve tokens](/reference/authorize) so you can perform API calls to our operators' production environments, or use the following convenience token to test in mock mode:
+        
+        `mock_sandbox_access_token`
       operationId: checkDeviceSwap
       security:
         - three_legged:

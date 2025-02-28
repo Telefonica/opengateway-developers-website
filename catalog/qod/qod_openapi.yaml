@@ -33,6 +33,10 @@ paths:
         Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following scope:
 
         `dpv:RequestedServiceProvision#qod`
+
+        Create an app on our [Sandbox](/docs/sandbox) to get credentials and [retrieve tokens](/reference/authorize) so you can perform API calls to our operators' production environments, or use the following convenience token to test in mock mode:
+        
+        `mock_sandbox_access_token`
         
         You can explore our [QoD sample code](/docs/samplecode_qod) for additional guidance on using this API.
       operationId: createSession
@@ -132,6 +136,9 @@ paths:
 
         `dpv:RequestedServiceProvision#qod`
 
+        Create an app on our [Sandbox](/docs/sandbox) to get credentials and [retrieve tokens](/reference/authorize) so you can perform API calls to our operators' production environments, or use the following convenience token to test in mock mode:
+        
+        `mock_sandbox_access_token`
       security:
         - three_legged:
           - qod
@@ -177,7 +184,10 @@ paths:
         Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following scope:
 
         `dpv:RequestedServiceProvision#qod`
+
+        Create an app on our [Sandbox](/docs/sandbox) to get credentials and [retrieve tokens](/reference/authorize) so you can perform API calls to our operators' production environments, or use the following convenience token to test in mock mode:
         
+        `mock_sandbox_access_token`
       security:
         - three_legged:
           - qod
@@ -227,6 +237,9 @@ paths:
 
         `dpv:RequestedServiceProvision#qod`
 
+        Create an app on our [Sandbox](/docs/sandbox) to get credentials and [retrieve tokens](/reference/authorize) so you can perform API calls to our operators' production environments, or use the following convenience token to test in mock mode:
+        
+        `mock_sandbox_access_token`
       operationId: postNotification
       requestBody:
         required: true
