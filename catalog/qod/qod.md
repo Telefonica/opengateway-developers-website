@@ -12,6 +12,20 @@ number of simultaneous users watching the sporting event in the same location.
 > 📘 Want to give it a try?
 > Apply to join the [Developer Hub](https://opengateway.telefonica.com/en/developer-hub) and gain access to our Sandbox.
 
+### Getting started on the Telefónica Open Gateway Sandbox
+[block:embed]
+{
+  "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FovVWzyx34Do%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DovVWzyx34Do&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FovVWzyx34Do%2Fhqdefault.jpg&type=text%2Fhtml&schema=youtube\" width=\"854\" height=\"480\" scrolling=\"no\" title=\"YouTube embed\" frameborder=\"0\" allow=\"autoplay; fullscreen; encrypted-media; picture-in-picture;\" allowfullscreen=\"true\"></iframe>",
+  "url": "https://www.youtube.com/watch?v=ovVWzyx34Do",
+  "title": "Better Connectivity with QoD Mobile and QoD Wi-Fi APIs",
+  "favicon": "https://www.youtube.com/favicon.ico",
+  "image": "https://i.ytimg.com/vi/ovVWzyx34Do/hqdefault.jpg",
+  "provider": "https://www.youtube.com/",
+  "href": "https://www.youtube.com/watch?v=ovVWzyx34Do",
+  "typeOfEmbed": "youtube"
+}
+[/block]
+
 ## Overview of the QoD CAMARA API
 
 ### High level definition

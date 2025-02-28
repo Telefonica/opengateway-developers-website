@@ -11,6 +11,20 @@ Additionally, the SIM Swap's Unified API Access feature ensures access to networ
 > 📘 Want to give it a try?
 > Apply to join the [Developer Hub](https://opengateway.telefonica.com/en/developer-hub) and gain access to our Sandbox.
 
+### Getting started on the Telefónica Open Gateway Sandbox
+[block:embed]
+{
+  "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FPdo-HnTyQ_E%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DPdo-HnTyQ_E&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FPdo-HnTyQ_E%2Fhqdefault.jpg&type=text%2Fhtml&schema=youtube\" width=\"854\" height=\"480\" scrolling=\"no\" title=\"YouTube embed\" frameborder=\"0\" allow=\"autoplay; fullscreen; encrypted-media; picture-in-picture;\" allowfullscreen=\"true\"></iframe>",
+  "url": "https://www.youtube.com/watch?v=Pdo-HnTyQ_E",
+  "title": "Digital Fraud Prevention with the SIM Swap API",
+  "favicon": "https://www.youtube.com/favicon.ico",
+  "image": "https://i.ytimg.com/vi/Pdo-HnTyQ_E/hqdefault.jpg",
+  "provider": "https://www.youtube.com/",
+  "href": "https://www.youtube.com/watch?v=Pdo-HnTyQ_E",
+  "typeOfEmbed": "youtube"
+}
+[/block]
+
 ## Overview of the SIM Swap CAMARA API
 
 ### High level definition

@@ -6,13 +6,13 @@ category: 66d5624a492663000f4ed527
 
 [block:embed]
 {
-  "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2Fug1YzuUUPp4%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Dug1YzuUUPp4&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2Fug1YzuUUPp4%2Fhqdefault.jpg&type=text%2Fhtml&schema=youtube\" width=\"854\" height=\"480\" scrolling=\"no\" title=\"YouTube embed\" frameborder=\"0\" allow=\"autoplay; fullscreen; encrypted-media; picture-in-picture;\" allowfullscreen=\"true\"></iframe>",
-  "url": "https://www.youtube.com/embed/ug1YzuUUPp4?si=3HYXjWk7FhUVX4JH",
-  "title": "How does the Telefónica Open Gateway Sandbox work?",
+  "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2Fuo94M3QGkjw%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Duo94M3QGkjw&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2Fuo94M3QGkjw%2Fhqdefault.jpg&type=text%2Fhtml&schema=youtube\" width=\"854\" height=\"480\" scrolling=\"no\" title=\"YouTube embed\" frameborder=\"0\" allow=\"autoplay; fullscreen; encrypted-media; picture-in-picture;\" allowfullscreen=\"true\"></iframe>",
+  "url": "https://www.youtube.com/watch?v=uo94M3QGkjw",
+"title": "Agile and Secure Development with the Telefónica Open Gateway Sandbox",
   "favicon": "https://www.youtube.com/favicon.ico",
-  "image": "https://i.ytimg.com/vi/ug1YzuUUPp4/hqdefault.jpg",
+  "image": "https://i.ytimg.com/vi/uo94M3QGkjw/hqdefault.jpg",
   "provider": "https://www.youtube.com/",
-  "href": "https://www.youtube.com/embed/ug1YzuUUPp4?si=3HYXjWk7FhUVX4JH",
+  "href": "https://www.youtube.com/watch?v=uo94M3QGkjw",
   "typeOfEmbed": "youtube"
 }
 [/block]
