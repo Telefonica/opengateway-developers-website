@@ -45,13 +45,14 @@ The SIM Swap CAMARA API specifies the following two operations:
 
   [Check the API Reference](/reference/checksimswap)
 
+## Why Sim Swap?
+
 With the SIM Swap CAMARA API, any digital service provider can integrate the functionality of checking changes in SIM renewals directly into their software. This can be done both alone and in combination with other external inputs. Additionally, they can combine other Open Gateway APIs related to anti-fraud measures that may be of interest.
 
 Aggregators play a crucial role in the anti-fraud industry. They can integrate this functionality into their software and build more sophisticated algorithms by combining other security checks, such as location verification, phone number verification, matching of contact information, external data sources, AI algorithms, etc. To achieve this, aggregators can use other Open Gateway APIs like Device Location Verification, Number Verification, or KYC-Match.
 
 By using the SIM Swap CAMARA API, developers can significantly enhance the security and reliability of their applications, providing a robust defense against SIM swap fraud.
 
-## Why Sim Swap?
 ![SIMSwap](https://github.com/Telefonica/opengateway-developers-website/raw/main/catalog/simswap/images/SIMSwap.png)
 
 ### Understanding SIM Swap Fraud

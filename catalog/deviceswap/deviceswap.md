@@ -28,3 +28,29 @@ The Device Swap CAMARA API specifies the following two operations:
 - **POST check:** Checks if device swap has been performed during a past period (defined in the request with 'maxAge' attribute) for a given phone number, the API will return boolean response (true/false), indicating that the device has been swapped or not in the specified period. In case the phone number has never been installed in a device, or no data is available in the operators records (e.g. database error), API will return a 422 error.
 
   [Check the API Reference](/reference/checkdeviceswap)
+
+## Why Device Swap?
+
+With the Device Swap Open Gateway API, any digital service provider can integrate the functionality of detecting changes in device usage directly into their software. This can be done both alone and in combination with other external inputs. Additionally, they can leverage other Open Gateway APIs related to anti-fraud measures that may be of interest.
+
+Aggregators play a crucial role in the anti-fraud industry. They can integrate this functionality into their software and build more sophisticated algorithms by combining other security checks, such as SIM Swap detection, device location verification, phone number validation, external data sources, AI-based fraud detection, and behavioral analysis. To achieve this, aggregators can use other Open Gateway APIs like SIM Swap, Device Location Verification, Number Verification, or KYC-Match.By using the Device Swap Open Gateway API, developers can significantly enhance the security and reliability of their applications, providing a robust defense against unauthorized device usage and fraud.
+
+![DeviceSwap](https://github.com/Telefonica/opengateway-developers-website/raw/main/catalog/deviceswap/images/DeviceSwap.png)
+
+### Understanding Device Swap Fraud
+
+Device Swap fraud is a growing security risk that enables unauthorized access to user accounts. Your mobile phone is a critical tool for managing various services, from banking and insurance to shopping and communication. Many of these services rely on device-based authentication to verify user identity and authorize transactions.
+
+Unauthorized device changes pose a serious threat to account security. When a fraudster inserts a SIM into a new device, they can bypass security checks tied to trusted devices. This allows them to take over accounts, approve fraudulent transactions, or gain access to sensitive information. Beyond financial loss, this type of fraud can lead to identity theft, data breaches, and reputational damage for businesses and individuals alike.
+
+### How Device Swaps Are Used by Telecom Operators
+
+A mobile device is identified by a unique number called the IMEI, which telecom operators link to your phone number. If your phone number is used in a different device, this change is recorded and can indicate legitimate usage or potential unauthorized access.
+
+This is where Device Swap fraud becomes a security risk. When a fraudster inserts a SIM into a new device, they can bypass authentication systems that rely on trusted devices. This can allow them to take over accounts, approve fraudulent transactions, or access sensitive data without detection.
+
+### Protecting Against Device Swap Fraud
+
+To mitigate the risks of Device Swap fraud, businesses must adopt real-time monitoring of device changes. Security measures such as verifying device consistency, implementing adaptive authentication, and leveraging APIs like Device Swap Detection can help detect unauthorized changes before damage occurs.
+
+By understanding how Device Swap fraud works and integrating proactive security measures, companies and individuals can reduce the risk of account takeovers, identity theft, and financial fraud.

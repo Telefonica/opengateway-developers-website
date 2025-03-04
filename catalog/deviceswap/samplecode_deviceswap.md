@@ -1,6 +1,6 @@
 ---
 title: Sample code for Device Swap
-excerpt: The following samples show how to use the Open Gateway Device Swap API, 
+excerpt: The following samples show how to use the [Open Gateway Device Swap API](https://opengateway.telefonica.com/en/apis/device-swap), 
 category: 66aa4f941e51e7000fa353ce
 ---
 
