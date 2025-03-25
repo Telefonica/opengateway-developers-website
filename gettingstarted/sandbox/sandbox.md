@@ -33,10 +33,10 @@ Please note that the usage of credentials granted from our Sandbox might be subj
 
 | API |  Available  | Soon Available | 
 |:-----|:--------:|------:|
-| Sim Swap | Movistar Spain, mock operator | VIVO Brasil, O2 Germany, Blau Germany |
-| Number Verification | Movistar Spain, mock operator | VIVO Brasil, O2 Germany, Blau Germany |
-| Quality on Demand | Movistar Spain, mock operator | VIVO Brasil, O2 Germany, Blau Germany |
-| Device Location | mock operator | Movistar Spain, VIVO Brasil, O2 Germany, Blau Germany |
-| Device Status | mock operator |  Movistar Spain, VIVO Brasil, O2 Germany, Blau Germany |
-| Know Your Customer | mock operator |  Movistar Spain, VIVO Brasil, O2 Germany, Blau Germany |
+| Sim Swap | Movistar Spain, O2 Germany, mock operator | Vivo Brasil |
+| Number Verification | Movistar Spain, O2 Germany, mock operator | Vivo Brasil |
+| Quality on Demand | Movistar Spain, mock operator | Vivo Brasil, O2 Germany |
+| Device Location | mock operator | Movistar Spain, Vivo Brasil, O2 Germany |
+| Device Status | mock operator |  Movistar Spain, Vivo Brasil, O2 Germany |
+| Know Your Customer | mock operator |  Movistar Spain, Vivo Brasil, O2 Germany |
 | Device Swap | mock operator | Movistar Spain |
