@@ -31,7 +31,7 @@ Furthermore, by verifying a user's location, businesses can offer more personali
 }
 [/block]
 
-## Overview of the SIM Swap CAMARA API
+## Overview of the Device Location Verification CAMARA API
 
 ### High level definition
 
