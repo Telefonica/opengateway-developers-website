@@ -3,7 +3,7 @@ info:
   title: Quality on Demand
   description: |
     Service Enabling Network Function API for QoS control
-  version: 0.8.1
+  version: "0.8"
   termsOfService: http://swagger.io/terms/
   contact:
     name: Telefónica Open Gateway DevRel
