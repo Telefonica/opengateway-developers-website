@@ -1,7 +1,6 @@
 openapi: 3.0.3
 info: 
   title: OIDC Authorization
-  version: "Core 1.0"
   description: Check the [Authorization guide](/docs/authorization)
   contact:
     name: Telefónica Open Gateway DevRel
@@ -10,6 +9,9 @@ info:
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
+
+  version: "1.0.0"
+
 servers:
   - url: "{host}"
     variables:

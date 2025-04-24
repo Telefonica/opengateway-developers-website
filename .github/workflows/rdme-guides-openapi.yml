@@ -20,7 +20,7 @@ jobs:
       - name: Run `guides` command 🚀
         uses: readmeio/rdme@v8
         with:
-          rdme: guides . --key=${{ secrets.README_API_KEY }} --version=1.0
+          rdme: guides . --key=${{ secrets.README_API_KEY }} --version=0
 
   rdme-openapi:
     runs-on: ubuntu-latest
@@ -31,7 +31,7 @@ jobs:
       - name: Run `openapi` command 🚀
         uses: readmeio/rdme@v8
         with:
-          rdme: openapi callflows/authorization/authorization_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=66da35ace41d6c004c486743
+          rdme: openapi callflows/authorization/authorization_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=680aa7e45d2acc0024fa76b8
 
       - name: Run `openapi` command 🚀
         uses: readmeio/rdme@v8
@@ -53,10 +53,15 @@ jobs:
         with:
           rdme: openapi catalog/devicestatus/devicestatus_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=66d7828a08fb2000497d3cfd
 
-      - name: Run `openapi` command 🚀
+      - name: Run `openapi` command for QoD 0.8 🚀
         uses: readmeio/rdme@v8
         with:
-          rdme: openapi catalog/qod/qod_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=67129c6a5647e60059b6e34f
+          rdme: openapi catalog/qod/qod_08_openapi.yaml --version=0.8 --key=${{ secrets.README_API_KEY }} --id=680a6f24a4086b002a8a19b6
+
+      - name: Run `openapi` command for QoD 0.10 🚀
+        uses: readmeio/rdme@v8
+        with:
+          rdme: openapi catalog/qod/qod_010_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=680a6e63bf00a7002a3ceb1e
 
       - name: Run `openapi` command 🚀
         uses: readmeio/rdme@v8
