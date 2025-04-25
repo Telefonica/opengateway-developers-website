@@ -53,6 +53,11 @@ jobs:
         with:
           rdme: openapi catalog/knowyourcustomer/kyc_match_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=680abbb167e5c600307ef2e3
 
+      - name: Run `openapi` command 🚀
+        uses: readmeio/rdme@v8
+        with:
+          rdme: openapi catalog/knowyourcustomer/kyc_match_01_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=680b45d5ffafb6005dcecfa3
+  
       - name: Run `openapi` command 🚀    
         uses: readmeio/rdme@v8
         with:
