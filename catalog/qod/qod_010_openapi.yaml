@@ -16,20 +16,30 @@ servers:
   - url: "{host}/qod/v0"
     variables:
       host:
-        default: sandbox.opengateway.telefonica.com/apigateway
+        default: sandbox.opengateway.telefonica.com/apigateway/ogw
         description: API gateway URL
 paths:
   /qos-profiles:
     get:
-      summary: "Get All QoS Profiles"
+      summary: Get all QoS profiles v0.10
       tags:
-        - QoS Profiles v0.10
+        - QoS profiles
       security:
         - three_legged:
           - qod
       description: |
         Returns all QoS Profiles that match the given criteria.
         If no criteria is given, all QoS Profiles are returned.
+
+        Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following scope:
+
+        `dpv:RequestedServiceProvision#qod`
+
+        Create an app on our [Sandbox](/docs/sandbox) to get credentials and [retrieve tokens](/reference/authorize) so you can perform API calls to our operators' production environments, or use the following convenience token to test in mock mode:
+        
+        `mock_sandbox_access_token`
+        
+        You can explore our [QoD sample code](/docs/samplecode_qod) for additional guidance on using this API.
       operationId: getQosProfiles
       parameters:
         - name: name
@@ -64,15 +74,25 @@ paths:
           $ref: "#/components/responses/Generic503"
   /qos-profiles/{name}:
     get:
-      summary: "Get QoS Profile for a given name"
+      summary: Get QoS profile for a given name v0.10
       tags:
-        - QoS Profiles v0.10
+        - QoS profiles
       security:
         - three_legged:
           - qod
       operationId: getQosProfile
       description: |
         Returns a QoS Profile that matches the given name.
+
+        Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following scope:
+
+        `dpv:RequestedServiceProvision#qod`
+
+        Create an app on our [Sandbox](/docs/sandbox) to get credentials and [retrieve tokens](/reference/authorize) so you can perform API calls to our operators' production environments, or use the following convenience token to test in mock mode:
+        
+        `mock_sandbox_access_token`
+        
+        You can explore our [QoD sample code](/docs/samplecode_qod) for additional guidance on using this API.
       parameters:
         - name: name
           in: path
@@ -102,7 +122,7 @@ paths:
     post:
       summary: Create QoD session v0.10
       tags:
-        - QoD sessions v0.10
+        - QoD sessions
       security:
         - three_legged:
           - qod
@@ -147,7 +167,7 @@ paths:
             post:
               tags:
                 - Session notifications callback
-              summary: "Session notifications callback"
+              summary: Session notifications callback
               description: |
                 Important: this endpoint is to be implemented by the API consumer.
                 The QoD server will call this endpoint whenever any QoS session change (e.g. network termination) related event occurs.
@@ -265,7 +285,7 @@ paths:
     get:
       summary: Check QoD session v0.10
       tags:
-        - QoD sessions v0.10
+        - QoD sessions
       description: |
         Gets information about an active QoS session
 
@@ -309,7 +329,7 @@ paths:
     delete:
       summary: Cancel QoD session v0.10
       tags:
-        - QoD sessions v0.10
+        - QoD sessions
       description: |
         Release resources related to QoS session
 
@@ -355,7 +375,7 @@ paths:
     post:
       summary: Extend a QoD session v0.10
       tags:
-        - QoD sessions v0.10
+        - QoD sessions
       description: |
         Extend the overall duration of an active QoS session. If this operation is executed successfully, the new duration of the target session will be the original duration plus the additionally requested duration.
         The new remaining duration of the QoS session shall not exceed the maximum remaining duration limit (currently fixed at 86,400 seconds) where the remaining duration is calculated as the difference between the `expiresAt` and current time when the request to extend the session duration is received. If this maximum limit would be exceeded, the overall duration shall be set such that the remaining duration is equal to this limit.
