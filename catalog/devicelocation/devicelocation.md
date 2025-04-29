@@ -44,7 +44,7 @@ The Device Location Verification Camara API specifies one operation:
 
 - **POST /verify**: answers the question ‘is the device in the circle determined by a center (latitude and longitude) and an accuracy (given in km as the radius of the circle)?’
 
-[Check the API Reference](/reference/verifylocation-1)
+[Check the API Reference](/reference/verifylocation-2)
 
 ## Why Device Location Verification API
 

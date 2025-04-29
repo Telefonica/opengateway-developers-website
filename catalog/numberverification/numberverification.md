@@ -36,7 +36,7 @@ The Number Verification CAMARA API specifies the following two operations:
 
 - **POST verify:** Determines if the provided phone number matches the one currently in use by the user (parameter `phoneNumber`). This operation is ideal for user authentication.
 
-	[Check the API Reference](/reference/phonenumberverify)
+	[Check the API Reference](/reference/phonenumberverify-2)
   
 - **GET device-phone-number:** Identifies the phone number currently associated with the user's device without requiring input, providing a straightforward way to retrieve this information.
 

@@ -24,11 +24,11 @@ The Device Swap CAMARA API specifies the following two operations:
 
 - **POST retrieve-date:** Provides timestamp of latest device swap for a given phone number. If no device swap has been performed, the API will return the first phone number usage in the device (the timestamp of the first time that the phone number was connected to the network, it is, the first time that the SIM is installed in the device) by default. It will return an empty string in case is not possible to retrieve the date (e.g. in case local regulations are preventing the safekeeping of the information for longer than the stated period, or in some edge error cases). In case no data is available in the operators records (e.g. no recorded event), API will return a 422 error.
 
-  [Check the API Reference](/reference/retrievedeviceswapdate)
+  [Check the API Reference](/reference/retrievedeviceswapdate-3)
 
 - **POST check:** Checks if device swap has been performed during a past period (defined in the request with 'maxAge' attribute) for a given phone number, the API will return boolean response (true/false), indicating that the device has been swapped or not in the specified period. In case the phone number has never been installed in a device, or no data is available in the operators records (e.g. database error), API will return a 422 error.
 
-  [Check the API Reference](/reference/checkdeviceswap)
+  [Check the API Reference](/reference/retrievedeviceswapdate-3)
 
 ## Why Device Swap?
 
