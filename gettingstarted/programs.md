@@ -1,7 +1,8 @@
 ---
 title: Join our Programs
 excerpt: Find out how to start testing the Open Gateway APIs in our Sandbox or go commercial with one of our Channel Partners
-category: 66d5624a492663000f4ed527
+category: 6810d79df601bd00594a4dcc
+version: 0
 ---
 
 # Open Gateway Programs 

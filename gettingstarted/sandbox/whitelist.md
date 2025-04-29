@@ -1,7 +1,8 @@
 ---
 title: Sandbox line whitelist
 excerpt: Get familiar with our Sandbox's whitelist and how it's meant to guard our operators' customers' privacy.
-category: 66d5624a492663000f4ed527
+category: 6810d8058a4ef100205e74b4
+version: 0
 ---
 
 ## On privacy

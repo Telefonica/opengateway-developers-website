@@ -1,7 +1,8 @@
 ---
 title: API Roadmap
 excerpt: While some APIs are already commercially available on our Channel Partners, others have been already designed and standardized across telcos and are being adopted in order to be soon available and extend the scope of Telco APIs to the developer community.
-category: 66aa4f941e51e7000fa353ce
+category: 6810d6769d043a001ffb6bf6
+version: 0
 ---
 
 ## Technically available APIs

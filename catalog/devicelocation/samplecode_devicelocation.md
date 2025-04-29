@@ -1,7 +1,8 @@
 ---
 title: Sample code for Device Location Verification
 excerpt: The following samples show how to use the [Open Gateway Device Location Verification API](https://opengateway.telefonica.com/en/apis/device-location), 
-category: 66aa4f941e51e7000fa353ce
+category: 6810d699a1ec1400675fc3f6
+version: 0
 ---
 
 The following code shows, for didactic purposes, a hypothetical or sample SDK, in several programming languages, from a generic Open Gateway's channel partner, also known as aggregator. The final implementation will depend on the channel partner's development tools offering. Note that channel partners' Open Gateway SDKs are just code modules wrapping authorization and API calls providing an interface in your app's programming for convenience.

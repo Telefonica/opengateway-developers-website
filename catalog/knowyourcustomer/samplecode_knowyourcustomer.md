@@ -1,7 +1,8 @@
 ---
 title: Sample code for KYC Match
 excerpt: The following samples show how to use the [Open Gateway Know Your Customer (KYC) API's Match operation](https://opengateway.telefonica.com/en/apis/kyc-match)
-category: 66aa4f941e51e7000fa353ce
+category: 6810d704dcc34d00538035a1
+version: 0
 ---
 
 The following code shows, for didactic purposes, a hypothetical or sample SDK, in several programming languages, from a generic Open Gateway's channel partner, also known as aggregator. The final implementation will depend on the channel partner's development tools offering. Note that channel partners' Open Gateway SDKs are just code modules wrapping authorization and API calls providing an interface in your app's programming for convenience.

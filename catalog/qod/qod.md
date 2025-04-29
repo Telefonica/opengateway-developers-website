@@ -1,7 +1,8 @@
 ---
 title: Quality on Demand API
 excerpt: The QoD API allows the developer to prioritize network traffic on certain devices on demand.
-category: 66aa4f941e51e7000fa353ce
+category: 6810d735b7b2b600118d0ad6
+version: 0
 ---
 
 An example of an application that aims to enrich the public experience when attending a live sporting event, an advanced feature for your viewers may be watching replays of relevant games. 

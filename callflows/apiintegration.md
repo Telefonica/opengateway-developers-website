@@ -1,7 +1,8 @@
 ---
 title: API Integration
 excerpt: In this guide we will go through the different ways to integrate with Open Gateway APIs so you can find the best fit for your use case and the offering from our Channel Partners.
-category: 66d57750d3f60b0011576376
+category: 6810d648ad2bb6006d3e6267
+version: 0
 ---
 
 ## RESTful by design 

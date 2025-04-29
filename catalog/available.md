@@ -1,7 +1,8 @@
 ---
 title: Available APIs
 excerpt: The Open Gateway initiative is led to create a standardized framework of Application Programming Interfaces (APIs) that enables simplified and universal access to advanced mobile network capabilities and associated services. Designed to promote interoperability, innovation, and operational efficiency within the digital ecosystem, Open Gateway APIs are essential for modern application development.
-category: 66aa4f941e51e7000fa353ce
+category: 6810d66439dabc0046c05202
+version: 0
 ---
 
 Open Gateway enables software developers to leverage Telco Application Programming Interfaces (Telco APIs) for building applications that seamlessly integrate our underlying networks' capabilities and operators' data. These APIs provide a consistent method for accessing analytical and statistical data from networks, facilitating the implementation of customer experience-focused use cases. Open Gateway empowers developers to retrieve network information and request configuration changes efficiently.

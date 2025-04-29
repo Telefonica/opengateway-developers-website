@@ -1,7 +1,8 @@
 ---
 title: Sample code for SIM Swap
 excerpt: The following samples show how to use the [Open Gateway SIM Swap API](https://opengateway.telefonica.com/en/apis/sim-swap), for fraud prevention purposes, in order to check if a given mobile line, identified by its phone number, has gotten a SIM card swap lately.
-category: 66aa4f941e51e7000fa353ce
+category: 6810d75473b7c4005a02031a
+version: 0
 ---
 
 The following code shows, for didactic purposes, a hypothetical or sample SDK, in several programming languages, from a generic Open Gateway's channel partner, also known as aggregator. The final implementation will depend on the channel partner's development tools offering. Note that channel partners' Open Gateway SDKs are just code modules wrapping authorization and API calls providing an interface in your app's programming for convenience.

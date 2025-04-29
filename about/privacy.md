@@ -1,7 +1,8 @@
 ---
 title: Privacy by Design
 excerpt: Open Gateway as an industry initiative has been designed with end-user's privacy in mind, to provide developers with telco capabilities while ensuring user data privacy and security.
-category: 66840b9dac745a002559ffad
+category: 6810d6260bd9c1001c937b79
+version: 0
 ---
 
 Open Gateway APIs allow applications to access and utilize end-users' personal information or data. "Utilizing" personal data encompasses any form of handling or processing related to an identified or identifiable individual, including merely viewing the data or having it accesible from the application's code and thus to its developer. Consequently, **the use of personal data must be justified and authorized**.
