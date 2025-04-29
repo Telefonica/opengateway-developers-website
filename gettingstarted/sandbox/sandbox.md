@@ -35,8 +35,8 @@ Please note that the usage of credentials granted from our Sandbox might be subj
 |:-----|:--------|------:|
 | Sim Swap | Movistar Spain, O2 Germany, mock operator | Vivo Brasil |
 | Number Verification | Movistar Spain, O2 Germany, mock operator | Vivo Brasil |
-| Quality on Demand | Movistar Spain, mock operator | Vivo Brasil, O2 Germany |
-| Device Location | Movistar Spain, mock operator | Vivo Brasil, O2 Germany |
-| Device Status | mock operator | Movistar Spain, Vivo Brasil, O2 Germany |
+| Quality on Demand | Movistar Spain, O2 Germany, mock operator | Vivo Brasil |
 | Know Your Customer | Movistar Spain, mock operator | Vivo Brasil, O2 Germany |
-| Device Swap | mock operator | Movistar Spain |
+| Device Location | Movistar Spain, mock operator | Vivo Brasil |
+| Device Swap | Movistar Spain, mock operator | |
+| Device Status | mock operator | Movistar Spain |

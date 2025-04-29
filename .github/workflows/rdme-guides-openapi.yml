@@ -20,7 +20,7 @@ jobs:
       - name: Run `guides` command 🚀
         uses: readmeio/rdme@v8
         with:
-          rdme: guides . --key=${{ secrets.README_API_KEY }} --version=0
+          rdme: guides . --key=${{ secrets.README_API_KEY }} --id=680a72d37e764000180409b7
 
   rdme-openapi:
     runs-on: ubuntu-latest
