@@ -1,14 +1,14 @@
 ---
 title: Quality on Demand API
-excerpt: The QoD API allows the developer to prioritize network traffic on certain devices on demand.
+excerpt: The QoD API allows the developer to optimize the network traffic on their customers' devices on demand.
 category: 6810d735b7b2b600118d0ad6
 version: 0
 ---
 
-An example of an application that aims to enrich the public experience when attending a live sporting event, an advanced feature for your viewers may be watching replays of relevant games. 
+One good example is an application for enriching the audience experience when attending a live sporting event: add the capability to watch replays of relevant games. 
 
-To do this, the application must ensure that the end user has adequate connectivity to watch it, regardless of the
-number of simultaneous users watching the sporting event in the same location. 
+To do this, the application activates a Quality on Demand session on the device of the customer just before it is about to start the video-streaming, so the customer can watch it regardless of the
+number of simultaneous users attending the sporting event in the same location. 
 
 > 📘 Want to give it a try?
 > Apply to join the [Developer Hub](https://opengateway.telefonica.com/en/developer-hub) and gain access to our Sandbox.
@@ -31,41 +31,32 @@ number of simultaneous users watching the sporting event in the same location.
 
 ### High level definition
 
-The QoD CAMARA API is a software interface that enable application developers to integrate network configuration and optimization functionalities into their software, without the need for the End Users to run complex processes on their devices.
-
-This functionality easily allows applications to gain the ability to interact seamlessly with mobile network operator systems, so developers can focus on provide a better user experience.
+The QoD CAMARA API enables application developers to integrate network configuration and optimization functionalities into their software, without the need for the End Users to run complex processes on their devices, so developers can focus on provide a better user experience.
 
 
 ### API Operations
 
-The QoD CAMARA API specifies the following three operations:
+The QoD CAMARA API specifies the following operations:
 
-- **POST Creates a new session:** An operation to setup a new QoD provisioning for a given device. Parameters required:  
+- **Discover the available QoS Profiles:** An operation to retrieve the list of available QoS profiles.
 
-  - `ueId`: User equipment identifier ;
-  - `asId`: Application server identifier ;
-  - `qos` : Enum: "QOS_E" (Qualifier for enhanced communication profile),  "QOS_S" (Qualifier for the requested QoS profile S), "QOS_M" (Qualifier for the requested QoS profile M) ,  "QOS_L" (Qualifier for the requested QoS profile L);
-  
-  Other parameters :
-    - `duration`: Session duration in seconds (maximal value of 24 hours is used if not set);
-    - `uePorts` : Ports may be specified as a list of ranges or single ports ;
-    - `asPorts` : Ports may be specified as a list of ranges or single ports ;
-    - `notificationUri` : Allows asynchronous delivery of session related events ;
-    - `notificationAuthToken` : Authentication token for callback API ;
+[Check the API Reference](/reference/getqosprofiles-2)
 
-[Check the API Reference](/reference/createsession)
+- **Create a new session:** An operation to assign a QoS Profile for a given device for a given duration. 
 
-- **GET Get session information:** An operation to get the information about a specific QoD provisioning.Path parameter required:  
+[Check the API Reference](/reference/createsession-2)
 
-  - `sessionId`:Session ID that was obtained from the createSession operation.
+- **Read session information:** An operation to read the information about a QoD session created previously. 
 
-[Check the API Reference](/reference/getsession)
+[Check the API Reference](/reference/getsession-2)
 
-- **DELETE Free resources related to QoS session:** An operation to terminate a QoD provisioning, identified by Id .  Path parameter required:  
+- **Extend a session:** An operation to extend the duration of a QoD session created previously.
 
-  - `sessionId`: Session ID that was obtained from the createSession operation.
+[Check the API Reference](/reference/extendqossessionduration-2)
 
-[Check the API Reference](/reference/deletesession)
+- **Finish a session:** An operation to terminate a QoD session created previously. 
+
+[Check the API Reference](/reference/deletesession-2)
 
 By utilizing the QoD Service, developers of applications can capitalize on the usability, ubiquity, security, quickness, and simplicity of the APIs to manage their End Users networking and focus on the experiences they want to offer.
 
