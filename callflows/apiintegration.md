@@ -42,4 +42,4 @@ These are some pros and cons you could get from the following two ways of integr
 	- Once you have integrated the SDKs from a Channel Partner, you would need some re-engineering to switch to another Channel Partner's Open Gateway platform, since each one offer their owns and SDK interfaces are not standardized at CAMARA.
 
 > 📘 Want to give Open Gateway APIs a try?
-> Apply to join the [Developer Hub](https://opengateway.telefonica.com/en/developer-hub) and gain access to our Sandbox.
+> Apply to join the [Developer Hub](https://opengateway.telefonica.com/en/developer-hub/join) and gain access to our Sandbox.
