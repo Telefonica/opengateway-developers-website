@@ -10,7 +10,7 @@ version: 0
 Open Gateway is a initiative spearheaded by the [GSMA](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/) in collaboration with leading telecommunications operators, cloud providers, and aggregators worldwide. Our mission is to create a standardized framework of Application Programming Interfaces (APIs) that enable simplified and universal access to cutting-edge mobile network capabilities and associated services. By leveraging Open Gateway APIs, developers can focus on building exceptional applications while we handle the complexities of network integration.
 
 > 📘 Want to give Open Gateway APIs a try?
-> Apply to join the [Developer Hub](https://opengateway.telefonica.com/en/developer-hub) and gain access to our Sandbox.
+> Apply to join the [Developer Hub](https://opengateway.telefonica.com/en/developer-hub/join) and gain access to our Sandbox.
 
 
 ## Why Open Gateway APIs?
@@ -59,6 +59,6 @@ Getting started with Open Gateway APIs is easy:
 
 Open Gateway APIs open up a world of possibilities for developers looking to harness the power of advanced network capabilities. Our standardized, secure, and easy-to-use APIs provide the foundation for creating exceptional applications that meet the demands of today's connected world. Start your journey with Open Gateway today and transform your ideas into reality.
 
-By becoming a part of the Open Gateway community, you join a global network of developers, innovators, and industry leaders dedicated to advancing the digital ecosystem.  Join to our [Developer Hub](https://opengateway.telefonica.com/developer-hub) for exclusive content and to use the Sandbox to test the Open Gateway APIs.
+By becoming a part of the Open Gateway community, you join a global network of developers, innovators, and industry leaders dedicated to advancing the digital ecosystem.  Join to our [Developer Hub](https://opengateway.telefonica.com/en/developer-hub/join) for exclusive content and to use the Sandbox to test the Open Gateway APIs.
 
 Welcome to the future of network integration. Welcome to Open Gateway APIs.
