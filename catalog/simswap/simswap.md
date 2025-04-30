@@ -86,6 +86,7 @@ By understanding the mechanics of SIM swap fraud and taking proactive steps to p
 >
 > Checks when the last SIM Card exchange was carried out on a mobile line or if this exchange was carried out within a specific period
 
+
 > ⚙️ Parameters sent in the request 
 >
 > - phoneNumber: Cell phone number that will be verified for exchange

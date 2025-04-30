@@ -83,4 +83,103 @@ With the QoD service, you can configure the network of your clients easily with 
 You will not have to guess and discover the available networking capabilities of their clients and will focus on what matters more to your business.
 
 
+## General Informations
 
+> ⚙️ Problem Solved ? 
+>
+> Do I need to prioritize network data traffic on certain devices?
+
+
+> ⚙️ How it works 
+>
+> Prioritizes network data traffic on certain devices, thereby reducing browsing problems on those devices.
+
+
+> ⚙️ Parameters sent in the request 
+>
+> - msisdn: Cell phone number in the format - +551199999999
+> - ipv6addr: IPV6 address
+> - qos : Qos profiles, connectivity characteristics in use of long-distance network 
+> - duration : Duration of the process in seconds - if not passed, it will be considered 24 hours
+> - notificationUri : Address to be redirected to
+> - notificationAuthToken : Authentication key
+>
+
+
+> ⚙️ Data received in the response - POST 
+>  
+> {
+>    "duration": 3600,
+>    "ueId": {
+>        "msisdn": "+5511852146260"
+>    },
+>    "asId": {
+>        "ipv4addr": "0.0.0.0/0"
+>    },
+>    "qos": "QOS_E",
+>    "id": "6a4d570a-6607-466d-889b-473e361afaa1",
+>    "startedAt": 1740508025048,
+>    "expiresAt": 1740508028648,
+>    "qosStatus": "REQUESTED",
+>    "messages": [
+>        {
+>            "severity": "INFO",
+>            "description": "string"
+>        }
+>    ],
+> }
+>  
+
+> ⚙️ Data received in the response - GET 
+> 
+> {
+>    "duration": 77483,
+>    "ueId": {
+>        "externalId": "Kieran_Sauer3@hotmail.com",
+>        "msisdn": "+34312468621",
+>        "ipv4addr": "117.186.17.77",
+>        "ipv6addr": "bdec:2f6a:b9de:6fc9:61a3:c233:391c:858a"
+>    },
+>    "asId": {
+>        "ipv4addr": "55.2.85.35",
+>        "ipv6addr": "3a6e:97df:0614:d555:a0db:66c4:1ac5:fbfb"
+>    },
+>    "uePorts": {
+>        "ranges": [
+>            {
+>                "from": 61055,
+>                "to": 56578
+>            }
+>        ],
+>        "ports": [
+>            14968,
+>            49223
+>        ]
+>    },
+>    "asPorts": {
+>        "ranges": [
+>            {
+>                "from": 25113,
+>                "to": 55764
+>            }
+>        ],
+>        "ports": [
+>            42391,
+>            44401
+>        ]
+>    },
+>    "qos": "QOS_E",
+>    "notificationUri": "https://application-server.com/notifications",
+>    "notificationAuthToken": "c8974e592c2fa383d4a3960714",
+>    "id": "7c9c75e5-7691-484f-847b-5c6bc10bb778",
+>    "startedAt": 1740508302143,
+>    "expiresAt": 1740508362996,
+>    "qosStatus": "REQUESTED",
+>    "messages": [
+>        {
+>            "severity": "INFO",
+>            "description": "string"
+>        }
+>    ],
+>}
+>
