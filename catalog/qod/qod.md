@@ -11,7 +11,7 @@ To do this, the application activates a Quality on Demand session on the device 
 number of simultaneous users attending the sporting event in the same location. 
 
 > 📘 Want to give it a try?
-> Apply to join the [Developer Hub](https://opengateway.telefonica.com/en/developer-hub) and gain access to our Sandbox.
+> Apply to join the [Developer Hub](https://opengateway.telefonica.com/en/developer-hub/join) and gain access to our Sandbox.
 
 ### Getting started on the Telefónica Open Gateway Sandbox
 [block:embed]
