@@ -16,7 +16,7 @@ Furthermore, by verifying a user's location, businesses can offer more personali
 ![DeviceLocation](https://github.com/Telefonica/opengateway-developers-website/raw/main/catalog/devicelocation/images/DeviceLocation.png)
 
 > 📘 Want to give it a try?
-> Apply to join the [Developer Hub](https://opengateway.telefonica.com/en/developer-hub) and gain access to our Sandbox.
+> Apply to join the [Developer Hub](https://opengateway.telefonica.com/en/developer-hub/join) and gain access to our Sandbox.
 
 ### Getting started on the Telefónica Open Gateway Sandbox
 [block:embed]

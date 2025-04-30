@@ -12,7 +12,7 @@ This solution allows you to control resource management during international roa
 ![DeviceStatus](https://github.com/Telefonica/opengateway-developers-website/raw/main/catalog/devicestatus/images/DeviceStatus.png)
 
 > 📘 Want to give it a try?
-> Apply to join the [Developer Hub](https://opengateway.telefonica.com/en/developer-hub) and gain access to our Sandbox.
+> Apply to join the [Developer Hub](https://opengateway.telefonica.com/en/developer-hub/join) and gain access to our Sandbox.
 
 ### Getting started on the Telefónica Open Gateway Sandbox
 [block:embed]

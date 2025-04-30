@@ -10,7 +10,7 @@ The standardised Know Your Customer API allows you to validate user contact info
 This API provides a quick and efficient method to verify customer contact details, helping you prevent identity fraud, including synthetic identities and identity theft. Additionally, by utilizing this standardized API, you can expand your user reach across multiple MNOs.
 
 > 📘 Want to give it a try?
-> Apply to join the [Developer Hub](https://opengateway.telefonica.com/en/developer-hub) and gain access to our Sandbox.
+> Apply to join the [Developer Hub](https://opengateway.telefonica.com/en/developer-hub/join) and gain access to our Sandbox.
 
 ### Getting started on the Telefónica Open Gateway Sandbox
 [block:embed]
