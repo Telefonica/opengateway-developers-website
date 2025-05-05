@@ -35,7 +35,7 @@ With the Device Swap Open Gateway API, any digital service provider can integrat
 
 Aggregators play a crucial role in the anti-fraud industry. They can integrate this functionality into their software and build more sophisticated algorithms by combining other security checks, such as SIM Swap detection, device location verification, phone number validation, external data sources, AI-based fraud detection, and behavioral analysis. To achieve this, aggregators can use other Open Gateway APIs like SIM Swap, Device Location Verification, Number Verification, or KYC-Match.By using the Device Swap Open Gateway API, developers can significantly enhance the security and reliability of their applications, providing a robust defense against unauthorized device usage and fraud.
 
-![DeviceSwap](https://github.com/Telefonica/opengateway-developers-website/raw/main/catalog/deviceswap/images/DeviceSwap.png)
+![DeviceSwap](https://github.com/Telefonica/opengateway-developers-website/raw/main/v0/catalog/deviceswap/images/DeviceSwap.png)
 
 ### Understanding Device Swap Fraud
 

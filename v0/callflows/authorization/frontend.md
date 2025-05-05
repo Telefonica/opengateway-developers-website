@@ -87,7 +87,7 @@ Once you get the access token, you can use it to authorize you HTTP request to t
 	
 ## Frontend authorization flow sequence diagram
 
-![Frontend Authorization Flow Sequence Diagram](https://github.com/Telefonica/opengateway-developers-website/raw/main/callflows/authorization/diagrams/frontend.svg?autoSizes=true)
+![Frontend Authorization Flow Sequence Diagram](https://github.com/Telefonica/opengateway-developers-website/raw/main/v0/callflows/authorization/diagrams/frontend.svg?autoSizes=true)
 
 ## References
 

@@ -24,7 +24,7 @@ The only requirement to start using the Open Gateway Sandbox is to join one of o
 
 Once you are approved in at least one of our programs and you log in to the private area of the Telefónica Open Gateway website, you already have access to the Sandbox web console as a program member from the Technical Toolbox section.
 
-![Access to the Sandbox console from the website private area](https://github.com/Telefonica/opengateway-developers-website/raw/main/gettingstarted/sandbox/images/access.png?raw=true)
+![Access to the Sandbox console from the website private area](https://github.com/Telefonica/opengateway-developers-website/raw/main/v0/gettingstarted/sandbox/images/access.png?raw=true)
 
 > 📘 Note
 Please note that the usage of credentials granted from our Sandbox might be subject to some limitations in order to let you test without the obligations of a commercial contract. The [terms and conditions](https://opengateway.telefonica.com/en/terms-conditions-developers-hub) of our developer or partner programs will apply.
