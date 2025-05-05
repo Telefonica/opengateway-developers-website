@@ -1,8 +1,7 @@
 ---
 title: Sample code for Device Status
 excerpt: The following samples show how to use the [Open Gateway Device Status API](https://opengateway.telefonica.com/en/apis/device-status), to control your resource management during international roaming more securely
-category: 6810d6be73082700306ca6af
-version: 0
+category: 681879c3afc1a0003709c745
 ---
 
 The following code shows, for didactic purposes, a hypothetical or sample SDK, in several programming languages, from a generic Open Gateway's channel partner, also known as aggregator. The final implementation will depend on the channel partner's development tools offering. Note that channel partners' Open Gateway SDKs are just code modules wrapping authorization and API calls providing an interface in your app's programming for convenience.

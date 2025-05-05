@@ -1,8 +1,7 @@
 ---
 title: CAMARA project
 excerpt: CAMARA is an open-source initiative under the Linux Foundation focused on defining, developing, and testing telecom APIs. In collaboration with the GSMA Operator Platform Group, CAMARA ensures that API requirements are aligned, and API definitions are published for industry-wide use. The project achieves API harmonization by rapidly creating working code and providing developer-friendly documentation. All API definitions and reference implementations are available for free under the Apache 2.0 license.
-category: 6810d5e743391a00103e5885
-version: 0
+category: 680a72d37e76400018040958
 ---
 
 With CAMARA Open APIs, enterprise software developers can integrate network capabilities once, and they’re ready to go. Imagine these APIs embedded in cloud provider stacks. Developers could then seamlessly incorporate lines of code from both the cloud provider and global telecommunication standards, covering services like identity, cybersecurity, billing, signaling, geolocation, and more.

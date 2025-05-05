@@ -1,8 +1,7 @@
 ---
 title: Glossary of Terms
 excerpt: Reference guide to key terms and concepts used in the Open Gateway API documentation
-category: 6810d600713e0a001a963871
-version: 0
+category: 680a72d37e76400018040958
 ---
 
 ## Aggregator

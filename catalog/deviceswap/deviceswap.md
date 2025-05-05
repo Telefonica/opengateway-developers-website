@@ -1,8 +1,7 @@
 ---
 title: Device Swap API
 excerpt: The Device Swap API from Open Gateway allows to check for device swaps on a mobile line for fraud prevention purposes
-category: 6810d6cd4cfed300490a5aff
-version: 0
+category: 681879c3afc1a0003709c745
 ---
 
 The Device Swap API performs real-time checks on the last Device Swap event, providing real-time information about whether the SIM card associated with a user's phone number has been transferred to a different physical device.

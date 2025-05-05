@@ -1,8 +1,7 @@
 ---
 title: Sample code for Number Verification
 excerpt: The following samples show how to use the [Open Gateway Number Verification API](https://opengateway.telefonica.com/en/apis/number-verification), for fraud prevention purposes, in order to check if a given phone number matches the one on the SIM card installed in the end-user's device.
-category: 6810d7259084060043cbf86c
-version: 0
+category: 681879c3afc1a0003709c745
 ---
 
 Although the API consumption flow for this API must be always triggered from such end-user's device - therefore from the application's frontend - according to its intrinsic feature, the flow will always complete on the backend. The following code shows, for didactic purposes, a hypothetical or sample SDK used on the backend, in several programming languages, from a generic Open Gateway's channel partner, also known as aggregator.

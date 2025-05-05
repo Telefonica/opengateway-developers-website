@@ -1,8 +1,7 @@
 ---
 title: How to use the Sandbox
 excerpt: Learn how to effectively use the Open Gateway Sandbox, a free and secure environment for testing and refining your applications with real-world API scenarios before deployment. Follow our step-by-step guide to maximize your development process and ensure a smooth transition to production.
-category: 6810d7e2c4dfa40053f4b2fe
-version: 0
+category: 680a72d37e7640001804095b
 ---
 
 [block:embed]

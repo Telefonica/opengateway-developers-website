@@ -1,8 +1,7 @@
 ---
 title: Sandbox Python SDK reference
 excerpt: Reference guide to the Sandbox Python SDK on how to authorize, instantiate and use its service classes to access the Open Gateway APIs.
-category: 6810d7d3afc1f90064551d55
-version: 0
+category: 680a72d37e7640001804095b
 ---
 
 The current scope of the Sandbox SDK is limited since it is meant to showcase how an SDK integration is like. Check the [API Integration guide](/docs/apiintegration) to understand the pros and cons of using an SDK when compared to implement HTTP requests.
