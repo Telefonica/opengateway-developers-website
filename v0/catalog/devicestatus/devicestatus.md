@@ -66,23 +66,3 @@ Since it is a standardized API, integration is straightforward and doesn’t req
 ### Unified Access to Telecom Functions
 
 The standardized API provides uniform access to other telecom capabilities, such as detecting if a user is roaming, through a single interface. This ensures consistency and flexibility across different carriers and markets.
-
-
-## General Informations
-
-> ⚙️ Problem Solved ? 
->
-> Check if a device is roaming or not.
-
-
-> ⚙️ Parameters sent in the request 
->
-> - msisdn (mobile phone number in the format - +551199999999) 
-> - eventType (Select the various events - In one of these patterns: ROAMING_STATUS or ROAMING_ON or ROAMING_OFF or ROAMING_CHANGE_COUNTRY )
-
-
-> ⚙️ Data received in the response
->
-> - If the device is roaming, it returns "roaming": true ;
-> - If the device is not roaming, returns "roaming": false.
-

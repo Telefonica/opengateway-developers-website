@@ -65,28 +65,3 @@ As a standardized API, it allows seamless integration into your applications wit
 
 ### Footprint for your identity service
 The API's standardization ensures uniform access across multiple telecom providers, expanding your business reach and ensuring consistent functionality across different carriers.
-
-## General Informations
-
-> ⚙️ Problem Solved
->
-> You want to verify that a device is where you expect it to be. The expected location can be the reported GPS coordinates, safe places to operate from (e.g. home address, workplace), etc.
-
-
-> ⚙️ How it works 
->
-> By providing latitude and longitude, it is checked whether the device is in that location.
-
-
-> ⚙️ Parameters sent in the request 
->
-> - msisdn (mobile phone number in the format: +551199999999) 
-> - latitude (latitude in the format: -23.5042623)
-> - longitude (longitude in the format -46.8575631)
-> - accuracy (precision of the radius of the circle in km: 2)
-
-
-> ⚙️ Data received in the response
->
-> If the device is not in the expected location, it returns verificationResult: false . If the device is in the expected location, the value is verificationResult: true .
-
