@@ -86,6 +86,11 @@ jobs:
       - name: Run `openapi` command 🚀    
         uses: readmeio/rdme@v8
         with:
+          rdme: openapi ./v0/catalog/devicelocation/devicelocation_02_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=682ef067328ce700607a276a
+
+      - name: Run `openapi` command 🚀    
+        uses: readmeio/rdme@v8
+        with:
           rdme: openapi ./v0/catalog/devicestatus/devicestatus_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=680abc29cc0c4b0077132d26
 
       - name: Run `openapi` command 🚀
