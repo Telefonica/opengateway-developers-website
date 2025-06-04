@@ -35,7 +35,7 @@ info:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
 servers:
-  - url: "{host}/number-verification/v0"
+  - url: "{host}/number-verification/v1"
     variables:
       host:
         default: sandbox.opengateway.telefonica.com/apigateway
