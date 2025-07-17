@@ -36,7 +36,10 @@ Please note that the usage of credentials granted from our Sandbox might be subj
 | Sim Swap | Movistar Spain, O2 Germany, mock operator | Vivo Brasil |
 | Number Verification | Movistar Spain, O2 Germany, mock operator | Vivo Brasil |
 | Quality on Demand | Movistar Spain, O2 Germany, mock operator | Vivo Brasil |
-| Know Your Customer | Movistar Spain, mock operator | Vivo Brasil, O2 Germany |
+| Know Your Customer (KYC) | Movistar Spain, O2 Germany, mock operator | Vivo Brasil |
 | Device Location | Movistar Spain, mock operator | Vivo Brasil |
 | Device Swap | Movistar Spain, mock operator | |
-| Device Status | mock operator | Movistar Spain |
+| Device Status | Movistar Spain, mock operator | |
+| Age Verification (KYC API) | mock operator | |
+| Tenure (KYC API) | mock operator | |
+| Scam Signal (restricted API) | mock operator | |
