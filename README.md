@@ -45,7 +45,7 @@ The contents in this repo are meant to be organized in the following structure a
 - [ ] Make the changes into your own branch
 - [ ] Create a pull request to the `main` branch
 - [ ] Add main contributors as reviewers to the pull request
-	- [ ] Maritere Nieto [@mtnieto](https://github.com/mtnieto) (Go to Developer)
+	
 	- [ ] Laura Lacarra [@lauralacarraarcos](https://github.com/lauralacarraarcos) (Go to Developer)
 	- [ ] Agustín Martín [@amg77](https://github.com/amg77) (Global Product)
 	- [ ] Diego Rivera [@diegotid](https://github.com/diegotid) (Global Product)
