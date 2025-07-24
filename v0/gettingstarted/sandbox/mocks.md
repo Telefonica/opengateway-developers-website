@@ -29,7 +29,7 @@ When using the Sandbox in mock mode, the following rules apply:
 | **device** missing or invalid | 400           | message: <error details>          |
 | **device** > **ipv4Address** > **publicPort** missing when device = ipv4Address  | 400           | message: "Missing publicPort" 		|
 | device > **networkAccessIdentifier** / **phoneNumber** / **ipv4Address** / **ipv6Address** ends in **9**  | 409           | code: "CONFLICT"<br>message: "Another session is created for the same UE"         |
-| **applicationServer** missing or invalid | 400           | message: <error on IPv4/IPv6 format>          |
-| **qosProfile** missing or invalid | 400           | message: <error on QoS profile not listed in the GET profiles operation>          |
-| **duration** Not in range **1...86400** seconds | 400           | message: <error on duration not in range>          |
-| Valid input | 201           | sessionId: <session ID><br>startedAt: <device session ID><br>expiresAt: <application server session ID><br>qosStatus: <QoS status><br>messages: <array of messages>        |
+| **applicationServer** missing or invalid | 400           | message: error on IPv4/IPv6 format          |
+| **qosProfile** missing or invalid | 400           | message: error on QoS profile not listed in the GET profiles operation          |
+| **duration** Not in range **1...86400** seconds | 400           | message: error on duration not in range          |
+| Valid input | 201           | Provided input adding: sessionId, startedAt, expiresAt, qosStatus, messages        |
