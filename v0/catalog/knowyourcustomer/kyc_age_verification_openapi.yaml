@@ -45,7 +45,7 @@ paths:
         `mock_sandbox_access_token`
       operationId: verifyAge
       security:
-        - openId:
+        - three_legged:
           - kyc-age-verification:verify
       parameters:
         - $ref: '#/components/parameters/x-correlator'
@@ -115,9 +115,14 @@ paths:
 
 components:
   securitySchemes:
-    openId:
-      type: openIdConnect
-      openIdConnectUrl: https://example.com/.well-known/openid-configuration
+    three_legged:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://{host}/authorize
+          tokenUrl: https://{host}/token
+          scopes:
+            kyc: KYC Age Verification
 
   headers:
     x-correlator:
