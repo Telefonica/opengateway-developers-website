@@ -17,6 +17,27 @@ category: 680a72d37e7640001804095b
 }
 [/block]
 
+## Usage modes
+
+- **Production mode**
+
+	Although our Sandbox is not a Channel Partner's production environment but a testing environment instead, it can route your API calls to our mobile operators to provide a real response if you test your prototype application from a device connected to one of their networks. That requires that you are the mobile line holder and have the SIM card installed in such device.
+
+	Movistar (Spain) is already available for testing from the Telefónica Open Gateway Sandbox, and other Telefónica operators in other countries will be added soon.
+
+	The production mode is disabled by default for Privacy reasons, but you can enable it by filling in your legal information and accepting the terms and conditions in the form that the Sandbox console will offer you for that purpose. You will have to provide some mobile phone numbers of your own which will be added to a whitelist that will allow you to test the APIs in production mode from your own devices and will block API usage accessing someone else's personal data.
+
+
+- **Mock mode**
+
+	You can test your application without the need to have a SIM card from one of our mobile operators. The Sandbox will provide you with a mock response for every API call you make.
+
+	The mock mode will also make available for you some APIs that are not still commercially available on our mobile operators, so you can test them in advance.
+
+	Check the [Sandbox mock responses](/docs/sandbox/mocks) guide for more information on how to use the mock mode and the mock responses you can expect.
+
+![Production mode and mock mode of Sandbox](https://github.com/Telefonica/opengateway-developers-website/raw/main/v0/gettingstarted/sandbox/images/production_mock.png)
+
 ## Registering your application
 
 Open Gateway APIs access is granted to applications, not developers, so every application can have limited access to the scope and for the purpose it needs.
@@ -30,31 +51,17 @@ Therefore the way to get credentials to test the APIs is to register an applicat
 
 For every application you create, you will need to follow these simple steps to configure it:
 
-1. Select the APIs you want your application to test. It could be one or several APIs depending on your use case.
+1. Select the APIs you want your application to test. It could be one or several APIs depending on your use case
 
 ![API selection](https://github.com/Telefonica/opengateway-developers-website/raw/main/v0/gettingstarted/sandbox/images/api-selection.png?raw=true)
 
-2. Select the usage mode for your application. You have the following options:
-
-	- **Production mode**
-
-		Although our Sandbox is not a Channel Partner's production environment but a testing environment instead, it can route your API calls to our mobile operators to provide a real response if you test your prototype application from a device connected to one of their networks. That requires that you are the mobile line holder and have the SIM card installed in such device.
-
-		Movistar (Spain) is already available for testing from the Telefónica Open Gateway Sandbox, and other Telefónica operators in other countries will be added soon.
-
-		The production mode is disabled by default for Privacy reasons, but you can enable it by filling in your legal information and accepting the terms and conditions in the form that the Sandbox console will offer you for that purpose. You will have to provide some mobile phone numbers of your own which will be added to a whitelist that will allow you to test the APIs in production mode from your own devices and will block API usage accessing someone else's personal data.
-
-![Production mode and mock mode of Sandbox](https://github.com/Telefonica/opengateway-developers-website/raw/main/v0/gettingstarted/sandbox/images/production_mock.png)
-
-   - **Mock mode**
-
-		You can test your application without the need to have a SIM card from one of our mobile operators. The Sandbox will provide you with a mock response for every API call you make.
-
-		The mock mode will also make available for you some APIs that are not still commercially available on our mobile operators, so you can test them in advance.
+2. Select the usage mode for your application
 
 ![Usage mode](https://github.com/Telefonica/opengateway-developers-website/raw/main/v0/gettingstarted/sandbox/images/usage-mode.png?raw=true)
 
-3. Briefly describe your application as part of the application onboarding process so that mobile operators can understand the purpose of your tests and validate it.
+According to the usage modes described [above](#usage-modes)
+
+3. Briefly describe your application as part of the application onboarding process so that mobile operators can understand the purpose of your tests and validate it
 
 	Since it is a testing environment, your application won't be rejected as per this information, but our Sandbox uses standard procedures to register applications in the mobile operators' systems which takes this data as mandatory.
 
@@ -67,7 +74,7 @@ For every application you create, you will need to follow these simple steps to 
 
 ![App information](https://github.com/Telefonica/opengateway-developers-website/raw/main/v0/gettingstarted/sandbox/images/app-information.png?raw=true)
 
-4. Check the specifications and accept the terms and conditions per API and operator.
+4. Check the specifications and accept the terms and conditions per API and operator
 
 	Each mobile operator has its own terms and conditions for the usage of each API, and its own technical specifications you will want to consider when it comes to consuming them, so you will need to accept them for each API you want to test on each operator you have previously selected.
 
@@ -79,7 +86,7 @@ For every application you create, you will need to follow these simple steps to 
 
 ![Review the summary and confirm](https://github.com/Telefonica/opengateway-developers-website/raw/main/v0/gettingstarted/sandbox/images/review-confirm.png?raw=true)
 
-6. Once you have confirmed, your application is granted access to the Sandbox API gateway with its credentials.
+6. Once you have confirmed, your application is granted access to the Sandbox API gateway with its credentials
 
 ![alt text](https://github.com/Telefonica/opengateway-developers-website/raw/main/v0/gettingstarted/sandbox/images/app-created.png?raw=true)
 

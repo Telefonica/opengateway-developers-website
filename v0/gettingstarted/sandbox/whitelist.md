@@ -1,6 +1,6 @@
 ---
 title: Sandbox line whitelist
-excerpt: Get familiar with our Sandbox's whitelist and how it's meant to guard our operators' customers' privacy.
+excerpt: When using the Production mode, get familiar with our Sandbox's whitelist and how it's meant to guard our customer´s privacy.
 category: 680a72d37e7640001804095b
 ---
 
