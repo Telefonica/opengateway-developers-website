@@ -1,0 +1,51 @@
+openapi: 3.0.3
+info:
+  title: Scam Signal
+  version: "0.1"
+  termsOfService: https://opengateway.telefonica.com/en/terms
+  contact:
+    name: Telefónica Open Gateway DevRel
+    url: https://opengateway.telefonica.com/en/developer-hub
+    email: devrel@telefonica.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+
+servers:
+  - url: "{host}/scam-signal/v0.1"
+    variables:
+      host:
+        default: sandbox.opengateway.telefonica.com/apigateway
+        description: API gateway URL
+
+tags:
+  - name: Detect active scams
+    description: Trigger real-time telco-based intelligence to identify potential fraud during critical customer actions.
+
+paths:
+  /detect:
+    post:
+      summary: Scam Signal v0.1 (confidential parameters)
+      tags:
+        - Detect active scams
+      description: |
+        The Scam Signal API is designed to help prevent scams in real-time by offering a telecom-powered risk signal. This allows businesses to:
+
+        - Pause suspicious payment attempts
+        - Trigger customer verification flows
+        - Reduce false positives in fraud scoring systems
+
+        It has proven to reduce fraud losses and improve user safety in sensitive flows such as online banking and high-value transactions.
+
+        **Note:** Due to the sensitive nature of this API, parameters and schema are not publicly disclosed.
+
+        Key business use cases include:
+        - Preventing real-time payment scams (e.g. APP fraud)
+        - Adding telecom signals to existing fraud detection models
+        - Improving protection in SME/corporate transaction platforms
+
+        For access to integration details and onboarding support, **get in touch with our API experts** through the following link:
+
+        👉 [Talk to an expert now](https://opengateway.telefonica.com/en/contactexpert) to explore how Scam Signal can protect your users in real-time.
+
+      

@@ -1,0 +1,289 @@
+openapi: 3.0.3
+info:
+  title: Tenure
+  termsOfService: http://swagger.io/terms/
+  contact:
+    name: Telefónica Open Gateway DevRel
+    url: https://opengateway.telefonica.com/en/developer-hub
+    email: devrel@telefonica.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: "0.1"
+
+servers:
+  - url: "{host}/kyc-tenure/v0.1"
+    variables:
+      host:
+        default: sandbox.opengateway.telefonica.com/apigateway
+        description: API gateway URL
+
+tags:
+  - name: Check Subscriber Tenure
+    description: Check details about the length of tenure of the subscriber
+
+paths:
+  /check-tenure:
+    post:
+      summary: Check tenure length v0.1
+      tags:
+        - Check Subscriber Tenure
+      description: |
+        Verifies a specified length of tenure, based on a provided date, for a network subscriber to establish a level of trust for the network subscription identifier.
+
+        Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following scope:
+
+        `dpv:FraudPreventionAndDetection#kyc-tenure`
+
+        Create an app on our [Sandbox](/docs/sandbox) to get credentials and [retrieve tokens](/reference/authorize) so you can perform API calls to our operators' production environments, or use the following convenience token to test in mock mode:
+
+        `mock_sandbox_access_token`
+      operationId: checkTenure
+      security:
+        - openId:
+            - kyc-tenure
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TenureRequest"
+      responses:
+        "200":
+          description: Respond with tenure information
+          headers:
+            x-correlator:
+              $ref: "#/components/headers/X-Correlator"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TenureInfo"
+              examples:
+                SUCCESS_RESPONSE:
+                  value:
+                    tenureDateCheck: true
+                    contractType: "PAYM"
+        "400":
+          $ref: '#/components/responses/Generic400'
+        "401":
+          $ref: '#/components/responses/Generic401'
+        "403":
+          $ref: '#/components/responses/Generic403'
+        "404":
+          $ref: '#/components/responses/Generic404'
+        "422":
+          $ref: '#/components/responses/Generic422'
+
+components:
+  securitySchemes:
+    openId:
+      type: openIdConnect
+      openIdConnectUrl: https://example.com/.well-known/openid-configuration
+      description: Required scope: dpv:FraudPreventionAndDetection#kyc-tenure
+
+  headers:
+    X-Correlator:
+      description: Correlation id for the different services
+      schema:
+        type: string
+        pattern: ^[a-zA-Z0-9-]{0,55}$
+
+  schemas:
+    TenureRequest:
+      description: Specifies date from which continuous tenure of the identified mobile subscriber is required to be confirmed
+      type: object
+      properties:
+        tenureDate:
+          type: string
+          description: The date, in RFC 3339 / ISO 8601 compliant format "YYYY-MM-DD", from which continuous tenure of the identified network subscriber is required to be confirmed
+          format: date
+          example: "2023-07-03"
+        phoneNumber:
+          type: string
+          description: The phone number in E.164 format to validate tenure. If not provided, it must be extracted from the access token context.
+          example: "+34629255833"
+      required:
+        - tenureDate
+
+    TenureInfo:
+      type: object
+      properties:
+        tenureDateCheck:
+          description: |
+            `true` when the identified mobile subscription has had valid tenure since `tenureDate`, otherwise `false`
+          example: true
+          type: boolean
+        contractType:
+          description: |
+            If exists, populated with:
+            - `PAYG` - prepaid (pay-as-you-go) account
+            - `PAYM` - contract account
+            - `Business` - Business (enterprise) account
+
+            This attribute may be omitted from the response set if the information is not available
+          example: "PAYM"
+          type: string
+          enum: ["PAYG", "PAYM", "Business"]
+      required:
+        - tenureDateCheck
+
+    ErrorInfo:
+      type: object
+      required:
+        - message
+        - status
+        - code
+      properties:
+        message:
+          type: string
+          description: A human readable description of what the event represent
+        status:
+          type: integer
+          description: HTTP response status code
+        code:
+          type: string
+          description: Friendly Code to describe the error
+
+  responses:
+    Generic400:
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/ErrorInfo"
+              - type: object
+                properties:
+                  status:
+                    enum:
+                      - 400
+                  code:
+                    enum:
+                      - INVALID_ARGUMENT
+                      - OUT_OF_RANGE
+          examples:
+            GENERIC_400_INVALID_ARGUMENT:
+              description: Invalid Argument. Generic Syntax Exception
+              value:
+                status: 400
+                code: INVALID_ARGUMENT
+                message: Client specified an invalid argument, request body or query param.
+            GENERIC_400_OUT_OF_RANGE:
+              description: Out of Range. Specific Syntax Exception used when a given field has a pre-defined range or a invalid filter criteria combination is requested
+              value:
+                status: 400
+                code: OUT_OF_RANGE
+                message: Client specified an invalid range.
+
+    Generic401:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/ErrorInfo"
+              - type: object
+                properties:
+                  status:
+                    enum:
+                      - 401
+                  code:
+                    enum:
+                      - UNAUTHENTICATED
+                      - AUTHENTICATION_REQUIRED
+          examples:
+            GENERIC_401_UNAUTHENTICATED:
+              description: Request cannot be authenticated
+              value:
+                status: 401
+                code: UNAUTHENTICATED
+                message: Request not authenticated due to missing, invalid, or expired credentials.
+            GENERIC_401_AUTHENTICATION_REQUIRED:
+              description: New authentication is needed, authentication is no longer valid
+              value:
+                status: 401
+                code: AUTHENTICATION_REQUIRED
+                message: New authentication is required.
+
+    Generic403:
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/ErrorInfo"
+              - type: object
+                properties:
+                  status:
+                    enum:
+                      - 403
+                  code:
+                    enum:
+                      - PERMISSION_DENIED
+          examples:
+            GENERIC_403_PERMISSION_DENIED:
+              description: Permission denied. OAuth2 token access does not have the required scope or when the user fails operational security
+              value:
+                status: 403
+                code: PERMISSION_DENIED
+                message: Client does not have sufficient permissions to perform this action.
+
+    Generic404:
+      description: Not found
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/ErrorInfo"
+              - type: object
+                properties:
+                  status:
+                    enum:
+                      - 404
+                  code:
+                    enum:
+                      - IDENTIFIER_NOT_FOUND
+          examples:
+            GENERIC_404_IDENTIFIER_NOT_FOUND:
+              description: The phone number is not associated with a CSP customer account
+              value:
+                status: 404
+                code: IDENTIFIER_NOT_FOUND
+                message: The phone number provided is not associated with a customer account
+
+    Generic422:
+      description: Unprocessable Content
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/ErrorInfo"
+              - type: object
+                properties:
+                  status:
+                    enum:
+                      - 422
+                  code:
+                    enum:
+                      - SERVICE_NOT_APPLICABLE
+                      - MISSING_IDENTIFIER
+                      - UNNECESSARY_IDENTIFIER
+          examples:
+            GENERIC_422_SERVICE_NOT_APPLICABLE:
+              description: Service is not applicable for the provided phone number
+              value:
+                status: 422
+                code: SERVICE_NOT_APPLICABLE
+                message: The service is not applicable for the provided phone number
+            GENERIC_422_MISSING_IDENTIFIER:
+              description: No phone number has been provided either explicitly or associated with the access token
+              value:
+                status: 422
+                code: MISSING_IDENTIFIER
+                message: No phone number has been provided
+            GENERIC_422_UNNECESSARY_IDENTIFIER:
+              description: An explicit phone number has been provided when one is already associated with the access token
+              value:
+                status: 422
+                code: UNNECESSARY_IDENTIFIER
+                message: An explicit phone number has been provided when one is already associated with the access token
