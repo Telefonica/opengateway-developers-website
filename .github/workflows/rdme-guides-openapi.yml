@@ -111,9 +111,9 @@ jobs:
       - name: Run `openapi` command 🚀
         uses: readmeio/rdme@v8
         with:
-          rdme: openapi ./v0/catalog/knowyourcustomer/kyc_age_verification_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=686d430f5c2fd20018ce7556
+          rdme: openapi ./v0/catalog/ageverification/kyc_age_verification_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=686d430f5c2fd20018ce7556
 
       - name: Run `openapi` command 🚀
         uses: readmeio/rdme@v8
         with:
-          rdme: openapi ./v0/catalog/knowyourcustomer/kyc_tenure_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=6874e6f254f6aa3161e0c45b
+          rdme: openapi ./v0/catalog/tenure/kyc_tenure_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=6874e6f254f6aa3161e0c45b
