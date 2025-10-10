@@ -15,105 +15,109 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repo 📚
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Run `guides` command for version 0 🚀
-        uses: readmeio/rdme@v8
+      - name: Run `docs` command for version 0 🚀
+        uses: readmeio/rdme@v10
         with:
-          rdme: guides ./v0 --key=${{ secrets.README_API_KEY }} --version=0
+          rdme: docs --folder=./v0 --key=${{ secrets.README_API_KEY }} --version=0
 
-      - name: Run `guides` command for version 0.1 🚀
-        uses: readmeio/rdme@v8
+      - name: Run `docs` command for version 0.1 🚀
+        uses: readmeio/rdme@v10
         with:
-          rdme: guides ./v0.1 --key=${{ secrets.README_API_KEY }} --version=0.1
+          rdme: docs --folder=./v0.1 --key=${{ secrets.README_API_KEY }} --version=0.1
 
-      - name: Run `guides` command for version 0.8 🚀
-        uses: readmeio/rdme@v8
+      - name: Run `docs` command for version 0.8 🚀
+        uses: readmeio/rdme@v10
         with:
-          rdme: guides ./v0.8 --key=${{ secrets.README_API_KEY }} --version=0.8
+          rdme: docs --folder=./v0.8 --key=${{ secrets.README_API_KEY }} --version=0.8
 
   rdme-openapi:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repo 📚
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Run `openapi` command 🚀
-        uses: readmeio/rdme@v8
+        uses: readmeio/rdme@v10
         with:
-          rdme: openapi ./v0/callflows/authorization/authorization_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=680abb4bec17eb0025ecfd8a
+          rdme: openapi --file=./v0/callflows/authorization/authorization_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=680abb4bec17eb0025ecfd8a
 
       - name: Run `openapi` command 🚀
-        uses: readmeio/rdme@v8
+        uses: readmeio/rdme@v10
         with:
-          rdme: openapi ./v0/callflows/authorization/authorization_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=680ac21fcc0c4b0077132dd2
+          rdme: openapi --file=./v0/callflows/authorization/authorization_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=680ac21fcc0c4b0077132dd2
 
       - name: Run `openapi` command 🚀
-        uses: readmeio/rdme@v8
+        uses: readmeio/rdme@v10
         with:
-          rdme: openapi ./v0/catalog/simswap/simswap_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=680abb7b7f2931002a8b048a
+          rdme: openapi --file=./v0/catalog/simswap/simswap_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=680abb7b7f2931002a8b048a
         
       - name: Run `openapi` command 🚀
-        uses: readmeio/rdme@v8
+        uses: readmeio/rdme@v10
         with:
-          rdme: openapi ./v0/catalog/numberverification/numberverification_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=680abb9be979f2003091ef2c
+          rdme: openapi --file=./v0/catalog/numberverification/numberverification_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=680abb9be979f2003091ef2c
         
       - name: Run `openapi` command 🚀
-        uses: readmeio/rdme@v8
+        uses: readmeio/rdme@v10
         with:
-          rdme: openapi ./v0/catalog/knowyourcustomer/kyc_match_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=680abbb167e5c600307ef2e3
+          rdme: openapi --file=./v0/catalog/knowyourcustomer/kyc_match_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=680abbb167e5c600307ef2e3
 
       - name: Run `openapi` command 🚀
-        uses: readmeio/rdme@v8
+        uses: readmeio/rdme@v10
         with:
-          rdme: openapi ./v0/catalog/knowyourcustomer/kyc_match_01_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=680b45d5ffafb6005dcecfa3
+          rdme: openapi --file=./v0/catalog/knowyourcustomer/kyc_match_01_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=680b45d5ffafb6005dcecfa3
   
       - name: Run `openapi` command 🚀    
-        uses: readmeio/rdme@v8
+        uses: readmeio/rdme@v10
         with:
-          rdme: openapi ./v0/catalog/qod/qod_08_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=680abbcdaf35e8000f93a6d9
+          rdme: openapi --file=./v0/catalog/qod/qod_08_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=680abbcdaf35e8000f93a6d9
 
       - name: Run `openapi` command 🚀    
-        uses: readmeio/rdme@v8
+        uses: readmeio/rdme@v10
         with:
-          rdme: openapi ./v0/catalog/qod/qod_010_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=680abc0098f80500388c2d84
+          rdme: openapi --file=./v0/catalog/qod/qod_010_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=680abc0098f80500388c2d84
         
       - name: Run `openapi` command 🚀    
-        uses: readmeio/rdme@v8
+        uses: readmeio/rdme@v10
         with:
-          rdme: openapi ./v0/catalog/devicelocation/devicelocation_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=680abc148a1ded0062eb0274
+          rdme: openapi --file=./v0/catalog/devicelocation/devicelocation_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=680abc148a1ded0062eb0274
   
       - name: Run `openapi` command 🚀    
-        uses: readmeio/rdme@v8
+        uses: readmeio/rdme@v10
         with:
-          rdme: openapi ./v0/catalog/devicelocation/devicelocation_02_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=682ef067328ce700607a276a
+          rdme: openapi --file=./v0/catalog/devicelocation/devicelocation_02_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=682ef067328ce700607a276a
 
       - name: Run `openapi` command 🚀    
-        uses: readmeio/rdme@v8
+        uses: readmeio/rdme@v10
         with:
-          rdme: openapi ./v0/catalog/devicestatus/devicestatus_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=680abc29cc0c4b0077132d26
+          rdme: openapi --file=./v0/catalog/devicestatus/devicestatus_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=680abc29cc0c4b0077132d26
 
       - name: Run `openapi` command 🚀
-        uses: readmeio/rdme@v8
+        uses: readmeio/rdme@v10
         with:
-          rdme: openapi ./v0/catalog/deviceswap/deviceswap_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=680abc42e979f2003091ef61
+          rdme: openapi --file=./v0/catalog/deviceswap/deviceswap_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=680abc42e979f2003091ef61
 
       - name: Run `openapi` command 🚀
-        uses: readmeio/rdme@v8
+        uses: readmeio/rdme@v10
         with:
-          rdme: openapi ./v1/catalog/numberverification/numberverification_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=6840119e1f5929001cf49914
+          rdme: openapi --file=./v1/catalog/numberverification/numberverification_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=6840119e1f5929001cf49914
 
       - name: Run `openapi` command 🚀
-        uses: readmeio/rdme@v8
+        uses: readmeio/rdme@v10
         with:
-          rdme: openapi ./v1/catalog/simswap/simswap_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=684015189c5d5400104707cc
+          rdme: openapi --file=./v1/catalog/simswap/simswap_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=684015189c5d5400104707cc
 
       - name: Run `openapi` command 🚀
-        uses: readmeio/rdme@v8
+        uses: readmeio/rdme@v10
         with:
+
           rdme: openapi ./v0/catalog/ageverification/kyc_age_verification_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=686d430f5c2fd20018ce7556
 
+
       - name: Run `openapi` command 🚀
-        uses: readmeio/rdme@v8
+        uses: readmeio/rdme@v10
         with:
-          rdme: openapi ./v0/catalog/tenure/kyc_tenure_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=6874e6f254f6aa3161e0c45b
+
+          rdme: openapi --file=./v0/catalog/knowyourcustomer/kyc_tenure_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=6874e6f254f6aa3161e0c45b
+
