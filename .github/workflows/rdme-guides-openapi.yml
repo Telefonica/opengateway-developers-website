@@ -112,7 +112,7 @@ jobs:
         uses: readmeio/rdme@v10
         with:
 
-          rdme: openapi ./v0/catalog/ageverification/kyc_age_verification_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=686d430f5c2fd20018ce7556
+          rdme: openapi --file=./v0/catalog/ageverification/kyc_age_verification_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=686d430f5c2fd20018ce7556
 
 
       - name: Run `openapi` command 🚀
