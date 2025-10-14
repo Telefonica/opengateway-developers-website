@@ -1,7 +1,14 @@
 ---
 title: Sandbox
-excerpt: In this section you will find how to use the Telefónica Open Gateway Sandbox environment to test the Open Gateway APIs without the need to subscribe to a Channel Partner. Your tests won't be charged and won't be suitable for going into a production stage, so it is a great chance to learn and prototype, as a previous step to go commercial.
-category: 680a72d37e7640001804095b
+category:
+  uri: Getting Started
+content:
+  excerpt: >-
+    In this section you will find how to use the Telefónica Open Gateway Sandbox
+    environment to test the Open Gateway APIs without the need to subscribe to a
+    Channel Partner. Your tests won't be charged and won't be suitable for going
+    into a production stage, so it is a great chance to learn and prototype, as
+    a previous step to go commercial.
 ---
 
 > 📘 Want to give it a try?

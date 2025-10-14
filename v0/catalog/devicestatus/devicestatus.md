@@ -1,7 +1,11 @@
 ---
 title: Device Status API
-excerpt: The Device Status API makes it possible to check the roaming status of a specific SIM-based device by using events from the operators' network.
-category: 681879c3afc1a0003709c745
+category:
+  uri: API Catalog
+content:
+  excerpt: >-
+    The Device Status API makes it possible to check the roaming status of a
+    specific SIM-based device by using events from the operators' network.
 ---
 
 The standardised Device Status API provides the ability to check the roaming status of a given SIM-based device without identity theft or GPS.

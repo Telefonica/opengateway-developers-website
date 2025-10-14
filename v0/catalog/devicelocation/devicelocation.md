@@ -1,7 +1,11 @@
 ---
 title: Device Location Verification API
-excerpt: The Device Location Verification API from Open Gateway allows to check if a mobile phone is in a determined location.
-category: 681879c3afc1a0003709c745
+category:
+  uri: API Catalog
+content:
+  excerpt: >-
+    The Device Location Verification API from Open Gateway allows to check if a
+    mobile phone is in a determined location.
 ---
 
 The Device Location API is a software interface that allows applications to confirm if a user's device is in its intended location. The network must track a device's location at all times to effectively provide telecommunications services. This capability is utilized to offer device location as a service.

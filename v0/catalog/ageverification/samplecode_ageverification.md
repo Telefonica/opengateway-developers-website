@@ -1,7 +1,13 @@
 ---
 title: Sample code for Age Verification
-excerpt: The following samples show how to use the [Open Gateway Age Verification API](https://opengateway.telefonica.com/en/apis/age-verification) to check if a subscriber meets a required age threshold, optionally including content lock or parental control information.
-category: 681879c3afc1a0003709c745
+category:
+  uri: API Catalog
+content:
+  excerpt: >-
+    The following samples show how to use the [Open Gateway Age Verification
+    API](https://opengateway.telefonica.com/en/apis/age-verification) to check
+    if a subscriber meets a required age threshold, optionally including content
+    lock or parental control information.
 ---
 
 The following code shows, for didactic purposes, a hypothetical or sample SDK, in several programming languages, from a generic Open Gateway's channel partner, also known as aggregator.

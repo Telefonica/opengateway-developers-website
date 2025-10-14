@@ -1,7 +1,11 @@
 ---
 title: Sample code for Device Swap
-excerpt: The following samples show how to use the [Open Gateway Device Swap API](https://opengateway.telefonica.com/en/apis/device-swap), 
-category: 681879c3afc1a0003709c745
+category:
+  uri: API Catalog
+content:
+  excerpt: >-
+    The following samples show how to use the [Open Gateway Device Swap
+    API](https://opengateway.telefonica.com/en/apis/device-swap),
 ---
 
 The following code shows, for didactic purposes, a hypothetical or sample SDK, in several programming languages, from a generic Open Gateway's channel partner, also known as aggregator. The final implementation will depend on the channel partner's development tools offering. Note that channel partners' Open Gateway SDKs are just code modules wrapping authorization and API calls providing an interface in your app's programming for convenience.

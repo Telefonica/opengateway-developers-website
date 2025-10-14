@@ -1,7 +1,11 @@
 ---
 title: How to use the API reference
-excerpt: Find out how to start testing the Open Gateway APIs with our tools in the API Reference
-category: 680a72d37e7640001804095b
+category:
+  uri: Getting Started
+content:
+  excerpt: >-
+    Find out how to start testing the Open Gateway APIs with our tools in the
+    API Reference
 ---
 
 An API reference is a comprehensive document that provides detailed information about an API (Application Programming Interface), including how to use its functions, methods, endpoints, parameters, and data structures. It serves as a guide for developers who want to integrate or interact with the API in their applications.

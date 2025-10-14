@@ -1,7 +1,12 @@
 ---
 title: Know Your Customer API
-excerpt: The Know Your Customer API makes it possible to validates users info with MNO (Mobile Network Operator) data, ensuring compliance and preventing identity fraud.
-category: 681879c3afc1a0003709c745
+category:
+  uri: API Catalog
+content:
+  excerpt: >-
+    The Know Your Customer API makes it possible to validates users info with
+    MNO (Mobile Network Operator) data, ensuring compliance and preventing
+    identity fraud.
 ---
 
 The standardised Know Your Customer API allows you to validate user contact information against data from Mobile Network Operators (MNOs), ensuring accuracy and improving both conversion rates and the quality of user onboarding for new services.

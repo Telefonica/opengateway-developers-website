@@ -1,7 +1,12 @@
 ---
 title: Tenure API
-excerpt: The Tenure API enables businesses to verify the length of customer tenure with mobile network operators, establishing trust and reliability scores for network subscription identifiers based on account history and longevity.
-category: 681879c3afc1a0003709c745
+category:
+  uri: API Catalog
+content:
+  excerpt: >-
+    The Tenure API enables businesses to verify the length of customer tenure
+    with mobile network operators, establishing trust and reliability scores for
+    network subscription identifiers based on account history and longevity.
 ---
 
 The Tenure API provides businesses with the ability to verify and assess the length of tenure of mobile network subscribers, offering valuable insights into customer reliability and account stability. By leveraging verified data from mobile network operators, this API enables informed decision-making for fraud prevention, risk assessment, and customer onboarding processes.

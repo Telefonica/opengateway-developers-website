@@ -1,7 +1,12 @@
 ---
 title: Test the Sandbox with Postman
-excerpt: Learn how to explore the functionality of the Sandbox environment using Postman, this guide will demonstrate how to effectively interact with APIs in a controlled setting.
-category: 680a72d37e7640001804095b
+category:
+  uri: Getting Started
+content:
+  excerpt: >-
+    Learn how to explore the functionality of the Sandbox environment using
+    Postman, this guide will demonstrate how to effectively interact with APIs
+    in a controlled setting.
 ---
 
 # Interact with the Open Gateway Sandbox using Postman

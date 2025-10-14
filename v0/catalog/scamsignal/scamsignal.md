@@ -1,7 +1,13 @@
 ---
 title: Scam Signal API
-excerpt: The Scam Signal API provides advanced fraud detection capabilities leveraging telco network intelligence to identify and prevent fraudulent activities in real-time, protecting businesses and their customers from evolving threats.
-category: 681879c3afc1a0003709c745
+category:
+  uri: API Catalog
+content:
+  excerpt: >-
+    The Scam Signal API provides advanced fraud detection capabilities
+    leveraging telco network intelligence to identify and prevent fraudulent
+    activities in real-time, protecting businesses and their customers from
+    evolving threats.
 ---
 
 The Scam Signal API leverages mobile network operator intelligence to detect and prevent Authorized Push Payment (APP) fraud in real-time. By analyzing network patterns during transaction attempts, this API enables financial institutions to identify when customers are under active social engineering pressure and intervene before fraud completion.

@@ -1,7 +1,11 @@
 ---
 title: Authorization
-excerpt: In this guide you will find a briefly introduction to authorization mechanisms and best practices for secure access to Open Gateway APIs
-category: 680a72d37e7640001804095c
+category:
+  uri: API Call Flows
+content:
+  excerpt: >-
+    In this guide you will find a briefly introduction to authorization
+    mechanisms and best practices for secure access to Open Gateway APIs
 ---
 
 ## Authorization standards

@@ -1,7 +1,12 @@
 ---
 title: API Integration
-excerpt: In this guide we will go through the different ways to integrate with Open Gateway APIs so you can find the best fit for your use case and the offering from our Channel Partners.
-category: 680a72d37e7640001804095c
+category:
+  uri: API Call Flows
+content:
+  excerpt: >-
+    In this guide we will go through the different ways to integrate with Open
+    Gateway APIs so you can find the best fit for your use case and the offering
+    from our Channel Partners.
 ---
 
 ## RESTful by design 

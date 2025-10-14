@@ -1,7 +1,11 @@
 ---
 title: Sandbox mock responses
-excerpt: Get deterministic responses from our Sandbox environment when using the mock mode, according to the following guidelines.
-category: 680a72d37e7640001804095b
+category:
+  uri: Getting Started
+content:
+  excerpt: >-
+    Get deterministic responses from our Sandbox environment when using the mock
+    mode, according to the following guidelines.
 ---
 
 ## Using the Sandbox on mock mode

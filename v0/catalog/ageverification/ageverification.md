@@ -1,7 +1,13 @@
 ---
 title: Age Verification API
-excerpt: The Age Verification API enables businesses to verify if users meet required age thresholds for age-restricted services using verified data from mobile network operators, ensuring compliance with regulations while protecting privacy.
-category: 681879c3afc1a0003709c745
+category:
+  uri: API Catalog
+content:
+  excerpt: >-
+    The Age Verification API enables businesses to verify if users meet required
+    age thresholds for age-restricted services using verified data from mobile
+    network operators, ensuring compliance with regulations while protecting
+    privacy.
 ---
 
 The standardized Age Verification API allows businesses to determine if users meet required age thresholds for accessing age-restricted subscriptions and services using verified data from mobile network operators.

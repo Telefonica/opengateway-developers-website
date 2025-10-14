@@ -1,7 +1,13 @@
 ---
 title: Sample code for Tenure
-excerpt: The following samples show how to use the [Open Gateway Tenure API](https://opengateway.telefonica.com/en/apis/tenure) to verify a specified length of tenure for a network subscriber to establish a level of trust for the network subscription identifier.
-category: 681879c3afc1a0003709c745
+category:
+  uri: API Catalog
+content:
+  excerpt: >-
+    The following samples show how to use the [Open Gateway Tenure
+    API](https://opengateway.telefonica.com/en/apis/tenure) to verify a
+    specified length of tenure for a network subscriber to establish a level of
+    trust for the network subscription identifier.
 ---
 
 The following code shows, for didactic purposes, a hypothetical or sample SDK, in several programming languages, from a generic Open Gateway's channel partner, also known as aggregator.

@@ -1,7 +1,14 @@
 ---
 title: Frontend authorization flow
-excerpt: If your application offers a human interface to provide your users with features enabled by Open Gateway, this is its frontend component, running on the end-user's device, that will trigger the API calling flow. This guide will show you how to authorize your application by identifying the end-user from their network connected devices.
-category: 680a72d37e7640001804095c
+category:
+  uri: API Call Flows
+content:
+  excerpt: >-
+    If your application offers a human interface to provide your users with
+    features enabled by Open Gateway, this is its frontend component, running on
+    the end-user's device, that will trigger the API calling flow. This guide
+    will show you how to authorize your application by identifying the end-user
+    from their network connected devices.
 ---
 
 From a developer perspective, the frontend authorization flow consists of two sequential steps implemented by performing HTTP requests to the following Open Gateway Channel Partner's API gateway endpoints, compliant with the OIDC standard **Authorization Code Flow**.

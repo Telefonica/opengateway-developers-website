@@ -1,7 +1,13 @@
 ---
 title: The Open Gateway Initiative
-excerpt: Welcome to Open Gateway APIs, your gateway to leveraging advanced network capabilities in your applications. Whether you're a seasoned developer or just starting your journey, Open Gateway APIs provide the tools and resources you need to create innovative, high-performance applications.
-category: 680a72d37e76400018040958
+category:
+  uri: About Open Gateway
+content:
+  excerpt: >-
+    Welcome to Open Gateway APIs, your gateway to leveraging advanced network
+    capabilities in your applications. Whether you're a seasoned developer or
+    just starting your journey, Open Gateway APIs provide the tools and
+    resources you need to create innovative, high-performance applications.
 ---
 
 ## What is Open Gateway?

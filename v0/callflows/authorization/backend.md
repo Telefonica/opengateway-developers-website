@@ -1,7 +1,13 @@
 ---
 title: Backend authorization flow
-excerpt: If your use case does not involve end-user's interaction you will want to integrate with Open Gateway APIs from the backend. This guide will help you understand the flows to get your application authorized to call the APIs from your server or any other environment without a human interface.
-category: 680a72d37e7640001804095c
+category:
+  uri: API Call Flows
+content:
+  excerpt: >-
+    If your use case does not involve end-user's interaction you will want to
+    integrate with Open Gateway APIs from the backend. This guide will help you
+    understand the flows to get your application authorized to call the APIs
+    from your server or any other environment without a human interface.
 ---
 
 From a developer perspective, the backend authorization flow consists of two sequential steps implemented by performing HTTP requests to the following Open Gateway Channel Partner's API gateway endpoints, compliant with the ODIC standard **CIBA** (Client-Initiated Backchannel Authentication Flow).
