@@ -687,3 +687,4 @@ fetch("https://opengateway.aggregator.com/sim-swap/v0/retrieve-date", requestOpt
     console.log(`SIM was swapped: ${result.toLocaleString('en-GB', { timeZone: 'UTC' })}`)
   })
 ```
+```

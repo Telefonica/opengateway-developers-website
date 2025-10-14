@@ -22,18 +22,8 @@ Furthermore, by verifying a user's location, businesses can offer more personali
 > Apply to join the [Developer Hub](https://opengateway.telefonica.com/en/developer-hub/join) and gain access to our Sandbox.
 
 ### Getting started on the Telefónica Open Gateway Sandbox
-[block:embed]
-{
-  "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FsBMx9G4cKy4%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DsBMx9G4cKy4&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FsBMx9G4cKy4%2Fhqdefault.jpg&type=text%2Fhtml&schema=youtube\" width=\"854\" height=\"480\" scrolling=\"no\" title=\"YouTube embed\" frameborder=\"0\" allow=\"autoplay; fullscreen; encrypted-media; picture-in-picture;\" allowfullscreen=\"true\"></iframe>",
-  "url": "https://www.youtube.com/watch?v=sBMx9G4cKy4",
-"title": "Greater Security in Identity Verifications with the Device Location Verification API",
-  "favicon": "https://www.youtube.com/favicon.ico",
-  "image": "https://i.ytimg.com/vi/sBMx9G4cKy4/hqdefault.jpg",
-  "provider": "https://www.youtube.com/",
-  "href": "https://www.youtube.com/watch?v=sBMx9G4cKy4",
-  "typeOfEmbed": "youtube"
-}
-[/block]
+
+[![Greater Security in Identity Verifications with the Device Location Verification API](https://i.ytimg.com/vi/sBMx9G4cKy4/hqdefault.jpg)](https://www.youtube.com/watch?v=sBMx9G4cKy4)
 
 ## Overview of the Device Location Verification CAMARA API
 
