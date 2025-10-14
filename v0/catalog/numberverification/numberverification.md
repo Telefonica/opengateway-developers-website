@@ -19,18 +19,8 @@ Built as part of the Open Gateway initiative, the Number Verification API provid
 > Apply to join the [Developer Hub](https://opengateway.telefonica.com/en/developer-hub/join) and gain access to our Sandbox.
 
 ### Getting started on the Telefónica Open Gateway Sandbox
-[block:embed]
-{
-  "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FFUQGNlMwYSg%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DFUQGNlMwYSg&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FFUQGNlMwYSg%2Fhqdefault.jpg&type=text%2Fhtml&schema=youtube\" width=\"854\" height=\"480\" scrolling=\"no\" title=\"YouTube embed\" frameborder=\"0\" allow=\"autoplay; fullscreen; encrypted-media; picture-in-picture;\" allowfullscreen=\"true\"></iframe>",
-  "url": "https://www.youtube.com/watch?v=FUQGNlMwYSg",
-"title": "Smoother Identity Validations with the Number Verification API",
-  "favicon": "https://www.youtube.com/favicon.ico",
-  "image": "https://i.ytimg.com/vi/FUQGNlMwYSg/hqdefault.jpg",
-  "provider": "https://www.youtube.com/",
-  "href": "https://www.youtube.com/watch?v=FUQGNlMwYSg",
-  "typeOfEmbed": "youtube"
-}
-[/block]
+
+[![Smoother Identity Validations with the Number Verification API](https://i.ytimg.com/vi/FUQGNlMwYSg/hqdefault.jpg)](https://www.youtube.com/watch?v=FUQGNlMwYSg)
 
 ## Overview of the Number Verification CAMARA API
 

@@ -56,7 +56,7 @@ To use an environment in Postmam:
 
 1. Select the desired environment by clicking on the drop-down menu in the top right corner of the interface.
 2. The variables defined in the environment will be available for use in collection requests. Collection requests already use the following environment variables in the format
-{{variable_name}}. You simply need to edit the environment, after importing it, and modify
+`{{variable_name}}`. You simply need to edit the environment, after importing it, and modify
 them according to your own test configuration:
    - **‘api-gateway-url** - Fixed. Should not be changed if you want to run your tests on the Sandbox. Its value is https://sandbox.opengateway.telefonica.com/apigateway
    - **‘application-client-id’** - Value that identifies each of the apps you have registered in the Sandbox. You can check it in the ‘My apps’ section.
