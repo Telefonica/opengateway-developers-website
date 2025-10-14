@@ -17,20 +17,20 @@ jobs:
       - name: Check out repo 📚
         uses: actions/checkout@v4
 
-      - name: Run `docs` command for version 0 🚀
+      - name: Run `docs upload` command for version 0 🚀
         uses: readmeio/rdme@v10
         with:
-          rdme: docs --folder=./v0 --key=${{ secrets.README_API_KEY }} --version=0
+          rdme: docs upload ./v0 --key=${{ secrets.README_API_KEY }} --branch=0
 
-      - name: Run `docs` command for version 0.1 🚀
+      - name: Run `docs upload` command for version 0.1 🚀
         uses: readmeio/rdme@v10
         with:
-          rdme: docs --folder=./v0.1 --key=${{ secrets.README_API_KEY }} --version=0.1
+          rdme: docs upload ./v0.1 --key=${{ secrets.README_API_KEY }} --branch=0.1
 
-      - name: Run `docs` command for version 0.8 🚀
+      - name: Run `docs upload` command for version 0.8 🚀
         uses: readmeio/rdme@v10
         with:
-          rdme: docs --folder=./v0.8 --key=${{ secrets.README_API_KEY }} --version=0.8
+          rdme: docs upload ./v0.8 --key=${{ secrets.README_API_KEY }} --branch=0.8
 
   rdme-openapi:
     runs-on: ubuntu-latest
@@ -111,13 +111,10 @@ jobs:
       - name: Run `openapi` command 🚀
         uses: readmeio/rdme@v10
         with:
-
           rdme: openapi --file=./v0/catalog/ageverification/kyc_age_verification_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=686d430f5c2fd20018ce7556
-
 
       - name: Run `openapi` command 🚀
         uses: readmeio/rdme@v10
         with:
-
           rdme: openapi --file=./v0/catalog/knowyourcustomer/kyc_tenure_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=6874e6f254f6aa3161e0c45b
 
