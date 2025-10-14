@@ -262,29 +262,31 @@ access_token = response.json().get("access_token")
 
 #### API usage
 > 📘 Note
-> Here’s an example with all the fields that can be used:
+> Here's an example with all the fields that can be used:
+> ```javascript
 > dataToMatch = {
->  "country": "Japan",
->  "address": "Plaza María Pita, 1",
->  "birthdate": "1978-08-22",
->  "nameKanaHankaku": "federica",
->  "gender": "male",
->  "streetNumber": 4,
->  "nameKanaZenkaku": "Ｆｅｄｅｒｉｃａ",
->  "idDocument": "66666666q",
->  "postalCode": 1028460,
->  "locality": "ZZZZ",
->  "middleNames": "Sanchez",
->  "familyNameAtBirth": "YYYY",
->  "houseNumberExtension": "VVVV",
->  "streetName": "Nicolas Salmeron",
->  "phoneNumber": "+34629255833",
->  "familyName": "Sanchez Arjona",
->  "name": "Federica Sanchez Arjona",
->  "giventName": "Federica",
->  "region": "Tokyo",
->  "email": "abc@example.com"
->}
+>   "country": "Japan",
+>   "address": "Plaza María Pita, 1",
+>   "birthdate": "1978-08-22",
+>   "nameKanaHankaku": "federica",
+>   "gender": "male",
+>   "streetNumber": 4,
+>   "nameKanaZenkaku": "Ｆｅｄｅｒｉｃａ",
+>   "idDocument": "66666666q",
+>   "postalCode": 1028460,
+>   "locality": "ZZZZ",
+>   "middleNames": "Sanchez",
+>   "familyNameAtBirth": "YYYY",
+>   "houseNumberExtension": "VVVV",
+>   "streetName": "Nicolas Salmeron",
+>   "phoneNumber": "+34629255833",
+>   "familyName": "Sanchez Arjona",
+>   "name": "Federica Sanchez Arjona",
+>   "giventName": "Federica",
+>   "region": "Tokyo",
+>   "email": "abc@example.com"
+> }
+> ```
 >
 ```python Sample SDK for Python
 # Enter only the parameters you want to verify.
@@ -297,7 +299,6 @@ result = kycMatch_client.match({
 print(f"Address matches the user's? {result.addressMatch}")
 print(f"Id matches the user's? {result.idDocumentMatch}")
 print(f"Postal Code matches the user's? {result.postalCodeMatch}")
-
 ```
 ```node Sample SDK for Node.js
 let result = kycMatchClient.match({
@@ -395,7 +396,6 @@ result = response.json()
 print(f"Address matches the user's? {result.addressMatch}")
 print(f"Id matches the user's? {result.idDocumentMatch}")
 print(f"Postal Code matches the user's? {result.postalCodeMatch}")
-
 ```
 
 ### Frontend flow
