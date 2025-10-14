@@ -4,7 +4,7 @@ category:
   uri: API Catalog
 content:
   excerpt: >-
-    The Device Location Verification API from Open Gateway allows to check if a
+    The Device Location Verification API from Open Gateway allows you to check if a
     mobile phone is in a determined location.
 ---
 
@@ -56,9 +56,11 @@ The standardised Device Location Verification API provides the option of verifyi
 This solution validates the location of a device to enable services or allow transactions by verifying the location.
 
 ### Fast and reliable location
+
 The Device Location Verification API provides a swift and efficient way to validate customer locations, helping you maintain control over your application while enabling features like anti-fraud measures, personalization, and targeted advertising.
 
-### Theft-free gps
+### Theft-free GPS
+
 Location Verification is based on network data managed by telecom carriers, ensuring protection against device spoofing, GPS manipulation, or emulation.
 
 ### Risk prevention

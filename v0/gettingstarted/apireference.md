@@ -21,30 +21,34 @@ Each API has a string called “purpose” that defines the intended use of that
 - <u>Device Status</u>: dpv:FraudPreventionAndDetection#device-status-roaming-read
 - <u>QoD</u>: dpv:GeneralQAPurpose#qod
 
-## Config the API Reference step by step
-### Step 1: Get the authorization code
-For a faster and easier authorization it is recommended to use a [CIBA](../about/glossary.md). This CIBA is going to authorize an application to access a resource from the backend:
-- <u>login_hint</u>: The phone number you own and provided when creating your application. If you are using [the Sandbox](https://sandbox.opengateway.telefonica.com/my-apps), it is the number you provided when requesting access to production. If your application is a mock, you can enter any invented number that does not end with 9. The sintax is <id_type>:<id_value> (tel:+34666555432)
-- <u>scope</u>: The purpose+scope string for the API you want to call. You can check the scope by clicking on one of the test calls in this API reference. If not, you have a list in the *Before Getting Started* section of this page.
-- <u>credentials</u>: The username is your client_id and your password is you client_secret. You can get both from the info in your aplication. If you are using [a Sandbox app](https://sandbox.opengateway.telefonica.com/my-apps) you have this information in My Apps page, clicking in your app.
+## Configure the API Reference step by step
 
-When finished, you page will look similar to the image below.
+### Step 1: Get the authorization code
+
+For faster and easier authorization, it is recommended to use a [CIBA](../about/glossary.md). This CIBA will authorize an application to access a resource from the backend:
+- **login_hint**: The phone number you own and provided when creating your application. If you are using [the Sandbox](https://sandbox.opengateway.telefonica.com/my-apps), it is the number you provided when requesting access to production. If your application is a mock, you can enter any invented number that does not end with 9. The syntax is `<id_type>:<id_value>` (tel:+34666555432)
+- **scope**: The purpose+scope string for the API you want to call. You can check the scope by clicking on one of the test calls in this API reference. If not, you have a list in the *Before Getting Started* section of this page.
+- **credentials**: The username is your client_id and your password is your client_secret. You can get both from the info in your application. If you are using [a Sandbox app](https://sandbox.opengateway.telefonica.com/my-apps) you have this information in the My Apps page, by clicking on your app.
+
+When finished, your page will look similar to the image below.
 ![CIBA Auth example](https://github.com/Telefonica/opengateway-developers-website/raw/main/v0/gettingstarted/images/CIBA%20auth.png)
 
 ### Step 2: Get the access token
-For this step, go to the [*Retrieve an access token*](https://developers.opengateway.telefonica.com/reference/token) secction. Because this tutorial is using the CIBA, you must copy the authorization code in the *ACCESSTOKENCIBAREQUEST* tab:
 
-- <u>grant_type</u>: Select the option *urn:openid:params:ggrant-type:ciba*
-- <u>auth_req_id</u>: The *auth_req_id* you get in response of the last step
+For this step, go to the [*Retrieve an access token*](https://developers.opengateway.telefonica.com/reference/token) section. Because this tutorial is using the CIBA, you must copy the authorization code in the *ACCESSTOKENCIBAREQUEST* tab:
 
-When finished, you page will look similar to the image below.
-![CIBA Auth example](https://github.com/Telefonica/opengateway-developers-website/raw/main/v0/gettingstarted/images/Access%20token.png)
+- **grant_type**: Select the option *urn:openid:params:grant-type:ciba*
+- **auth_req_id**: The *auth_req_id* you got in response from the last step
+
+When finished, your page will look similar to the image below.
+![Access Token example](https://github.com/Telefonica/opengateway-developers-website/raw/main/v0/gettingstarted/images/Access%20token.png)
 
 ### Step 3: Make your calls
-The API Reference is now prepared to make calls to the Open Gateway's APIs. Check that the credentials you made are just for one API because of the scope. Every time you change the API you are consuming, you must change the scope.
-The variable common to all APIs is the *access_token* you get in response of the last step, which should be placed in the authentication section.
 
-![CIBA Auth example](https://github.com/Telefonica/opengateway-developers-website/raw/main/v0/gettingstarted/images/SIM%20Swap%20call.png)
+The API Reference is now prepared to make calls to the Open Gateway APIs. Check that the credentials you created are just for one API because of the scope. Every time you change the API you are consuming, you must change the scope.
+The variable common to all APIs is the *access_token* you got in response from the last step, which should be placed in the authentication section.
+
+![SIM Swap Call example](https://github.com/Telefonica/opengateway-developers-website/raw/main/v0/gettingstarted/images/SIM%20Swap%20call.png)
 
 
 

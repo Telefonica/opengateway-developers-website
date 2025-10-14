@@ -11,7 +11,7 @@ content:
 
 # Interact with the Open Gateway Sandbox using Postman
 
-Here you can download the postman collection <a href="https://github.com/Telefonica/opengateway-postman">Postman collection</a> and the <a href="https://github.com/Telefonica/opengateway-postman"> Sandbox enviroment</a> with variables that you will have to configure to work with your sandbox credentials. 
+Here you can download the [Postman collection](https://github.com/Telefonica/opengateway-postman) and the [Sandbox environment](https://github.com/Telefonica/opengateway-postman) with variables that you will have to configure to work with your sandbox credentials. 
 
 To import a Postman collection, you will need to follow the steps below:  
 

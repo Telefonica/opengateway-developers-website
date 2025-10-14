@@ -4,13 +4,13 @@ category:
   uri: API Catalog
 content:
   excerpt: >-
-    The SIM Swap API from Open Gateway allows to check for SIM card swaps for
+    The SIM Swap API from Open Gateway allows you to check for SIM card swaps for
     fraud prevention purposes
 ---
 
 The standardized SIM Swap API enables seamless integration of SIM swap detection and management functionality into your applications. This API enhances security by identifying potentially fraudulent activity and providing an additional layer of protection against unauthorized access.
 
-Additionally, the SIM Swap's Unified API Access feature ensures access to network capabilities of various carriers through a single, standardized interface. This simplifies integration and improves efficiency for developers by consolidating access to multiple carrier networks.
+Additionally, the SIM Swap Unified API Access feature ensures access to network capabilities of various carriers through a single, standardized interface. This simplifies integration and improves efficiency for developers by consolidating access to multiple carrier networks.
 
 > 📘 Want to give it a try?
 > Apply to join the [Developer Hub](https://opengateway.telefonica.com/en/developer-hub/join) and gain access to our Sandbox.
@@ -49,9 +49,9 @@ The SIM Swap CAMARA API specifies the following two operations:
 
   [Check the API Reference](/reference/checksimswap)
 
-## Why Sim Swap?
+## Why SIM Swap?
 
-With the SIM Swap CAMARA API, any digital service provider can integrate the functionality of checking changes in SIM renewals directly into their software. This can be done both alone and in combination with other external inputs. Additionally, they can combine other Open Gateway APIs related to anti-fraud measures that may be of interest.
+With the SIM Swap CAMARA API, any digital service provider can integrate the functionality of checking changes in SIM renewals directly into their software. This can be done independently or in combination with other external inputs. Additionally, they can combine other Open Gateway APIs related to anti-fraud measures that may be of interest.
 
 Aggregators play a crucial role in the anti-fraud industry. They can integrate this functionality into their software and build more sophisticated algorithms by combining other security checks, such as location verification, phone number verification, matching of contact information, external data sources, AI algorithms, etc. To achieve this, aggregators can use other Open Gateway APIs like Device Location Verification, Number Verification, or KYC-Match.
 
