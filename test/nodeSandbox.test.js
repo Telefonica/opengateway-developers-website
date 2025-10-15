@@ -4,11 +4,18 @@ import sandboxSdk from '@telefonica/opengateway-sandbox-sdk';
 import fs from 'fs';
 import path from 'path';
 
-const { DeviceLocation, Simswap } = sandboxSdk;
+const { DeviceLocation, Simswap, DeviceStatus, NumberVerification, QualityOnDemand, DeviceSwap, KnowYourCustomer, AgeVerification, Tenure } = sandboxSdk;
 
 jest.mock('@telefonica/opengateway-sandbox-sdk', () => ({
     DeviceLocation: jest.fn(),
-    Simswap: jest.fn()
+    Simswap: jest.fn(),
+    DeviceStatus: jest.fn(),
+    NumberVerification: jest.fn(),
+    QualityOnDemand: jest.fn(),
+    DeviceSwap: jest.fn(),
+    KnowYourCustomer: jest.fn(),
+    AgeVerification: jest.fn(),
+    Tenure: jest.fn()
 }));
 
 const credentials = {
@@ -80,5 +87,168 @@ describe('Simswap Client', () => {
 
         // Imprime el valor de console.log para verlo en la salida de la consola
         console.log.mock.calls.forEach(call => console.log(...call));
+    });
+});
+
+describe('DeviceStatus Client', () => {
+    let getConnectivityMock;
+
+    beforeEach(() => {
+        jest.clearAllMocks();
+        getConnectivityMock = jest.fn().mockReturnValue({ status: 'CONNECTED_DATA' });
+        DeviceStatus.mockImplementation(() => ({
+            getConnectivity: getConnectivityMock
+        }));
+    });
+
+    test('should call DeviceStatus and getConnectivity with correct parameters', () => {
+        console.log = jest.fn();
+
+        const deviceStatus = new DeviceStatus(credentials, undefined, CUSTOMER_PHONE_NUMBER);
+        const result = deviceStatus.getConnectivity();
+
+        expect(DeviceStatus).toHaveBeenCalledWith(credentials, undefined, CUSTOMER_PHONE_NUMBER);
+        expect(getConnectivityMock).toHaveBeenCalled();
+        expect(result.status).toBe('CONNECTED_DATA');
+    });
+});
+
+describe('NumberVerification Client', () => {
+    let verifyNumberMock;
+
+    beforeEach(() => {
+        jest.clearAllMocks();
+        verifyNumberMock = jest.fn().mockReturnValue(true);
+        NumberVerification.mockImplementation(() => ({
+            verifyNumber: verifyNumberMock
+        }));
+    });
+
+    test('should call NumberVerification and verifyNumber with correct parameters', () => {
+        console.log = jest.fn();
+
+        const numberVerification = new NumberVerification(credentials, undefined, CUSTOMER_PHONE_NUMBER);
+        const result = numberVerification.verifyNumber();
+
+        expect(NumberVerification).toHaveBeenCalledWith(credentials, undefined, CUSTOMER_PHONE_NUMBER);
+        expect(verifyNumberMock).toHaveBeenCalled();
+        expect(result).toBe(true);
+    });
+});
+
+describe('QualityOnDemand Client', () => {
+    let createSessionMock;
+
+    beforeEach(() => {
+        jest.clearAllMocks();
+        createSessionMock = jest.fn().mockReturnValue({ sessionId: '12345', status: 'AVAILABLE' });
+        QualityOnDemand.mockImplementation(() => ({
+            createSession: createSessionMock
+        }));
+    });
+
+    test('should call QualityOnDemand and createSession with correct parameters', () => {
+        console.log = jest.fn();
+
+        const qod = new QualityOnDemand(credentials, undefined, CUSTOMER_PHONE_NUMBER);
+        const result = qod.createSession();
+
+        expect(QualityOnDemand).toHaveBeenCalledWith(credentials, undefined, CUSTOMER_PHONE_NUMBER);
+        expect(createSessionMock).toHaveBeenCalled();
+        expect(result.sessionId).toBe('12345');
+        expect(result.status).toBe('AVAILABLE');
+    });
+});
+
+describe('DeviceSwap Client', () => {
+    let checkSwapMock;
+
+    beforeEach(() => {
+        jest.clearAllMocks();
+        checkSwapMock = jest.fn().mockReturnValue({ swapped: true, lastSwapDate: '2023-12-25' });
+        DeviceSwap.mockImplementation(() => ({
+            checkSwap: checkSwapMock
+        }));
+    });
+
+    test('should call DeviceSwap and checkSwap with correct parameters', () => {
+        console.log = jest.fn();
+
+        const deviceSwap = new DeviceSwap(credentials, undefined, CUSTOMER_PHONE_NUMBER);
+        const result = deviceSwap.checkSwap();
+
+        expect(DeviceSwap).toHaveBeenCalledWith(credentials, undefined, CUSTOMER_PHONE_NUMBER);
+        expect(checkSwapMock).toHaveBeenCalled();
+        expect(result.swapped).toBe(true);
+        expect(result.lastSwapDate).toBe('2023-12-25');
+    });
+});
+
+describe('KnowYourCustomer Client', () => {
+    let matchMock;
+
+    beforeEach(() => {
+        jest.clearAllMocks();
+        matchMock = jest.fn().mockReturnValue({ match: true });
+        KnowYourCustomer.mockImplementation(() => ({
+            match: matchMock
+        }));
+    });
+
+    test('should call KnowYourCustomer and match with correct parameters', () => {
+        console.log = jest.fn();
+
+        const kyc = new KnowYourCustomer(credentials, undefined, CUSTOMER_PHONE_NUMBER);
+        const result = kyc.match();
+
+        expect(KnowYourCustomer).toHaveBeenCalledWith(credentials, undefined, CUSTOMER_PHONE_NUMBER);
+        expect(matchMock).toHaveBeenCalled();
+        expect(result.match).toBe(true);
+    });
+});
+
+describe('AgeVerification Client', () => {
+    let verifyAgeMock;
+
+    beforeEach(() => {
+        jest.clearAllMocks();
+        verifyAgeMock = jest.fn().mockReturnValue({ verificationResult: true });
+        AgeVerification.mockImplementation(() => ({
+            verifyAge: verifyAgeMock
+        }));
+    });
+
+    test('should call AgeVerification and verifyAge with correct parameters', () => {
+        console.log = jest.fn();
+
+        const ageVerification = new AgeVerification(credentials, undefined, CUSTOMER_PHONE_NUMBER);
+        const result = ageVerification.verifyAge();
+
+        expect(AgeVerification).toHaveBeenCalledWith(credentials, undefined, CUSTOMER_PHONE_NUMBER);
+        expect(verifyAgeMock).toHaveBeenCalled();
+        expect(result.verificationResult).toBe(true);
+    });
+});
+
+describe('Tenure Client', () => {
+    let getTenureMock;
+
+    beforeEach(() => {
+        jest.clearAllMocks();
+        getTenureMock = jest.fn().mockReturnValue({ tenure: 24 });
+        Tenure.mockImplementation(() => ({
+            getTenure: getTenureMock
+        }));
+    });
+
+    test('should call Tenure and getTenure with correct parameters', () => {
+        console.log = jest.fn();
+
+        const tenure = new Tenure(credentials, undefined, CUSTOMER_PHONE_NUMBER);
+        const result = tenure.getTenure();
+
+        expect(Tenure).toHaveBeenCalledWith(credentials, undefined, CUSTOMER_PHONE_NUMBER);
+        expect(getTenureMock).toHaveBeenCalled();
+        expect(result.tenure).toBe(24);
     });
 });

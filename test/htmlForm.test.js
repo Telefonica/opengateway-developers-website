@@ -47,6 +47,18 @@ describe('API Request Form', () => {
             redirectUri: '/simswap-callback',
             phoneNumberInput: 'state',
             phoneNumberValue: '+34555555555'
+        },
+        ageverification: {
+            scope: 'dpv:FraudPreventionAndDetection kyc-age-verification:verify',
+            redirectUri: 'https://my_app_server/ageverification-callback',
+            phoneNumberInput: 'phone_number',
+            phoneNumberValue: '+34629255833'
+        },
+        tenure: {
+            scope: 'dpv:FraudPreventionAndDetection kyc-tenure:verify',
+            redirectUri: 'https://my_app_server/tenure-callback',
+            phoneNumberInput: 'phone_number',
+            phoneNumberValue: '+34629255833'
         }
     };
 
