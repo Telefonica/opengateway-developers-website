@@ -1,10 +1,48 @@
-# Samplecode extractor
+# OpenGateway Sample Code Testing Suite
 ## Introducción
 
-El script `test_code.sh` es una herramienta automatizada para procesar archivos que contienen bloques de código fuente en diferentes lenguajes de programación (Java, Node.js, Python, ...), extraer esos bloques de código por lenguaje de programación y caso de uso especifico. Una vez extraido y formateado, se testean y/o se ejecutan herramientas linter, para chequear su corrección y funcionamiento en la medida de lo posible.
+El directorio `test` contiene una suite completa de testing automatizado para todas las APIs de OpenGateway. Incluye:
+
+1. **Extractor de código de muestra**: El script `test_code.sh` procesa archivos que contienen bloques de código fuente en diferentes lenguajes de programación (Java, Node.js, Python), los extrae, formatea y valida automáticamente.
+
+2. **Suite de tests completa**: 
+   - **Tests de Python** (`python_test.py`): 9 tests unitarios con mocks para todas las APIs
+   - **Tests de Node.js** (`nodeSandbox.test.js`): 9 tests de integración con el SDK oficial
+   - **Tests de validación HTML** (`htmlForm.test.js`): Validación de configuraciones de formularios
+
+3. **SDK Mock personalizado** (`mock_aggregator_sdk.py`): Implementación mock completa para testing sin dependencias externas.
+
+## APIs Soportadas
+
+El sistema de testing tiene cobertura completa para las siguientes 9 APIs de OpenGateway:
+
+1. **AgeVerification** - Verificación de edad de usuarios
+2. **DeviceLocation** - Verificación de ubicación de dispositivos  
+3. **DeviceStatus** - Estado de conectividad y roaming
+4. **DeviceSwap** - Detección de cambios de dispositivo
+5. **KnowYourCustomer** - Verificación de datos de cliente (KYC)
+6. **NumberVerification** - Verificación de números de teléfono
+7. **QualityOnDemand** - Gestión de calidad de servicio (QoD)
+8. **Simswap** - Detección de intercambio de SIM
+9. **Tenure** - Verificación de antigüedad de cliente
+
+## Archivos de Testing
+
+### Archivos principales:
+- `test_code.sh` - Script principal de orquestación
+- `python_test.py` - Suite de tests de Python (9 tests)
+- `nodeSandbox.test.js` - Suite de tests de Node.js (9 tests)  
+- `htmlForm.test.js` - Tests de validación HTML (4 tests)
+- `mock_aggregator_sdk.py` - SDK mock para testing Python
+- `package.json` - Configuración de dependencias Node.js
+
+### Configuración:
+- `babel.config.js` - Configuración de Babel para ES6
+- `eslint.config.mjs` - Configuración de ESLint
+- `.gitignore` - Exclusiones de archivos temporales
 
 ## Premisas
-El script sólo analiza los archivos ubicados en el directorio `../catalog`, cuyo nombre coincide con el formato `samplecode_<nombre_api>.md`.
+El extractor de código analiza archivos ubicados en el directorio `../catalog`, cuyo nombre coincide con el formato `samplecode_<nombre_api>.md`.
 
 Para que el script funcione correctamente, los archivos `samplecode_*.md` deben seguir el template actual para los bloques de código, es decir, cumplir las siguientes reglas:
 - Los archivos deben estar ubicados en el directorio `../catalog`.
@@ -16,20 +54,49 @@ Para que el script funcione correctamente, los archivos `samplecode_*.md` deben 
 
 ## Funcionamiento
 
-El script realiza las siguientes tareas o pasos:
+### Script Principal (`test_code.sh`)
+El script de orquestación realiza las siguientes tareas:
 
-1. Elimina datos de ejecuciones anteriores y crea una carpeta temporal para almacenar archivos procesados.
-2. Recorre archivos `samplecode_*.md` en el directorio `../catalog` y extrae bloques de código, organizándolos en carpetas temporales según el lenguaje de programación.
-3. Reorganiza el código en los archivos Node.js y Python extraídos cuyo nombre empieza por Auth_code, para colocar el código de "uso de API" en la posición correcta en el código, ya que inicialmente la primera parte del script, solo agrupa el código de los bloques secuencialmente.
-4. Ejecuta pruebas y linters para los archivos procesados.
+1. **Extracción de código**: Procesa archivos `samplecode_*.md` y extrae bloques de código por lenguaje
+2. **Corrección automática**: Aplica fixes automáticos para imports y sintaxis de Python
+3. **Generación de SDKs simplificados**: Crea versiones mock para APIs problemáticas
+4. **Ejecución de tests**: Ejecuta la suite completa de Python y Node.js
+5. **Linting**: Valida código con ESLint (JavaScript) y flake8 (Python)
+
+### Tests de Python (`python_test.py`)
+- **Framework**: unittest con mock
+- **Cobertura**: 9 APIs con tests individuales
+- **Mock SDK**: Utiliza `mock_aggregator_sdk.py` para simular respuestas
+- **Validación**: Verifica llamadas correctas y respuestas esperadas
+
+### Tests de Node.js (`nodeSandbox.test.js`)  
+- **Framework**: Jest con mocks del SDK oficial
+- **Cobertura**: 9 APIs con configuraciones específicas
+- **SDK**: Utiliza `@telefonica/opengateway-sandbox-sdk`
+- **Validación**: Tests de instanciación y métodos principales
+
+### Tests HTML (`htmlForm.test.js`)
+- **Propósito**: Valida configuraciones de formularios web
+- **Cobertura**: Scope y redirect URLs para todas las APIs
+- **Framework**: Jest con JSDOM para manipulación DOM
 
 ## Requisitos
 
-Para ejecutar este script, necesitas tener instalados los siguientes programas y herramientas:
+### Sistema base:
+- **Bash**: Shell compatible con Bash (zsh también funciona)
+- **Git**: Para gestión de versiones
 
-- **Bash**: Un shell compatible con Bash.
-- **Node.js**: Incluyendo `npx` y `jest` para ejecutar pruebas y linters.
-- **Python**: Incluyendo `flake8` para ejecutar linters.
+### Node.js:
+- **Node.js** (v14+): Runtime de JavaScript
+- **npm**: Gestor de paquetes (incluido con Node.js)
+- **jest**: Framework de testing para JavaScript
+- **eslint**: Linter para JavaScript/TypeScript
+
+### Python:
+- **Python** (v3.7+): Intérprete de Python
+- **pip**: Gestor de paquetes de Python
+- **flake8**: Linter para Python
+- **unittest**: Framework de testing (incluido en Python)
 
 ## Instalación
 
@@ -56,19 +123,79 @@ Para ejecutar este script, necesitas tener instalados los siguientes programas y
 
 ## Ejecución
 
-Para ejecutar el script `test_code.sh`, sigue estos pasos:
+### Ejecución completa (recomendada)
+```bash
+cd test
+chmod +x test_code.sh  # Solo la primera vez
+./test_code.sh
+```
 
-1. Asegúrate de que los requisitos estén instalados.
-2. Navega al directorio `test` donde se encuentra el script `test_code.sh`.
-3. Ejecuta el script con el siguiente comando:
-   ```bash
-   ./test_code.sh
-   ```
-El script procesará los archivos de código fuente, reorganizará los bloques de código y ejecutará las pruebas y linters correspondientes. Los resultados se mostrarán en la terminal.
+### Ejecución individual de tests
 
-Notas:
-* Asegúrate de tener permisos de ejecución para el script. Si no los tienes, puedes otorgarlos con el siguiente comando:
-   ```bash
-   chmod +x test_code.sh
-   ```
-* Analiza la salida del script y ten encuenta que algunos de los warnings tiene sentido no corregirlos. Por ejemplo, algunas variables no se utilizan en el código pero se mantienen para que los usuarios tengan claro que existen y se pueden utilizar.
+**Solo tests de Python:**
+```bash
+cd test
+python python_test.py
+```
+
+**Solo tests de Node.js:**
+```bash
+cd test
+npm test
+# O específicamente:
+npx jest nodeSandbox.test.js
+npx jest htmlForm.test.js
+```
+
+**Solo linting:**
+```bash
+cd test
+# JavaScript/Node.js
+npx eslint tmp/js/**/*.js
+
+# Python  
+flake8 tmp/py/
+```
+
+## Resultados Esperados
+
+### ✅ Ejecución Exitosa
+```
+################### Python test ##################################
+Ran 9 tests in 0.011s
+OK
+
+################### Node & html test ##################################
+Test Suites: 2 passed, 2 total  
+Tests: 13 passed, 13 total
+```
+
+### ⚠️ Warnings Esperados
+- **ESLint warnings en `/tmp`**: Archivos generados automáticamente pueden tener warnings de estilo
+- **Variables no utilizadas**: Algunas variables se mantienen para claridad educativa
+- **Syntax errors en archivos generados**: Algunos archivos en `/tmp` pueden tener errores de sintaxis menores
+
+## Estructura de Archivos Generados
+
+```
+test/
+├── tmp/                          # Archivos temporales generados
+│   ├── js/                       # Código JavaScript extraído
+│   │   ├── devicelocation/       # Por API
+│   │   ├── simswap/
+│   │   └── ...
+│   ├── py/                       # Código Python extraído  
+│   └── html/                     # Código HTML extraído
+├── python_test.py                # Tests principales Python
+├── nodeSandbox.test.js          # Tests principales Node.js
+├── htmlForm.test.js             # Tests de formularios HTML
+├── mock_aggregator_sdk.py       # SDK mock para Python
+└── test_code.sh                 # Script orquestador
+```
+
+## Notas Importantes
+
+- El directorio `/tmp` se regenera en cada ejecución
+- Los tests utilizan datos mock, no requieren conectividad real
+- Algunos warnings de linting son intencionales para mantener claridad educativa
+- Los archivos en `/tmp` son para validación automática, no para uso directo
