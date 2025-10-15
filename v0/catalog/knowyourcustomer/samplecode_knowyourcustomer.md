@@ -297,7 +297,6 @@ result = kycMatch_client.match({
 print(f"Address matches the user's? {result.addressMatch}")
 print(f"Id matches the user's? {result.idDocumentMatch}")
 print(f"Postal Code matches the user's? {result.postalCodeMatch}")
-
 ```
 ```node Sample SDK for Node.js
 let result = kycMatchClient.match({
@@ -395,7 +394,6 @@ result = response.json()
 print(f"Address matches the user's? {result.addressMatch}")
 print(f"Id matches the user's? {result.idDocumentMatch}")
 print(f"Postal Code matches the user's? {result.postalCodeMatch}")
-
 ```
 
 ### Frontend flow
