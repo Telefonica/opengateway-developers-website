@@ -1,7 +1,7 @@
 ---
 title: Test the Sandbox with Postman
 category:
-  uri: Getti    - **'device-local-ip'** - Local IPv4 of a device on the home WiFi network for calls to the home network APIs (e.g. Home Devices QoD). If this is more convenient for you. You can modify the calls in the collection to specify this value in them instead of using the `{{device-local-ip}}` variable. - **'mobile-phone-number'** - Mobile line number for mobile network API calls (e.g. SIM Swap). If it is more convenient for you. You can modify the calls in the collection to indicate this value in them instead of using the `{{mobile-phone-number}}` variable.g Started
+  uri: Getting Started
 content:
   excerpt: >-
     Learn how to explore the functionality of the Sandbox environment using
