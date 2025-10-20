@@ -17,7 +17,16 @@ Additionally, the SIM Swap Unified API Access feature ensures access to network 
 
 ### Getting started on the Telefónica Open Gateway Sandbox
 
-[![Digital Fraud Prevention with the SIM Swap API](https://i.ytimg.com/vi/Pdo-HnTyQ_E/hqdefault.jpg)](https://www.youtube.com/watch?v=Pdo-HnTyQ_E)
+<iframe  
+  width="560"  
+  height="315"  
+  src="https://www.youtube.com/embed/Pdo-HnTyQ_E?si=8ikNlfQqz36U_vJ8"  
+  title="YouTube video player"  
+  frameborder="0"  
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  
+  referrerpolicy="strict-origin-when-cross-origin"  
+  allowfullscreen>
+</iframe>
 
 ## Overview of the SIM Swap CAMARA API
 

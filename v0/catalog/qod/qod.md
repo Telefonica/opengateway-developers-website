@@ -18,7 +18,16 @@ number of simultaneous users attending the sporting event in the same location.
 
 ### Getting started on the Telefónica Open Gateway Sandbox
 
-[![Better Connectivity with QoD Mobile and QoD Wi-Fi APIs](https://i.ytimg.com/vi/ovVWzyx34Do/hqdefault.jpg)](https://www.youtube.com/watch?v=ovVWzyx34Do)
+<iframe  
+  width="560"  
+  height="315"  
+  src="https://www.youtube.com/embed/ovVWzyx34Do?si=hTcAXEtOeAiYwPaJ"  
+  title="YouTube video player"  
+  frameborder="0"  
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  
+  referrerpolicy="strict-origin-when-cross-origin"  
+  allowfullscreen>
+</iframe>
 
 ## Overview of the QoD CAMARA API
 

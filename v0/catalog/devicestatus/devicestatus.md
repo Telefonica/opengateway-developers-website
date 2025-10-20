@@ -19,7 +19,16 @@ This solution allows you to control resource management during international roa
 
 ### Getting started on the Telefónica Open Gateway Sandbox
 
-[![Reducing Digital Risk with the Device Status API](https://i.ytimg.com/vi/58KzlZHICtY/hqdefault.jpg)](https://www.youtube.com/watch?v=58KzlZHICtY)
+<iframe  
+  width="560"  
+  height="315"  
+  src="https://www.youtube.com/embed/58KzlZHICtY?si=M0x4vPNIBQSHLOAf"  
+  title="YouTube video player"  
+  frameborder="0"  
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  
+  referrerpolicy="strict-origin-when-cross-origin"  
+  allowfullscreen>
+</iframe>
 
 ## Overview of the Device Status API
 
