@@ -20,7 +20,16 @@ Built as part of the Open Gateway initiative, the Number Verification API provid
 
 ### Getting started on the Telefónica Open Gateway Sandbox
 
-[![Smoother Identity Validations with the Number Verification API](https://i.ytimg.com/vi/FUQGNlMwYSg/hqdefault.jpg)](https://www.youtube.com/watch?v=FUQGNlMwYSg)
+<iframe  
+  width="560"  
+  height="315"  
+  src="https://www.youtube.com/embed/FUQGNlMwYSg?si=tC_C2oS44YjSS_lw"  
+  title="YouTube video player"  
+  frameborder="0"  
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  
+  referrerpolicy="strict-origin-when-cross-origin"  
+  allowfullscreen>
+</iframe>
 
 ## Overview of the Number Verification CAMARA API
 
