@@ -23,7 +23,16 @@ Furthermore, by verifying a user's location, businesses can offer more personali
 
 ### Getting started on the Telefónica Open Gateway Sandbox
 
-[![Greater Security in Identity Verifications with the Device Location Verification API](https://i.ytimg.com/vi/sBMx9G4cKy4/hqdefault.jpg)](https://www.youtube.com/watch?v=sBMx9G4cKy4)
+<iframe  
+  width="560"  
+  height="315"  
+  src="https://www.youtube.com/embed/sBMx9G4cKy4?si=qwO56lNdTGSnsALD"  
+  title="YouTube video player"  
+  frameborder="0"  
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  
+  referrerpolicy="strict-origin-when-cross-origin"  
+  allowfullscreen>
+</iframe>
 
 ## Overview of the Device Location Verification CAMARA API
 

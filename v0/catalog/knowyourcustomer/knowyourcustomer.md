@@ -18,7 +18,16 @@ This API provides a quick and efficient method to verify customer contact detail
 
 ### Getting started on the Telefónica Open Gateway Sandbox
 
-[![Stronger Identity Authentications with the Know Your Customer-Match API](https://i.ytimg.com/vi/MmQK8dg1Poo/hqdefault.jpg)](https://www.youtube.com/watch?v=MmQK8dg1Poo)
+<iframe  
+  width="560"  
+  height="315"  
+  src="https://www.youtube.com/embed/MmQK8dg1Poo?si=kmzgCtItDqczKlYv"  
+  title="YouTube video player"  
+  frameborder="0"  
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  
+  referrerpolicy="strict-origin-when-cross-origin"  
+  allowfullscreen>
+</iframe>
 
 ## Overview of the Know Your Customer API
 
