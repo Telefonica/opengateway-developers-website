@@ -10,6 +10,11 @@ content:
     evolving threats.
 ---
 
+<div style="display: flex; gap: 8px; margin-bottom: 15px;">
+  <span style="background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 15px; padding: 4px 12px; font-size: 12px; font-weight: bold; color: #666;">Under CAMARA project</span>
+  <span style="background-color: #8a8a8a; color: white; border-radius: 15px; padding: 4px 12px; font-size: 12px; font-weight: bold;">GSMA Certified API</span>
+</div>
+
 The Scam Signal API leverages mobile network operator intelligence to detect and prevent Authorized Push Payment (APP) fraud in real-time. By analyzing network patterns during transaction attempts, this API enables financial institutions to identify when customers are under active social engineering pressure and intervene before fraud completion.
 
 Specifically designed for the critical detection window between fraud initiation and payment completion, Scam Signal has demonstrated proven effectiveness with early deployments reporting up to **41% reduction in successful scams** and **44% decrease in fraud losses**.

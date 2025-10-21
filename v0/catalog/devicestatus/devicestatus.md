@@ -8,6 +8,11 @@ content:
     specific SIM-based device by using events from the operators' network.
 ---
 
+<div style="display: flex; gap: 8px; margin-bottom: 15px;">
+  <span style="background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 15px; padding: 4px 12px; font-size: 12px; font-weight: bold; color: #666;">Under CAMARA project</span>
+  <span style="background-color: #8a8a8a; color: white; border-radius: 15px; padding: 4px 12px; font-size: 12px; font-weight: bold;">GSMA Certified API</span>
+</div>
+
 The standardised Device Status API provides the ability to check the roaming status of a given SIM-based device without identity theft or GPS.
 
 This solution allows you to control resource management during international roaming in a more secure way.
