@@ -8,6 +8,11 @@ content:
     fraud prevention purposes
 ---
 
+<div style="display: flex; gap: 8px; margin-bottom: 15px;">
+  <span style="background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 15px; padding: 4px 12px; font-size: 12px; font-weight: bold; color: #666;">Under CAMARA project</span>
+  <span style="background-color: #8a8a8a; color: white; border-radius: 15px; padding: 4px 12px; font-size: 12px; font-weight: bold;">GSMA Certified API</span>
+</div>
+
 The standardized SIM Swap API enables seamless integration of SIM swap detection and management functionality into your applications. This API enhances security by identifying potentially fraudulent activity and providing an additional layer of protection against unauthorized access.
 
 Additionally, the SIM Swap Unified API Access feature ensures access to network capabilities of various carriers through a single, standardized interface. This simplifies integration and improves efficiency for developers by consolidating access to multiple carrier networks.

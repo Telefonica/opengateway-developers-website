@@ -8,6 +8,11 @@ content:
     customers' devices on demand.
 ---
 
+<div style="display: flex; gap: 8px; margin-bottom: 15px;">
+  <span style="background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 15px; padding: 4px 12px; font-size: 12px; font-weight: bold; color: #666;">Under CAMARA project</span>
+  <span style="background-color: #8a8a8a; color: white; border-radius: 15px; padding: 4px 12px; font-size: 12px; font-weight: bold;">GSMA Certified API</span>
+</div>
+
 One good example is an application for enriching the audience experience when attending a live sporting event: add the capability to watch replays of relevant games. 
 
 To do this, the application activates a Quality on Demand session on the device of the customer just before it is about to start the video-streaming, so the customer can watch it regardless of the

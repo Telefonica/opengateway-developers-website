@@ -10,6 +10,11 @@ content:
     privacy.
 ---
 
+<div style="display: flex; gap: 8px; margin-bottom: 15px;">
+  <span style="background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 15px; padding: 4px 12px; font-size: 12px; font-weight: bold; color: #666;">Under CAMARA project</span>
+  <span style="background-color: #8a8a8a; color: white; border-radius: 15px; padding: 4px 12px; font-size: 12px; font-weight: bold;">GSMA Certified API</span>
+</div>
+
 The standardized Age Verification API allows businesses to determine if users meet required age thresholds for accessing age-restricted subscriptions and services using verified data from mobile network operators.
 
 This API is essential in regulated sectors such as online gambling, alcohol sales, or digital media with age restrictions, helping to block unauthorized access and eliminate fake accounts. The Age Verification API enables this verification privately and in real-time.

@@ -13,6 +13,11 @@ content:
     with ease.
 ---
 
+<div style="display: flex; gap: 8px; margin-bottom: 15px;">
+  <span style="background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 15px; padding: 4px 12px; font-size: 12px; font-weight: bold; color: #666;">Under CAMARA project</span>
+  <span style="background-color: #8a8a8a; color: white; border-radius: 15px; padding: 4px 12px; font-size: 12px; font-weight: bold;">GSMA Certified API</span>
+</div>
+
 Built as part of the Open Gateway initiative, the Number Verification API provides developers with universal access to essential network functionalities. Whether you're enhancing user registration processes, securing transactions, or optimizing user engagement strategies, integrating the Number Verification API enriches your application's security posture while ensuring a seamless user experience.
 
 > 📘 Want to give it a try?
