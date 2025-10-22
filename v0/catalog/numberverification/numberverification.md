@@ -18,10 +18,9 @@ content:
   <span style={{backgroundColor: '#8a8a8a', color: 'white', borderRadius: '15px', padding: '4px 12px', fontSize: '12px', fontWeight: 'bold'}}>GSMA Certified API</span>
 </div>
 
-Built as part of the Open Gateway initiative, the Number Verification API provides developers with universal access to essential network functionalities. Whether you're enhancing user registration processes, securing transactions, or optimizing user engagement strategies, integrating the Number Verification API enriches your application's security posture while ensuring a seamless user experience.
+The Number Verification API is part of the Open Gateway initiative, providing developers with access to network-based phone number validation. This API verifies user identity by confirming phone number ownership through network operator mechanisms, eliminating the need for manual verification processes.
 
-> 📘 Want to give it a try?
-> Apply to join the [Developer Hub](https://opengateway.telefonica.com/en/developer-hub/join) and gain access to our Sandbox.
+Apply to join the [Developer Hub](https://opengateway.telefonica.com/en/developer-hub/join) and gain access to our Sandbox.
 
 ### Getting started on the Telefónica Open Gateway Sandbox
 
@@ -36,37 +35,51 @@ Built as part of the Open Gateway initiative, the Number Verification API provid
   allowfullscreen>
 </iframe>
 
-## Overview of the Number Verification CAMARA API
+## API Overview
 
-### High level definition
+### Technical Definition
 
-The Number Verification CAMARA API validates user identity by confirming ownership of the phone number being registered, matching it with the number identified by the operator through the user’s device connection.
+The Number Verification CAMARA API validates user identity by confirming that the provided phone number matches the number associated with the user's device connection to the mobile network operator.
 
-### API Operations
+### Available Operations
 
-The Number Verification CAMARA API specifies the following two operations:
-
-- **POST verify:** Determines if the provided phone number matches the one currently in use by the user (parameter `phoneNumber`). This operation is ideal for user authentication.
+- **POST verify:** Validates if the provided phone number matches the device's registered number. Returns a boolean result indicating verification status.
 
 	[Check the API Reference](/reference/phonenumberverify-2)
   
-- **GET device-phone-number:** Identifies the phone number currently associated with the user's device without requiring input, providing a straightforward way to retrieve this information.
+- **GET device-phone-number:** Retrieves the phone number associated with the user's device without requiring input parameters.
 
 	***This feature is pending availability***
 
-The Number Verification CAMARA API enables developers to seamlessly integrate authentication mechanisms into their applications, enhancing the user experience and security. It can also be combined with other Open Gateway APIs focused on anti-fraud measures to further bolster security.
+### Technical Implementation
 
-Integration with channel partners and service aggregators streamlines the incorporation of telco functionalities with additional security algorithms, backup authentication methods, or external data sources. This collaboration enhances service reliability and security, leveraging APIs like Device Location Verification or SIM SWAP within the Open Gateway framework.
+The API leverages network operator infrastructure to perform verification without requiring user interaction. This network-based approach provides:
 
-## Why Number Verification?
+- Real-time validation against operator records
+- No dependency on SMS or voice calls
+- Transparent verification process for end users
+- Integration with existing network authentication mechanisms
+
+The API can be combined with other Open Gateway APIs such as Device Location Verification or SIM SWAP detection to create comprehensive security solutions.
+
+## Use Cases and Benefits
+
+Phone number verification addresses critical security requirements in digital services. Traditional verification methods using SMS or voice calls are vulnerable to SIM swapping, interception, and social engineering attacks.
+
 ![NumberVerification Before](https://github.com/Telefonica/opengateway-developers-website/raw/main/v0/catalog/numberverification/images/NV(1).png)
 
-In today's digital landscape, verifying phone number ownership is critical to prevent identity fraud and secure online transactions. The Number Verification CAMARA API offers a reliable solution to **authenticate users by confirming their phone numbers**. This ensures that only legitimate users gain access to digital services, bolstering security measures and building trust among customers.
+The Number Verification API provides network-level authentication that validates phone number ownership through the mobile operator's infrastructure, offering superior security compared to conventional methods.
 
 ![NumberVerification After](https://github.com/Telefonica/opengateway-developers-website/raw/main/v0/catalog/numberverification/images/NV(2).png)
 
-### How does the Number Verification API help facilitate authentication? 
+### Key Advantages
 
-The Number Verification API utilizes telco mechanisms to authenticate users seamlessly based on their device's connection to the network. This method contrasts with traditional authentication solutions by enhancing user convenience and security. Unlike manual processes or plain-text codes, network-based validation requires no user interaction, bolstering protection against unauthorized access.
+**Network-Based Verification:** Utilizes the mobile network operator's authentication mechanisms, providing verification without user interaction or exposure to interception.
 
-This API verifies that the provided mobile phone number (MSISDN) matches the device initiating data communication, ensuring users interact with digital services from authenticated devices.
+**Real-Time Validation:** Immediate confirmation of phone number ownership through active network connection verification.
+
+**Enhanced Security:** Eliminates vulnerabilities associated with SMS-based verification, including SIM swapping and message interception.
+
+**Seamless Integration:** RESTful API design enables straightforward integration into existing authentication workflows.
+
+The API verifies that the provided mobile phone number (MSISDN) corresponds to the device establishing the data connection, ensuring users access services from authenticated devices.
