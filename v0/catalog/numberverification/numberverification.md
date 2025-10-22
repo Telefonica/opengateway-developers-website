@@ -72,6 +72,10 @@ The Number Verification API provides network-level authentication that validates
 
 ![NumberVerification After](https://github.com/Telefonica/opengateway-developers-website/raw/main/v0/catalog/numberverification/images/NV(2).png)
 
+For desktop applications, the Number Verification API supports cross-device authentication through QR code scanning, enabling users to verify their phone number from their mobile device while using a desktop application.
+
+![NumberVerification Desktop](https://github.com/Telefonica/opengateway-developers-website/raw/main/v0/catalog/numberverification/images/NV(3).png)
+
 ### Key Advantages
 
 **Network-Based Verification:** Utilizes the mobile network operator's authentication mechanisms, providing verification without user interaction or exposure to interception.
