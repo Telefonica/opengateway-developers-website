@@ -9,9 +9,9 @@ content:
     identity fraud.
 ---
 
-<div style="display: flex; gap: 8px; margin-bottom: 15px;">
-  <span style="background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 15px; padding: 4px 12px; font-size: 12px; font-weight: bold; color: #666;">Under CAMARA project</span>
-  <span style="background-color: #8a8a8a; color: white; border-radius: 15px; padding: 4px 12px; font-size: 12px; font-weight: bold;">GSMA Certified API</span>
+<div style={{display: 'flex', gap: '8px', marginBottom: '15px'}}>
+  <span style={{backgroundColor: '#f0f0f0', border: '1px solid #ccc', borderRadius: '15px', padding: '4px 12px', fontSize: '12px', fontWeight: 'bold', color: '#666'}}>Under CAMARA project</span>
+  <span style={{backgroundColor: '#8a8a8a', color: 'white', borderRadius: '15px', padding: '4px 12px', fontSize: '12px', fontWeight: 'bold'}}>GSMA Certified API</span>
 </div>
 
 The standardised Know Your Customer API allows you to validate user contact information against data from Mobile Network Operators (MNOs), ensuring accuracy and improving both conversion rates and the quality of user onboarding for new services.
