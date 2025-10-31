@@ -10,11 +10,20 @@ content:
     the one on the SIM card installed in the end-user's device.
 ---
 
-Although the API consumption flow for this API must be always triggered from such end-user's device - therefore from the application's frontend - according to its intrinsic feature, the flow will always complete on the backend. The following code shows, for didactic purposes, a hypothetical or sample SDK used on the backend, in several programming languages, from a generic Open Gateway's channel partner, also known as aggregator.
+## Implementation Architecture
 
-The final implementation will depend on the channel partner's development tools offering. Some of them might even provide you with both backend SDKs and frontend SDKs, the latter handling details such as network interface switching for proper mobile line identification. Apart from this extra frontend features (available upon channel partner discretion), note that channel partners' Open Gateway SDKs are just code modules wrapping authentication and API calls providing an interface in your app's programming for convenience.
+The Number Verification API uses a **frontend-initiated, backend-completed** authentication flow:
 
-Sample code on how to consume the API without an SDK, directly with HTTP requests, is also provided, and it is common and valid no matter what your partner is, thanks to the CAMARA standardization. If you do not use an SDK you need to code the HTTP calls and additional stuff like encoding your credentials, calling authorization endpoints, handling tokens, etc. You can check our sample [Postman collection](https://github.com/Telefonica/opengateway-postman) as a reference.
+- **Frontend starts**: The verification request must originate from the user's mobile device to establish network identity
+- **Backend completes**: The authentication flow concludes on your backend server for security reasons (protecting client credentials)
+
+This split architecture ensures both network-based verification and secure credential management.
+
+## SDK vs HTTP Implementation
+
+**Channel Partner SDKs**: Most aggregators provide SDKs that simplify authentication and API calls. Some offer both frontend and backend SDKs, with frontend SDKs handling network interface switching for proper mobile line identification.
+
+**Direct HTTP Calls**: You can also consume the API directly using HTTP requests. This approach requires manual handling of credential encoding, authorization endpoints, and token management. Reference our [Postman collection](https://github.com/Telefonica/opengateway-postman) for HTTP examples.
 
 > 📘 Want to give it a try before coding?
 > Check the [API interactive reference](https://developers.opengateway.telefonica.com/reference/phonenumberverify)
@@ -28,19 +37,31 @@ Sample code on how to consume the API without an SDK, directly with HTTP request
 
 ## Code samples
 
-> 📘 Note
-> These are code samples and not finalized ready-to-run code:
-> - Remember to replace 'my-app-id' and 'my-app-secret' with the credentials of your app.
-If you registered your test app on our Sandbox, you can retrieve its credentials [here](https://sandbox.opengateway.telefonica.com/my-apps). 
-> - Remember also to replace "aggregator/opengateway-sdk" with the SDK from your aggregator.
-If you are using our sandbox SDK, check info and installation of de Sandbox SDK [here](/docs/sdkreference)
+**Important Notes:**
+- Replace `my-app-id` and `my-app-secret` with your actual application credentials
+- If using our Sandbox, retrieve credentials [here](https://sandbox.opengateway.telefonica.com/my-apps)
+- Replace `aggregator/opengateway-sdk` with your aggregator's actual SDK package name
+- For our Sandbox SDK, check installation details [here](/docs/sdkreference)
 
 ### Frontend
 
-This API consumption flow must always start on the end-user's device, since its feature is precisely verifying that a given phone number is the one effectively used in such device, which can be verified by the operator by receiving the online request from it:
-* Application's frontend performs an HTTP request to get a `code`, and provides a `redirect_uri` it wants such `code` to be redirected to.
-* Application's frontend will receive an HTTP redirect (status 302) and needs to be able to handle it. If it is a web application running on a web browser, the browser will natively follow the redirection. If it is not, in depends on the coding language and/or HTTP module or library used, or on its settings, how the flow will follow all the way to your application's backend through the mobile network operator authentication server.
-* Application's backend receives the `code` from this HTTP redirection, by publishing an endpoint in the given `redirect_uri`, and then exchanges it for an access token. The latter is achieved as shown in the [Backend](#backend) flow.
+#### Why the Frontend Must Initiate the Flow
+
+The Number Verification API must start from the end-user's device because:
+- **Network Identity**: The mobile operator needs to identify which SIM card/phone number is making the request
+- **Device Context**: Verification works by confirming the phone number matches the device's active mobile connection
+- **Security**: The network-based authentication happens through the user's actual mobile data connection
+
+#### Frontend Flow Steps
+
+1. **Initiate Request**: Your frontend application makes an authorization request to the mobile operator
+2. **Provide Callback**: You specify a `redirect_uri` (your backend callback URL) where the operator will send the authorization code
+3. **Handle Redirect**: The mobile operator redirects to your callback URL with an authorization code
+4. **Backend Processing**: Your backend receives the code and completes the token exchange (see [Backend](#backend) section)
+
+**Important**: The `redirect_uri` must point to your backend server, not your frontend application, because:
+- The authorization code must be securely exchanged for an access token using your client secret
+- Client secrets should never be exposed in frontend code for security reasons
 
 The authentication protocol used in Open Gateway for frontend flows is the OIDC standard Authorization Code Flow. You can check the CAMARA documentation on this flow [here](https://github.com/camaraproject/IdentityAndConsentManagement/blob/release-0.1.0/documentation/CAMARA-API-access-and-user-consent.md#authorization-code-flow-frontend-flow).
 
@@ -109,7 +130,23 @@ fetch(url, requestOptions);
 
 ### Backend
 
-As the opposite to the flow triggering, this API consumption flow will always complete on the application's backend, since the authorization code is to be received via HTTP redirect on your redirect_uri, aka callback URL, which must be published on a web server.
+#### Understanding the Callback URL Requirement
+
+The Number Verification API uses the OAuth 2.0 Authorization Code Flow for security purposes. Here's why a callback URL is essential:
+
+**Why a callback URL is needed:**
+- **Security**: Your app's credentials (client secret) must remain secure and never be exposed to the frontend/browser
+- **Token Exchange**: The authorization code received from the mobile operator must be exchanged for an access token on your secure backend
+- **Network Verification**: The mobile operator needs to redirect back to your application after verifying the user's network connection
+
+**How the callback URL works:**
+1. Your frontend initiates the verification request
+2. The user's device connects to the mobile operator for network-based authentication
+3. The operator redirects back to your `redirect_uri` (callback URL) with an authorization code
+4. Your backend receives this code and exchanges it securely for an access token
+5. The access token is then used to call the verification API
+
+The callback URL must be a publicly accessible endpoint on your backend server that can handle HTTP GET requests with query parameters.
 
 #### Getting the access token from the callback endpoint at the backend
 
@@ -256,7 +293,7 @@ app.get('/numberverification-callback', (req, res) => {
     let accessToken
 
     const myHeaders = new Headers()
-    myHeaders.append("Content-Type", "application/x-www-form-urlencode")
+    myHeaders.append("Content-Type", "application/x-www-form-urlencoded")
     myHeaders.append("Authorization", `Basic ${appCredentials}`)
     const requestBody = JSON.stringify({
         "grant_type": "authorization_code",

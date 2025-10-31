@@ -14,9 +14,9 @@ content:
   <span style={{backgroundColor: '#8a8a8a', color: 'white', borderRadius: '15px', padding: '4px 12px', fontSize: '12px', fontWeight: 'bold'}}>GSMA Certified API</span>
 </div>
 
-The standardised Know Your Customer API allows you to validate user contact information against data from Mobile Network Operators (MNOs), ensuring accuracy and improving both conversion rates and the quality of user onboarding for new services.
+The Know Your Customer API enables enterprises to validate user information against authoritative Mobile Network Operator (MNO) records, ensuring data accuracy while enhancing security and compliance in customer onboarding processes.
 
-This API provides a quick and efficient method to verify customer contact details, helping you prevent identity fraud, including synthetic identities and identity theft. Additionally, by utilizing this standardized API, you can expand your user reach across multiple MNOs.
+This standardized solution delivers real-time verification of customer contact details, providing robust protection against identity fraud, synthetic identity schemes, and unauthorized account creation. The unified API interface allows businesses to seamlessly scale their verification capabilities across multiple network operators and geographical markets.
 
 > 📘 Want to give it a try?
 > Apply to join the [Developer Hub](https://opengateway.telefonica.com/en/developer-hub/join) and gain access to our Sandbox.
@@ -34,36 +34,103 @@ This API provides a quick and efficient method to verify customer contact detail
   allowfullscreen>
 </iframe>
 
-## Overview of the Know Your Customer API
+## API Overview
 
-### High level definition
+### Core Functionality
 
-The Know Your Customer CAMARA API is a software interface that enables a requester to check if an user data is correct or not making a check with the mobile network operator records. 
+The Know Your Customer CAMARA API provides a secure interface that enables businesses to verify user-submitted information against authenticated mobile network operator records, ensuring data integrity and regulatory compliance.
 
-### API Operations
+### Available Operations
 
-The Know Your Customer Camara API specifies one operation:
+The API offers a single, powerful endpoint:
 
-- **POST /match**: answers the question 'is this informacion true?'
+- **POST /match**: Validates the authenticity of user information against MNO databases
 
-[Check the API Reference](/reference/kyc_match_v02-2)
+[Explore the complete API Reference](/reference/kyc_match_v02-2)
 
 ## Why Know Your Customer?
 
-This API provides a streamlined solution for accessing network capabilities across various operators. By offering a single, standardized interface, it simplifies the integration process and reduces the complexity associated with managing multiple operator-specific APIs. This unified access not only saves development time and resources but also ensures consistent performance and reliability across different network environments. As a result, businesses can focus on delivering high-quality services without worrying about the underlying network intricacies.
+The Know Your Customer API delivers strategic advantages that transform how businesses approach identity verification and customer onboarding, providing enterprise-grade security while maintaining operational efficiency.
 
-### Fraud prevention
+### Advanced Fraud Protection
 
-Utilizing the KYC-Match API helps mitigate risks associated with your customers’ identities, including synthetic identity fraud and fraudulent transactions stemming from identity theft.
+The KYC API significantly reduces identity-related risks by cross-referencing customer data with authoritative MNO records. This comprehensive verification process effectively detects and prevents synthetic identity fraud, account takeovers, and other sophisticated identity theft schemes that traditional verification methods often miss.
 
-###  Conversion rate and ​high-quality users
+### Enhanced Conversion & Data Quality
 
-The API enhances the conversion rate quality during customer onboarding. The API cross-references user-provided contact information with data from their respective Mobile Network Operators (MNOs), ensuring a highly reliable source of verification. Additionally, it strictly adheres to privacy regulations.
+By streamlining the verification process, the API improves onboarding conversion rates while ensuring the highest data quality standards. Real-time validation against MNO databases provides immediate feedback, reducing friction for legitimate customers while maintaining strict compliance with privacy regulations and industry standards.
 
-### Simplified Integration
+### Seamless Integration Experience
 
-By using a standardized API, you can effortlessly incorporate the KYC-Match process into your onboarding system without requiring custom implementations for each telecom operator. This streamlines development and accelerates your time-to-market.
+The standardized API architecture eliminates the complexity of managing multiple operator relationships. A single integration point provides access to verification capabilities across numerous telecommunications providers, significantly reducing development overhead and accelerating time-to-market for new services.
 
-### Footprint for your Identify Service​
+### Global Market Expansion
 
-The standardized API provides uniform access to multiple telecom companies, broadening your business reach and ensuring consistent and flexible operations across different providers.
+Leverage standardized access to telecommunications networks worldwide, enabling rapid market entry and consistent service delivery across diverse geographical regions. This unified approach ensures reliable operations regardless of local operator variations or technical requirements.
+
+## Regulatory Compliance
+
+### AML/KYC Compliance Made Simple
+
+The Know Your Customer API is specifically designed to help organizations meet stringent **Anti-Money Laundering (AML)** and **Know Your Customer (KYC)** regulatory requirements across multiple jurisdictions. By validating customer information against authoritative MNO records, businesses can demonstrate due diligence and regulatory compliance to financial authorities and auditors.
+
+### Key Compliance Benefits
+
+- **Regulatory Documentation**: Automated compliance reporting with verifiable data sources
+- **Risk Assessment**: Enhanced customer risk profiling through trusted MNO data validation
+- **Audit Trail**: Complete verification history for regulatory reviews and investigations
+- **Global Standards**: Adherence to international AML/KYC frameworks and local regulations
+
+This standardized approach not only ensures compliance but also positions your organization as a trustworthy and reliable business partner in regulated industries.
+
+## Industry Use Cases
+
+The Know Your Customer API delivers value across multiple sectors, each with specific requirements for identity verification and regulatory compliance.
+
+### Financial Services & Insurance
+
+**Primary Needs**: Strict AML/KYC compliance, risk assessment, fraud prevention
+
+Financial institutions leverage the KYC API to verify customer identities during account opening, loan applications, and insurance policy issuance. The API helps detect synthetic identities and ensures compliance with banking regulations while maintaining high conversion rates for legitimate customers.
+
+**Key Applications**:
+- Digital banking onboarding
+- Insurance policy verification
+- Credit assessment and approval
+- Investment account creation
+
+### E-commerce & Retail
+
+**Primary Needs**: Quality user database, fraud prevention, account security
+
+E-commerce platforms use the API to validate customer information during registration and high-value transactions, preventing fake accounts and ensuring marketing efforts target genuine customers.
+
+**Key Applications**:
+- Customer account verification
+- High-value purchase validation
+- Loyalty program enrollment
+- Age-restricted product sales
+
+### Media, Entertainment & Extended Reality (XR)
+
+**Primary Needs**: Age verification, content personalization, user authenticity
+
+Media platforms require reliable identity verification for age-restricted content, personalized experiences, and subscription services while maintaining user privacy.
+
+**Key Applications**:
+- Streaming service registration
+- Gaming platform verification
+- Virtual reality user authentication
+- Content rating compliance
+
+### Social & Customer Engagement
+
+**Primary Needs**: Authentic user community, spam prevention, trust building
+
+Social platforms and customer engagement tools use the API to build authentic user communities, prevent bot registrations, and enhance trust in peer-to-peer interactions.
+
+**Key Applications**:
+- Social network registration
+- Community platform verification
+- Customer review authenticity
+- Peer-to-peer marketplace validation

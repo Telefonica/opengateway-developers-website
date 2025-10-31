@@ -1,0 +1,284 @@
+openapi: 3.0.3
+info:
+  title: Number Verification
+  description: |
+    Service Enabling Network Function API to verify that the provided **mobile phone number** is the one used in the device. It verifies that the user is using a device with the same *mobile phone number* as it is declared.
+    It also makes it possible for a Service provider to verify the number itself by returning the phone number associated to the authenticated user's access token.
+    
+    In this API **phone number** term refers to the mobile phone number
+
+    # API Functionality 
+    This enables a Service Provider (SP) to verify the phone number of the mobile device being used to access their service. The mobile device can access the *service provider* over a **mobile network or WiFi connection** using **SIM-Based Authentication**. This can happen either by getting the comparison result or receiving the phone number of the device that is used, so they can verify it themselves.
+
+    # Authentication Methods
+    This API supports two distinct authentication methods:
+    - **Mobile Network Authentication**: Traditional authentication via mobile network operator infrastructure
+    - **SIM-Based Authentication (TS.43 Operator Tokens)**: Enhanced authentication using standardized operator tokens, supporting both mobile network and WiFi connections
+    
+    The SIM-Based Authentication method enables verification over WiFi by utilizing secure tokens issued by mobile operators according to TS.43 specifications.
+
+    # Resources and Operations overview
+    This API currently provides two endpoints supporting **3-legged tokens** with flexible authentication methods:
+    - The first one checks if the user mobile phone number matches the phone number associated with the mobile device. It can receive either a hashed or a plain text phone number as input and it compares the received input with the authenticated user's phone number associated to the access token in order to respond **true/false**.
+    - The next one retrieves the phone number associated to the user's token and returns it so the verification can be made by the service provider.
+
+    Authentication can be performed via:
+    - **CIBA (Client Initiated Backchannel Authentication)** with TS.43 operator tokens
+    - **JWT-Bearer** authentication flows with TS.43 operator tokens
+    - Traditional mobile network authentication (backward compatibility)
+
+    # Sequence Diagram
+    Number Verification API uses **OAuth2 Authorization Code grant** and **TS.43 SIM-Based Authentication**. The following diagram will help to clarify the end-to-end process, including previous steps prior to this API call.
+    
+    ![UML Sequence Diagram](https://github.com/camaraproject/NumberVerification/blob/main/documentation/API_documentation/CAMARA/uml_v0.3.jpg?raw=true)
+    
+    **Additional details:**
+
+    - **(1):** Authentication supports both automatic network-based and SIM-based methods. For SIM-based authentication, TS.43 operator tokens enable secure verification over both mobile networks and WiFi connections. Traditional SMS OTP or user/password methods remain incompatible for mobile network authentication. The use of parameter prompt=none, as described in **[OIDC Connect](https://openid.net/specs/openid-connect-core-1_0.html#AuthRequest)**, ensures no user interaction for automatic flows.
+
+    - **(2):** The way in which the phone_number is retrieved depends on the implementation and authentication method used. For TS.43 tokens, the phone number is securely embedded within the operator-issued token. For traditional access tokens, implementations may use self-contained encrypted JWT or request the phone_number from the authorization server.
+  version: "2.1.0"
+  termsOfService: http://example.com/terms/
+  contact:
+    name: Telefónica Open Gateway DevRel
+    url: https://opengateway.telefonica.com/en/developer-hub
+    email: devrel@telefonica.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+  - url: "{host}/number-verification/v2"
+    variables:
+      host:
+        default: sandbox.opengateway.telefonica.com/apigateway
+        description: gateway URL
+paths:
+  /verify:
+    post:
+      summary: Verify number v2.1.0
+      tags: 
+        -  Verify a phone number
+      description: |
+        Verifies if the specified phone number (plain text or hashed format) matches the one associated with the access token.
+         - The number verification supports multiple authentication methods: traditional mobile network authentication and **SIM-Based Authentication (TS.43 Operator Tokens)**
+         - For SIM-Based Authentication, verification works over both **mobile network and WiFi connections**
+         - The user authentication can be performed via **CIBA** or **JWT-Bearer** flows with TS.43 operator tokens
+         - It returns true/false depending on if the phone number received as input matches the authenticated user's `device phone number` associated to the access token
+
+        **Authentication Methods Supported:**
+        - Traditional mobile network authentication (backward compatibility)
+        - SIM-Based Authentication with TS.43 operator tokens (recommended)
+        - CIBA (Client Initiated Backchannel Authentication) flows
+        - JWT-Bearer authentication flows
+
+        Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following scope:
+
+        `dpv:FraudPreventionAndDetection number-verification:verify`
+
+        Create an app on our [Sandbox](/docs/sandbox) to get credentials and [retrieve tokens](/reference/authorize) so you can perform API calls to our operators' production environments, or use the following convenience token to test in mock mode:
+        
+        `mock_sandbox_access_token`
+
+        You can explore our [Number Verification sample code](/docs/samplecode_numberverification) for additional guidance on using this API.
+      operationId: phoneNumberVerify
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NumberVerificationRequestBody'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NumberVerificationMatchResponse'
+        '400':
+          $ref: '#/components/responses/Generic400'
+        '401':
+          $ref: '#/components/responses/Generic401'
+        '403':
+          $ref: '#/components/responses/PhoneNumberVerificationPermissionDenied403'
+        '500':
+          $ref: '#/components/responses/Generic500'
+        '503':
+          $ref: '#/components/responses/Generic503'
+        '504':
+          $ref: '#/components/responses/Generic504'
+      security:
+        - three_legged:
+          - number-verification:verify
+components:
+  securitySchemes:
+    three_legged:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://{host}/authorize
+          tokenUrl: https://{host}/token
+          scopes:
+            number-verification:verify: phoneNumberVerify operation
+    ts43_sim_based:
+      type: oauth2
+      description: SIM-Based Authentication using TS.43 Operator Tokens. Supports both mobile network and WiFi connections.
+      flows:
+        clientCredentials:
+          tokenUrl: https://{host}/token
+          scopes:
+            number-verification:verify: phoneNumberVerify operation with SIM-based authentication
+    ciba_flow:
+      type: oauth2
+      description: Client Initiated Backchannel Authentication (CIBA) flow with TS.43 operator tokens
+      flows:
+        clientCredentials:
+          tokenUrl: https://{host}/bc-token
+          scopes:
+            number-verification:verify: phoneNumberVerify operation via CIBA flow
+  schemas:
+    NumberVerificationRequestBody:
+      type: object
+      description: Payload to verify the phone number
+      oneOf:
+          - $ref: '#/components/schemas/PhoneNumber'
+          - $ref: '#/components/schemas/HashedPhoneNumber'
+    PhoneNumber:
+      type: object
+      properties:
+        phoneNumber:
+          description: A phone number belonging to the user in **E.164 format (starting with country code)**. Optionally prefixed with '+'.
+          type: string
+          example: '+346661113334'
+    HashedPhoneNumber:
+      type: object
+      properties:
+        hashedPhoneNumber:
+          description: Hashed phone number. SHA-256 (in hexadecimal representation) of the mobile phone number in **E.164 format (starting with country code)**. Optionally prefixed with '+'. Must be exactly 64 hexadecimal characters.
+          type: string
+          pattern: '^[a-fA-F0-9]{64}$'
+          example: 32f67ab4e4312618b09cd23ed8ce41b13e095fe52b73b2e8da8ef49830e50dba
+    NumberVerificationMatchResponse:
+      type: object
+      description: Number verification result
+      required:
+        - devicePhoneNumberVerified
+      properties:
+        devicePhoneNumberVerified:
+          $ref: '#/components/schemas/DevicePhoneNumberVerified'
+    NumberVerificationShareResponse:
+      type: object
+      description: Number verification share result
+      required:
+        - devicePhoneNumber
+      properties:
+        devicePhoneNumber:
+          $ref: '#/components/schemas/DevicePhoneNumber'
+    DevicePhoneNumber:
+      description: The device phone number associated to the access token in **E.164 format (starting with country code)**. Optionally prefixed with '+'.
+      type: string
+      example: '+346661113334'
+    DevicePhoneNumberVerified:
+      description: Number verification. True, if it matches
+      type: boolean
+    ErrorInfo:
+      type: object
+      required:
+        - status
+        - code
+        - message
+      properties:
+        status:
+          type: integer
+          description: HTTP response status code
+        code:
+          type: string
+          description: Code given to this error
+        message:
+          type: string
+          description: Detailed error description
+  responses:
+    Generic400:
+      description: Problem with the client request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          example:
+            status: 400
+            code: INVALID_ARGUMENT
+            message: Client specified an invalid argument, request body or query param
+    Generic401:
+      description: Authentication problem with the client request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          example:
+            status: 401
+            code: UNAUTHENTICATED
+            message: Request not authenticated due to missing, invalid, or expired credentials
+    PhoneNumberVerificationPermissionDenied403:
+      description: |
+        Client does not have sufficient permission.
+        In addition to regular scenario of `PERMISSION_DENIED`, other scenarios may exist:
+          - Client authentication was not via supported method. Supported methods include mobile network authentication, SIM-based authentication (TS.43), CIBA flows, or JWT-Bearer flows. In order to check the authentication method, AMR parameter value in the access token can be used (`{"code": "NUMBER_VERIFICATION.USER_NOT_AUTHENTICATED_BY_SUPPORTED_METHOD","message": "Client must authenticate via mobile network, SIM-based authentication, or supported OAuth2 flows"}`)
+          - Phone number cannot be deducted from access token or TS.43 operator token context.(`{"code": "NUMBER_VERIFICATION.INVALID_TOKEN_CONTEXT","message": "Phone number cannot be deducted from token context"}`)
+          - Invalid TS.43 operator token format or signature.(`{"code": "NUMBER_VERIFICATION.INVALID_TS43_TOKEN","message": "Invalid or malformed TS.43 operator token"}`)
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          examples:
+            PermissionDenied:
+              value:
+                status: 403
+                code: PERMISSION_DENIED
+                message: Client does not have sufficient permissions to perform this action
+            UserNotAuthenticatedBySupportedMethod:
+              value:
+                status: 403
+                code: NUMBER_VERIFICATION.USER_NOT_AUTHENTICATED_BY_SUPPORTED_METHOD
+                message: Client must authenticate via mobile network, SIM-based authentication, or supported OAuth2 flows
+            InvalidTokenContext:
+              value:
+                status: 403
+                code: NUMBER_VERIFICATION.INVALID_TOKEN_CONTEXT
+                message: Phone number cannot be deducted from token context
+            InvalidTS43Token:
+              value:
+                status: 403
+                code: NUMBER_VERIFICATION.INVALID_TS43_TOKEN
+                message: Invalid or malformed TS.43 operator token
+    Generic500:
+      description: Server error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          example:
+            status: 500
+            code: INTERNAL
+            message: Server error
+    Generic503:
+      description: Service unavailable. Typically the server is down.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          example:
+            status: 503
+            code: UNAVAILABLE
+            message: Service unavailable
+    Generic504:
+      description: Request time exceeded. If it happens repeatedly, consider reducing the request complexity
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorInfo'
+          example:
+            status: 504
+            code: TIMEOUT
+            message: Request timeout exceeded. Try later.
+externalDocs:
+  description: Project documentation at CAMARA
+  url: https://github.com/camaraproject/NumberVerification
