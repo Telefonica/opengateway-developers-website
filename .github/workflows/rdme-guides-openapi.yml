@@ -102,6 +102,11 @@ jobs:
         uses: readmeio/rdme@v10
         with:
           rdme: openapi --file=./v1/catalog/numberverification/numberverification_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=6840119e1f5929001cf49914
+      
+      - name: Run `openapi` command 🚀
+        uses: readmeio/rdme@v10
+        with:
+          rdme: openapi --file=./v2/catalog/numberverification/numberverification_openapi.yaml --key=${{ secrets.README_API_KEY }} --slug=v2catalognumberverificationnumberverification_openapi
 
       - name: Run `openapi` command 🚀
         uses: readmeio/rdme@v10
@@ -117,4 +122,3 @@ jobs:
         uses: readmeio/rdme@v10
         with:
           rdme: openapi --file=./v0/catalog/knowyourcustomer/kyc_tenure_openapi.yaml --key=${{ secrets.README_API_KEY }} --id=6874e6f254f6aa3161e0c45b
-
