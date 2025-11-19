@@ -104,6 +104,37 @@ paths:
         Create an app on our [Sandbox](/docs/sandbox) to get credentials so you can perform API calls to our operators' production environments, or use the following convenience client credentials to test it in mock mode:
         
         `mock_sandbox_app_id` / `mock_sandbox_app_secret`
+
+        ## Available API Scopes
+
+        Use the following scopes for different APIs:
+
+        ### Age Verification
+        - `dpv:FraudPreventionAndDetection kyc-age-verification:verify`
+
+        ### Device Location
+        - `dpv:FraudPreventionAndDetection#device-location-read`
+
+        ### Device Status
+        - `dpv:FraudPreventionAndDetection#device-status-roaming-read`
+
+        ### Device Swap Detection
+        - `dpv:FraudPreventionAndDetection#device-swap`
+
+        ### Know Your Customer
+        - `dpv:FraudPreventionAndDetection#kyc-match:match`
+
+        ### Number Verification
+        - `dpv:FraudPreventionAndDetection#number-verification-verify-read`
+
+        ### Quality on Demand
+        - `dpv:RequestedServiceProvision#qod`
+
+        ### SIM Swap
+        - `dpv:FraudPreventionAndDetection#sim-swap`
+
+        ### Tenure
+        - `dpv:FraudPreventionAndDetection#kyc-tenure`
       operationId: bcAuthorize
       requestBody:
         content:
@@ -176,7 +207,12 @@ components:
       properties:
         login_hint:
           type: string
-          description: <id_type>:<id_value>
+          description: |
+            The login hint to be used by the operator to identify the end-user, in the following format `<identifier_type>:<identifier>`, those being:
+            - `tel` for phone numbers. The `login_hint` must be a tel URI as defined in [RFC 3966](https://www.rfc-editor.org/info/rfc3966) for global phone numbers without visual separators in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I/en) format, including "+". For example, `tel:+34666666666`.
+            - `ipport` for IPv4 and IPv6 addresses, that can optionally include a port. For example, `ipport:80.90.34.2:16790`, `ipport:80.90.34.2`, `ipport:[2001:db8::1]:8080` or `ipport:[2001:db8::1]`
+            
+            Check the [Backend authorization flow guide](/docs/backend) for more information.
         scope:
           type: string
           description: dpv:<w3c_purpose>#<scope>
