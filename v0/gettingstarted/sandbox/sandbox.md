@@ -47,6 +47,7 @@ Please note that the usage of credentials granted from our Sandbox might be subj
 | Device Location | Movistar Spain, mock operator | Vivo Brasil |
 | Device Swap | Movistar Spain, mock operator | |
 | Device Status | Movistar Spain, mock operator | |
-| Age Verification (KYC API) | mock operator | |
-| Tenure (KYC API) | mock operator | |
+| Age Verification (KYC API) | Movistar Spain, mock operator | |
+| Tenure (KYC API) | Movistar Spain, mock operator | |
+| Number Recycling (KYC API) | mock operator | O2 Germany |
 | Scam Signal (restricted API) | mock operator | |
