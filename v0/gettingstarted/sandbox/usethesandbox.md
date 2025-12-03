@@ -10,7 +10,16 @@ content:
     development process and ensure a smooth transition to production.
 ---
 
-[![Agile and Secure Development with the Telefónica Open Gateway Sandbox](https://i.ytimg.com/vi/uo94M3QGkjw/hqdefault.jpg)](https://www.youtube.com/watch?v=uo94M3QGkjw)
+<iframe 
+  width="560" 
+  height="315" 
+  src="https://www.youtube.com/embed/uo94M3QGkjw" 
+  title="YouTube video player" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  referrerpolicy="strict-origin-when-cross-origin" 
+  allowfullscreen>
+</iframe>
 
 ## Usage modes
 
