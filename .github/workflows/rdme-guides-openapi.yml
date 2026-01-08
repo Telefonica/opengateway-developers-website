@@ -106,7 +106,7 @@ jobs:
       - name: Run `openapi` command 🚀
         uses: readmeio/rdme@v10
         with:
-          rdme: openapi --file=./v2/catalog/numberverification/numberverification_openapi.yaml --key=${{ secrets.README_API_KEY }} --slug=v2catalognumberverificationnumberverification_openapi
+          rdme: openapi --file=./v2/catalog/numberverification/numberverification_openapi.yaml --key=${{ secrets.README_API_KEY }} --slug=v2catalognumberverificationnumberverification_openapi --branch=2
 
       - name: Run `openapi` command 🚀
         uses: readmeio/rdme@v10
