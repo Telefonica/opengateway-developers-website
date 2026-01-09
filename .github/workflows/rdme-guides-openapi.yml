@@ -121,7 +121,7 @@ jobs:
       - name: Run `openapi` command 🚀
         uses: readmeio/rdme@v10
         with:
-          rdme: openapi upload ./v0/catalog/knowyourcustomer/kyc_tenure_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug tenure.json --branch 0
+          rdme: openapi upload ./v0/catalog/tenure/kyc_tenure_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug tenure.json --branch 0
 
       - name: Run `openapi` command 🚀
         uses: readmeio/rdme@v10

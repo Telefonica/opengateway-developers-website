@@ -30,7 +30,7 @@ paths:
       tags:
         - Check Subscriber Tenure
       description: |
-        Verifies a specified length of tenure, based on a provided date, for a network subscriber to establish a level of trust for the network subscription identifier.
+        Verifies a specified duration of tenure, based on a provided date, for a network subscriber to establish a level of trust for the network subscription identifier.
 
         Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following scope:
 
