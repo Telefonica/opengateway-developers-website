@@ -1,76 +1,6 @@
 openapi: 3.0.3
 info:
   title: Number Recycling
-  description: |
-    The API can be used to check whether the subscriber of the phone number has changed.
-    A common scenario is when Application service provider (ASP) wants to check whether there has been a change in the user associated with the phone number after the specified date. This allows the ASP to ensure that a phone number is correctly linked to an user and prevent the mis-delivery of SMS messages.
-
-    For example, below is a potential scenarios:
-    * Scenario 1
-      * Pre-conditions
-        * User A signed a contract with MNO A for the phone number '+123456789' on October 9, 2023, and is still using it.
-        * User A also signed contracts with ASP A on December 22, 2023 for its services.
-        * ASP A holds the contract date (2023-12-22) and the phone number (+123456789) for User A.
-        * Currently, on November 2, 2024, ASP A wishes to send a SMS message to User A.
-      * Potential operations
-        * ASP A sends a request with specified date (2023-12-22) and phone number (+123456789) to the Number Recycling API.
-        * The API response sets to 'false', indicating that there has not been a change in the user associated with the phone number.
-      * Post-conditions
-        * ASP A decides to send the SMS message to User A.
-      * By following these steps, ASP A ensures that a phone number is linked to User A.
-
-    <img width="4000" alt="Number_Recycling_scenario_1" src="https://raw.githubusercontent.com/camaraproject/NumberRecycling/r1.1/documentation/API_documentation/assets/Number_Recycling_scenario_1.png">
-
-    Note:
-    * When API receives a request with specified date on which a user signed a contract with MNO, the API respond sets to 'false'(e.g., 2023-10-09 in the Scenario 1 of the figure above).
-
-      * Scenario 2
-        * Pre-conditions
-          * User A signed a contract with MNO A for the phone number '+123456789' on October 9, 2023, and canceled it on February 25, 2024. Subsequently, User B signed a contract with MNO A for the same phone number on September 21, 2024, and is still using it.
-          * User A also signed contracts with ASP A on December 22, 2023 for its services.
-          * ASP A holds the contract date (2023-12-22) and the phone number (+123456789) for User A.
-          * Currently, on November 2, 2024, ASP A wishes to send a SMS message to User A.
-        * Potential operations
-          * ASP A sends a request with specified date (2023-12-22) and phone number (+123456789) to the Number Recycling API.
-          * The API response sets to 'true', indicating that there has been a change in the user associated with the phone number.
-        * Post-conditions
-          * ASP A decides to stop sending the SMS message to User A and contacts User A by mail.
-        * By following these steps, ASP A ensures that a phone number is not linked to User A and prevents the mis-delivery of the SMS message.
-
-    <img width="4000" alt="Number_Recycling_scenario_2" src="https://raw.githubusercontent.com/camaraproject/NumberRecycling/r1.1/documentation/API_documentation/assets/Number_Recycling_scenario_2.png">
-
-    Note:
-    * When the API receives a request with specified date during which there is no contract with MNO for the phone number, the API respond sets to 'true'(e.g., the period between 2024-02-25 and 2024-09-20 in the Scenario 2 of the figure above).
-
-    # Authorization and authentication
-
-    The "Camara Security and Interoperability Profile" provides details of how an API consumer requests an access token. Please refer to Identity and Consent Management (https://github.com/camaraproject/IdentityAndConsentManagement/) for the released version of the profile.
-
-    The specific authorization flows to be used will be agreed upon during the onboarding process, happening between the API consumer and the API provider, taking into account the declared purpose for accessing the API, whilst also being subject to the prevailing legal framework dictated by local legislation.
-
-    In cases where personal data is processed by the API and users can exercise their rights through mechanisms such as opt-in and/or opt-out, the use of three-legged access tokens is mandatory. This ensures that the API remains in compliance with privacy regulations, upholding the principles of transparency and user-centric privacy-by-design.
-
-    # Identifying the phone number from the access token
-
-    This API requires the API consumer to identify a phone number as the subject of the API as follows:
-    - When the API is invoked using a two-legged access token, the subject will be identified from the optional `phoneNumber` field, which therefore MUST be provided.
-    - When a three-legged access token is used however, this optional identifier MUST NOT be provided, as the subject will be uniquely identified from the access token.
-
-    This approach simplifies API usage for API consumers using a three-legged access token to invoke the API by relying on the information that is associated with the access token and was identified during the authentication process.
-
-    ## Error handling:
-
-    - If the subject cannot be identified from the access token and the optional `phoneNumber` field is not included in the request, then the server will return an error with the `422 MISSING_IDENTIFIER` error code.
-    - If the subject can be identified from the access token and the optional `phoneNumber` field is also included in the request, then the server will return an error with the `422 UNNECESSARY_IDENTIFIER` error code. This will be the case even if the same phone number is identified by these two methods, as the server is unable to make this comparison.
-
-    Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following scope:
-
-    `dpv:EnforceSecurity number-recycling:check`
-
-    Create an app on our [Sandbox](/docs/sandbox) to get credentials and [retrieve tokens](/reference/authorize) so you can perform API calls to our operators' production environments, or use the following convenience token to test in mock mode:
-    
-    `mock_sandbox_access_token`
-
   version: "0.1"
   termsOfService: http://example.com/terms/
   contact:
@@ -101,7 +31,76 @@ paths:
             - number-recycling:check
       tags:
         - Check for phone number subscriber change
-      description: Check whether the subscriber of the phone number has changed.
+      description: |
+        The API can be used to check whether the subscriber of the phone number has changed.
+        A common scenario is when Application service provider (ASP) wants to check whether there has been a change in the user associated with the phone number after the specified date. This allows the ASP to ensure that a phone number is correctly linked to an user and prevent the mis-delivery of SMS messages.
+
+        For example, below is a potential scenarios:
+        * Scenario 1
+          * Pre-conditions
+            * User A signed a contract with MNO A for the phone number '+123456789' on October 9, 2023, and is still using it.
+            * User A also signed contracts with ASP A on December 22, 2023 for its services.
+            * ASP A holds the contract date (2023-12-22) and the phone number (+123456789) for User A.
+            * Currently, on November 2, 2024, ASP A wishes to send a SMS message to User A.
+          * Potential operations
+            * ASP A sends a request with specified date (2023-12-22) and phone number (+123456789) to the Number Recycling API.
+            * The API response sets to 'false', indicating that there has not been a change in the user associated with the phone number.
+          * Post-conditions
+            * ASP A decides to send the SMS message to User A.
+          * By following these steps, ASP A ensures that a phone number is linked to User A.
+
+        <img width="4000" alt="Number_Recycling_scenario_1" src="https://raw.githubusercontent.com/camaraproject/NumberRecycling/r1.1/documentation/API_documentation/assets/Number_Recycling_scenario_1.png">
+
+        Note:
+        * When API receives a request with specified date on which a user signed a contract with MNO, the API respond sets to 'false'(e.g., 2023-10-09 in the Scenario 1 of the figure above).
+
+          * Scenario 2
+            * Pre-conditions
+              * User A signed a contract with MNO A for the phone number '+123456789' on October 9, 2023, and canceled it on February 25, 2024. Subsequently, User B signed a contract with MNO A for the same phone number on September 21, 2024, and is still using it.
+              * User A also signed contracts with ASP A on December 22, 2023 for its services.
+              * ASP A holds the contract date (2023-12-22) and the phone number (+123456789) for User A.
+              * Currently, on November 2, 2024, ASP A wishes to send a SMS message to User A.
+            * Potential operations
+              * ASP A sends a request with specified date (2023-12-22) and phone number (+123456789) to the Number Recycling API.
+              * The API response sets to 'true', indicating that there has been a change in the user associated with the phone number.
+            * Post-conditions
+              * ASP A decides to stop sending the SMS message to User A and contacts User A by mail.
+            * By following these steps, ASP A ensures that a phone number is not linked to User A and prevents the mis-delivery of the SMS message.
+
+        <img width="4000" alt="Number_Recycling_scenario_2" src="https://raw.githubusercontent.com/camaraproject/NumberRecycling/r1.1/documentation/API_documentation/assets/Number_Recycling_scenario_2.png">
+
+        Note:
+        * When the API receives a request with specified date during which there is no contract with MNO for the phone number, the API respond sets to 'true'(e.g., the period between 2024-02-25 and 2024-09-20 in the Scenario 2 of the figure above).
+
+        # Authorization and authentication
+
+        The "Camara Security and Interoperability Profile" provides details of how an API consumer requests an access token. Please refer to Identity and Consent Management (https://github.com/camaraproject/IdentityAndConsentManagement/) for the released version of the profile.
+
+        The specific authorization flows to be used will be agreed upon during the onboarding process, happening between the API consumer and the API provider, taking into account the declared purpose for accessing the API, whilst also being subject to the prevailing legal framework dictated by local legislation.
+
+        In cases where personal data is processed by the API and users can exercise their rights through mechanisms such as opt-in and/or opt-out, the use of three-legged access tokens is mandatory. This ensures that the API remains in compliance with privacy regulations, upholding the principles of transparency and user-centric privacy-by-design.
+
+        # Identifying the phone number from the access token
+
+        This API requires the API consumer to identify a phone number as the subject of the API as follows:
+        - When the API is invoked using a two-legged access token, the subject will be identified from the optional `phoneNumber` field, which therefore MUST be provided.
+        - When a three-legged access token is used however, this optional identifier MUST NOT be provided, as the subject will be uniquely identified from the access token.
+
+        This approach simplifies API usage for API consumers using a three-legged access token to invoke the API by relying on the information that is associated with the access token and was identified during the authentication process.
+
+        ## Error handling:
+
+        - If the subject cannot be identified from the access token and the optional `phoneNumber` field is not included in the request, then the server will return an error with the `422 MISSING_IDENTIFIER` error code.
+        - If the subject can be identified from the access token and the optional `phoneNumber` field is also included in the request, then the server will return an error with the `422 UNNECESSARY_IDENTIFIER` error code. This will be the case even if the same phone number is identified by these two methods, as the server is unable to make this comparison.
+
+        Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following scope:
+
+        `dpv:EnforceSecurity number-recycling:check`
+
+        Create an app on our [Sandbox](/docs/sandbox) to get credentials and [retrieve tokens](/reference/authorize) so you can perform API calls to our operators' production environments, or use the following convenience token to test in mock mode:
+        
+        `mock_sandbox_access_token`
+
       operationId: checkNumberRecycling
       parameters:
         - $ref: '#/components/parameters/x-correlator'

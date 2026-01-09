@@ -118,10 +118,10 @@ jobs:
       #   with:
       #     rdme: openapi upload ./v0/catalog/ageverification/kyc_age_verification_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug age-verification.json --branch 0
 
-      # - name: Run `openapi` command 🚀
-      #   uses: readmeio/rdme@v10
-      #   with:
-      #     rdme: openapi upload ./v0/catalog/knowyourcustomer/kyc_tenure_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug tenure.json --branch 0
+      - name: Run `openapi` command 🚀
+        uses: readmeio/rdme@v10
+        with:
+          rdme: openapi upload ./v0/catalog/knowyourcustomer/kyc_tenure_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug tenure.json --branch 0
 
       - name: Run `openapi` command 🚀
         uses: readmeio/rdme@v10
