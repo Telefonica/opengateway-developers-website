@@ -63,6 +63,14 @@ info:
     - If the subject cannot be identified from the access token and the optional `phoneNumber` field is not included in the request, then the server will return an error with the `422 MISSING_IDENTIFIER` error code.
     - If the subject can be identified from the access token and the optional `phoneNumber` field is also included in the request, then the server will return an error with the `422 UNNECESSARY_IDENTIFIER` error code. This will be the case even if the same phone number is identified by these two methods, as the server is unable to make this comparison.
 
+    Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following scope:
+
+    `dpv:EnforceSecurity number-recycling:check`
+
+    Create an app on our [Sandbox](/docs/sandbox) to get credentials and [retrieve tokens](/reference/authorize) so you can perform API calls to our operators' production environments, or use the following convenience token to test in mock mode:
+    
+    `mock_sandbox_access_token`
+
   version: "0.1"
   termsOfService: http://example.com/terms/
   contact:

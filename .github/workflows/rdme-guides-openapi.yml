@@ -38,90 +38,90 @@ jobs:
       - name: Check out repo 📚
         uses: actions/checkout@v4
 
-      - name: Run `openapi` command 🚀
-        uses: readmeio/rdme@v10
-        with:
-          rdme: openapi upload ./v0/callflows/authorization/authorization_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug oidc-authorization.json --branch 0
+      # - name: Run `openapi` command 🚀
+      #   uses: readmeio/rdme@v10
+      #   with:
+      #     rdme: openapi upload ./v0/callflows/authorization/authorization_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug oidc-authorization.json --branch 0
 
-      - name: Run `openapi` command 🚀
-        uses: readmeio/rdme@v10
-        with:
-          rdme: openapi upload ./v0/callflows/authorization/authorization_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug oidc-authorization.json --branch 0
+      # - name: Run `openapi` command 🚀
+      #   uses: readmeio/rdme@v10
+      #   with:
+      #     rdme: openapi upload ./v0/callflows/authorization/authorization_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug oidc-authorization.json --branch 0
 
-      - name: Run `openapi` command 🚀
-        uses: readmeio/rdme@v10
-        with:
-          rdme: openapi upload ./v0/catalog/simswap/simswap_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug sim-swap.json --branch 0
+      # - name: Run `openapi` command 🚀
+      #   uses: readmeio/rdme@v10
+      #   with:
+      #     rdme: openapi upload ./v0/catalog/simswap/simswap_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug sim-swap.json --branch 0
         
-      - name: Run `openapi` command 🚀
-        uses: readmeio/rdme@v10
-        with:
-          rdme: openapi upload ./v0/catalog/numberverification/numberverification_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug number-verification.json --branch 0
+      # - name: Run `openapi` command 🚀
+      #   uses: readmeio/rdme@v10
+      #   with:
+      #     rdme: openapi upload ./v0/catalog/numberverification/numberverification_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug number-verification.json --branch 0
         
-      - name: Run `openapi` command 🚀
-        uses: readmeio/rdme@v10
-        with:
-          rdme: openapi upload ./v0/catalog/knowyourcustomer/kyc_match_01_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug know-your-customer-match.json --branch 0
+      # - name: Run `openapi` command 🚀
+      #   uses: readmeio/rdme@v10
+      #   with:
+      #     rdme: openapi upload ./v0/catalog/knowyourcustomer/kyc_match_01_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug know-your-customer-match.json --branch 0
 
-      - name: Run `openapi` command 🚀
-        uses: readmeio/rdme@v10
-        with:
-          rdme: openapi upload ./v0/catalog/knowyourcustomer/kyc_match_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug know-your-customer-match.json --branch 0
+      # - name: Run `openapi` command 🚀
+      #   uses: readmeio/rdme@v10
+      #   with:
+      #     rdme: openapi upload ./v0/catalog/knowyourcustomer/kyc_match_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug know-your-customer-match.json --branch 0
   
-      - name: Run `openapi` command 🚀    
-        uses: readmeio/rdme@v10
-        with:
-          rdme: openapi upload ./v0/catalog/qod/qod_08_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug quality-on-demand.json --branch 0
+      # - name: Run `openapi` command 🚀    
+      #   uses: readmeio/rdme@v10
+      #   with:
+      #     rdme: openapi upload ./v0/catalog/qod/qod_08_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug quality-on-demand.json --branch 0
 
-      - name: Run `openapi` command 🚀    
-        uses: readmeio/rdme@v10
-        with:
-          rdme: openapi upload ./v0/catalog/qod/qod_010_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug quality-on-demand.json --branch 0
+      # - name: Run `openapi` command 🚀    
+      #   uses: readmeio/rdme@v10
+      #   with:
+      #     rdme: openapi upload ./v0/catalog/qod/qod_010_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug quality-on-demand.json --branch 0
         
-      - name: Run `openapi` command 🚀    
-        uses: readmeio/rdme@v10
-        with:
-          rdme: openapi upload ./v0/catalog/devicelocation/devicelocation_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug device-location-verification.json --branch 0
+      # - name: Run `openapi` command 🚀    
+      #   uses: readmeio/rdme@v10
+      #   with:
+      #     rdme: openapi upload ./v0/catalog/devicelocation/devicelocation_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug device-location-verification.json --branch 0
   
-      - name: Run `openapi` command 🚀    
-        uses: readmeio/rdme@v10
-        with:
-          rdme: openapi upload ./v0/catalog/devicelocation/devicelocation_02_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug device-location-verification.json --branch 0
+      # - name: Run `openapi` command 🚀    
+      #   uses: readmeio/rdme@v10
+      #   with:
+      #     rdme: openapi upload ./v0/catalog/devicelocation/devicelocation_02_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug device-location-verification.json --branch 0
 
-      - name: Run `openapi` command 🚀    
-        uses: readmeio/rdme@v10
-        with:
-          rdme: openapi upload ./v0/catalog/devicestatus/devicestatus_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug device-status.json --branch 0
+      # - name: Run `openapi` command 🚀    
+      #   uses: readmeio/rdme@v10
+      #   with:
+      #     rdme: openapi upload ./v0/catalog/devicestatus/devicestatus_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug device-status.json --branch 0
 
-      - name: Run `openapi` command 🚀
-        uses: readmeio/rdme@v10
-        with:
-          rdme: openapi upload ./v0/catalog/deviceswap/deviceswap_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug device-swap.json --branch 0
+      # - name: Run `openapi` command 🚀
+      #   uses: readmeio/rdme@v10
+      #   with:
+      #     rdme: openapi upload ./v0/catalog/deviceswap/deviceswap_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug device-swap.json --branch 0
 
-      - name: Run `openapi` command 🚀
-        uses: readmeio/rdme@v10
-        with:
-          rdme: openapi upload ./v1/catalog/numberverification/numberverification_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug number-verification.json --branch 1
+      # - name: Run `openapi` command 🚀
+      #   uses: readmeio/rdme@v10
+      #   with:
+      #     rdme: openapi upload ./v1/catalog/numberverification/numberverification_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug number-verification.json --branch 1
       
-      - name: Run `openapi` command 🚀
-        uses: readmeio/rdme@v10
-        with:
-          rdme: openapi upload ./v2/catalog/numberverification/numberverification_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug v2catalognumberverificationnumberverification_openapi --branch 2
+      # - name: Run `openapi` command 🚀
+      #   uses: readmeio/rdme@v10
+      #   with:
+      #     rdme: openapi upload ./v2/catalog/numberverification/numberverification_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug v2catalognumberverificationnumberverification_openapi --branch 2
 
-      - name: Run `openapi` command 🚀
-        uses: readmeio/rdme@v10
-        with:
-          rdme: openapi upload ./v1/catalog/simswap/simswap_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug sim-swap.json --branch 1
+      # - name: Run `openapi` command 🚀
+      #   uses: readmeio/rdme@v10
+      #   with:
+      #     rdme: openapi upload ./v1/catalog/simswap/simswap_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug sim-swap.json --branch 1
 
-      - name: Run `openapi` command 🚀
-        uses: readmeio/rdme@v10
-        with:
-          rdme: openapi upload ./v0/catalog/ageverification/kyc_age_verification_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug age-verification.json --branch 0
+      # - name: Run `openapi` command 🚀
+      #   uses: readmeio/rdme@v10
+      #   with:
+      #     rdme: openapi upload ./v0/catalog/ageverification/kyc_age_verification_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug age-verification.json --branch 0
 
-      - name: Run `openapi` command 🚀
-        uses: readmeio/rdme@v10
-        with:
-          rdme: openapi upload ./v0/catalog/knowyourcustomer/kyc_tenure_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug tenure.json --branch 0
+      # - name: Run `openapi` command 🚀
+      #   uses: readmeio/rdme@v10
+      #   with:
+      #     rdme: openapi upload ./v0/catalog/knowyourcustomer/kyc_tenure_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug tenure.json --branch 0
 
       - name: Run `openapi` command 🚀
         uses: readmeio/rdme@v10
