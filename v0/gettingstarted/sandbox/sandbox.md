@@ -49,5 +49,5 @@ Please note that the usage of credentials granted from our Sandbox might be subj
 | Device Status | Movistar Spain, mock operator | |
 | Age Verification (KYC API) | Movistar Spain, mock operator | |
 | Tenure (KYC API) | Movistar Spain, mock operator | |
-| Number Recycling (KYC API) | mock operator | O2 Germany |
+| Number Recycling (KYC API) | O2 Germany, mock operator | |
 | Scam Signal (restricted API) | mock operator | |
