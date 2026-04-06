@@ -122,3 +122,8 @@ jobs:
         uses: readmeio/rdme@v10
         with:
           rdme: openapi upload ./v0/catalog/numberrecycling/numberrecycling_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug v0catalognumberrecyclingnumberrecycling_openapi.yaml --branch 0
+
+      - name: Run `openapi` command 🚀
+        uses: readmeio/rdme@v10
+        with:
+          rdme: openapi upload ./v1/catalog/qod/qod_11_openapi.yaml --key ${{ secrets.README_API_KEY }} --slug quality-on-demand.json --branch 1
