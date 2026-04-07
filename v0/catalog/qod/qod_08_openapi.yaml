@@ -23,7 +23,7 @@ paths:
     post:
       summary: Create QoD session v0.8
       tags:
-        - QoD sessions
+        - Quality on Demand
       security:
         - three_legged:
           - qod
@@ -128,7 +128,7 @@ paths:
     get:
       summary: Check QoD session v0.8
       tags:
-        - QoD sessions
+        - Quality on Demand
       description: |
         Gets information about an active QoS session
 
@@ -177,7 +177,7 @@ paths:
     delete:
       summary: Cancel QoD session v0.8
       tags:
-        - QoD sessions
+        - Quality on Demand
       description: |
         Cancels an active QoS session
 
