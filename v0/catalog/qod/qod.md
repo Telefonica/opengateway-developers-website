@@ -4,8 +4,8 @@ category:
   uri: API Catalog
 content:
   excerpt: >-
-    The QoD API allows the developer to optimize the network traffic on their
-    customers' devices on demand.
+    The Quality on Demand API lets developers control their customers' mobile
+    connectivity to build better user experiences.
 ---
 
 <div style={{display: 'flex', gap: '8px', marginBottom: '15px'}}>
@@ -13,10 +13,9 @@ content:
   <span style={{backgroundColor: '#8a8a8a', color: 'white', borderRadius: '15px', padding: '4px 12px', fontSize: '12px', fontWeight: 'bold'}}>GSMA Certified API</span>
 </div>
 
-One good example is an application for enriching the audience experience when attending a live sporting event: add the capability to watch replays of relevant games. 
+The standardised Quality on Demand API lets you control your customers' mobile connectivity so you can focus on creating the best possible user experiences.
 
-To do this, the application activates a Quality on Demand session on the device of the customer just before it is about to start the video-streaming, so the customer can watch it regardless of the
-number of simultaneous users attending the sporting event in the same location. 
+It enables new service capabilities that require more precise control over connectivity quality, including availability, latency, jitter, and throughput, through a single standardised interface across carriers.
 
 > 📘 Want to give it a try?
 > Apply to join the [Developer Hub](https://opengateway.telefonica.com/en/developer-hub/join) and gain access to our Sandbox.
@@ -38,56 +37,39 @@ number of simultaneous users attending the sporting event in the same location.
 
 ### High level definition
 
-The QoD CAMARA API enables application developers to integrate network configuration and optimization functionalities into their software, without the need for the End Users to run complex processes on their devices, so developers can focus on provide a better user experience.
+The QoD CAMARA API enables developers to integrate advanced network capabilities into their services without requiring end users to manage complex network processes on their devices. This makes it easier to build experiences that depend on stable, predictable connectivity quality.
 
 
 ### API Operations
 
-The QoD CAMARA API specifies the following operations:
+Check the API reference to explore available QoD operations and integration details.
 
-- **Discover the available QoS Profiles:** An operation to retrieve the list of available QoS profiles.
-
-[Check the API Reference](/reference/getqosprofiles-2)
-
-- **Create a new session:** An operation to assign a QoS Profile for a given device for a given duration. 
-
-[Check the API Reference](/reference/createsession-2)
-
-- **Read session information:** An operation to read the information about a QoD session created previously. 
-
-[Check the API Reference](/reference/getsession-2)
-
-- **Extend a session:** An operation to extend the duration of a QoD session created previously.
-
-[Check the API Reference](/reference/extendqossessionduration-2)
-
-- **Finish a session:** An operation to terminate a QoD session created previously. 
-
-[Check the API Reference](/reference/deletesession-2)
-
-By utilizing the QoD Service, developers of applications can capitalize on the usability, ubiquity, security, quickness, and simplicity of the APIs to manage their End Users networking and focus on the experiences they want to offer.
+[Check the API reference](https://developers.opengateway.telefonica.com/reference/createsession-2)
 
 ## Why QoD?
 
-### Optimize client’s networking
+### Customer network optimisation
 
-With QoD, you can activate the best networking configuration that suits better to the needs of your applications in real time. Regardless of whether your application requires a  short boost with better throughput or a temporal control on the maximum jitter or latency. 
+The Quality on Demand service lets you activate the network configuration that best fits your application's needs in real time. This can include a short throughput boost or temporary control over jitter and maximum latency.
 
 ### Seamless User Experience
 
-Your clients will enjoy the enhanced services you build with the capabilities brough to you by the QoD service without even noticing their network has been modified. This allows you to upsell advanced features with the security they will not suffer undesirable network issues.
+Your customers can enjoy enhanced services built on top of Quality on Demand without noticing that their network has been modified. This makes it easier to offer advanced features while reducing unwanted network issues.
 
-### Improve your client’s satisfaction
+### Increased customer satisfaction
 
-You can control and monitor the network conditions and adapt to them whenever your applications are being used. 
+Quality on Demand helps you control and monitor network conditions and adapt to them whenever your applications are used. This reduces poor experiences caused by network issues and helps improve your relationship with customers.
 
-This will helps when customers didn’t experience your application as they should, and you weren’t able to manage.
+### Simplified integration
 
-### Quick and easy onboarding
+As a standardised API, Quality on Demand can be integrated without customising implementations for each carrier. This simplifies development and reduces time to market.
 
-With the QoD service, you can configure the network of your clients easily with only a couple of lines of code.
+### Quick and easy integration
 
-You will not have to guess and discover the available networking capabilities of their clients and will focus on what matters more to your business.
+With the QoD service, you can configure your customers' network connectivity with just a few lines of code. You do not need to guess which network capabilities are available for each user, so you can stay focused on your product.
 
+### Development tools
+
+Channel partners and telcos have aligned the development experience so the service can be consumed with familiar tooling, including SDKs and operational support tools for integration, monitoring, and troubleshooting.
 
 
