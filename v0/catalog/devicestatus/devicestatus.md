@@ -4,8 +4,8 @@ category:
   uri: API Catalog
 content:
   excerpt: >-
-    The Device Status API makes it possible to check the roaming status of a
-    specific SIM-based device by using events from the operators' network.
+    The Device Roaming Status API makes it possible to check the roaming status
+    of a specific SIM-based device using operator network events.
 ---
 
 <div style={{display: 'flex', gap: '8px', marginBottom: '15px'}}>
@@ -13,9 +13,9 @@ content:
   <span style={{backgroundColor: '#8a8a8a', color: 'white', borderRadius: '15px', padding: '4px 12px', fontSize: '12px', fontWeight: 'bold'}}>GSMA Certified API</span>
 </div>
 
-The standardised Device Status API provides the ability to check the roaming status of a given SIM-based device without identity theft or GPS.
+The Device Roaming Status API makes it possible to check the roaming status of a specific SIM-based device by using events from the operator networks.
 
-This solution allows you to control resource management during international roaming in a more secure way.
+This solution enables you to control your resource management during international roaming more securely.
 
 ![DeviceStatus](https://github.com/Telefonica/opengateway-developers-website/raw/main/v0/catalog/devicestatus/images/DeviceStatus.png)
 
@@ -39,15 +39,13 @@ This solution allows you to control resource management during international roa
 
 ### High level definition
 
-The Device Status CAMARA API is a software interface that enables a requester to provide a mobile device identifier (such as MSISDN, IP, or an external identifier) and receive a response indicating whether the device is currently in roaming status.
+The Device Status CAMARA API enables a requester to provide a mobile device identifier and receive a response indicating whether the device is currently in roaming status.
 
 ### API Operations
 
-The Device Status Camara API specifies one operation:
+Check the API reference to explore Device Roaming Status integration details.
 
-- **POST /roaming**: answers the question 'is the device in roaming?'
-
-[Check the API Reference](/reference/getroamingstatus-2)
+[Check the API reference](https://developers.opengateway.telefonica.com/reference/getroamingstatus-2)
 
 ## Why Device Status?
 

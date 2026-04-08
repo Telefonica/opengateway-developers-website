@@ -4,8 +4,8 @@ category:
   uri: API Catalog
 content:
   excerpt: >-
-    The SIM Swap API from Open Gateway allows you to check for SIM card swaps for
-    fraud prevention purposes
+    The SIM Swap API lets you detect SIM exchange events for fraud prevention
+    and stronger account protection.
 ---
 
 <div style={{display: 'flex', gap: '8px', marginBottom: '15px'}}>
@@ -13,9 +13,9 @@ content:
   <span style={{backgroundColor: '#8a8a8a', color: 'white', borderRadius: '15px', padding: '4px 12px', fontSize: '12px', fontWeight: 'bold'}}>GSMA Certified API</span>
 </div>
 
-The standardized SIM Swap API enables seamless integration of SIM swap detection and management functionality into your applications. This API enhances security by identifying potentially fraudulent activity and providing an additional layer of protection against unauthorized access.
+The standardised SIM Swap API allows you to integrate SIM swap detection and management functionality into your applications, enhancing security by identifying potentially fraudulent activity and providing an additional layer of protection.
 
-Additionally, the SIM Swap Unified API Access feature ensures access to network capabilities of various carriers through a single, standardized interface. This simplifies integration and improves efficiency for developers by consolidating access to multiple carrier networks.
+This solution leverages data from the carrier's network, allowing the protocols and security measures of any service to be adjusted quickly and proportionately.
 
 > 📘 Want to give it a try?
 > Apply to join the [Developer Hub](https://opengateway.telefonica.com/en/developer-hub/join) and gain access to our Sandbox.
@@ -37,21 +37,13 @@ Additionally, the SIM Swap Unified API Access feature ensures access to network 
 
 ### High level definition
 
-The SIM Swap CAMARA API is a software interface that enables applications to request the last date of a SIM swap performed on a mobile line or to check whether a SIM swap has been performed during a specified period. This functionality is provided in an easy and secure manner, allowing real-time verification of the activation date of a SIM card on the mobile network.
+The SIM Swap CAMARA API enables applications to check whether a SIM swap occurred recently on a mobile line, allowing real-time verification of suspicious SIM exchange events.
 
 ### API Operations
 
-The SIM Swap CAMARA API specifies the following two operations:
+Check the API reference to explore SIM Swap integration details.
 
-- **POST retrieve-date:** Answers the question ‘when did the last SIM swap occur?’. This operation requires the phone number to be checked (parameter `phoneNumber`).
-
-  [Check the API Reference](/reference/retrievesimswapdate)
-
-- **POST check:** Checks whether a SIM swap occurred during the last N hours. This operation requires the following inputs:
-  - `phoneNumber`: The phone number to be checked.
-  - `maxAge`: The period in hours to be checked for a SIM swap (minimum 1 hour, maximum 2400 hours, default 240 hours).
-
-  [Check the API Reference](/reference/checksimswap)
+[Check the API reference](https://developers.opengateway.telefonica.com/reference/checksimswap)
 
 ## Why SIM Swap?
 

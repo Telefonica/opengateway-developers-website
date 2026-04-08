@@ -4,10 +4,9 @@ category:
   uri: API Catalog
 content:
   excerpt: >-
-    The Age Verification API enables businesses to verify if users meet required
-    age thresholds for age-restricted services using verified data from mobile
-    network operators, ensuring compliance with regulations while protecting
-    privacy.
+    The Age Verification API lets businesses determine whether a user is above
+    the required age threshold for regulated services using mobile
+    operator-verified data.
 ---
 
 <div style={{display: 'flex', gap: '8px', marginBottom: '15px'}}>
@@ -15,9 +14,9 @@ content:
   <span style={{backgroundColor: '#8a8a8a', color: 'white', borderRadius: '15px', padding: '4px 12px', fontSize: '12px', fontWeight: 'bold'}}>GSMA Certified API</span>
 </div>
 
-The standardized Age Verification API allows businesses to determine if users meet required age thresholds for accessing age-restricted subscriptions and services using verified data from mobile network operators.
+The standardized Age Verification API allows you to determine whether a user is over the age required to access subscriptions that require it by regulation, using data verified by the mobile operator.
 
-This API is essential in regulated sectors such as online gambling, alcohol sales, or digital media with age restrictions, helping to block unauthorized access and eliminate fake accounts. The Age Verification API enables this verification privately and in real-time.
+It is essential in regulated sectors such as online gambling, alcohol sales, or age-restricted digital media to block unauthorized access and eliminate fake accounts. The Age Verification API helps to do this privately and in real time.
 
 > 📘 Want to give it a try?
 > Apply to join the [Developer Hub](https://opengateway.telefonica.com/en/developer-hub/join) and gain access to our Sandbox.
@@ -28,15 +27,13 @@ This API is essential in regulated sectors such as online gambling, alcohol sale
 
 ### High level definition
 
-The Age Verification CAMARA API is a software interface that enables businesses to verify if a user meets a specified age threshold by leveraging verified data collected and maintained by mobile network operators during SIM card registration or customer account setup.
+The Age Verification CAMARA API enables businesses to verify whether a user meets a specified age threshold by relying on verified data collected and maintained by mobile network operators during SIM registration or customer account setup.
 
 ### API Operations
 
-The Age Verification CAMARA API specifies one operation:
+Check the API reference to explore Age Verification integration details.
 
-- **POST /verify**: Verifies that the age of the subscriber associated with a phone number is equal to or greater than the specified age threshold value. The response may optionally include additional information such as identity match score, verified status, content lock, and parental control information.
-
-[Check the API Reference](https://developers.opengateway.telefonica.com/reference/verifyage)
+[Check the API reference](https://developers.opengateway.telefonica.com/reference/verifyage)
 
 ## Why Age Verification?
 

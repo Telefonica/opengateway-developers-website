@@ -4,10 +4,8 @@ category:
   uri: API Catalog
 content:
   excerpt: >-
-    The Scam Signal API provides advanced fraud detection capabilities
-    leveraging telco network intelligence to identify and prevent fraudulent
-    activities in real-time, protecting businesses and their customers from
-    evolving threats.
+    The Scam Signal API enables companies to protect their customers from
+    phishing and impersonation scams using telecom network intelligence.
 ---
 
 <div style="display: flex; gap: 8px; margin-bottom: 15px;">
@@ -15,9 +13,9 @@ content:
   <span style="background-color: #8a8a8a; color: white; border-radius: 15px; padding: 4px 12px; font-size: 12px; font-weight: bold;">GSMA Certified API</span>
 </div>
 
-The Scam Signal API leverages mobile network operator intelligence to detect and prevent Authorized Push Payment (APP) fraud in real-time. By analyzing network patterns during transaction attempts, this API enables financial institutions to identify when customers are under active social engineering pressure and intervene before fraud completion.
+The Scam Signal API allows businesses to protect their customers from impersonation scams.
 
-Specifically designed for the critical detection window between fraud initiation and payment completion, Scam Signal has demonstrated proven effectiveness with early deployments reporting up to **41% reduction in successful scams** and **44% decrease in fraud losses**.
+Authorized Push Payment (APP) fraud occurs when a victim is tricked into transferring money to a fraudster, often through impersonation of banks, government agencies, family members, or via scams involving fake investments, counterfeit goods, or deceptive relationships.
 
 > 📘 Want to learn more about implementation?
 > [Contact our Expert Team](https://opengateway.telefonica.com/contactoexperto) to discuss technical implementation details and access requirements.
@@ -26,17 +24,19 @@ Specifically designed for the critical detection window between fraud initiation
 
 ### High level definition
 
-The Scam Signal CAMARA API provides real-time fraud detection by analyzing telco network signals to identify when customers are being manipulated during payment transactions. The API enables financial institutions to detect ongoing social engineering attacks and implement immediate protective measures.
+The Scam Signal CAMARA API provides real-time fraud detection by correlating telco network signals with high-risk actions such as payment initiation to identify potential scam activity while preserving user privacy.
 
 ### API Operations
 
-The Scam Signal API delivers risk assessment capabilities through secure endpoints that analyze network metadata without accessing call content, ensuring privacy compliance while detecting fraud indicators.
+Scam Signal does not currently have a public v0 API reference entry in the developers menu. Access and implementation details are currently available through expert consultation.
 
 **Available through expert consultation:**
 - Real-time fraud scoring methodologies
 - Integration patterns for existing fraud prevention systems
 - Customization options for specific use cases and risk thresholds
 - Performance benchmarks and accuracy metrics
+
+[Talk to an expert](https://opengateway.telefonica.com/contactoexperto)
 
 ## Why Scam Signal?
 

@@ -4,13 +4,8 @@ category:
   uri: API Catalog
 content:
   excerpt: >-
-    The Number Verification API is a pivotal tool for bolstering security and
-    reliability in your applications. In today's digital landscape, verifying
-    the authenticity of phone numbers is paramount for safeguarding against
-    fraud and ensuring seamless user interactions. The Number Verification API
-    offers a streamlined solution to validate phone numbers in real-time,
-    empowering developers to implement robust identity verification mechanisms
-    with ease.
+    The Number Verification API increases the security of user identity and
+    credentials by verifying phone numbers through the mobile network.
 ---
 
 <div style={{display: 'flex', gap: '8px', marginBottom: '15px'}}>
@@ -18,7 +13,9 @@ content:
   <span style={{backgroundColor: '#8a8a8a', color: 'white', borderRadius: '15px', padding: '4px 12px', fontSize: '12px', fontWeight: 'bold'}}>GSMA Certified API</span>
 </div>
 
-The Number Verification API is part of the Open Gateway initiative, providing developers with access to network-based phone number validation. This API verifies user identity by confirming phone number ownership through network operator mechanisms, eliminating the need for manual verification processes.
+The standardised Number Verification API allows you to increase the security of your users identity and credentials quickly, conveniently, reliably and securely.
+
+This API provides a mechanism to automatically verify whether a user is interacting via a device that has a SIM card associated with a certain phone number (MSISDN). This means that the user does not have to interact with any element or enter any kind of credential or one-time password (OTP).
 
 Apply to join the [Developer Hub](https://opengateway.telefonica.com/en/developer-hub/join) and gain access to our Sandbox.
 
@@ -41,15 +38,11 @@ Apply to join the [Developer Hub](https://opengateway.telefonica.com/en/develope
 
 The Number Verification CAMARA API validates user identity by confirming that the provided phone number matches the number associated with the user's device connection to the mobile network operator.
 
-### Available Operations
+### API Operations
 
-- **POST verify:** Validates if the provided phone number matches the device's registered number. Returns a boolean result indicating verification status.
+Check the API reference to explore Number Verification integration details.
 
-	[Check the API Reference](/reference/phonenumberverify-2)
-  
-- **GET device-phone-number:** Retrieves the phone number associated with the user's device without requiring input parameters.
-
-	***This feature is pending availability***
+[Check the API reference](https://developers.opengateway.telefonica.com/v1/reference/phonenumberverify)
 
 
 ### Technical Implementation

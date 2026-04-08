@@ -4,9 +4,8 @@ category:
   uri: API Catalog
 content:
   excerpt: >-
-    The Tenure API enables businesses to verify the length of customer tenure
-    with mobile network operators, establishing trust and reliability scores for
-    network subscription identifiers based on account history and longevity.
+    The Line Tenure API lets businesses verify the actual age of a mobile line
+    to strengthen fraud detection and identity validation.
 ---
 
 <div style={{display: 'flex', gap: '8px', marginBottom: '15px'}}>
@@ -14,9 +13,9 @@ content:
   <span style={{backgroundColor: '#8a8a8a', color: 'white', borderRadius: '15px', padding: '4px 12px', fontSize: '12px', fontWeight: 'bold'}}>GSMA Certified API</span>
 </div>
 
-The Tenure API provides businesses with the ability to verify and assess the length of tenure of mobile network subscribers, offering valuable insights into customer reliability and account stability. By leveraging verified data from mobile network operators, this API enables informed decision-making for fraud prevention, risk assessment, and customer onboarding processes.
+The standardized Line Tenure API allows you to know the actual age of a mobile line, helping to identify suspicious accounts and prevent identity fraud.
 
-This API is particularly valuable for financial services, digital platforms, and any business requiring additional verification layers to establish customer trustworthiness based on their mobile subscription history and account longevity.
+Fraudsters often use newly activated phone numbers to evade detection. The Line Tenure API identifies these "fresh" lines in real time, allowing institutions to block or review high-risk users in a timely manner.
 
 > 📘 Want to give it a try?
 > Apply to join the [Developer Hub](https://opengateway.telefonica.com/en/developer-hub/join) and gain access to our Sandbox.
@@ -27,15 +26,13 @@ This API is particularly valuable for financial services, digital platforms, and
 
 ### High level definition
 
-The Tenure CAMARA API is a software interface that enables businesses to verify a specified length of tenure for a network subscriber based on a provided date, establishing a level of trust for the network subscription identifier through historical account data validation.
+The Tenure CAMARA API enables businesses to verify whether a mobile line has been active since a given date, providing a simple and useful trust signal for fraud prevention and risk analysis.
 
 ### API Operations
 
-The Tenure CAMARA API specifies one operation:
+Check the API reference to explore Line Tenure integration details.
 
-- **POST /check-tenure**: Verifies continuous tenure of an identified mobile subscriber from a specified date, returning boolean confirmation and optional contract type information (PAYG, PAYM, or Business).
-
-[Check the API Reference](https://developers.opengateway.telefonica.com/reference/checktenure)
+[Check the API reference](https://developers.opengateway.telefonica.com/reference/checktenure)
 
 ## Why Tenure?
 

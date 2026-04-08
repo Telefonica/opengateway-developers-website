@@ -4,8 +4,8 @@ category:
   uri: API Catalog
 content:
   excerpt: >-
-    The Device Location Verification API from Open Gateway allows you to check if a
-    mobile phone is in a determined location.
+    The Location Verification API lets you verify whether a SIM-based device is
+    within a requested geographic area without relying on GPS.
 ---
 
 <div style="display: flex; gap: 8px; margin-bottom: 15px;">
@@ -13,13 +13,9 @@ content:
   <span style="background-color: #8a8a8a; color: white; border-radius: 15px; padding: 4px 12px; font-size: 12px; font-weight: bold;">GSMA Certified API</span>
 </div>
 
-The Device Location API is a software interface that allows applications to confirm if a user's device is in its intended location. The network must track a device's location at all times to effectively provide telecommunications services. This capability is utilized to offer device location as a service.
+The standardised Location Verification API provides the option of verifying the geographical location of a given SIM-based device and validating whether it is within a requested geographical area without spoofing or GPS theft.
 
-The Device Location API enhances security by verifying that a device is in the expected location during transactions, which helps prevent fraud and unauthorized activities. This verification process also streamlines authentication, leading to faster and smoother transactions, ultimately improving the user experience. 
-
-Additionally, the API is a valuable tool for fraud prevention, as it can quickly detect and mitigate potential threats by identifying discrepancies between the claimed and actual device locations. It also helps businesses comply with regulatory requirements in industries where location verification is essential, such as finance and gaming. 
- 
-Furthermore, by verifying a user's location, businesses can offer more personalized and context-aware services, increasing customer engagement and satisfaction. The API's versatility makes it applicable across various industries, including retail, telecom, and logistics. For merchants, it also contributes to reducing chargebacks by verifying the location of a device during transactions.
+This solution validates the location of a device to enable services or allow transactions in a safer way.
 
 ![DeviceLocation](https://github.com/Telefonica/opengateway-developers-website/raw/main/v0/catalog/devicelocation/images/DeviceLocation.png)
 
@@ -43,15 +39,13 @@ Furthermore, by verifying a user's location, businesses can offer more personali
 
 ### High level definition
 
-The Device Location Verification CAMARA API is a software interface that allows applications to confirm if a user’s device is in the expected location. For the network to deliver its telecommunications services effectively, it needs to track a device's location at all times. This capability is thus utilized to provide device location verification as a service.
+The Device Location Verification CAMARA API enables applications to check whether a device is within a requested geographic area, specified by a center point and radius, using network-based location data.
 
 ### API Operations
 
-The Device Location Verification Camara API specifies one operation:
+Check the API reference to explore Location Verification integration details.
 
-- **POST /verify**: answers the question ‘is the device in the circle determined by a center (latitude and longitude) and an accuracy (given in km as the radius of the circle)?’
-
-[Check the API Reference](/reference/verifylocation-2)
+[Check the API reference](https://developers.opengateway.telefonica.com/reference/verifylocation-2)
 
 ## Why Device Location Verification API
 

@@ -4,9 +4,8 @@ category:
   uri: API Catalog
 content:
   excerpt: >-
-    The Know Your Customer API makes it possible to validates users info with
-    MNO (Mobile Network Operator) data, ensuring compliance and preventing
-    identity fraud.
+    The Know Your Customer - Match API validates user contact information
+    against reliable mobile carrier data to reduce fraud and improve onboarding.
 ---
 
 <div style={{display: 'flex', gap: '8px', marginBottom: '15px'}}>
@@ -14,9 +13,9 @@ content:
   <span style={{backgroundColor: '#8a8a8a', color: 'white', borderRadius: '15px', padding: '4px 12px', fontSize: '12px', fontWeight: 'bold'}}>GSMA Certified API</span>
 </div>
 
-The standardised Know Your Customer API allows you to validate user contact information against data from Mobile Network Operators (MNOs), ensuring accuracy and improving both conversion rates and the quality of user onboarding for new services.
+The standardised Know Your Customer - Match (KYC-Match) API allows you to validate user contact information quickly and easily, thanks to reliable mobile carrier data.
 
-This API provides a quick and efficient method to verify customer contact details, helping you prevent identity fraud, including synthetic identities and identity theft. Additionally, by utilizing this standardized API, you can expand your user reach across multiple MNOs.
+This validation system prevents different forms of identity fraud such as synthetic identity or identity theft and improves the conversion rate and the quality of user onboarding for new services. In addition, thanks to its standardisation, the user footprint that can be reached through multiple mobile carriers can be expanded.
 
 > 📘 Want to give it a try?
 > Apply to join the [Developer Hub](https://opengateway.telefonica.com/en/developer-hub/join) and gain access to our Sandbox.
@@ -38,15 +37,13 @@ This API provides a quick and efficient method to verify customer contact detail
 
 ### High level definition
 
-The Know Your Customer CAMARA API is a software interface that enables a requester to check if an user data is correct or not making a check with the mobile network operator records. 
+The Know Your Customer CAMARA API enables a requester to validate user contact information against records held by the mobile network operator.
 
 ### API Operations
 
-The Know Your Customer Camara API specifies one operation:
+Check the API reference to explore KYC-Match integration details.
 
-- **POST /match**: answers the question 'is this informacion true?'
-
-[Check the API Reference](/reference/kyc_match_v02-2)
+[Check the API reference](https://developers.opengateway.telefonica.com/reference/kyc_match_v02-2)
 
 ## Why Know Your Customer?
 

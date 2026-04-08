@@ -4,8 +4,8 @@ category:
   uri: API Catalog
 content:
   excerpt: >-
-    The Device Swap API from Open Gateway allows to check for device swaps on a
-    mobile line for fraud prevention purposes
+    The Device Swap API helps detect unauthorised device changes for a mobile
+    line, strengthening fraud prevention and identity protection.
 ---
 
 <div style={{display: 'flex', gap: '8px', marginBottom: '15px'}}>
@@ -13,9 +13,9 @@ content:
   <span style={{backgroundColor: '#8a8a8a', color: 'white', borderRadius: '15px', padding: '4px 12px', fontSize: '12px', fontWeight: 'bold'}}>GSMA Certified API</span>
 </div>
 
-The Device Swap API performs real-time checks on the last Device Swap event, providing real-time information about whether the SIM card associated with a user's phone number has been transferred to a different physical device.
+The Device Swap API enables new layers of security to be integrated into digital services, providing protection against mobile device transitions. It is designed to detect unauthorised changes that could result in potential fraud.
 
-Device Swap information can be invaluable for enhancing security, fraud detection, and ensuring compliance with regulatory requirements in various applications, apart from providing useful information of device upgrade trends in user segments.
+It provides real-time information about whether the SIM card associated with a mobile phone number has been transferred to another device, helping organisations strengthen fraud prevention and trigger additional safeguards when needed.
 
 > 📘 Want to give it a try?
 > Apply to join the [Developer Hub](https://opengateway.telefonica.com/en/developer-hub/join) and gain access to our Sandbox.
@@ -24,19 +24,13 @@ Device Swap information can be invaluable for enhancing security, fraud detectio
 
 ### High level definition
 
-The Device Swap API provides a programmable interface for developers and other users (capabilities consumers) to request the last date of a device swap performed on the mobile line, or, to check whether a device swap has been performed during a past period.
+The Device Swap API provides a programmable interface to request the last date of a device swap performed on a mobile line, helping identify suspicious changes before they become unauthorised actions.
 
 ### API Operations
 
-The Device Swap CAMARA API specifies the following two operations:
+Check the API reference to explore Device Swap integration details.
 
-- **POST retrieve-date:** Provides timestamp of latest device swap for a given phone number. If no device swap has been performed, the API will return the first phone number usage in the device (the timestamp of the first time that the phone number was connected to the network, it is, the first time that the SIM is installed in the device) by default. It will return an empty string in case is not possible to retrieve the date (e.g. in case local regulations are preventing the safekeeping of the information for longer than the stated period, or in some edge error cases). In case no data is available in the operators records (e.g. no recorded event), API will return a 422 error.
-
-  [Check the API Reference](/reference/retrievedeviceswapdate-3)
-
-- **POST check:** Checks if device swap has been performed during a past period (defined in the request with 'maxAge' attribute) for a given phone number, the API will return boolean response (true/false), indicating that the device has been swapped or not in the specified period. In case the phone number has never been installed in a device, or no data is available in the operators records (e.g. database error), API will return a 422 error.
-
-  [Check the API Reference](/reference/retrievedeviceswapdate-3)
+[Check the API reference](https://developers.opengateway.telefonica.com/reference/retrievedeviceswapdate-3)
 
 ## Why Device Swap?
 
