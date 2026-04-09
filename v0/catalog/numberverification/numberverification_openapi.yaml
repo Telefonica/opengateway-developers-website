@@ -59,6 +59,14 @@ paths:
         
         `mock_sandbox_access_token`
 
+        ## Mock Mode Technical Specification
+
+        When testing in mock mode, the following rules apply based on the phone number:
+
+        - If `phoneNumber` ends with 1 → the response is 200 OK with `devicePhoneNumberVerified: true`.
+        - If `phoneNumber` ends with 2 → the response is 200 OK with `devicePhoneNumberVerified: false`.
+        - If `phoneNumber` ends with 3-0 → the response is 200 OK and `devicePhoneNumberVerified` will be true or false depending on whether the current timestamp is even or odd.
+
         You can explore our [Number Verification sample code](/docs/samplecode_numberverification) for additional guidance on using this API.
       operationId: phoneNumberVerify
       requestBody:

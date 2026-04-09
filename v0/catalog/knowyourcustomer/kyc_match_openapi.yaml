@@ -39,6 +39,13 @@ paths:
         Create an app on our [Sandbox](/docs/sandbox) to get credentials and [retrieve tokens](/reference/authorize) so you can perform API calls to our operators' production environments, or use the following convenience token to test in mock mode:
         
         `mock_sandbox_access_token`
+
+        ## Mock Mode Technical Specification
+
+        When testing in mock mode, the following rules apply based on the input:
+
+        - If the input is invalid → the response is 400 Bad Request with details of the invalid field.
+        - If the input is valid → the response is 200 OK with `match: true/false` and `matchScore` between 0 and 100 for some keys.
       operationId: KYC_Match_v0.2
 
       security:
