@@ -109,6 +109,50 @@ paths:
       security:
         - three_legged:
           - number-verification:verify
+  /device-phone-number:
+    get:
+      summary: Get phone number v2.1.0
+      tags:
+        -  Share a phone number
+      description: |
+        Returns the phone number associated with the access token so the API client can verify the number themselves.
+         - The retrieval supports multiple authentication methods: traditional mobile network authentication and **SIM-Based Authentication (TS.43 Operator Tokens)**
+         - For SIM-Based Authentication, it works over both **mobile network and WiFi connections**
+         - The user authentication can be performed via **CIBA** or **JWT-Bearer** flows with TS.43 operator tokens
+         - It returns the authenticated user's `device phone number` associated to the access token
+
+        Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following scope:
+
+        `dpv:ServiceProvision number-verification:device-phone-number:read`
+
+        Create an app on our [Sandbox](/docs/sandbox) to get credentials and [retrieve tokens](/reference/authorize) so you can perform API calls to our operators' production environments, or use the following convenience token to test in mock mode:
+
+        `mock_sandbox_access_token`
+
+        You can explore our [Number Verification sample code](/docs/samplecode_numberverification) for additional guidance on using this API.
+      operationId: phoneNumberShare
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NumberVerificationShareResponse'
+        '400':
+          $ref: '#/components/responses/Generic400'
+        '401':
+          $ref: '#/components/responses/Generic401'
+        '403':
+          $ref: '#/components/responses/PhoneNumberVerificationPermissionDenied403'
+        '500':
+          $ref: '#/components/responses/Generic500'
+        '503':
+          $ref: '#/components/responses/Generic503'
+        '504':
+          $ref: '#/components/responses/Generic504'
+      security:
+        - three_legged:
+          - number-verification:device-phone-number:read
 components:
   securitySchemes:
     three_legged:
@@ -119,6 +163,7 @@ components:
           tokenUrl: https://{host}/token
           scopes:
             number-verification:verify: phoneNumberVerify operation
+            number-verification:device-phone-number:read: phoneNumberShare operation
     ts43_sim_based:
       type: oauth2
       description: SIM-Based Authentication using TS.43 Operator Tokens. Supports both mobile network and WiFi connections.
@@ -127,6 +172,7 @@ components:
           tokenUrl: https://{host}/token
           scopes:
             number-verification:verify: phoneNumberVerify operation with SIM-based authentication
+            number-verification:device-phone-number:read: phoneNumberShare operation with SIM-based authentication
     ciba_flow:
       type: oauth2
       description: Client Initiated Backchannel Authentication (CIBA) flow with TS.43 operator tokens
@@ -135,6 +181,7 @@ components:
           tokenUrl: https://{host}/bc-token
           scopes:
             number-verification:verify: phoneNumberVerify operation via CIBA flow
+            number-verification:device-phone-number:read: phoneNumberShare operation via CIBA flow
   schemas:
     NumberVerificationRequestBody:
       type: object

@@ -89,6 +89,48 @@ paths:
       security:
         - three_legged:
           - number-verification-verify-read
+  /device-phone-number:
+    get:
+      summary: Get phone number v0.3
+      tags:
+        -  Share a phone number
+      description: |
+        Returns the phone number associated with the access token so the API client can verify the number themselves.
+         - It will be done for the user that has authenticated via mobile network and so their `sub` is in the access token
+         - It returns the authenticated user's `device phone number` associated to the access token
+
+        Check the [Authorization guide](/docs/authorization) on how to get an OAuth2 token, with the following scope:
+
+        `dpv:FraudPreventionAndDetection#number-verification-share-read`
+
+        Create an app on our [Sandbox](/docs/sandbox) to get credentials and [retrieve tokens](/reference/authorize) so you can perform API calls to our operators' production environments, or use the following convenience token to test in mock mode:
+
+        `mock_sandbox_access_token`
+
+        You can explore our [Number Verification sample code](/docs/samplecode_numberverification) for additional guidance on using this API.
+      operationId: phoneNumberShare
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NumberVerificationShareResponse'
+        '400':
+          $ref: '#/components/responses/Generic400'
+        '401':
+          $ref: '#/components/responses/Generic401'
+        '403':
+          $ref: '#/components/responses/PhoneNumberVerificationPermissionDenied403'
+        '500':
+          $ref: '#/components/responses/Generic500'
+        '503':
+          $ref: '#/components/responses/Generic503'
+        '504':
+          $ref: '#/components/responses/Generic504'
+      security:
+        - three_legged:
+          - number-verification-share-read
 components:
   securitySchemes:
     three_legged:
