@@ -93,7 +93,7 @@ paths:
     get:
       summary: Get phone number v1.0
       tags:
-        -  Share a phone number
+        -  Retrieve a phone number
       description: |
         Returns the phone number associated with the access token so the API client can verify the number themselves.
          - It will be done for the user that has authenticated via mobile network

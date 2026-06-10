@@ -113,7 +113,7 @@ paths:
     get:
       summary: Get phone number v2.1.0
       tags:
-        -  Share a phone number
+        -  Retrieve a phone number
       description: |
         Returns the phone number associated with the access token so the API client can verify the number themselves.
          - The retrieval supports multiple authentication methods: traditional mobile network authentication and **SIM-Based Authentication (TS.43 Operator Tokens)**
